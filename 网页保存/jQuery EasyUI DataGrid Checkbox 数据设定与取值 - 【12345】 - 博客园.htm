@@ -1,0 +1,594 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>jQuery EasyUI DataGrid Checkbox 数据设定与取值 - 【12345】 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=VDh8zSH1vx51MDqRT7hK220akQ58FjlaaeGuWBPhfOA1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/SimpleBlue/bundle-SimpleBlue.css?v=jJERBFSojhmgst84aaRDal9S3q1WoO-WcNudmMzGJS81"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/piaopiao7891/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/piaopiao7891/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/piaopiao7891/wlwmanifest.xml"/>
+<script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'piaopiao7891', cb_enable_mathjax=false;</script>
+<script src="/bundles/blog-common.js?v=lWYisON4NCZPE0cDhRSZfCJYBtCYvhrzIJwgrI08A5U1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+		
+<!--done-->
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/piaopiao7891/">飞翔</a></div>
+<div class="subtitle">飞翔</div>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li id="nav_sitehome"><a id="MyLinks1_HomeLink" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li id="nav_myhome"><a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/piaopiao7891/">首页</a></li>
+<li id="nav_q"><a class="menu" href="http://q.cnblogs.com/">博问</a></li>
+<li id="nav_ing"><a class="menu" href="http://home.cnblogs.com/ing/">闪存</a></li>
+<li id="nav_newpost"><a id="MyLinks1_NewPostLink" class="menu" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li id="nav_contact"><a id="MyLinks1_ContactLink" class="menu" rel="nofollow" href="http://msg.cnblogs.com/send/%E3%80%9012345%E3%80%91">联系</a></li>
+<li id="nav_rss"><a id="MyLinks1_Syndication" class="menu" href="http://www.cnblogs.com/piaopiao7891/rss">订阅</a>
+<!--<a id="MyLinks1_XMLLink" class="aHeaderXML" href="http://www.cnblogs.com/piaopiao7891/rss"><img src="http://www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li id="nav_admin"><a id="MyLinks1_Admin" class="menu" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+</ul>
+
+		<div class="blogStats">
+			
+			
+<!--done-->
+随笔-453&nbsp;
+文章-3&nbsp;
+评论-21&nbsp;
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/piaopiao7891/p/3180561.html">jQuery EasyUI DataGrid Checkbox 数据设定与取值</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p>转：<a href="http://www.it165.net/pro/html/201305/6000.html">http://www.it165.net/pro/html/201305/6000.html</a></p>
+<p>纯粹做个记录，以免日后忘记该怎么设定。</p>
+<p>这一篇将会说明两种使用 jQuery EasyUI DataGrid 的 Checkbox 设定方式，以及在既有数据下将 checked 为 true 的该笔数据列的 Checkbox 设定为 Checked，另外就是两种 Checkbox 设定方式下如何取得有勾选的数据。</p>
+<p>有关 jQuery EasyUI DataGrid 的相关资料，可以前往官网查看，<br /><a href="http://www.jeasyui.com/index.php" rel="nofollow" target="_blank">jQuery EasyUI 官网</a> <a href="http://www.jeasyui.com/documentation/index.php" rel="nofollow" target="_blank">jQuery EasyUI Documentation</a> <a href="http://www.jeasyui.com/demo/main/index.php?plugin=DataGrid&amp;theme=default&amp;dir=ltr&amp;pitem=" rel="nofollow" target="_blank">DataGrid Demo</a> <a href="http://www.jeasyui.com/tutorial/datagrid/datagrid10.php" rel="nofollow" target="_blank">CheckBox select on DataGrid</a><br />使用的范例 JSON 数据：</p>
+<div id="highlighter_32408" class="syntaxhighlighter ">
+<div class="bar">
+<div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div>
+
+</div>
+<div class="lines">
+<div class="line alt1"><code class="number">01.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">{</code></span></span></div>
+<div class="line alt2"><code class="number">02.</code><span class="content"><code class="spaces">&nbsp; </code><span class="block" style="margin-left: 14px;"><code class="string">"total"</code><code class="plain">: 4,</code></span></span></div>
+<div class="line alt1"><code class="number">03.</code><span class="content"><code class="spaces">&nbsp; </code><span class="block" style="margin-left: 14px;"><code class="string">"rows"</code><code class="plain">: [</code></span></span></div>
+<div class="line alt2"><code class="number">04.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">{</code></span></span></div>
+<div class="line alt1"><code class="number">05.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"productid"</code><code class="plain">: </code><code class="string">"FI-SW-01"</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">06.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"productname"</code><code class="plain">: </code><code class="string">"Koi"</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">07.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"unitcost"</code><code class="plain">: 10.00,</code></span></span></div>
+<div class="line alt2"><code class="number">08.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"status"</code><code class="plain">: </code><code class="string">"P"</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">09.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"listprice"</code><code class="plain">: 36.50,</code></span></span></div>
+<div class="line alt2"><code class="number">10.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"attr1"</code><code class="plain">: </code><code class="string">"Large"</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">11.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"itemid"</code><code class="plain">: </code><code class="string">"EST-1"</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">12.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"checked"</code><code class="plain">: </code><code class="keyword">true</code></span></span></div>
+<div class="line alt1"><code class="number">13.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">},</code></span></span></div>
+<div class="line alt2"><code class="number">14.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">{</code></span></span></div>
+<div class="line alt1"><code class="number">15.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"productid"</code><code class="plain">: </code><code class="string">"K9-DL-01"</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">16.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"productname"</code><code class="plain">: </code><code class="string">"Dalmation"</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">17.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"unitcost"</code><code class="plain">: 12.00,</code></span></span></div>
+<div class="line alt2"><code class="number">18.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"status"</code><code class="plain">: </code><code class="string">"P"</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">19.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"listprice"</code><code class="plain">: 18.50,</code></span></span></div>
+<div class="line alt2"><code class="number">20.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"attr1"</code><code class="plain">: </code><code class="string">"Spotted Adult Female"</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">21.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"itemid"</code><code class="plain">: </code><code class="string">"EST-10"</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">22.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"checked"</code><code class="plain">: </code><code class="keyword">true</code></span></span></div>
+<div class="line alt1"><code class="number">23.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">},</code></span></span></div>
+<div class="line alt2"><code class="number">24.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">{</code></span></span></div>
+<div class="line alt1"><code class="number">25.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"productid"</code><code class="plain">: </code><code class="string">"RP-SN-01"</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">26.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"productname"</code><code class="plain">: </code><code class="string">"Rattlesnake"</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">27.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"unitcost"</code><code class="plain">: 12.00,</code></span></span></div>
+<div class="line alt2"><code class="number">28.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"status"</code><code class="plain">: </code><code class="string">"P"</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">29.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"listprice"</code><code class="plain">: 38.50,</code></span></span></div>
+<div class="line alt2"><code class="number">30.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"attr1"</code><code class="plain">: </code><code class="string">"Venomless"</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">31.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"itemid"</code><code class="plain">: </code><code class="string">"EST-11"</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">32.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"checked"</code><code class="plain">: </code><code class="keyword">true</code></span></span></div>
+<div class="line alt1"><code class="number">33.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">},</code></span></span></div>
+<div class="line alt2"><code class="number">34.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">{</code></span></span></div>
+<div class="line alt1"><code class="number">35.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"productid"</code><code class="plain">: </code><code class="string">"RP-SN-01"</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">36.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"productname"</code><code class="plain">: </code><code class="string">"Rattlesnake"</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">37.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"unitcost"</code><code class="plain">: 12.00,</code></span></span></div>
+<div class="line alt2"><code class="number">38.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"status"</code><code class="plain">: </code><code class="string">"P"</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">39.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"listprice"</code><code class="plain">: 26.50,</code></span></span></div>
+<div class="line alt2"><code class="number">40.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"attr1"</code><code class="plain">: </code><code class="string">"Rattleless"</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">41.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"itemid"</code><code class="plain">: </code><code class="string">"EST-12"</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">42.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 42px;"><code class="string">"checked"</code><code class="plain">: </code><code class="keyword">false</code></span></span></div>
+<div class="line alt1"><code class="number">43.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">}</code></span></span></div>
+<div class="line alt2"><code class="number">44.</code><span class="content"><code class="spaces">&nbsp; </code><span class="block" style="margin-left: 14px;"><code class="plain">]</code></span></span></div>
+<div class="line alt1"><code class="number">45.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">}</code></span></span></div>
+
+</div>
+
+</div>
+<p>设定方式一：使用预设的设定方式 网页的 HTML 原始码内容<br /> </p>
+<div id="highlighter_552731" class="syntaxhighlighter ">
+<div class="bar">
+<div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div>
+
+</div>
+<div class="lines">
+<div class="line alt1"><code class="number">01.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">&lt;</code><code class="keyword">body</code><code class="plain">&gt;</code></span></span></div>
+<div class="line alt2"><code class="number">02.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">&lt;</code><code class="keyword">h2</code><code class="plain">&gt;Custom CheckBox on DataGrid&lt;/</code><code class="keyword">h2</code><code class="plain">&gt;</code></span></span></div>
+<div class="line alt1"><code class="number">03.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code></span></div>
+<div class="line alt2"><code class="number">04.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">&lt;</code><code class="keyword">input</code> <code class="color1">type</code><code class="plain">=</code><code class="string">"button"</code> <code class="color1">id</code><code class="plain">=</code><code class="string">"ButonGetCheck"</code> <code class="color1">value</code><code class="plain">=</code><code class="string">"Get Checked"</code> <code class="plain">/&gt;</code></span></span></div>
+<div class="line alt1"><code class="number">05.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">&lt;</code><code class="keyword">br</code><code class="plain">/&gt;&lt;</code><code class="keyword">br</code><code class="plain">/&gt;</code></span></span></div>
+<div class="line alt2"><code class="number">06.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code></span></div>
+<div class="line alt1"><code class="number">07.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">&lt;</code><code class="keyword">table</code> <code class="color1">id</code><code class="plain">=</code><code class="string">"dg"</code><code class="plain">&gt;&lt;/</code><code class="keyword">table</code><code class="plain">&gt;</code></span></span></div>
+<div class="line alt2"><code class="number">08.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code></span></div>
+<div class="line alt1"><code class="number">09.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">&lt;/</code><code class="keyword">body</code><code class="plain">&gt;</code></span></span></div>
+
+</div>
+
+</div>
+<p>我是习惯把 DataGrid 的相关设定放在 Javascript 程序中，因为这会比直接在 HTML 的 Table Tag 使用属性设定的方式还具有弹性，</p>
+<p>Javascript 程序中的 DataGrid 设定</p>
+<div id="highlighter_880944" class="syntaxhighlighter ">
+<div class="bar">
+<div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div>
+
+</div>
+<div class="lines">
+<div class="line alt1"><code class="number">01.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">$(</code><code class="string">'#dg'</code><code class="plain">).datagrid({</code></span></span></div>
+<div class="line alt2"><code class="number">02.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">title: </code><code class="string">'CheckBox Selection on DataGrid'</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">03.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">url: </code><code class="string">'datagrid_data3.json'</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">04.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">width: </code><code class="string">'700'</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">05.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">rownumbers: </code><code class="keyword">true</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">06.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">columns:[[</code></span></span></div>
+<div class="line alt1"><code class="number">07.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field:</code><code class="string">'ck'</code><code class="plain">,checkbox:</code><code class="keyword">true</code> <code class="plain">}, </code></span></span></div>
+<div class="line alt2"><code class="number">08.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'productid'</code><code class="plain">, title: </code><code class="string">'productid'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt1"><code class="number">09.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'productname'</code><code class="plain">, title: </code><code class="string">'productname'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt2"><code class="number">10.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'unitcost'</code><code class="plain">, title: </code><code class="string">'unitcost'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt1"><code class="number">11.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'status'</code><code class="plain">, title: </code><code class="string">'status'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt2"><code class="number">12.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'listprice'</code><code class="plain">, title: </code><code class="string">'listprice'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt1"><code class="number">13.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'itemid'</code><code class="plain">, title: </code><code class="string">'itemid'</code> <code class="plain">}</code></span></span></div>
+<div class="line alt2"><code class="number">14.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">]],</code></span></span></div>
+<div class="line alt1"><code class="number">15.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">singleSelect: </code><code class="keyword">false</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">16.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">selectOnCheck: </code><code class="keyword">true</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">17.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">checkOnSelect: </code><code class="keyword">true</code></span></span></div>
+<div class="line alt2"><code class="number">18.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">});</code></span></span></div>
+
+</div>
+
+</div>
+<p>设定完成后的页面如下：</p>
+<p>&nbsp;</p>
+<div style="text-align: center;"><img style="width: 560px; height: 222.8px; display: inline;" src="http://www.it165.net/uploadfile/2013/0528/20130528093325271.png" alt="\" />  </div>
+<div>
+<p>但是我们的 JSON 数据里有个字段是「checked」，这个字段的数据 true / false 就是用来设定 Checkbox 是否勾选，而设定的动作必须要在 DataGrid 加载数据完成后再去执行，这边会使用到 jQuery 的 each 去逐一检查每个数据列的的数据内容，假如 checked 为 true，那就使用「checkRow」这个 Method 将该数据列的 Checkbox 设为勾选的状态，</p>
+<p>&nbsp;</p>
+<div style="text-align: center;"><img style="width: 560px; height: 60.2px; display: inline;" src="http://www.it165.net/uploadfile/2013/0528/20130528093349595.png" alt="\" />  </div>
+<div>
+<p>修改后的 DataGrid 设定程序如下：</p>
+<p>&nbsp;</p>
+<div id="highlighter_588791" class="syntaxhighlighter ">
+<div class="bar">
+<div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div>
+
+</div>
+<div class="lines">
+<div class="line alt1"><code class="number">01.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">$(</code><code class="string">'#dg'</code><code class="plain">).datagrid({</code></span></span></div>
+<div class="line alt2"><code class="number">02.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">title: </code><code class="string">'CheckBox Selection on DataGrid'</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">03.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">url: </code><code class="string">'datagrid_data3.json'</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">04.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">width: </code><code class="string">'700'</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">05.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">rownumbers: </code><code class="keyword">true</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">06.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">columns:[[</code></span></span></div>
+<div class="line alt1"><code class="number">07.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field:</code><code class="string">'ck'</code><code class="plain">,checkbox:</code><code class="keyword">true</code> <code class="plain">}, </code></span></span></div>
+<div class="line alt2"><code class="number">08.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'productid'</code><code class="plain">, title: </code><code class="string">'productid'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt1"><code class="number">09.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'productname'</code><code class="plain">, title: </code><code class="string">'productname'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt2"><code class="number">10.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'unitcost'</code><code class="plain">, title: </code><code class="string">'unitcost'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt1"><code class="number">11.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'status'</code><code class="plain">, title: </code><code class="string">'status'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt2"><code class="number">12.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'listprice'</code><code class="plain">, title: </code><code class="string">'listprice'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt1"><code class="number">13.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'itemid'</code><code class="plain">, title: </code><code class="string">'itemid'</code> <code class="plain">}</code></span></span></div>
+<div class="line alt2"><code class="number">14.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">]],</code></span></span></div>
+<div class="line alt1"><code class="number">15.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">singleSelect: </code><code class="keyword">false</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">16.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">selectOnCheck: </code><code class="keyword">true</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">17.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">checkOnSelect: </code><code class="keyword">true</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">18.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">onLoadSuccess:</code><code class="keyword">function</code><code class="plain">(data){&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code></span></span></div>
+<div class="line alt1"><code class="number">19.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="keyword">if</code><code class="plain">(data){</code></span></span></div>
+<div class="line alt2"><code class="number">20.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="plain">$.each(data.rows, </code><code class="keyword">function</code><code class="plain">(index, item){</code></span></span></div>
+<div class="line alt1"><code class="number">21.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 112px;"><code class="keyword">if</code><code class="plain">(item.checked){</code></span></span></div>
+<div class="line alt2"><code class="number">22.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 140px;"><code class="plain">$(</code><code class="string">'#dg'</code><code class="plain">).datagrid(</code><code class="string">'checkRow'</code><code class="plain">, index);</code></span></span></div>
+<div class="line alt1"><code class="number">23.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 112px;"><code class="plain">}</code></span></span></div>
+<div class="line alt2"><code class="number">24.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="plain">});</code></span></span></div>
+<div class="line alt1"><code class="number">25.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">}</code></span></span></div>
+<div class="line alt2"><code class="number">26.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code></span></span></div>
+<div class="line alt1"><code class="number">27.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">});</code></span></span></div>
+
+</div>
+
+</div>
+<p>重新执行页面后就可以看到 checked 为 true 的数据列 Checkbox 都为勾选，</p>
+<p>&nbsp;</p>
+<div style="text-align: center;"><img style="width: 560px; height: 214.8px; display: inline;" src="http://www.it165.net/uploadfile/2013/0528/20130528093516891.png" alt="\" />  </div>
+<div>
+<p>再来就是要取得勾选的数据值，这边也是使用 DataGrid 所提供的 Method「getChecked」 www.it165.net</p>
+<p>&nbsp;</p>
+<div style="text-align: center;"><img style="width: 560px; height: 92.12px; display: inline;" src="http://www.it165.net/uploadfile/2013/0528/20130528093541558.png" alt="\" />  </div>
+<div>
+<p>程序如下：</p>
+<p>&nbsp;</p>
+<div id="highlighter_213610" class="syntaxhighlighter ">
+<div class="bar">
+<div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div>
+
+</div>
+<div class="lines">
+<div class="line alt1"><code class="number">1.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">$(</code><code class="string">'#ButonGetCheck'</code><code class="plain">).click(</code><code class="keyword">function</code><code class="plain">(){</code></span></span></div>
+<div class="line alt2"><code class="number">2.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="keyword">var</code> <code class="plain">checkedItems = $(</code><code class="string">'#dg'</code><code class="plain">).datagrid(</code><code class="string">'getChecked'</code><code class="plain">);</code></span></span></div>
+<div class="line alt1"><code class="number">3.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="keyword">var</code> <code class="plain">names = [];</code></span></span></div>
+<div class="line alt2"><code class="number">4.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">$.each(checkedItems, </code><code class="keyword">function</code><code class="plain">(index, item){</code></span></span></div>
+<div class="line alt1"><code class="number">5.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">names.push(item.productname);</code></span></span></div>
+<div class="line alt2"><code class="number">6.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code></span></span></div>
+<div class="line alt1"><code class="number">7.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">console.log(names.join(</code><code class="string">","</code><code class="plain">));</code></span></span></div>
+<div class="line alt2"><code class="number">8.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">});</code></span></span></div>
+
+</div>
+
+</div>
+<p>最后的执行结果：</p>
+<p>&nbsp;</p>
+<div style="text-align: center;"><img style="width: 560px; height: 346.27px; display: inline;" src="http://www.it165.net/uploadfile/2013/0528/20130528093711469.png" alt="\" /><br /><img style="width: 560px; height: 365.31px; display: inline;" src="http://www.it165.net/uploadfile/2013/0528/20130528093723702.png" alt="\" /><br /><img style="width: 560px; height: 357.86px; display: inline;" src="http://www.it165.net/uploadfile/2013/0528/20130528093737307.png" alt="\" />  </div>
+<div>
+<p>方式一的完整 Javascript 程序：</p>
+<p>&nbsp;</p>
+<div id="highlighter_469214" class="syntaxhighlighter ">
+<div class="bar">
+<div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div>
+
+</div>
+<div class="lines">
+<div class="line alt1"><code class="number">01.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">$(</code><code class="string">'#dg'</code><code class="plain">).datagrid({</code></span></span></div>
+<div class="line alt2"><code class="number">02.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">title: </code><code class="string">'CheckBox Selection on DataGrid'</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">03.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">url: </code><code class="string">'datagrid_data3.json'</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">04.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">width: </code><code class="string">'700'</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">05.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">rownumbers: </code><code class="keyword">true</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">06.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">columns:[[</code></span></span></div>
+<div class="line alt1"><code class="number">07.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field:</code><code class="string">'ck'</code><code class="plain">,checkbox:</code><code class="keyword">true</code> <code class="plain">}, </code></span></span></div>
+<div class="line alt2"><code class="number">08.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'productid'</code><code class="plain">, title: </code><code class="string">'productid'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt1"><code class="number">09.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'productname'</code><code class="plain">, title: </code><code class="string">'productname'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt2"><code class="number">10.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'unitcost'</code><code class="plain">, title: </code><code class="string">'unitcost'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt1"><code class="number">11.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'status'</code><code class="plain">, title: </code><code class="string">'status'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt2"><code class="number">12.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'listprice'</code><code class="plain">, title: </code><code class="string">'listprice'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt1"><code class="number">13.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'itemid'</code><code class="plain">, title: </code><code class="string">'itemid'</code> <code class="plain">}</code></span></span></div>
+<div class="line alt2"><code class="number">14.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">]],</code></span></span></div>
+<div class="line alt1"><code class="number">15.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">singleSelect: </code><code class="keyword">false</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">16.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">selectOnCheck: </code><code class="keyword">true</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">17.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">checkOnSelect: </code><code class="keyword">true</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">18.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">onLoadSuccess:</code><code class="keyword">function</code><code class="plain">(data){&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code></span></span></div>
+<div class="line alt1"><code class="number">19.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="keyword">if</code><code class="plain">(data){</code></span></span></div>
+<div class="line alt2"><code class="number">20.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="plain">$.each(data.rows, </code><code class="keyword">function</code><code class="plain">(index, item){</code></span></span></div>
+<div class="line alt1"><code class="number">21.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 112px;"><code class="keyword">if</code><code class="plain">(item.checked){</code></span></span></div>
+<div class="line alt2"><code class="number">22.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 140px;"><code class="plain">$(</code><code class="string">'#dg'</code><code class="plain">).datagrid(</code><code class="string">'checkRow'</code><code class="plain">, index);</code></span></span></div>
+<div class="line alt1"><code class="number">23.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 112px;"><code class="plain">}</code></span></span></div>
+<div class="line alt2"><code class="number">24.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="plain">});</code></span></span></div>
+<div class="line alt1"><code class="number">25.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">}</code></span></span></div>
+<div class="line alt2"><code class="number">26.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code></span></span></div>
+<div class="line alt1"><code class="number">27.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">});</code></span></span></div>
+<div class="line alt2"><code class="number">28.</code></div>
+<div class="line alt1"><code class="number">29.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">$(</code><code class="string">'#ButonGetCheck'</code><code class="plain">).click(</code><code class="keyword">function</code><code class="plain">(){</code></span></span></div>
+<div class="line alt2"><code class="number">30.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="keyword">var</code> <code class="plain">checkedItems = $(</code><code class="string">'#dg'</code><code class="plain">).datagrid(</code><code class="string">'getChecked'</code><code class="plain">);</code></span></span></div>
+<div class="line alt1"><code class="number">31.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="keyword">var</code> <code class="plain">names = [];</code></span></span></div>
+<div class="line alt2"><code class="number">32.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">$.each(checkedItems, </code><code class="keyword">function</code><code class="plain">(index, item){</code></span></span></div>
+<div class="line alt1"><code class="number">33.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">names.push(item.productname);</code></span></span></div>
+<div class="line alt2"><code class="number">34.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code></span></span></div>
+<div class="line alt1"><code class="number">35.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">console.log(names.join(</code><code class="string">","</code><code class="plain">));</code></span></span></div>
+<div class="line alt2"><code class="number">36.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">});</code></span></span></div>
+
+</div>
+
+</div>
+<p>设定方式二：不使用预设的设定方式与 Method</p>
+<p>这个设定的方式应该是在 jQuery EasyUI 1.3 之前所使用的，因为早期的版本并没有足够的设定方式与 Method 让使用者可以去增加 Checkbox 的项目，这边所使用的 JSON 数据以及 HTML 原始码都跟设定方式一的内容是一样的，不一样的地方在于 Javascript 程序的部份，</p>
+<p>先看 DataGrid 的设定</p>
+<p>&nbsp;</p>
+<div id="highlighter_135756" class="syntaxhighlighter ">
+<div class="bar">
+<div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div>
+
+</div>
+<div class="lines">
+<div class="line alt1"><code class="number">01.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">$(</code><code class="string">'#dg'</code><code class="plain">).datagrid({</code></span></span></div>
+<div class="line alt2"><code class="number">02.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">title: </code><code class="string">'CheckBox Selection on DataGrid'</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">03.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">url: </code><code class="string">'datagrid_data3.json'</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">04.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">width: </code><code class="string">'700'</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">05.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">rownumbers: </code><code class="keyword">true</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">06.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">columns:[[</code></span></span></div>
+<div class="line alt1"><code class="number">07.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{field:</code><code class="string">'checked'</code><code class="plain">,formatter:</code><code class="keyword">function</code><code class="plain">(value,row,index){ </code></span></span></div>
+<div class="line alt2"><code class="number">08.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="keyword">if</code><code class="plain">(row.checked){</code></span></span></div>
+<div class="line alt1"><code class="number">09.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 112px;"><code class="keyword">return</code> <code class="string">'&lt;input type="checkbox" name="DataGridCheckbox" checked="checked"&gt;'</code><code class="plain">; </code></span></span></div>
+<div class="line alt2"><code class="number">10.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="plain">}</code></span></span></div>
+<div class="line alt1"><code class="number">11.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="keyword">else</code><code class="plain">{</code></span></span></div>
+<div class="line alt2"><code class="number">12.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 112px;"><code class="keyword">return</code> <code class="string">'&lt;input type="checkbox" name="DataGridCheckbox"&gt;'</code><code class="plain">; </code></span></span></div>
+<div class="line alt1"><code class="number">13.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="plain">}</code></span></span></div>
+<div class="line alt2"><code class="number">14.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">}}, </code></span></span></div>
+<div class="line alt1"><code class="number">15.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'productid'</code><code class="plain">, title: </code><code class="string">'productid'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt2"><code class="number">16.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'productname'</code><code class="plain">, title: </code><code class="string">'productname'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt1"><code class="number">17.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'unitcost'</code><code class="plain">, title: </code><code class="string">'unitcost'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt2"><code class="number">18.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'status'</code><code class="plain">, title: </code><code class="string">'status'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt1"><code class="number">19.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'listprice'</code><code class="plain">, title: </code><code class="string">'listprice'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt2"><code class="number">20.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">{ field: </code><code class="string">'itemid'</code><code class="plain">, title: </code><code class="string">'itemid'</code> <code class="plain">}</code></span></span></div>
+<div class="line alt1"><code class="number">21.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">]],</code></span></span></div>
+<div class="line alt2"><code class="number">22.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">singleSelect: </code><code class="keyword">true</code></span></span></div>
+<div class="line alt1"><code class="number">23.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">});</code></span></span></div>
+
+</div>
+
+</div>
+<p>这边的 Checkbox 设定则是使用 formatter 的方式，类似 <a class="keylink" href="http://www.it165.net/pro/webasp/" target="_blank">ASP</a>.NET GridView 的 ItemTemplate 设定方式，判断每个数据列的 checked 字段数据是否为 true，如 checked 为 true 则回传一个有勾选的 Checkbox，不过这样的设定方式就不会在 DataGrid 的字段名称列出现可让使用者全选的 Checkbox，如需要的话就必须再用其它的方式来做设定，不过这边就不介绍，</p>
+<p>&nbsp;</p>
+<div style="text-align: center;"><img style="width: 560px; height: 210.93px; display: inline;" src="http://www.it165.net/uploadfile/2013/0528/20130528094025866.png" alt="\" />  </div>
+<div>
+<p>接着就是取得有勾选的数据值，因为这里是使用自己加入 checkbox tag 的方式，所以就无法使用 DataGrid 所提供的 getChecked 方法，而是必须要另外写程序来处理，可以使用 extend 的方式去扩充 DataGrid 的方法，</p>
+<p>&nbsp;</p>
+
+程序如下：
+<div id="highlighter_707198" class="syntaxhighlighter ">
+<div class="bar">
+<div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div>
+
+</div>
+<div class="lines">
+<div class="line alt1"><code class="number">01.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">$.extend($.fn.datagrid.methods, {</code></span></span></div>
+<div class="line alt2"><code class="number">02.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">getChecked: </code><code class="keyword">function</code> <code class="plain">(jq) {</code></span></span></div>
+<div class="line alt1"><code class="number">03.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="keyword">var</code> <code class="plain">rr = [];</code></span></span></div>
+<div class="line alt2"><code class="number">04.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="keyword">var</code> <code class="plain">rows = jq.datagrid(</code><code class="string">'getRows'</code><code class="plain">);</code></span></span></div>
+<div class="line alt1"><code class="number">05.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">jq.datagrid(</code><code class="string">'getPanel'</code><code class="plain">).find(</code><code class="string">'div.datagrid-cell input:checked'</code><code class="plain">).each(</code><code class="keyword">function</code> <code class="plain">() {</code></span></span></div>
+<div class="line alt2"><code class="number">06.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="keyword">var</code> <code class="plain">index = $(</code><code class="keyword">this</code><code class="plain">).parents(</code><code class="string">'tr:first'</code><code class="plain">).attr(</code><code class="string">'datagrid-row-index'</code><code class="plain">);</code></span></span></div>
+<div class="line alt1"><code class="number">07.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="plain">rr.push(rows[index]);</code></span></span></div>
+<div class="line alt2"><code class="number">08.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">});</code></span></span></div>
+<div class="line alt1"><code class="number">09.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="keyword">return</code> <code class="plain">rr;</code></span></span></div>
+<div class="line alt2"><code class="number">10.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">}</code></span></span></div>
+<div class="line alt1"><code class="number">11.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">});</code></span></span></div>
+
+</div>
+
+</div>
+
+这么一来在取得 DataGrid 的 Checkbox 有勾选的数据值就可以沿用方式一的程序，
+<div id="highlighter_555247" class="syntaxhighlighter ">
+<div class="bar">
+<div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div>
+
+</div>
+<div class="lines">
+<div class="line alt1"><code class="number">1.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">$(</code><code class="string">'#ButonGetCheck'</code><code class="plain">).click(</code><code class="keyword">function</code><code class="plain">(){</code></span></span></div>
+<div class="line alt2"><code class="number">2.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="keyword">var</code> <code class="plain">checkedItems = $(</code><code class="string">'#dg'</code><code class="plain">).datagrid(</code><code class="string">'getChecked'</code><code class="plain">);</code></span></span></div>
+<div class="line alt1"><code class="number">3.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="keyword">var</code> <code class="plain">names = [];</code></span></span></div>
+<div class="line alt2"><code class="number">4.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">$.each(checkedItems, </code><code class="keyword">function</code><code class="plain">(index, item){</code></span></span></div>
+<div class="line alt1"><code class="number">5.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">names.push(item.productname);</code></span></span></div>
+<div class="line alt2"><code class="number">6.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code></span></span></div>
+<div class="line alt1"><code class="number">7.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">console.log(names.join(</code><code class="string">","</code><code class="plain">));</code></span></span></div>
+<div class="line alt2"><code class="number">8.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">});</code></span></span></div>
+
+</div>
+
+</div>
+<p>执行结果：  </p>
+<p style="text-align: center;"><img style="width: 560px; height: 327.41px; display: inline;" src="http://www.it165.net/uploadfile/2013/0528/20130528094232663.png" alt="\" /><br /><img style="width: 560px; height: 342.59px; display: inline;" src="http://www.it165.net/uploadfile/2013/0528/20130528094244129.png" alt="\" /><br /><img style="width: 560px; height: 365.83px; display: inline;" src="http://www.it165.net/uploadfile/2013/0528/20130528094256967.png" alt="\" />  </p>
+<p>完整 Javascript 程序如下：<br /> </p>
+<div id="highlighter_591171" class="syntaxhighlighter ">
+<div class="bar">
+<div class="toolbar"><a class="item viewSource" style="width: 16px; height: 16px;" title="view source" href="#viewSource">view source</a><a class="item printSource" style="width: 16px; height: 16px;" title="print" href="#printSource">print</a><a class="item about" style="width: 16px; height: 16px;" title="?" href="#about">?</a></div>
+
+</div>
+<div class="lines">
+<div class="line alt1"><code class="number">01.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">$(</code><code class="keyword">function</code><code class="plain">(){</code></span></span></div>
+<div class="line alt2"><code class="number">02.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">$(</code><code class="string">'#dg'</code><code class="plain">).datagrid({</code></span></span></div>
+<div class="line alt1"><code class="number">03.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">title: </code><code class="string">'CheckBox Selection on DataGrid'</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">04.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">url: </code><code class="string">'datagrid_data3.json'</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">05.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">width: </code><code class="string">'700'</code><code class="plain">,</code></span></span></div>
+<div class="line alt2"><code class="number">06.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">rownumbers: </code><code class="keyword">true</code><code class="plain">,</code></span></span></div>
+<div class="line alt1"><code class="number">07.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">columns:[[</code></span></span></div>
+<div class="line alt2"><code class="number">08.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="plain">{field:</code><code class="string">'checked'</code><code class="plain">,formatter:</code><code class="keyword">function</code><code class="plain">(value,row,index){ </code></span></span></div>
+<div class="line alt1"><code class="number">09.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 112px;"><code class="keyword">if</code><code class="plain">(row.checked){</code></span></span></div>
+<div class="line alt2"><code class="number">10.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 140px;"><code class="keyword">return</code> <code class="string">'&lt;input type="checkbox" name="DataGridCheckbox" checked="checked"&gt;'</code><code class="plain">; </code></span></span></div>
+<div class="line alt1"><code class="number">11.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 112px;"><code class="plain">}</code></span></span></div>
+<div class="line alt2"><code class="number">12.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 112px;"><code class="keyword">else</code><code class="plain">{</code></span></span></div>
+<div class="line alt1"><code class="number">13.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 140px;"><code class="keyword">return</code> <code class="string">'&lt;input type="checkbox" name="DataGridCheckbox"&gt;'</code><code class="plain">; </code></span></span></div>
+<div class="line alt2"><code class="number">14.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 112px;"><code class="plain">}</code></span></span></div>
+<div class="line alt1"><code class="number">15.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="plain">}}, </code></span></span></div>
+<div class="line alt2"><code class="number">16.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="plain">{ field: </code><code class="string">'productid'</code><code class="plain">, title: </code><code class="string">'productid'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt1"><code class="number">17.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="plain">{ field: </code><code class="string">'productname'</code><code class="plain">, title: </code><code class="string">'productname'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt2"><code class="number">18.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="plain">{ field: </code><code class="string">'unitcost'</code><code class="plain">, title: </code><code class="string">'unitcost'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt1"><code class="number">19.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="plain">{ field: </code><code class="string">'status'</code><code class="plain">, title: </code><code class="string">'status'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt2"><code class="number">20.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="plain">{ field: </code><code class="string">'listprice'</code><code class="plain">, title: </code><code class="string">'listprice'</code> <code class="plain">},</code></span></span></div>
+<div class="line alt1"><code class="number">21.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="plain">{ field: </code><code class="string">'itemid'</code><code class="plain">, title: </code><code class="string">'itemid'</code> <code class="plain">}</code></span></span></div>
+<div class="line alt2"><code class="number">22.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">]],</code></span></span></div>
+<div class="line alt1"><code class="number">23.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">singleSelect: </code><code class="keyword">true</code></span></span></div>
+<div class="line alt2"><code class="number">24.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">});</code></span></span></div>
+<div class="line alt1"><code class="number">25.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code></span></div>
+<div class="line alt2"><code class="number">26.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">$(</code><code class="string">'#ButonGetCheck'</code><code class="plain">).click(</code><code class="keyword">function</code><code class="plain">(){</code></span></span></div>
+<div class="line alt1"><code class="number">27.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="keyword">var</code> <code class="plain">checkedItems = $(</code><code class="string">'#dg'</code><code class="plain">).datagrid(</code><code class="string">'getChecked'</code><code class="plain">);</code></span></span></div>
+<div class="line alt2"><code class="number">28.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="keyword">var</code> <code class="plain">names = [];</code></span></span></div>
+<div class="line alt1"><code class="number">29.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">$.each(checkedItems, </code><code class="keyword">function</code><code class="plain">(index, item){</code></span></span></div>
+<div class="line alt2"><code class="number">30.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="plain">names.push(item.productname);</code></span></span></div>
+<div class="line alt1"><code class="number">31.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">});&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code></span></span></div>
+<div class="line alt2"><code class="number">32.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">console.log(names.join(</code><code class="string">","</code><code class="plain">));</code></span></span></div>
+<div class="line alt1"><code class="number">33.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">});</code></span></span></div>
+<div class="line alt2"><code class="number">34.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">});</code></span></span></div>
+<div class="line alt1"><code class="number">35.</code></div>
+<div class="line alt2"><code class="number">36.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">$.extend($.fn.datagrid.methods, {</code></span></span></div>
+<div class="line alt1"><code class="number">37.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">getChecked: </code><code class="keyword">function</code> <code class="plain">(jq) {</code></span></span></div>
+<div class="line alt2"><code class="number">38.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="keyword">var</code> <code class="plain">rr = [];</code></span></span></div>
+<div class="line alt1"><code class="number">39.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="keyword">var</code> <code class="plain">rows = jq.datagrid(</code><code class="string">'getRows'</code><code class="plain">);</code></span></span></div>
+<div class="line alt2"><code class="number">40.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">jq.datagrid(</code><code class="string">'getPanel'</code><code class="plain">).find(</code><code class="string">'div.datagrid-cell input:checked'</code><code class="plain">).each(</code><code class="keyword">function</code> <code class="plain">() {</code></span></span></div>
+<div class="line alt1"><code class="number">41.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="keyword">var</code> <code class="plain">index = $(</code><code class="keyword">this</code><code class="plain">).parents(</code><code class="string">'tr:first'</code><code class="plain">).attr(</code><code class="string">'datagrid-row-index'</code><code class="plain">);</code></span></span></div>
+<div class="line alt2"><code class="number">42.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 84px;"><code class="plain">rr.push(rows[index]);</code></span></span></div>
+<div class="line alt1"><code class="number">43.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="plain">});</code></span></span></div>
+<div class="line alt2"><code class="number">44.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 56px;"><code class="keyword">return</code> <code class="plain">rr;</code></span></span></div>
+<div class="line alt1"><code class="number">45.</code><span class="content"><code class="spaces">&nbsp;&nbsp;&nbsp; </code><span class="block" style="margin-left: 28px;"><code class="plain">}</code></span></span></div>
+<div class="line alt2"><code class="number">46.</code><span class="content"><span class="block" style="margin-left: 0px;"><code class="plain">});</code></span></span></div>
+
+</div>
+
+</div>
+<p>以上</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2013-07-09 17:37</span> <a href='http://www.cnblogs.com/piaopiao7891/'>【12345】</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="http://i.cnblogs.com/EditPosts.aspx?postid=3180561" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(3180561);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=39082,cb_entryId=3180561,cb_blogApp=currentBlogApp,cb_blogUserGuid='0e42420b-63cf-dd11-9e4d-001cf0cd104b',cb_entryCreatedDate='2013/7/9 17:37:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.cnblogs.com/" target="_blank" title="开发者的网上家园">博客园首页</a><a href="http://q.cnblogs.com/" target="_blank" title="程序员问答社区">博问</a><a href="http://news.cnblogs.com/" target="_blank" title="IT新闻">新闻</a><a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a><a href="http://job.cnblogs.com/" target="_blank">程序员招聘</a><a href="http://kb.cnblogs.com/" target="_blank">知识库</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    var enableGoogleAd = canShowAdsense(); 
+    fixPostBodyFormat();
+</script>
+<script type='text/javascript'>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+    (function () {
+        if (enableGoogleAd) {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') +
+              '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        }
+  })();
+</script>
+<script type='text/javascript'>
+    try {
+        if (enableGoogleAd) {
+            googletag.cmd.push(function() {
+            googletag.defineSlot('/1090369/cnblogs_blogpost_C2', [468, 60], 'div-gpt-ad-1433581717989-0').addService(googletag.pubads());
+            googletag.defineSlot('/1090369/cnblogs_blogpost_C1_sitehome', [300, 250], 'div-gpt-ad-1433581717989-1').addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.pubads().collapseEmptyDivs();
+            googletag.enableServices();
+            });
+        };
+    } catch (e) { }
+</script>
+<div id="google_ad_c1" class="c_ad_block">
+    <div id='div-gpt-ad-1433581717989-1' style='height:250px; width:300px;'>
+    <script type='text/javascript'>
+        try {
+            if (enableGoogleAd) {
+                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1433581717989-1'); });
+            } else {
+                $('#div-gpt-ad-1433581717989-1').hide();
+            }
+    } catch (e) { }
+    </script>
+    </div>
+</div>
+<div id="under_post_news"></div>
+<div id="google_ad_c2" class="c_ad_block">
+<div id='div-gpt-ad-1433581717989-0' style='height:60px; width:468px;'>
+<script type='text/javascript'>
+try {
+    if (enableGoogleAd) {
+        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1433581717989-0'); });
+    } else {
+        $('#div-gpt-ad-1433581717989-0').hide();
+    }
+} catch (e) { }
+</script>
+</div>
+</div>
+<div id="under_post_kb"></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+</script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2015 【12345】
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+</body>
+</html>

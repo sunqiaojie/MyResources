@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Cache-Control" content="no-siteapp" /> <!--禁止转码 -->
+<meta name="author" content="https://www.JaneCC.com/" /><!--作者 -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><!--手机版控件 -->
+<meta property="qc:admins" content="055332104762165336375" />
+<meta property="wb:webmaster" content="3f6cfd23aaee450f" />
+<title>实用的Sublime插件集合 | 简CC的博客</title>
+<meta name="keywords" content="Sublime, 工具, 插件, " />
+<meta name="description" content="[box style='info']不得不说，sublime是个神器，不得不说它所支持的扩展和插件，下面在介绍的同时将会奉上生动的动画配图。[/box]前言在阅读此文章之前，建议先阅读这篇：Sublime Text 3 破解和简体中..." />
+<meta http-equiv="x-dns-prefetch-control" content="on" />
+<link rel="dns-prefetch" href="//cdn.janecc.com/" />
+<link rel="dns-prefetch" href="//a.cdn.janecc.com/" />
+<link rel="dns-prefetch" href="//c.cdn.janecc.com/" />
+<link rel="dns-prefetch" href="//e.cdn.janecc.com/" />
+<link rel="dns-prefetch" href="//bdimg.share.baidu.com/" />
+<link rel="dns-prefetch" href="//api.share.baidu.com/" />
+<link rel="dns-prefetch" href="//libs.baidu.com/" />
+<link rel="dns-prefetch" href="//hm.baidu.com/" />
+<link rel="dns-prefetch" href="//gravatar.gravatar.com/" />
+<link rel="dns-prefetch" href="//dn-gravatar-janecc.qbox.me/" />
+<link rel="dns-prefetch" href="//dn-janecc.qbox.me/" />
+<link rel="dns-prefetch" href="//static.duoshuo.com/" />
+<link rel="dns-prefetch" href="//pic.yupoo.com/" />
+<link type="text/plain" rel="author" href="/humans.txt">
+<link rel="Bookmark" href="/favicon.ico" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="https://www.janecc.com/wp-content/themes/JaneCC/style.css">
+<script type="text/javascript" src="https://upcdn.b0.upaiyun.com/libs/jquery/jquery-1.10.2.min.js"></script>
+<!--[if lt IE 9]>
+<script src="https://www.janecc.com/wp-content/themes/JaneCC/js/html5shiv.min.js"></script>
+<script src="https://www.janecc.com/wp-content/themes/JaneCC/js/respond.min.js"></script>
+<script src="https://www.janecc.com/wp-content/themes/JaneCC/js/ie8warning.js"></script>
+<![endif]-->
+<style type="text/css">
+</style>
+</head>
+<body>
+<div id="container" class="container">
+    <header id="header" class="header">
+        <div class="header-top clearfix">
+            <div class="notice clearfix">
+               <!--是调用分类目录好还是在模版设置里输入更好呢-->
+                    <div class="notice-tit fl"><i class="ae ae-bullhorn"></i>公告：</div>
+                    <div class="notice-wrap fl"><a href="https://www.Janecc.com/" title="一个神奇的网站">简CC的博客</a>全新改版，欢迎劲爽体验！！！</div>
+            </div>
+<!--
+            <div class="ht-r">
+                <ul>
+                    <li><a href=""><i class="ae ae-qq"></i></a></li>
+                    <li><a href=""><i class="ae ae-weibo"></i></a></li>
+                    <li><a href=""><i class="ae ae-weixin"></i></a></li>
+                    <li><a href=""><i class="ae ae-github"></i></a></li>
+                    <li><a href=""><i class="ae ae-heart"></i></a></li>
+                </ul>
+            </div>
+-->
+        </div>
+        <div class="header-content clearfix">
+            <div class="logo">
+                <a href="https://www.janecc.com" title="简CC的博客">
+<!--                <img src="https://www.janecc.com/wp-content/themes/JaneCC/img/logo.png" alt="简CC的博客" title="简CC的博客">-->
+                                 <img src="https://www.janecc.com/wp-content/themes/JaneCC/img/logo.png" alt="简CC的博客" title="简CC的博客" />
+                                 </a>
+            </div><!-- .logo -->
+           <!--
+            <div class="poptip"><i class="ae"></i>
+                 JGulp: 利用Gulp 配置的前端<br>项目自动化工作流，<a href="" rel="nofollow" target="_blank">跪求star</a>！
+             </div>
+-->
+            <div class="header-right">
+                <div id="search" class="topsearch">
+                    <form method="get" id="searchform" action="https://www.janecc.com/"> 
+                    <input type="text" x-webkit-speech="" value="" placeholder="请善用搜索..." name="s" id="s" class="ipt">
+                    <button type="submit" value="搜索" class="btn"></button>
+                    </form>
+                </div>
+            </div><!-- .header-right -->
+        </div>
+    </header>
+    <!--#header-->
+    
+    <nav id="nav" class="nav clearfix">
+        <ul id="nav-primary" class="nav-primary"><li><a title="网站首页" href="https://www.janecc.com">网站首页</a></li>
+<li class="current-post-ancestor"><a href="https://www.janecc.com/webfront/">WEB前端</a>
+<ul class="sub-menu">
+	<li><a href="https://www.janecc.com/webfront/webbook/">前端精选书籍</a></li>
+	<li><a href="https://www.janecc.com/webfront/html5css3/">HTML5+CSS3</a></li>
+	<li><a href="https://www.janecc.com/webfront/jsjquery/">JS+Jquery</a></li>
+	<li><a href="https://www.janecc.com/webfront/htmlcss/">HTML+CSS</a></li>
+	<li><a href="https://www.janecc.com/webfront/webfontnews/">前端资讯</a></li>
+</ul>
+</li>
+<li><a href="https://www.janecc.com/wordpressrelevant/">WordPress</a>
+<ul class="sub-menu">
+	<li><a href="https://www.janecc.com/wordpressrelevant/wordpresstheme/">WP主题</a></li>
+	<li><a href="https://www.janecc.com/wordpressrelevant/wordpressplugin/">WP插件</a></li>
+	<li><a href="https://www.janecc.com/wordpressrelevant/wordpresscourse/">WP教程</a></li>
+</ul>
+</li>
+<li><a href="https://www.janecc.com/vpsoperation/">VPS运维</a></li>
+<li><a href="https://www.janecc.com/colligate/">综合分类</a>
+<ul class="sub-menu">
+	<li><a href="https://www.janecc.com/colligate/win8/">Win8小鸡</a></li>
+	<li><a href="https://www.janecc.com/colligate/emlog-colligate/">Emlog杂记</a></li>
+	<li><a href="https://www.janecc.com/colligate/share/">时尚分享</a></li>
+	<li><a href="https://www.janecc.com/colligate/xinqing/">心情物语</a></li>
+</ul>
+</li>
+<li><a href="https://www.janecc.com/about/">关于博客</a>
+<ul class="sub-menu">
+	<li><a href="https://www.janecc.com/friendlylinks/">友情链接</a></li>
+	<li><a href="https://www.janecc.com/readers/">读者墙</a></li>
+	<li><a href="https://www.janecc.com/cloudtags/">标签云</a></li>
+	<li><a href="https://www.janecc.com/archives/">文章存档</a></li>
+	<li><a href="https://www.janecc.com/sitemap/">站点地图</a></li>
+</ul>
+</li>
+<li><a href="https://www.janecc.com/tool/">前端工具箱</a>
+<ul class="sub-menu">
+	<li><a href="/go/zhitu">智图</a></li>
+	<li><a href="/go/jquery-api">jQuery在线中文手册</a></li>
+	<li><a href="/tools/glyphicons.html">glyphicons图标</a></li>
+	<li><a href="/tools/color.html">颜色表</a></li>
+</ul>
+</li>
+</ul>    </nav>
+    <!--#nav-->
+    <div id="main" class="main clearfix"><div id="content" class="content">
+    <div class="breadcrumb"><i class="ae ae-home"></i> 当前位置：<span itemprop="breadcrumb"><a href="https://www.janecc.com/">首页</a> &raquo;
+<a href="https://www.janecc.com/webfront/">WEB前端</a> &raquo; <a href="https://www.janecc.com/webfront/webtool/">前端精选工具</a> &raquo; 正文</span> 
+</div>      
+        <article class="article clearfix single" data-id="430">
+    <header>
+        <h1 class="title">
+            <span class="comeurl">
+<!--                            <i class="ae ae-caret-right"></i>-->
+                <em class='myurl'>原创</em>            </span>
+            实用的Sublime插件集合        </h1>
+        <div class="meta">
+            <span class="author"><i class="ae ae-user"></i><a href="https://www.janecc.com/author/janecc/" title="由JaneCC发布" rel="author">JaneCC</a></span>
+            <time class="date" itemprop="datePublished" datetime="2014-06-23" pubdate><i class="ae ae-clock-o"></i>2014年6月23日</time>
+            <span class="categories"><i class="ae ae-list"></i>分类：<a href="https://www.janecc.com/webfront/webtool/" rel="category tag">前端精选工具</a></span>
+            <span class="views"><i class="ae ae-eye"></i>浏览：2,939次</span>  
+<!--            <span class="comeurl"><i class="ae ae-share-square-o"></i>来源：原创</span>-->
+                    </div>
+    </header>
+    <section class="entry clearfix">
+                              
+        <div class="dw-box dw-box-info"><i class="ae ae-info"></i>不得不说，sublime是个神器，不得不说它所支持的扩展和<span class="tag-span"><a class="tag" href="https://www.janecc.com/tag/%e6%8f%92%e4%bb%b6/" title="查看关于 插件 的相关文章" target="_self">插件</a></span>，下面在介绍的同时将会奉上生动的动画配图。</div>
+<h2 id="h2-0" style="font-weight: inherit; color: #222222;">前言</h2>
+<p>在阅读此文章之前，建议先阅读这篇：<a title="Sublime Text 3 破解和简体中文汉化下载" href="https://www.janecc.com/sublime-text-3-crack-zh-cn.html" target="_blank">Sublime Text 3 破解和简体中文汉化下载</a></p>
+<p>&nbsp;</p>
+<h2 id="h2-1" style="font-weight: inherit; color: #222222;"><span class="tag-span"><a class="tag" href="https://www.janecc.com/tag/%e6%8f%92%e4%bb%b6/" title="查看关于 插件 的相关文章" target="_self">插件</a></span>介绍</h2>
+<h3 id="h3-2" style="color: #444444;"><a style="font-weight: inherit; font-style: inherit; color: #0088cc;" href="https://sublime.wbond.net/packages/Package%20Control" target="_blank" rel="nofollow" >Package Control</a></h3>
+<p>&nbsp;</p>
+<p>功能：安装包管理</p>
+<p>简介：sublime<span class="tag-span"><a class="tag" href="https://www.janecc.com/tag/%e6%8f%92%e4%bb%b6/" title="查看关于 插件 的相关文章" target="_self">插件</a></span>控制台，提供添加、删除、禁用、查找<span class="tag-span"><a class="tag" href="https://www.janecc.com/tag/%e6%8f%92%e4%bb%b6/" title="查看关于 插件 的相关文章" target="_self">插件</a></span>等功能</p>
+<p>使用：<a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://sublime.wbond.net/installation" target="_blank" rel="nofollow" >https://sublime.wbond.net/installation</a></p>
+<p>安装方法：</p>
+<ol>
+<li style="font-weight: inherit; font-style: inherit;">CTRL+` ，出现控制台</li>
+<li style="font-weight: inherit; font-style: inherit;">粘贴以下代码至控制台</li>
+</ol>
+<p>&nbsp;</p>
+<p>ST2：</p>
+<pre class="language-markup"><code class="language-markup">import urllib2,os; pf='Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler( ))); open( os.path.join( ipp, pf), 'wb' ).write( urllib2.urlopen( 'http://sublime.wbond.net/' +pf.replace( ' ','%20' )).read()); print( 'Please restart <span class="tag-span"><a class="tag" href="https://www.janecc.com/tag/sublime/" title="查看关于 Sublime 的相关文章" target="_self">Sublime</a></span> Text to finish installation')</code></pre>
+<p>ST3：</p>
+<pre class="language-markup"><code class="language-markup">import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())</code></pre>
+<p>&nbsp;</p>
+<p>其他方法：</p>
+<p>如果以上方法不能安装，请使用下面的方法</p>
+<ol>
+<li style="font-weight: inherit; font-style: inherit;">选择菜单：Preferences &gt; Browse Packages</li>
+<li style="font-weight: inherit; font-style: inherit;">打开sublime<span class="tag-span"><a class="tag" href="https://www.janecc.com/tag/%e6%8f%92%e4%bb%b6/" title="查看关于 插件 的相关文章" target="_self">插件</a></span>安装包文件夹</li>
+<li style="font-weight: inherit; font-style: inherit;">下载文件并复制到打开的文件夹</li>
+<li style="font-weight: inherit; font-style: inherit;">重启sublime</li>
+</ol>
+<h3 id="h3-3" style="color: #444444;"><a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://sublime.wbond.net/packages/Emmet" target="_blank" rel="nofollow" >Emmet</a></h3>
+<p>功能：编码快捷键，前端必备</p>
+<p>简介：Emmet作为zen coding的升级版，对于前端来说，可是必备插件，如果你对它还不太熟悉，可以在其官网（<a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="http://docs.emmet.io/" target="_blank" rel="nofollow" >http://docs.emmet.io/</a>）上看下具体的演示视频。</p>
+<p>使用：教程-<a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="http://docs.emmet.io/cheat-sheet/" target="_blank" rel="nofollow" >http://docs.emmet.io/cheat-sheet/</a>、<a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="http://peters-playground.com/Emmet-Css-Snippets-for-Sublime-Text-2/" target="_blank" rel="nofollow" >http://peters-playground.com/Emmet-Css-Snippets-for-Sublime-Text-2/</a></p>
+<p><img class="aligncenter size-full wp-image-431" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/06/emmet-e1403492497190.gif" alt="emmet" width="635" height="269" /></p>
+<h3 id="h3-4" style="color: #444444;"><a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://sublime.wbond.net/packages/JsFormat" target="_blank" rel="nofollow" >JS</a><a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://sublime.wbond.net/packages/JsFormat" target="_blank" rel="nofollow" > Fo</a><a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://sublime.wbond.net/packages/JsFormat" target="_blank" rel="nofollow" >rmat</a><img class="aligncenter size-full wp-image-432" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/06/jsFormat-e1403492602143.gif" alt="实用的Sublime插件集合" title="实用的Sublime插件集合" alt="jsFormat" width="636" height="221" /></h3>
+<p>功能：编码快捷键，前端必备</p>
+<p>简介：Emmet作为zen coding的升级版，对于前端来说，可是必备插件，如果你对它还不太熟悉，可以在其官网（<a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="http://docs.emmet.io/" target="_blank" rel="nofollow" >http://docs.emmet.io/</a>）上看下具体的演示视频。</p>
+<p>使用：教程-<a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="http://docs.emmet.io/cheat-sheet/" target="_blank" rel="nofollow" >http://docs.emmet.io/cheat-sheet/</a>、<a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="http://peters-playground.com/Emmet-Css-Snippets-for-Sublime-Text-2/" target="_blank" rel="nofollow" >http://peters-playground.com/Emmet-Css-Snippets-for-Sublime-Text-2/</a></p>
+<p><img class="aligncenter size-full wp-image-432" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/06/jsFormat-e1403492602143.gif" alt="jsFormat" width="636" height="221" /></p>
+<h3 id="h3-5" style="color: #444444;"><a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://sublime.wbond.net/packages/LESS" target="_blank" rel="nofollow" >LESS</a></h3>
+<p>功能：LESS高亮插件</p>
+<p>简介：用LESS的同学都知道，sublime没有支持less的语法高亮，所以这个插件可以帮上我们</p>
+<p>使用：打开.less文件或者设置为less格式</p>
+<p><img class="aligncenter size-full wp-image-433" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/06/less-e1403492695120.gif" alt="less" width="635" height="446" /></p>
+<h3 id="h3-6" style="color: #444444;"><a style="font-weight: inherit; font-style: inherit; color: #0088cc;" href="https://sublime.wbond.net/packages/Less2Css" target="_blank" rel="nofollow" >Less2CSS</a></h3>
+<p>功能：编译Less</p>
+<p>简介：监测到文件改动时，编译保存为.css文件</p>
+<p>使用：打开.less文件，编写代码保存即可看到同时生成.css的文件，如果没有则需要安装node。不推荐用这种方法编译，要么用koala，要么就用grunt编译。</p>
+<h3 id="h3-7" style="color: #444444;"><a style="font-weight: inherit; font-style: inherit; color: #0088cc;" href="https://github.com/wbond/sublime_alignment" target="_blank" rel="nofollow" >Alignment</a></h3>
+<p>功能：”=”号对齐</p>
+<p>简介：变量定义太多，长短不一，可一键对齐</p>
+<p>使用：默认快捷键Ctrl+Alt+A和QQ截屏冲突，可设置其他快捷键如：Ctrl+Shift+Alt+A；先选择要对齐的文本<img class="aligncenter size-full wp-image-434" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/06/align.gif" alt="align" width="328" height="140" /></p>
+<h3 id="h3-8" style="color: #444444;"><a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://sublime.wbond.net/packages/Autoprefixer" target="_blank" rel="nofollow" >sublime-autoprefixer</a></h3>
+<p>功能：CSS添加私有前缀</p>
+<p>简介：CSS还未标准化，所以要给各大浏览器一个前缀以解决兼容问题</p>
+<p>使用：Ctrl+Shift+P，选择autoprefixer即可。需要安装node.js。</p>
+<p>其他设置如快捷键请参考：<a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://sublime.wbond.net/packages/Autoprefixer" target="_blank" rel="nofollow" >https://sublime.wbond.net/packages/Autoprefixer</a></p>
+<p><img class="aligncenter size-full wp-image-435" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/06/prefixer.gif" alt="prefixer" width="526" height="261" /></p>
+<h3 id="h3-9" style="color: #444444;"><a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://github.com/kemayo/sublime-text-2-clipboard-history" target="_blank" rel="nofollow" >Clipboard History</a></h3>
+<p>功能：粘贴板历史记录</p>
+<p>简介：方便使用复制/剪切的内容</p>
+<p>使用：</p>
+<ul>
+<li style="font-weight: inherit; font-style: inherit;">Ctrl+alt+v：显示历史记录</li>
+<li style="font-weight: inherit; font-style: inherit;">Ctrl+alt+d：清空历史记录</li>
+<li style="font-weight: inherit; font-style: inherit;">Ctrl+shift+v：粘贴上一条记录（最旧）</li>
+<li style="font-weight: inherit; font-style: inherit;">Ctrl+shift+alt+v：粘贴下一条记录（最新）<img class="aligncenter size-full wp-image-436" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/06/keyboard-e1403493111827.gif" alt="keyboard" width="635" height="240" /></li>
+</ul>
+<h3 id="h3-10" style="color: #444444;"><a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://github.com/facelessuser/BracketHighlighter" target="_blank" rel="nofollow" >Bracket Highlighter</a></h3>
+<p>功能：代码匹配</p>
+<p>简介：可匹配[], (), {}, “”, ”, &lt;tag&gt;&lt;/tag&gt;，高亮标记，便于查看起始和结束标记</p>
+<p>使用：点击对应代码即可<img class="aligncenter size-full wp-image-437" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/06/highlight-e1403493169203.gif" alt="highlight" width="636" height="436" /></p>
+<h3 id="h3-11" style="color: #444444;"><a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://github.com/kemayo/sublime-text-git" target="_blank" rel="nofollow" >Git</a></h3>
+<p>功能：git管理</p>
+<p>简介：插件基本上实现了git的所有功能</p>
+<p>使用：<a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://github.com/kemayo/sublime-text-git/wiki" target="_blank" rel="nofollow" >https://github.com/kemayo/sublime-text-git/wiki</a></p>
+<p><img class="aligncenter size-full wp-image-438" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/06/git.png" alt="git" width="624" height="306" /></p>
+<h3 id="h3-12" style="color: #444444;"><a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://github.com/mrmartineau/Jquery" target="_blank" rel="nofollow" >jQuery</a></h3>
+<p>功能：jQ函数提示</p>
+<p>简介：快捷输入jQ函数，是偷懒的好方法<a href="https://dn-janecc.qbox.me/wp-content/uploads/2014/06/jquery.gif" alt="实用的Sublime插件集合" title="实用的Sublime插件集合"><img class="aligncenter size-full wp-image-439" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/06/jquery.gif" alt="jquery" width="397" height="200" /></a></p>
+<h3 id="h3-13" style="color: #444444;"><a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://sublime.wbond.net/packages/DocBlockr" target="_blank" rel="nofollow" >Doc​Blockr</a></h3>
+<p>功能：生成优美注释</p>
+<p>简介：标准的注释，包括函数名、参数、返回值等，并以多行显示，手动写比较麻烦</p>
+<p>使用：输入/*、/**然后回车，还有很多用法，请参照</p>
+<p><a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://sublime.wbond.net/packages/DocBlockr" target="_blank" rel="nofollow" >https://sublime.wbond.net/packages/DocBlockr</a><img class="aligncenter size-full wp-image-440" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/06/basic.gif" alt="实用的Sublime插件集合" title="实用的Sublime插件集合" alt="basic" width="240" height="192" /> <img class="aligncenter size-full wp-image-441" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/06/function-template.gif" alt="function-template" width="368" height="192" /></p>
+<h3 id="h3-14" style="color: #444444;"><a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://sublime.wbond.net/packages/ColorPicker" target="_blank" rel="nofollow" >Color​Picker</a></h3>
+<p>功能：调色板</p>
+<p>简介：需要输入颜色时，可直接选取颜色</p>
+<p>使用：快捷键Windows: ctrl+shift+c</p>
+<p><img class="aligncenter size-full wp-image-442" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/06/Color​Picker-01.png" alt="Color​Picker-01" width="415" height="421" /> <img class="aligncenter size-full wp-image-443" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/06/Color​Picker-02-e1403493461905.png" alt="Color​Picker-02" width="635" height="398" /></p>
+<h3 style="color: #444444;"><a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://sublime.wbond.net/packages/ConvertToUTF8" target="_blank" rel="nofollow" >ConvertToUTF8</a></h3>
+<p>功能：文件转码成utf-8</p>
+<p>简介：通过本插件，您可以编辑并保存目前编码不被 <span class="tag-span"><a class="tag" href="https://www.janecc.com/tag/sublime/" title="查看关于 Sublime 的相关文章" target="_self">Sublime</a></span> Text 支持的文件，特别是中日韩用户使用的 GB2312，GBK，BIG5，EUC-KR，EUC-JP ，ANSI等。ConvertToUTF8 同时支持 <span class="tag-span"><a class="tag" href="https://www.janecc.com/tag/sublime/" title="查看关于 Sublime 的相关文章" target="_self">Sublime</a></span> Text 2 和 3。</p>
+<p>使用：安装插件后自动转换为utf-8格式</p>
+<p><img class="aligncenter size-full wp-image-444" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/06/ConvertToUTF8.gif" alt="ConvertToUTF8" width="359" height="176" /></p>
+<h3 id="h3-16" style="color: #444444;"><a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://sublime.wbond.net/packages/AutoFileName" target="_blank" rel="nofollow" >AutoFileName</a></h3>
+<p>功能：快捷输入文件名</p>
+<p>简介：自动完成文件名的输入，如图片选取</p>
+<p>使用：输入”/”即可看到相对于本项目文件夹的其他文件</p>
+<p><img class="aligncenter size-full wp-image-445" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/06/autofilename-e1403493598969.gif" alt="autofilename" width="635" height="247" /></p>
+<h3 id="h3-17" style="color: #444444;"><a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://sublime.wbond.net/packages/Nodejs" target="_blank" rel="nofollow" >Nodejs</a></h3>
+<p>功能：node代码提示</p>
+<p>教程：<a style="font-weight: inherit; font-style: inherit; color: #3399cc;" href="https://sublime.wbond.net/packages/Nodejs" target="_blank" rel="nofollow" >https://sublime.wbond.net/packages/Nodejs</a></p>
+<p><img class="aligncenter size-full wp-image-446" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/06/Nodejs.png" alt="Nodejs" width="391" height="548" /></p>
+<h3 id="h3-18" style="color: #444444;"><a style="font-weight: inherit; font-style: inherit; color: #0088cc;" href="http://t.cn/zYDBkjL" target="_blank" rel="nofollow" >IMESupport</a></h3>
+<p>功能：sublime中文输入法</p>
+<p>简介：还在纠结 <span class="tag-span"><a class="tag" href="https://www.janecc.com/tag/sublime/" title="查看关于 Sublime 的相关文章" target="_self">Sublime</a></span> Text 中文输入法不能跟随光标吗？试试「IMESupport 」这个插件吧！目前只支持 Windows，在搜索等界面不能很好的跟随光标。</p>
+<p>使用：Ctrl + Shift + P →输入pci →输入IMESupport →回车</p>
+<p><img class="aligncenter size-full wp-image-447" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/06/IMESupport.gif" alt="IMESupport" width="358" height="301" /></p>
+<h2 id="h2-19" style="font-weight: inherit; color: #222222;">后续</h2>
+<p>还有<a style="color: #3399cc;" href="https://sublime.wbond.net/packages/Sass" target="_blank" rel="nofollow" >Sass</a>、<a style="color: #3399cc;" href="https://sublime.wbond.net/packages/SVN" target="_blank" rel="nofollow" >SVN</a>、<a style="color: #0088cc;" href="https://sublime.wbond.net/packages/CoffeeScript" target="_blank" rel="nofollow" >CoffeeScript</a>等插件，先就介绍这么多。后续会有更新~</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<!--正文内容-->
+        <footer class="entry-footer-meta">
+            <div class="copyright">  
+              <div class="entry-tags">本文标签：<a href="https://www.janecc.com/tag/sublime/" rel="tag">Sublime</a><a href="https://www.janecc.com/tag/%e5%b7%a5%e5%85%b7/" rel="tag">工具</a><a href="https://www.janecc.com/tag/%e6%8f%92%e4%bb%b6/" rel="tag">插件</a></div>
+              <b>©声明：</b>本站原创文章采用 BY-NC-SA 创作共用协议，转载时请以链接形式标明本文地址；非原创（转载）文章版权归原作者所有。【<a href="https://www.janecc.com/copyright/" title="版权声明" class="JPjax">查看版权声明</a>】<br>
+              <b>©转载请注明来源：</b> <a class="permalink" href="https://www.janecc.com/practical-sublime-plug-in.html" title="实用的Sublime插件集合" rel="permalink">https://www.janecc.com/practical-sublime-plug-in.html</a>
+            </div>
+            <div class="author-box">
+                <div class="h3"><span>作者： JaneCC</span>最后编辑于：2015-03-18 09:43</div>
+                <div class="author-info clearfix">
+                    <div class="author-avatar"> 
+                        <img alt='' src=https://www.janecc.com/wp-content/themes/JaneCC/img/black@10.png data-original='https://dn-gravatar-janecc.qbox.me/avatar/b044cb495c6f014c1476534e2fb177e6?s=40&#038;r=g' src=https://www.janecc.com/wp-content/themes/JaneCC/img/black@10.png data-originalset='https://dn-gravatar-janecc.qbox.me/avatar/b044cb495c6f014c1476534e2fb177e6?s=80&amp;r=g 2x' class='avatar avatar_lazy avatar-40 photo' height='40' width='40' />                    </div>
+                    <div class="author-description">
+                            坚持把简单的事情做好就是不简单，坚持把平凡的事情做好就是不平凡。所谓成功，就是在平凡中做出不平凡的坚持。<p class="author_meta">--JaneCC</p>
+                    </div>
+                </div>
+            </div>
+            <div class="donate"><a href="" target="_blank" class="cbtn-donate">捐 赠</a>如果你觉得这篇文章能帮助到你，请捐助我1元钱，帮助我早日用上iphone10</div>
+        </footer>
+    </section>
+</article>
+<div class="navigation">
+            <div class="previous"><a href="https://www.janecc.com/excellent-coder-skills.html" title="优秀Coder必备技巧" rel="prev"><span>上一篇：</span>优秀Coder必备技巧</a></div>
+                <div class="next"><a href="https://www.janecc.com/jquery-lazyload-js.html" title="jQuery.lazyload.js图片缓冲加载插件使用方法" rel="next"><span>下一篇：</span> jQuery.lazyload.js图片缓冲加载插件使用方法</a></div>
+    </div>
+
+<div class="related">
+    <h3 class="widget_title"><span>你可能也喜欢</span><small>Related Posts</small></h3>
+    <ul class="clearfix">
+            <li>
+        <a class="cover" href="https://www.janecc.com/sublime-text-theme-afterglow.html" title="推荐1个Sublime Text 主题 Afterglow"><img src="https://www.janecc.com/wp-content/themes/JaneCC/timthumb.php?src=https://dn-janecc.qbox.me/wp-content/uploads/2015/03/sublime-text-theme-afterglow.png&h=102&w=400&zc=1" alt="推荐1个Sublime Text 主题 Afterglow" /></a>
+                <span class="related-shadow"></span>
+        <span class="related-bottom"></span>
+        <h2 class="tit"><a itemprop="relatedLink" href="https://www.janecc.com/sublime-text-theme-afterglow.html" title="推荐1个Sublime Text 主题 Afterglow">推荐1个Sublime Text 主题 Afterglow</a></h2>
+        </li>
+            <li>
+                <a class="cover" href="https://www.janecc.com/adobe-brackets.html" title="Web前端不可错过的开发工具–Adobe Brackets">
+        <img src="https://www.janecc.com/wp-content/themes/JaneCC/timthumb.php?src=https://dn-janecc.qbox.me/wp-content/uploads/2015/02/brackets-1-e1423707700226.png&h=102&w=142&zc=1" alt="Web前端不可错过的开发工具–Adobe Brackets" 
+class="thumbnail"/></a>
+                <span class="related-shadow"></span>
+        <span class="related-bottom"></span>
+        <h2 class="tit"><a itemprop="relatedLink" href="https://www.janecc.com/adobe-brackets.html" title="Web前端不可错过的开发工具–Adobe Brackets">Web前端不可错过的开发工具–Adobe Brackets</a></h2>
+        </li>
+            <li>
+        <a class="cover" href="https://www.janecc.com/github-web-tool.html" title="GitHub上整理的一些前端工具"><img src="https://www.janecc.com/wp-content/themes/JaneCC/timthumb.php?src=https://dn-janecc.qbox.me/wp-content/uploads/2015/03/GitHub-web-tool.jpg&h=102&w=400&zc=1" alt="GitHub上整理的一些前端工具" /></a>
+                <span class="related-shadow"></span>
+        <span class="related-bottom"></span>
+        <h2 class="tit"><a itemprop="relatedLink" href="https://www.janecc.com/github-web-tool.html" title="GitHub上整理的一些前端工具">GitHub上整理的一些前端工具</a></h2>
+        </li>
+            <li>
+                <a class="cover" href="https://www.janecc.com/he-sets-the-front-end-component-library-the-essential-collection.html" title="前端组件库大合集-必备收藏">
+        <img src="https://www.janecc.com/wp-content/themes/JaneCC/timthumb.php?src=https://www.janecc.com/wp-content/themes/JaneCC/img/pic/3.png&h=102&w=142&zc=1" alt="前端组件库大合集-必备收藏" 
+class="thumbnail"/></a>
+                <span class="related-shadow"></span>
+        <span class="related-bottom"></span>
+        <h2 class="tit"><a itemprop="relatedLink" href="https://www.janecc.com/he-sets-the-front-end-component-library-the-essential-collection.html" title="前端组件库大合集-必备收藏">前端组件库大合集-必备收藏</a></h2>
+        </li>
+        </ul>
+</div>
+<div id="comments" class="comments">
+    			<!-- If comments are open, but there are no comments. -->
+        <h3 class="widget_title comments_title"><span>暂时木有评论啊，等您坐沙发呢！</span></h3>
+	 	<div id="respond_box">
+	<div id="respond">
+		<h3 class="widget_title"><span>发表感言</span></h3>
+		<div class="cancel-comment-reply">
+		<div id="real-avatar">
+			<img alt='' src=https://www.janecc.com/wp-content/themes/JaneCC/img/black@10.png data-original='https://dn-gravatar-janecc.qbox.me/avatar/?s=40&#038;r=g' src=https://www.janecc.com/wp-content/themes/JaneCC/img/black@10.png data-originalset='https://dn-gravatar-janecc.qbox.me/avatar/?s=80&amp;r=g 2x' class='avatar avatar_lazy avatar-40 photo avatar-default' height='40' width='40' />	</div>	
+			<small><a rel="nofollow" id="cancel-comment-reply-link" href="/practical-sublime-plug-in.html#respond" style="display:none;">点击这里取消回复。</a></small>
+		</div>
+		    <form action="https://www.janecc.com/wp-comments-post.php" method="post" id="commentform">
+      		<div id="comment-author-info">
+		<p>
+			<input type="text" name="author" id="author" class="commenttext" value="" size="22" tabindex="1" placeholder="您的昵称"  required />
+			<label for="author">昵称 *</label>
+		</p>
+		<p>
+			<input type="email" name="email" id="email" class="commenttext" value="" size="22" tabindex="2" placeholder="i@janecc.com"  required/>
+			<label for="email">邮箱 * <a id="Get_Gravatar"  title="申请Gravatar全球通用头像的方法" target="_blank" href="http://www.JaneCC.com/gravatar.html">（点击获取评论头像）</a></label>
+		</p>
+		<p>
+			<input type="url" name="url" id="url" class="commenttext" value="" size="22" tabindex="3"  placeholder="http://JaneCC.com/"/>
+			<label for="url">网址</label>
+		</p>
+	</div>
+            <div class="clear"></div>
+		<p><textarea name="w" id="comment" tabindex="4"  placeholder="随便说点什么吧..."></textarea><textarea name="comment" cols="100%" rows="4" style="display:none"></textarea></p>
+		<p>
+			<input class="submit" name="submit" type="submit" id="submit" tabindex="5" value="提交[Ctrl+Enter]" />
+			<input class="reset" name="reset" type="reset" id="reset" tabindex="6" value="重  写" />
+			<input type='hidden' name='comment_post_ID' value='430' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+		</p>
+		
+		<p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="c7e0cd3f5f" /></p><p style="display: none;"><input type="hidden" id="ak_js" name="ak_js" value="128"/></p>    </form>
+
+	<div class="clear"></div>
+      </div>
+  </div>
+  </div>
+    </div><!--content-->
+<div id="sidebar" class="sidebar">
+                <aside id="svr_newsletter-7" class="widget widget_newsletter"><h3 class="widget_title"><span>订阅精彩内容</span></h3><div class="newsletter"><form action="https://list.qq.com/cgi-bin/qf_compose_send" target="_blank" method="post"><h3 class="info">订阅精彩内容</h3><input type="hidden" name="t" value="qf_booked_feedback" /><input type="hidden" name="id" value="" /><input type="email" name="to" class="rsstxt" placeholder="your@email.com" value="" required /><input type="submit" class="rssbutton" value="订阅" /></form></div></aside><aside id="svr_postlist-5" class="widget widget_featured"><h3 class="widget_title"><span>精选文章</span></h3><ul>                           
+<li><a href="https://www.janecc.com/emlog-simple-response-type-blog-template.html"><span class="thumbnail"> <img width="76" height="55" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/05/jane01.png" alt="Emlog简单响应式模版发布- Janeblog1.1" class="featured_lazy"/>
+ </span><span class="text">Emlog简单响应式模版发布- Janeblog1.1</span><div class="meta"><span class="time">2014-05-21</span><span class="comment">29条评论</span></div></a></li>
+                           
+<li><a href="https://www.janecc.com/wordpress-qiniu-cdn.html"><span class="thumbnail"> <img width="76" height="55" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/08/qiniu-new-bucket_zpsec0f34ba.jpg" alt="不要插件！轻松整合 WordPress 与七牛云存储 CDN 加速服务" class="featured_lazy"/>
+ </span><span class="text">不要插件！轻松整合 WordPress 与七牛云存储 CDN 加速服务</span><div class="meta"><span class="time">2014-05-24</span><span class="comment">18条评论</span></div></a></li>
+                           
+<li><a href="https://www.janecc.com/emlog-more-domain-name.html"><span class="thumbnail"> <img width="76" height="55" src="https://dn-janecc.qbox.me/wp-content/uploads/2014/07/emlog-more-domain-name.jpg" alt="让你的emlog支持多域名访问,不是跳转哦！" class="featured_lazy"/>
+ </span><span class="text">让你的emlog支持多域名访问,不是跳转哦！</span><div class="meta"><span class="time">2014-07-30</span><span class="comment">17条评论</span></div></a></li>
+                           
+<li><a href="https://www.janecc.com/ssl-http-to-https.html"><span class="thumbnail"><img width="580" height="150" src="https://dn-janecc.qbox.me/wp-content/uploads/2015/06/ssl-wosign.png" class="attachment-postlist_thumb wp-post-image" alt="ssl-wosign" /></span><span class="text">安装了SSL证书，强制HTTP跳转到HTTPS</span><div class="meta"><span class="time">2015-06-04</span><span class="comment">9条评论</span></div></a></li>
+</ul></aside><aside id="tag_cloud-9" class="widget widget_tag_cloud"><h3 class="widget_title"><span>标签</span></h3><div class="tagcloud"><a href='https://www.janecc.com/tag/cdn/' class='tag-link-43' title='2个话题' style='font-size: 12px;'>CDN</a>
+<a href='https://www.janecc.com/tag/centos/' class='tag-link-167' title='6个话题' style='font-size: 12px;'>CentOS</a>
+<a href='https://www.janecc.com/tag/chrome/' class='tag-link-19' title='2个话题' style='font-size: 12px;'>Chrome</a>
+<a href='https://www.janecc.com/tag/css/' class='tag-link-18' title='12个话题' style='font-size: 12px;'>CSS</a>
+<a href='https://www.janecc.com/tag/css3/' class='tag-link-23' title='15个话题' style='font-size: 12px;'>CSS3</a>
+<a href='https://www.janecc.com/tag/css-hack/' class='tag-link-32' title='5个话题' style='font-size: 12px;'>CSS Hack</a>
+<a href='https://www.janecc.com/tag/ecs/' class='tag-link-94' title='6个话题' style='font-size: 12px;'>ECS</a>
+<a href='https://www.janecc.com/tag/emlog/' class='tag-link-42' title='5个话题' style='font-size: 12px;'>emlog</a>
+<a href='https://www.janecc.com/tag/font/' class='tag-link-20' title='3个话题' style='font-size: 12px;'>font</a>
+<a href='https://www.janecc.com/tag/google/' class='tag-link-89' title='3个话题' style='font-size: 12px;'>Google</a>
+<a href='https://www.janecc.com/tag/html5/' class='tag-link-46' title='9个话题' style='font-size: 12px;'>HTML5</a>
+<a href='https://www.janecc.com/tag/ie/' class='tag-link-26' title='5个话题' style='font-size: 12px;'>IE</a>
+<a href='https://www.janecc.com/tag/ie6/' class='tag-link-35' title='4个话题' style='font-size: 12px;'>IE6</a>
+<a href='https://www.janecc.com/tag/javascript/' class='tag-link-47' title='25个话题' style='font-size: 12px;'>JavaScript</a>
+<a href='https://www.janecc.com/tag/jquery/' class='tag-link-31' title='39个话题' style='font-size: 12px;'>jQuery</a>
+<a href='https://www.janecc.com/tag/nginx/' class='tag-link-102' title='4个话题' style='font-size: 12px;'>Nginx</a>
+<a href='https://www.janecc.com/tag/nodejs/' class='tag-link-114' title='4个话题' style='font-size: 12px;'>nodejs</a>
+<a href='https://www.janecc.com/tag/sublime/' class='tag-link-50' title='5个话题' style='font-size: 12px;'>Sublime</a>
+<a href='https://www.janecc.com/tag/web%e5%bc%80%e5%8f%91/' class='tag-link-45' title='12个话题' style='font-size: 12px;'>Web开发</a>
+<a href='https://www.janecc.com/tag/wordpress/' class='tag-link-37' title='48个话题' style='font-size: 12px;'>wordpress</a>
+<a href='https://www.janecc.com/tag/%e5%93%8d%e5%ba%94%e5%bc%8f/' class='tag-link-36' title='2个话题' style='font-size: 12px;'>响应式</a>
+<a href='https://www.janecc.com/tag/%e6%8f%92%e4%bb%b6/' class='tag-link-55' title='22个话题' style='font-size: 12px;'>插件</a>
+<a href='https://www.janecc.com/tag/%e6%95%99%e7%a8%8b/' class='tag-link-95' title='27个话题' style='font-size: 12px;'>教程</a>
+<a href='https://www.janecc.com/tag/%e7%94%b5%e5%bd%b1/' class='tag-link-40' title='2个话题' style='font-size: 12px;'>电影</a>
+<a href='https://www.janecc.com/tag/%e7%a7%bb%e5%8a%a8web%e5%bc%80%e5%8f%91/' class='tag-link-142' title='3个话题' style='font-size: 12px;'>移动Web开发</a>
+<a href='https://www.janecc.com/tag/%e9%98%bf%e9%87%8c%e4%ba%91/' class='tag-link-124' title='3个话题' style='font-size: 12px;'>阿里云</a></div>
+</aside><aside id="text-3" class="widget widget_text"><h3 class="widget_title"><span>广告萌萌哒</span></h3>			<div class="textwidget"><a href="/go/ecsside" title="阿里云主机优惠使用" target="_blank"><img src="https://dn-janecc.qbox.me/wp-content/uploads/2015/06/20150615224137.gif" alt="阿里云主机优惠使用"></a></div>
+		</aside>      
+</div><!--sidebar-->    </div><!--#main-->
+    
+    <footer id="footer">
+        <div class="footer-content">
+            <p><a href="//www.janecc.com/" title="分享前端知识"> JaneCC</a>旗下网站 | 皖ICP备14005403号 -1.  |  运行于<a href="/go/ecsside" title="阿里云主机优惠使用" target="_blank"> 阿里云ECS</a> | <a href="/sitemap" target="_blank">地图</a> Copyright © 2015  <a href="//www.janecc.com/" title="这是一个神奇的网站！！！">JaneCC </a>感谢<a rel="nofollow" href="https://portal.qiniu.com/signup?code=3lgczg5frpvf6" target="_blank">七牛云存储</a>赞助图片加速. . 稳定安全运行<span class="workingtime">393</span>天 . 46 queries in 0.284 seconds <span class="hide"><script src="//hm.baidu.com/hm.js?b67c1c01fb2c9cb0a47140a99a553960"></script></span>
+            </p>
+        </div><!-- #footer-content --> 
+    </footer><!--#footer-->
+    <!--#gotop-start-->
+    <div id="gotop" style="display: block; background-position: 0px 0px;"></div>
+    <!--#Jloading-start-->
+    <div class="Jloading"></div>
+</div><!--#container-->
+<script src="https://www.janecc.com/wp-content/themes/JaneCC/js/JaneCC.js"></script>
+<script src="https://www.janecc.com/wp-content/themes/JaneCC/js/custom.js"></script>
+<script>
+$(function(){
+/*
+ * 无限加载功能
+ */
+//var ias = $.ias({
+//    container: ".content", //包含所有文章的元素
+//    item: ".article", //文章元素
+//    pagination: ".page_navi", //分页元素
+//    next: ".page_navi a:eq(-2)", //下一页元素
+//});
+//
+//ias.extension(new IASTriggerExtension({
+//    text: 'Load more items', //此选项为需要点击时的文字
+//    offset: 2, //设置此项后，到 offset+1 页之后需要手动点击才能加载，取消此项则一直为无限加载
+//}));
+//ias.extension(new IASSpinnerExtension());
+//ias.extension(new IASNoneLeftExtension({
+//    text: 'You reached the end.', // 加载完成时的提示
+//}));
+/*
+ * 侧边栏跟随---->>>>>任意侧边栏，当侧边栏显示完毕，自动固定到顶部
+ */
+//$("#svr_newsletter-3").scrollFix({startBottom:"#sidebar .widget:last-child",distanceTop:20,zIndex:99});
+/*
+ * 侧边栏跟随---->>>>>最后一个侧边栏，当侧边栏显示完毕，自动固定到顶部
+ */
+$("#sidebar .widget:last-child").scrollFix({startTop:"#sidebar .widget:last-child",distanceTop:20,zIndex:99});
+
+})
+</script>
+<!--内页-->
+<script type="text/javascript" src="https://www.janecc.com/wp-content/themes/JaneCC/comments-ajax.js"></script>
+<!--分享组件-->
+<a class="openshare"></a>
+<div class="Share">
+    <ul>
+    <p class="close"><i class="fa fa-share-alt-square"></i> 分享到各大社区<a href="javascript:void(0)" title="关闭"></a></p>
+    <li title="分享到QQ空间"><a class="share1"></a></li>
+    <li title="分享到新浪微博"><a class="share2"></a></li>
+    <li title="分享到人人网"><a class="share3"></a></li>
+    <li title="分享到朋友网"><a class="share4"></a></li>
+    <li title="分享到腾讯微博"><a class="share5"></a></li>
+    <li title="分享到开心网"><a class="share6"></a></li>
+    </ul>
+</div>
+
+<div data-am="own" class="am-box" appkey="0ce6efa65c6859a5c2deb8c1b401f413" play-tage="0" am-store="true" start-play="true">
+	<!-- 基本界面 -->
+  <div class="am-interface">
+  	<div class="am-thumb"><!-- 歌曲封面 --><img src="" data-am='songpic' /></div>
+  	<div class="am-info">
+    	<div class="song-name" data-am="songname">歌曲封面</div>
+    	<div class="song-author" data-am="songauthor">歌曲封面</div>
+    	<div class="song-album" data-am="songalbum">歌曲封面</div>
+      <div class="am-time">
+        <em class="jp-current-time"><!-- 已播放时间 -->--:--</em> / 
+        <em class="jp-duration"><!-- 歌曲时间 -->--:--</em>
+      </div>
+    </div>
+  	<div class="am-basic">
+    	<em class="jp-pause" style="display:none;"><!-- 点击暂停 --></em>
+      <em class="jp-play"><!-- 点击播放 --></em>
+      <em class="jp-next" data-am="nextsong"><!-- 下一曲 --></em>
+      <em class="jp-page" data-am="pagebtn"><!-- 导航 --></em>
+      <em class="jp-lyric" data-am="lyricbtn">词<!-- 歌词 --></em>
+      <em class="jp-tool" data-am="toolbtn"><!-- 菜单 --></em>
+    </div>
+    <div class="am-tool Not" data-am="tool">
+      <em class="jp-prev" data-am="prevsong"><!-- 上一曲 --></em>
+      <em class="jp-solo" data-am="sortbtn" data-index="1"><!-- 单曲循环 --></em>
+      <em class="jp-rand" data-am="sortbtn" data-index="2"><!-- 随机播放 --></em>
+      <em class="jp-order" data-am="sortbtn" data-index="3"><!-- 顺序播放 --></em>
+      <em class="jp-mute"><!-- 声音开启状态 --></em>
+      <em class="jp-unmute"><!-- 禁音状态 --></em>
+      <ul class="jp-volume-bar"><li class="jp-volume-bar-value"></li></ul>
+    </div>
+  </div>
+  <div class="jp-progress">
+  	<div class="jp-seek-bar">
+    	<div class="jp-play-bar"><span><em></em></span></div>
+    </div>
+  </div>
+  
+  <div class="am-page Not" data-am="page">
+  	<ul class="am-nav">
+    	<li data-am="pagenav">推荐播单</li>
+    	<li data-am="pagenav">我的播单</li>
+    	<li data-am="pagenav" data-am-list="true">播放列表</li>
+    </ul>
+    <div class="am-nav-body">
+      <ul data-am="pagebody">
+        <li class="am-item">
+            <ul class="sort-list"></ul>
+        </li>
+        <li class="am-item">
+        	<ul class="sort-list"></ul>
+        </li>
+        <li class="am-item">
+            <ul class="song-list"></ul>
+        </li>
+      </ul>
+    </div>
+    <a href="javascript:;" class="am-close" data-am="pagebtn"></a>
+  </div>
+  <!-- 面板开关 -->
+	<div class="am-switch" data-am="ownbtn">
+    <em class="am-icon"></em>
+  </div>
+  
+  <div class="am-lyric Not" data-am="lyric">
+  	<div class="am-wrap-box"></div>
+    <div class="am-load">加载中... 请稍候</div>
+  </div>
+  <div class="am-control" data-am="control"><!-- jplayer主控制器 --></div>
+</div>
+<!-- 播放器主框架 -->
+<link rel="stylesheet" type="text/css" href="//www.janecc.com/wp-content/themes/JaneCC/js/msc/am.sea.min.css">
+<script type="text/javascript" src="//www.janecc.com/wp-content/themes/JaneCC/js/msc/am.sea.min.js"></script>
+
+<!--Plugin WP Missed Schedule 2011.0920.2011 Active--><script type='text/javascript' src='https://www.janecc.com/wp-content/plugins/akismet/_inc/form.js?ver=3.1.3'></script>
+</body>
+</html>

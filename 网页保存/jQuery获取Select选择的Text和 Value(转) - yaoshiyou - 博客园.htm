@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>jQuery获取Select选择的Text和 Value(转) - yaoshiyou - 博客园</title>
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=VpfXXGDfdkCz7-E0_XQ205E77kSNAF0FnyWpIgmGioM1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/marvin2/bundle-marvin2-brown.css?v=XX5jb76xyBTDkuz4GHc9T_qGUR-1oOf-1_iv8KwHFqI1"/>
+<link type="text/css" rel="stylesheet" href="/blog/customcss/61104.css?v=D1gAr9dNGGqnZmSryEXnU13qAVg%3d"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/yaoshiyou/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/yaoshiyou/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/yaoshiyou/wlwmanifest.xml"/>
+<script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'yaoshiyou', cb_enable_mathjax=false;</script>
+<script src="/bundles/blog-common.js?v=BqhsigJKeaj8k8sUrzizHGpe-CF5TRRZ3LONHih8z2s1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<div id="top">
+
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/yaoshiyou/">阿拉宁波网站优化之家-技术BLOG</a></h1>
+<p id="tagline">阿拉网站优化工具之家致力于面向搜索引擎网站建设，SEO优化标准制定及免费搜索优化工具研发。 域名:seo.al0574.com</p>
+</div>
+<div id="leftmenu">
+
+	
+<h3>导航</h3>
+<ul>
+	<li>
+		<a id="MyLinks1_HomeLink" href="http://www.cnblogs.com/">博客园</a>
+	<li><a id="MyLinks1_MyHomeLink" href="http://www.cnblogs.com/yaoshiyou/">首页</a></li>
+	<li></li>
+	<li>
+		<a id="MyLinks1_ContactLink" accesskey="9" rel="nofollow" href="http://msg.cnblogs.com/send/yaoshiyou">联系</a>
+	<li>
+		<a id="MyLinks1_Syndication" href="http://www.cnblogs.com/yaoshiyou/rss">订阅</a><a id="MyLinks1_XMLLink" href="http://www.cnblogs.com/yaoshiyou/rss"><img src="http://www.cnblogs.com/images/xml.gif" alt="订阅" /></a>
+	<li>
+		<a id="MyLinks1_Admin" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+</ul>
+
+	<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+	
+<h3>统计</h3>
+<ul>
+	<li>
+		随笔 -
+		46
+	<li>
+		文章 -
+		10
+	<li>
+		评论 -
+		72
+	<li>
+		引用 -
+		0
+	</li>
+</ul>
+
+	
+<h3>公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+
+	<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+
+</div>
+<div id="main">
+	
+<div id="post_detail">
+	<div class="post">
+		<h2>
+			<a id="cb_post_title_url" href="http://www.cnblogs.com/yaoshiyou/archive/2010/08/24/1806939.html">jQuery获取Select选择的Text和 Value(转)</a>
+		</h2>
+		<div id="cnblogs_post_body"><h5>&nbsp;</h5> <p>&nbsp;&nbsp;&nbsp; jQuery获取Select选择的Text和Value:<br>语法解释：<br>1. $("#select_id").change(function(){//code...});&nbsp;&nbsp; //为Select添加事件，当选择其中一项时触发<br>2. var checkText=$("#select_id").find("option:selected").text();&nbsp; //获取Select选择的Text<br>3. var checkValue=$("#select_id").val();&nbsp; //获取Select选择的Value<br>4. var checkIndex=$("#select_id ").get(0).selectedIndex;&nbsp; //获取Select选择的索引值<br>5. var maxIndex=$("#select_id option:last").attr("index");&nbsp; //获取Select最大的索引值<br>jQuery设置Select选择的 Text和Value:<br>语法解释：<br>1. $("#select_id ").get(0).selectedIndex=1;&nbsp; //设置Select索引值为1的项选中<br>2. $("#select_id ").val(4);&nbsp;&nbsp; // 设置Select的Value值为4的项选中<br>3. $("#select_id option[text='jQuery']").attr("selected", true);&nbsp;&nbsp; //设置Select的Text值为jQuery的项选中 <p>jQuery添加/删除Select的Option项：<br>语法解释：<br>1. $("#select_id").append("&lt;option value='Value'&gt;Text&lt;/option&gt;");&nbsp; //为Select追加一个Option(下拉项)<br>2. $("#select_id").prepend("&lt;option value='0'&gt;请选择&lt;/option&gt;");&nbsp; //为Select插入一个Option(第一个位置)<br>3. $("#select_id option:last").remove();&nbsp; //删除Select中索引值最大Option(最后一个)<br>4. $("#select_id option[index='0']").remove();&nbsp; //删除Select中索引值为0的Option(第一个)<br>5. $("#select_id option[value='3']").remove();&nbsp; //删除Select中Value='3'的Option<br>5. $("#select_id option[text='4']").remove();&nbsp; //删除Select中Text='4'的Option <p>http://www.cnblogs.com/SAL2928/archive/2008/10/28/1321285.html <p>jquery radio取值，checkbox取值，select取值，radio选中，checkbox选中，select选中，及其相关 <br>获 取一组radio被选中项的值 <br>var item = $('input[name=items][checked]').val(); <br>获 取select被选中项的文本 <br>var item = $("select[name=items] option[selected]").text(); <br>select下拉框的第二个元素为当前选中值 <br>$('#select_id')[0].selectedIndex = 1; <br>radio单选组的第二个元素为当前选中值 <br>$('input[name=items]').get(1).checked = true; <br>获取值： <br>文本框，文本区域：$("#txt").attr("value")； <br>多选框 checkbox：$("#checkbox_id").attr("value")； <br>单选组radio：&nbsp;&nbsp; $("input[type=radio][checked]").val(); <br>下拉框select： $('#sel').val(); <br>控制表单元素： <br>文本框，文本区域：$("#txt").attr("value",'');//清空内容 <br>$("#txt").attr("value",'11');//填充内容 <br>多选框checkbox： $("#chk1").attr("checked",'');//不打勾 <br>$("#chk2").attr("checked",true);//打勾 <br>if($("#chk1").attr('checked')==undefined) //判断是否已经打勾 <br>单选组 radio：&nbsp;&nbsp;&nbsp; $("input[type=radio]").attr("checked",'2');//设置value=2的项目为当前选中项 <br>下拉框 select：&nbsp;&nbsp; $("#sel").attr("value",'-sel3');//设置value=-sel3的项目为当前选中项 <br>$("&lt;option value='1'&gt;1111&lt;/option&gt;&lt;option value='2'&gt;2222&lt;/option&gt;").appendTo("#sel")//添加下拉框的option <br>$("#sel").empty()；//清空下拉框 <p>---------------------------------------------------------------------------------------------------- <p>//遍历option和添加、移除option<br>function changeShipMethod(shipping){<br>var len = $("select[name=ISHIPTYPE] option").length<br>if(shipping.value != "CA"){<br>$("select[name=ISHIPTYPE] option").each(function(){<br>if($(this).val() == 111){<br>$(this).remove();<br>}<br>});<br>}else{<br>$("&lt;option value='111'&gt;UPS Ground&lt;/option&gt;").appendTo($("select[name=ISHIPTYPE]"));<br>}<br>} <p>//取得下拉選單的選取值 <p>$(#testSelect option:selected').text();<br>或$("#testSelect").find('option:selected').text();<br>或$("#testSelect").val();<br>//////////////////////////////////////////////////////////////////<br>记 性不好的可以收藏下：<br>1,下拉框: <p>var cc1 = $(".formc select[name='country'] option[selected]").text(); //得到下拉菜单的选中项的文本(注意中间有空格)<br>var cc2 = $('.formc select[name="country"]').val(); //得到下拉菜单的选中项的值<br>var cc3 = $('.formc select[name="country"]').attr("id"); //得到下拉菜单的选中项的ID属性值<br>$("#select").empty();//清空下拉框 //$("#select").html('');<br>$("&lt;option value='1'&gt;1111&lt;/option&gt;").appendTo("#select")//添加下拉框的option <p>稍微解释一下:<br>1.select[name='country'] option[selected] 表示具有name 属性，<br>并 且该属性值为'country' 的select元素 里面的具有selected 属性的option 元素； <p>2,单选框:<br>$("input[@type=radio][@checked]").val(); //得到单选框的 选中项的值(注意中间没有空格)<br>$("input[@type=radio][@value=2]").attr("checked",'checked'); //设置单选框value=2的为选中状态.(注意中间没有空格) <p>3,复选框:<br>$("input[@type=checkbox][@checked]").val(); //得到复选框的选中的第一项的值<br>$("input[@type=checkbox][@checked]").each(function() { //由于复选框一般选中的是多个,所以可以循环输出<br>alert($(this).val());<br>}); <p>$("#chk1").attr("checked",'');//不打勾<br>$("#chk2").attr("checked",true);// 打勾<br>if($("#chk1").attr('checked')==undefined){} //判断是否已经打勾 <p>当然jquery的选择器是强大的. 还有很多方法. <p>&lt;script src="jquery-1.2.1.js" type="text/javascript"&gt;&lt;/script&gt;<br>&lt;script language="javascript" type="text/javascript"&gt;<br>$(document).ready(function(){<br>$("#selectTest").change(function()<br>{<br>//alert("Hello");<br>//alert($("#selectTest").attr("name"));<br>//$("a").attr("href","xx.html");<br>//window.location.href="xx.html";<br>//alert($("#selectTest").val());<br>alert($("#selectTest option[@selected]").text());<br>$("#selectTest").attr("value", "2"); <p>});<br>});<br>&lt;/script&gt; <p>&lt;a href="#"&gt;aaass&lt;/a&gt; <p>&lt;!--下拉框--&gt;<br>&lt;select id="selectTest" name="selectTest"&gt;<br>&lt;option value="1"&gt;11&lt;/option&gt;<br>&lt;option value="2"&gt;22&lt;/option&gt;<br>&lt;option value="3"&gt;33&lt;/option&gt;<br>&lt;option value="4"&gt;44&lt;/option&gt;<br>&lt;option value="5"&gt;55&lt;/option&gt;<br>&lt;option value="6"&gt;66&lt;/option&gt;<br>&lt;/select&gt;<br>jquery radio取值，checkbox取值，select取值，radio选中，checkbox选中，select选中，及其相关获取一组radio被选中 项的值<br>var item = $('input[@name=items][@checked]').val();<br>获取select被选 中项的文本<br>var item = $("select[@name=items] option[@selected]").text();<br>select 下拉框的第二个元素为当前选中值<br>$('#select_id')[0].selectedIndex = 1;<br>radio单选组的第二个 元素为当前选中值<br>$('input[@name=items]').get(1).checked = true;<br>获取值：<br>文本 框，文本区域：$("#txt").attr("value")；<br>多选框 checkbox：$("#checkbox_id").attr("value")；<br>单选组radio： $("input[@type=radio][@checked]").val();<br>下拉框select： $('#sel').val();<br>控 制表单元素：<br>文本框，文本区域：$("#txt").attr("value",'');//清空内容<br>$("#txt").attr("value",'11');// 填充内容<br>多选框checkbox： $("#chk1").attr("checked",'');//不打勾<br>$("#chk2").attr("checked",true);// 打勾<br>if($("#chk1").attr('checked')==undefined) //判断是否已经打勾<br>单选组radio： $("input[@type=radio]").attr("checked",'2');//设置value=2的项目为当前选中项<br>下拉框 select： $("#sel").attr("value",'-sel3');//设置value=-sel3的项目为当前选中项<br>$("&lt;optionvalue='1'&amp; gt;1111&lt;/option&gt;&lt;optionvalue='2'&gt;2222&lt;/option&amp; gt;").appendTo("#sel")//添加下拉框的option<br>$("#sel").empty()；// 清空下拉框 <p>获取一组radio被选中项的值<br>var item = $('input[@name=items][@checked]').val();<br>获取select被选中项的文本<br>var item = $("select[@name=items] option[@selected]").text();<br>select下拉框的第二个元素为当 前选中值<br>$('#select_id')[0].selectedIndex = 1;<br>radio单选组的第二个元素为当前选中值<br>$('input[@name=items]').get(1).checked = true;<br>获取值：<br>文本框，文本区域：$("#txt").attr("value")；<br>多选框 checkbox：$("#checkbox_id").attr("value")；<br>单选组radio： $("input[@type=radio][@checked]").val();<br>下拉框select： $('#sel').val();<br>控 制表单元素：<br>文本框，文本区域：$("#txt").attr("value",'');//清空内容<br>$("#txt").attr("value",'11');// 填充内容<br>多选框checkbox： $("#chk1").attr("checked",'');//不打勾<br>$("#chk2").attr("checked",true);// 打勾<br>if($("#chk1").attr('checked')==undefined) //判断是否已经打勾<br>单选组radio： $("input[@type=radio]").attr("checked",'2');//设置value=2的项目为当前选中项<br>下拉框 select： $("#sel").attr("value",'-sel3');//设置value=-sel3的项目为当前选中项<br>$("&lt;option value='1'&gt;1111&lt;/option&gt;&lt;option value='2'&gt;2222&lt;/option&gt;").appendTo("#sel")//添加下拉框的option<br>$("#sel").empty()；// 清空下拉框 </div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		<p class="postfoot">
+			posted on <span id="post-date">2010-08-24 09:12</span> <a href='http://www.cnblogs.com/yaoshiyou/'>yaoshiyou</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="http://i.cnblogs.com/EditPosts.aspx?postid=1806939" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(1806939);return false;">收藏</a>
+		</p>
+	</div>
+	<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=61104,cb_entryId=1806939,cb_blogApp=currentBlogApp,cb_blogUserGuid='43995076-e5a5-de11-ba8f-001cf0cd104b',cb_entryCreatedDate='2010/8/24 9:12:00';loadViewCount(cb_entryId);</script>
+	
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.cnblogs.com/" target="_blank" title="开发者的网上家园">博客园首页</a><a href="http://q.cnblogs.com/" target="_blank" title="程序员问答社区">博问</a><a href="http://news.cnblogs.com/" target="_blank" title="IT新闻">新闻</a><a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a><a href="http://job.cnblogs.com/" target="_blank">程序员招聘</a><a href="http://kb.cnblogs.com/" target="_blank">知识库</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    var enableGoogleAd = canShowAdsense(); 
+    fixPostBodyFormat();
+</script>
+<div id="google_ad_c1" class="c_ad_block"></div>
+<div id="under_post_news"></div>
+<div id="google_ad_c2" class="c_ad_block"></div>
+<div id="under_post_kb"></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+</script>
+</div>
+
+</div>
+
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a id="Footer1_Hyperlink3" NAME="Hyperlink1" href="http://www.cnblogs.com/" style="font-family:Verdana;font-size:12px;">博客园</a>
+	<br />
+	Copyright &copy; yaoshiyou
+</p>
+</body>
+</html>

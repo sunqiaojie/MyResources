@@ -1,0 +1,954 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+     
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>   
+    
+     
+    <script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/tracking.js" charset="utf-8"></script>  
+
+    <script type="text/javascript">
+        var protocol = window.location.protocol;
+        document.write('<script type="text/javascript" src="' + protocol + '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></' + 'script>');
+    </script>
+
+     <script id="allmobilize" charset="utf-8" src="http://a.yunshipei.com/46aae4d1e2371e4aa769798941cef698/allmobilize.min.js"></script>
+ <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+
+    <title>Java +EasyUI+SpringMvc实现Excle导入导出(上) - 张文康 
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="JDBC, Java Database Connecive, Java 数据库连接，是一组专门负责连接并操作数据库的标准，在整个JDBC 中实际上大量的提供的是接口。针对于各个不同的数据库生产商 ，只要想使用JAVA 进行数据库的开发，则对这些标准有所支持。JDBC 在使用中常见的有以下三类：JDBC-ODBC 桥连接：是SUN 在JDK的开发包中提供的最标准的一套JDBC 操作类库，使用" />
+    <script src="http://static.blog.csdn.net/scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://static.blog.csdn.net/scripts/ad.js?v=1.1"></script>
+        <!--new top-->
+               <link rel="stylesheet" href="http://static.csdn.net/public/common/toolbar/css/index.css">        <!--new top-->
+
+    <link rel="Stylesheet" type="text/css" href="http://static.blog.csdn.net/skin/skin-yellow/css/style.css?v=1.1" />
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="/zwk626542417/rss/list" />
+    <link rel="shortcut icon" href="http://c.csdnimg.cn/public/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/default.css" />
+ 
+
+
+</head>
+<body>
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="http://static.csdn.net/public/common/toolbar/js/html.js" type="text/javascript"></script>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/zwk626542417">张文康 </a></h2>
+            <h3>不想当将军的士兵不是好士兵</h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+            
+                <li id="btnContents"><a href="http://blog.csdn.net/zwk626542417?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="http://static.blog.csdn.net/images/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/zwk626542417?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="http://static.blog.csdn.net/images/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/zwk626542417/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="http://static.blog.csdn.net/images/ico_rss.gif">订阅</span></a></li>                
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "zwk626542417";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/zwk626542417";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod='popu_3' > 
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/48287419">
+<font color=blue>写博客，送money、送书、送C币啦
+</font></a>
+&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/blogdevteam/article/details/48496971"><font color=red>7-8月博乐推荐文章</font></a>
+&nbsp;&nbsp;&nbsp;
+  
+
+<a href="http://bss.csdn.net/m/zone/break_bug/present">
+<font color=blue>砸BUG 得大奖 100%中奖率
+</font></a>
+&nbsp;&nbsp;&nbsp;
+
+<a href="http://bss.csdn.net/m/topic/learning_path_weixin">
+<font color=red>微信开发学习路线高级篇上线
+</font></a>
+&nbsp;&nbsp;&nbsp;
+<a href="http://blog.csdn.net/zhouzhaoxiong1227/article/details/47973427">
+<font color=blue>恭喜博主周兆熊新书发售
+</font></a>
+</div>                        </div>
+                        
+
+  
+<link href="http://static.blog.csdn.net/css/comment1.css" type="text/css" rel="stylesheet" />
+<link href="http://static.blog.csdn.net/css/style1.css" type="text/css" rel="stylesheet" />
+<script language='JavaScript' type='text/javascript' src='http://download.csdn.net/js/jquery.cookie.js'></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/search-service/main.js"></script>
+<link rel="stylesheet" href="http://static.blog.csdn.net/public/res-min/markdown_views.css?v=1.0" />
+<script type="text/javascript" src="http://static.blog.csdn.net/public/res/bower-libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+           
+            var isBole = false;
+            
+          
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="/zwk626542417/article/details/43150047">
+        Java +EasyUI+SpringMvc实现Excle导入导出(上)            
+        </a></span>
+    </h1>
+</div>
+
+   
+
+    <div class="article_manage">
+        <span class="link_categories">
+        分类：
+            <a href="/zwk626542417/article/category/2167323" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">java学习</a> 
+        </span>
+    <span class="link_postdate">2015-01-26 11:23</span>
+    <span class="link_view" title="阅读次数">7791人阅读</span>
+    <span class="link_comments" title="评论次数"><a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(8)</span>
+    <span class="link_collect"><a href="javascript:void(0);" onclick="javascript:collectArticle('Java +EasyUI+SpringMvc实现Excle导入导出(上)','43150047');return false;" title="收藏">收藏</a></span>
+    <span class="link_report"><a href="#report"  onclick="javascript:report(43150047,2);return false;" title="举报">举报</a></span>
+    
+</div>
+
+  
+
+  
+  
+     
+
+<div id="article_content" class="article_content">
+
+<h1>前言</h1>
+<p style="margin:0in; font-size:16pt; font-family:SimSun">&nbsp;</p>
+<p style="margin:0in; font-size:16.0pt"><span lang="zh-CN" style="font-family:SimSun">&nbsp; &nbsp; 先介绍下项目的开发环境，采用</span><span lang="en-US" style="font-family:Calibri">java</span><span lang="zh-CN" style="font-family:SimSun">开发语言进行开发，前台</span><span lang="en-US" style="font-family:Calibri">UI</span><span lang="zh-CN" style="font-family:SimSun">使用的是</span><span lang="en-US" style="font-family:Calibri">EasyUI</span><span lang="zh-CN" style="font-family:SimSun">框架，接下来是</span><span lang="en-US" style="font-family:Calibri">SpringMvc</span><span lang="zh-CN" style="font-family:SimSun">与</span><span lang="en-US" style="font-family:Calibri">Ejb</span><span lang="zh-CN" style="font-family:SimSun">结合来开发，整个项目管理采用的是</span><span lang="en-US" style="font-family:Calibri">Maven</span><span lang="zh-CN" style="font-family:SimSun">管理，服务器用的是</span><span lang="en-US" style="font-family:Calibri">Jboss6.2.0</span><span lang="zh-CN" style="font-family:SimSun">企业版。</span></p>
+<p style="margin:0in; font-size:16pt; font-family:SimSun">&nbsp;</p>
+<h1>正文</h1>
+<p style="margin:0in; font-size:16pt; font-family:SimSun">&nbsp;</p>
+<h2><span style="font-size:24px">配置</span></h2>
+<p style="margin:0in; font-size:16pt; font-family:SimSun">&nbsp;</p>
+<p style="margin:0in; font-size:16.0pt"><span lang="zh-CN" style="font-family:SimSun">&nbsp; &nbsp; 对于</span><span lang="en-US" style="font-family:Calibri">Excel</span><span lang="zh-CN" style="font-family:SimSun">上传文件我们首先要引入</span><span lang="zh-CN" style="font-family:Calibri">commons-fileupload</span><span lang="en-US" style="font-family:Calibri">.jar</span><span lang="zh-CN" style="font-family:SimSun">包，由于我们的项目采用</span><span lang="en-US" style="font-family:Calibri">Maven</span><span lang="zh-CN" style="font-family:SimSun">进行项目管理，所以对于</span><span lang="en-US" style="font-family:Calibri">jar</span><span lang="zh-CN" style="font-family:SimSun">包的引入是在</span><span lang="en-US" style="font-family:Calibri">pom.xml</span><span lang="zh-CN" style="font-family:SimSun">文件中添加的依赖，添加</span><span lang="zh-CN" style="font-family:Calibri">commons-fileupload</span><span lang="en-US" style="font-family:Calibri">.jar</span><span lang="zh-CN" style="font-family:SimSun">的坐标：</span></p>
+<p style="margin:0in; font-size:16.0pt"><span lang="zh-CN" style="font-family:SimSun"><br>
+</span></p>
+<p style="margin:0in; font-size:16pt; font-family:Calibri"></p>
+<pre code_snippet_id="589159" snippet_file_name="blog_20150126_1_1204399"  code_snippet_id="589159" snippet_file_name="blog_20150126_1_1204399" name="code" class="html">&lt;pre name=&quot;code&quot; class=&quot;html&quot;&gt;&lt;dependency&gt;
+	&lt;groupId&gt;commons-fileupload&lt;/groupId&gt;
+	&lt;artifactId&gt;commons-fileupload&lt;/artifactId&gt;
+	&lt;version&gt;1.3.1&lt;/version&gt;
+
+&lt;/dependency&gt;</pre><br>
+<br>
+<p></p>
+<pre></pre>
+<p></p>
+<p style="margin:0in; font-size:16pt; font-family:SimSun">&nbsp;</p>
+<p style="margin:0in; font-size:16.0pt"><span lang="zh-CN" style="font-family:SimSun">&nbsp; &nbsp; 由于后台代码的</span><span lang="zh-CN" style="font-family:Calibri">ExcelUtil</span><span lang="zh-CN" style="font-family:SimSun">工具类所在的项目不再当前的</span><span lang="en-US" style="font-family:Calibri">web</span><span lang="zh-CN" style="font-family:SimSun">项目中，而在</span><span lang="zh-CN" style="font-family:Calibri">itoo-exam-too</span><span lang="zh-CN" style="font-family:SimSun">项目中，因此我们需要将</span><span lang="zh-CN" style="font-family:Calibri">ExcelUtil</span><span lang="zh-CN" style="font-family:SimSun">工具类所在的</span><span lang="zh-CN" style="font-family:Calibri">itoo-exam-too</span><span lang="zh-CN" style="font-family:SimSun">项目进行引入，也就是在</span><span lang="en-US" style="font-family:Calibri">maven</span><span lang="zh-CN" style="font-family:SimSun">的</span><span lang="en-US" style="font-family:Calibri">pom.xml</span><span lang="zh-CN" style="font-family:SimSun">文件中添加</span><span lang="zh-CN" style="font-family:Calibri">itoo-exam-too</span><span lang="zh-CN" style="font-family:SimSun">的项目依赖：</span></p>
+<p style="margin:0in; font-size:16pt; font-family:Calibri"></p>
+<pre code_snippet_id="589159" snippet_file_name="blog_20150126_2_2621668"  code_snippet_id="589159" snippet_file_name="blog_20150126_2_2621668" name="code" class="html">&lt;dependency&gt;
+	&lt;groupId&gt;com.tgb&lt;/groupId&gt;
+	&lt;artifactId&gt;itoo-exam-tool&lt;/artifactId&gt;
+	&lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+&lt;/dependency&gt;
+</pre><br>
+<br>
+<p></p>
+<p style="margin:0in; font-size:16pt; font-family:Calibri"><br>
+</p>
+<p style="margin:0in; font-size:16pt; font-family:Calibri"><span lang="zh-CN" style="font-size:16pt; font-family:SimSun">&nbsp; &nbsp; 接下来</span><span lang="en-US" style="font-size:16pt">SpringMvc</span><span lang="zh-CN" style="font-size:16pt; font-family:SimSun">的配置文件也需要做些配置，这样可以将前台文件进行解析，传到后台：</span></p>
+<p style="margin:0in; font-size:16pt; font-family:Calibri"></p>
+<pre code_snippet_id="589159" snippet_file_name="blog_20150126_3_6415895"  code_snippet_id="589159" snippet_file_name="blog_20150126_3_6415895" name="code" class="html">&lt;!-- SpringMVC上传文件时，需要配置MultipartResolver处理器 --&gt;
+&lt;bean id=&quot;multipartResolver&quot;
+	class=&quot;org.springframework.web.multipart.commons.CommonsMultipartResolver&quot;&gt;
+	&lt;property name=&quot;defaultEncoding&quot; value=&quot;UTF-8&quot; /&gt;
+	&lt;!-- 指定所上传文件的总大小不能超过10485760000B。注意maxUploadSize属性的限制不是针对单个文件，而是所有文件的容量之和 --&gt;
+	&lt;property name=&quot;maxUploadSize&quot; value=&quot;10485760000&quot;&gt;&lt;/property&gt;
+	&lt;property name=&quot;maxInMemorySize&quot; value=&quot;40960&quot;&gt;&lt;/property&gt;
+
+&lt;/bean&gt;</pre><br>
+<br>
+<p></p>
+<p style="margin:0in; font-size:16pt; font-family:SimSun">&nbsp;</p>
+<h2><span style="font-size:24px">具体实现</span></h2>
+<p style="margin:0in; font-size:16pt; font-family:SimSun">&nbsp;</p>
+<p style="margin:0in; font-size:16.0pt"><span lang="en-US" style="font-family:Calibri">&nbsp; &nbsp; &nbsp; Excel</span><span lang="zh-CN" style="font-family:SimSun">的导入我们可以进行分解，包括三个步骤：</span></p>
+<p style="margin:0in; font-size:16.0pt"><span lang="en-US" style="font-family:Calibri">&nbsp; &nbsp; &nbsp; 1.</span><span lang="zh-CN" style="font-family:SimSun">上传</span><span lang="en-US" style="font-family:Calibri">Excel</span><span lang="zh-CN" style="font-family:SimSun">文件</span></p>
+<p style="margin:0in; font-size:16.0pt"><span lang="en-US" style="font-family:Calibri">&nbsp; &nbsp; &nbsp; 2.</span><span lang="zh-CN" style="font-family:SimSun">读取</span><span lang="en-US" style="font-family:Calibri">Excle</span><span lang="zh-CN" style="font-family:SimSun">文件中的数据，将</span><span lang="en-US" style="font-family:Calibri">Excle</span><span lang="zh-CN" style="font-family:SimSun">数据转化成</span><span lang="en-US" style="font-family:Calibri">list</span><span lang="zh-CN" style="font-family:SimSun">集合</span></p>
+<p style="margin:0in; font-size:16.0pt"><span lang="en-US" style="font-family:Calibri">&nbsp; &nbsp; &nbsp; 3.</span><span lang="zh-CN" style="font-family:SimSun">将</span><span lang="en-US" style="font-family:Calibri">list</span><span lang="zh-CN" style="font-family:SimSun">集合存入数据库</span></p>
+<p style="margin:0in; font-size:16pt; font-family:Calibri">&nbsp;</p>
+<p style="margin:0in; font-size:16pt; font-family:Calibri"><span lang="zh-CN" style="font-family:SimSun; font-size:16pt">&nbsp; &nbsp;首先我们开始看我们前台</span><span lang="en-US" style="font-size:16pt">easyui</span><span lang="zh-CN" style="font-family:SimSun; font-size:16pt">上传</span><span lang="en-US" style="font-size:16pt">Excle</span><span lang="zh-CN" style="font-family:SimSun; font-size:16pt">文件的代码，采用的是一个</span><span lang="en-US" style="font-size:16pt">form</span><span lang="zh-CN" style="font-family:SimSun; font-size:16pt">表单，表单里包含一个</span><span lang="en-US" style="font-size:16pt">easyui</span><span lang="zh-CN" style="font-family:SimSun; font-size:16pt">的上传文件的控件</span><span lang="zh-CN" style="font-size:16pt">easyui-filebox</span><span lang="zh-CN" style="font-family:SimSun; font-size:16pt">：</span></p>
+<p style="margin:0in; font-size:16pt; font-family:Calibri"></p>
+<pre code_snippet_id="589159" snippet_file_name="blog_20150126_4_1879346"  code_snippet_id="589159" snippet_file_name="blog_20150126_4_1879346" name="code" class="html">&lt;form id=&quot;questionTypesManage&quot;  method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;
+   选择文件：　&lt;input id=&quot;uploadExcel&quot; name=&quot;uploadExcel&quot; class=&quot;easyui-filebox&quot; style=&quot;width:200px&quot; data-options=&quot;prompt:&#39;请选择文件...&#39;&quot;&gt;
+   
+	   　　&lt;a href=&quot;#&quot; class=&quot;easyui-linkbutton&quot; style=&quot;width:122px&quot; onclick=&quot;uploadExcel()&quot; &gt;导入题库&lt;/a&gt; 　　     　　　　　    
+
+&lt;/form&gt; </pre><br>
+<p><br>
+</p>
+<p style="margin:0in; font-size:16.0pt"><span lang="zh-CN" style="font-family:SimSun">&nbsp; &nbsp; 前台代码比较简单，我们使用是</span><span lang="en-US" style="font-family:Calibri">EasyUI</span><span lang="zh-CN" style="font-family:SimSun">的</span><span lang="en-US" style="font-family:Calibri">filebox</span><span lang="zh-CN" style="font-family:SimSun">进行文件上传，这里需要注意的是</span><span lang="en-US" style="font-family:Calibri">form</span><span lang="zh-CN" style="font-family:SimSun">表单的</span><span lang="en-US" style="font-family:Calibri"></span><span lang="zh-CN" style="font-family:Calibri">enctype</span><span lang="zh-CN" style="font-family:SimSun">属性必须是</span><span lang="en-US" style="font-family:Calibri">&quot;</span><span lang="zh-CN" style="font-family:Calibri">&quot;multipart/form-data</span><span lang="en-US" style="font-family:Calibri">&quot;,</span><span lang="zh-CN" style="font-family:SimSun">接下来我们用</span><span lang="en-US" style="font-family:Calibri">js</span><span lang="zh-CN" style="font-family:SimSun">代码对</span><span lang="en-US" style="font-family:Calibri">Excle</span><span lang="zh-CN" style="font-family:SimSun">的&#26684;式进行基本的校验，然后将文件提交到后台</span><span lang="en-US" style="font-family:Calibri">Controller</span><span lang="zh-CN" style="font-family:SimSun">，</span></p>
+<p style="margin:0in; font-size:16pt; font-family:Calibri"></p>
+<pre code_snippet_id="589159" snippet_file_name="blog_20150126_5_5150186"  code_snippet_id="589159" snippet_file_name="blog_20150126_5_5150186" name="code" class="java">&lt;pre name=&quot;code&quot; class=&quot;javascript&quot;&gt; //导入excel
+	   function uploadExcel(){   
+		 //得到上传文件的全路径
+		 var fileName= $(&#39;#uploadExcel&#39;).filebox(&#39;getValue&#39;);
+		 	  //获取题型
+		 var id= $(&#39;#questionType&#39;).combobox(&#39;getValue&#39;); 
+		 var questionTypes=encodeURI(id);  
+		 
+		  if(questionTypes !=&quot;&quot;){ 
+				 //进行基本校验
+				 if(fileName==&quot;&quot;){   
+					$.messager.alert(&#39;提示&#39;,&#39;请选择上传文件！&#39;,&#39;info&#39;); 
+				 }else{
+					 //对文件格式进行校验
+					 var d1=/\.[^\.]+$/.exec(fileName); 
+					 if(d1==&quot;.xls&quot;){
+						  //获取题型   
+						  var id= $(&#39;#questionType&#39;).combobox(&#39;getValue&#39;)
+						  var questionTypes=encodeURI(id);
+						   
+						  //获取课程
+						  var courseTypeId =$(&#39;#courseTypeId&#39;).combobox(&#39;getValue&#39;)
+						  var courseType=encodeURI(courseTypeId);
+						  
+						  //提交表单
+						  document.getElementById(&quot;questionTypesManage&quot;).action=&quot;${pageContext.request.contextPath}/leadtoQuestionTypes/leadInExcelQuestionBank?questionType=&quot;+questionTypes+&quot;&amp;courseType=&quot;+courseType;
+						  document.getElementById(&quot;questionTypesManage&quot;).submit();   
+						  $.messager.alert(&#39;提示&#39;,&#39;操作成功！&#39;,&#39;info&#39;); 		
+				    }else{
+				        $.messager.alert(&#39;提示&#39;,&#39;请选择xls格式文件！&#39;,&#39;info&#39;); 
+				    	$(&#39;#uploadExcel&#39;).filebox(&#39;setValue&#39;,&#39;&#39;); 
+				    }
+				 }  
+		  }else{  
+	          $.messager.alert(&#39;提示&#39;,&#39;请选择课程题型！&#39;,&#39;info&#39;); 
+		  }
+
+	  }
+</pre><br>
+<br>
+<p></p>
+<pre></pre>
+<p><span lang="zh-CN">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</span><span lang="zh-CN" style="font-family:SimSun; font-size:16pt">前台代码完毕以后，我们接下来看</span><span lang="en-US" style="font-size:16pt; font-family:Calibri">controller</span><span lang="zh-CN" style="font-family:SimSun; font-size:16pt">的代码，这里需要注意的是，前台</span><span lang="en-US" style="font-size:16pt; font-family:Calibri">easyui</span><span lang="zh-CN" style="font-family:SimSun; font-size:16pt">的</span><span lang="zh-CN" style="font-size:16pt; font-family:Calibri">filebox</span><span lang="zh-CN" style="font-family:SimSun; font-size:16pt">的</span><span lang="en-US" style="font-size:16pt; font-family:Calibri">name</span><span lang="zh-CN" style="font-family:SimSun; font-size:16pt">标签的名字是作为参数传到后台的，后台以流的形式接收到前台传过来的</span><span lang="en-US" style="font-size:16pt; font-family:Calibri">excle</span><span lang="zh-CN" style="font-family:SimSun; font-size:16pt">文件，我们使用</span><span lang="en-US" style="font-size:16pt; font-family:Calibri">Excle</span><span lang="zh-CN" style="font-family:SimSun; font-size:16pt">工具类将</span><span lang="en-US" style="font-size:16pt; font-family:Calibri">Excle</span><span lang="zh-CN" style="font-family:SimSun; font-size:16pt">转换成</span><span lang="en-US" style="font-size:16pt; font-family:Calibri">list</span><span lang="zh-CN" style="font-family:SimSun; font-size:16pt">集合，最后将</span><span lang="en-US" style="font-size:16pt; font-family:Calibri">list</span><span lang="zh-CN" style="font-family:SimSun; font-size:16pt">集合保存到数据库中。我们看下后台的代码实现：</span></p>
+<p style="margin:0in; font-size:16pt; font-family:Calibri"></p>
+<pre code_snippet_id="589159" snippet_file_name="blog_20150126_6_8628769"  code_snippet_id="589159" snippet_file_name="blog_20150126_6_8628769" name="code" class="java">/**
+	 * 导入题库Excel
+	 * 
+	 * @param uploadExcel  上传的excel文件
+	 *           
+	 * @param request    请求
+	 *          
+	 * @param resposne 响应
+	 *            
+	 * @throws UnsupportedEncodingException 编码异常
+	 *             
+	 */
+	@RequestMapping(&quot;/leadInExcelQuestionBank&quot;)
+	public String leadInExcelQuestionBank(
+			@RequestParam(&quot;uploadExcel&quot;) CommonsMultipartFile uploadExcel,
+			HttpServletRequest request, HttpServletResponse response)
+			throws UnsupportedEncodingException {
+		// 获取前台传来的题型和课程
+		String questionType = request.getParameter(&quot;questionType&quot;).trim();
+		String courseType = request.getParameter(&quot;courseType&quot;).trim();
+		String questionTypeNameId = new String(
+				questionType.getBytes(&quot;iso-8859-1&quot;), &quot;utf-8&quot;);
+		String courseTypeId = new String(courseType.getBytes(&quot;iso-8859-1&quot;),
+				&quot;utf-8&quot;);
+		InputStream in;
+		boolean flag = false;
+		try {
+			// 获取前台exce的输入流
+			in = uploadExcel.getInputStream();
+			
+			//获取sheetName名字
+			String sheetName = leadToInQuestionTypesManageBean.getSheetName(questionTypeNameId);
+			// excel的表头与文字对应，获取excel表头
+			LinkedHashMap&lt;String, String&gt; map = leadToInQuestionTypesManageBean.getMapLeadInExcelQuestionBank(questionTypeNameId);
+			//获取组合excle表头数组，防止重复用的
+			String[] uniqueFields =new String[] { &quot;题干内容&quot;, &quot;正确答案&quot; };
+			//获取需要导入的具体的表
+			Class class1=leadToInQuestionTypesManageBean.getClassName(questionTypeNameId);
+			//excel转化成的list集合
+			List list = null;
+			try {
+				//调用excle共用类，转化成list
+				list=ExcelUtil.excelToList(in, sheetName, class1, map, uniqueFields);
+			} catch (ExcelException e) {
+				e.printStackTrace();
+			}
+			//保存实体集合
+			flag= leadToInQuestionTypesManageBean.leadInExcelQuestionBank(questionTypeNameId, courseTypeId, list);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		System.out.println(&quot;执行结果：&quot; + flag);    
+		return &quot;/LeadToQuestionTypeBank&quot;;  
+
+	}
+</pre><br>
+<br>
+<p></p>
+<p style="margin:0in 0in 0in 0.375in; font-size:16pt; font-family:Calibri">&nbsp;</p>
+<p style="margin:0in; font-size:16.0pt"><span lang="zh-CN" style="font-family:SimSun">&nbsp; &nbsp;到这里关于</span><span lang="en-US" style="font-family:Calibri">Excle</span><span lang="zh-CN" style="font-family:SimSun">导入就已经完成了，关于</span><span lang="en-US" style="font-family:Calibri">Excle</span><span lang="zh-CN" style="font-family:SimSun">的导出，和</span><span lang="zh-CN" style="font-family:Calibri">ExcelUtil</span><span lang="zh-CN" style="font-family:SimSun">类的编写，我们下篇文章继续，敬请期待。</span></p>
+    
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+
+
+
+<div class="bdsharebuttonbox" style="float: right;">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"  style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"style="background-position:0 -1612px !important" ></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+   <link rel="stylesheet" href="http://static.blog.csdn.net/css/blog_detail.css" />
+
+    
+<!--172.16.140.13-->
+<ul class="article_next_prev">
+            <li class="prev_article"><span  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/zwk626542417/article/details/43085703';">上一篇</span><a href="/zwk626542417/article/details/43085703" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">Java SSH 项目总结——设定工作日日历</a></li>
+            <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/zwk626542417/article/details/43153005';">下一篇</span><a href="/zwk626542417/article/details/43153005" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">Java +EasyUI+SpringMvc实现Excle导入导出(下)</a></li>
+</ul>
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+ 
+
+        <div id="digg" ArticleId="43150047">
+            <dl id="btnDigg" class="digg digg_disable">
+               
+                 <dt>顶</dt>
+                <dd>5</dd>
+            </dl>
+            <dl id="btnBury" class="digg digg_disable">
+              
+                  <dt>踩</dt>
+                <dd>0</dd>
+            </dl>
+        </div>
+      
+</div>
+<div id="suggest"></div>
+         <script  language="javascript" type='text/javascript'>     
+             $(function(){
+                 $.get("/zwk626542417/svc/GetSuggestContent/43150047",function(data){
+                     $("#suggest").html(data);
+                 });     
+             });             
+         </script>  
+
+
+<style>
+.blog-ass-articl dd {
+color: #369;
+width: 99%; /*修改行*/
+float: left;
+overflow: hidden;
+font: normal normal 12px/23px "SimSun";
+height: 23px;
+margin: 0;
+padding: 0 0 0 10px;
+margin-right: 30px;
+background: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;
+}
+</style>
+
+<dl class="blog-ass-articl" id="res-relatived" > 
+     <dt><span>猜你在找</span></dt>    
+
+
+   
+
+
+    <div id="adCollege" style="width: 42%;float: left;"> 
+        <script src="http://csdnimg.cn/jobreco/job_reco.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            csdn.position.showEdu({
+                sourceType: "blog",
+                searchType: "detail",
+                searchKey: "43150047",
+                username: "",
+                recordcount: "5",
+                containerId: "adCollege" //容器DIV的id。 
+            });
+        </script> 
+    </div>  
+
+    
+     <div id="res"  data-mod="popu_36"  class="tracking-ad" style="width: 42%;float: left;margin-right: 30px;"></div>
+   
+</dl>
+
+<div id="job_blog_reco">
+<script src="http://c.csdnimg.cn/jobreco/job_reco.js" type="text/javascript"></script>
+   
+     <script type="text/javascript">
+         csdn.position.show({
+         sourceType: "blog",
+         tplType: "blogDetail",
+         searchType: "detail",
+         searchKey: "43150047",
+             username: "",
+         containerId: "job_blog_reco"
+        }); 
+    </script>
+
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        setTimeout(function () {
+            var searchtitletags = 'Java +EasyUI+SpringMvc实现Excle导入导出(上)' + ',' + $("#tags").html();
+            searchService({
+                index: 'blog',
+                query: searchtitletags,
+                from: 5,
+                size: 5,
+                appendTo: '#res',
+                url: 'recommend',
+                his: 2,
+                client: "blog_cf_enhance",
+                tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+            });
+        }, 500);
+    });    
+
+ </script>   
+
+    <div id="ad_cen">
+   
+          <script type="text/javascript">
+              new Ad(4, 'ad_cen');
+          </script>
+    </div>
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list">
+    </div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form">
+    </div>
+
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '43150047';
+    var commentscount = 8;
+    var islock = false
+</script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/comment.js"></script>
+    <div id="ad_bot">
+    </div>
+    <script type="text/javascript">
+        setTimeout(function(){
+            new Ad(5, 'ad_bot');
+        },500);  
+    </script>
+<div id="report_dialog">
+</div>
+
+<div id="d-top"  style="bottom:60px;">
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="http://static.blog.csdn.net/images/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop"  style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])" style="">         
+         <img src="http://static.blog.csdn.net/images/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);    
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+
+
+<div class="tag_list" style="display:none"></div>
+  <script  language="javascript" type='text/javascript'>     
+      $(function(){
+              setTimeout(function(){
+                  $.get("/zwk626542417/svc/GetTagContent",function(data){
+                      $(".tag_list").html(data).show();
+                  });     
+              });
+          },500);                       
+ </script> 
+
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });
+        },200);  
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }    
+
+</script>
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+                   
+           <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/zwk626542417" target="_blank">
+    <img src="http://avatar.csdn.net/1/D/6/1_zwk626542417.jpg" title="访问我的空间" style="max-width:90%"/>
+    </a>
+    <br />
+    <span><a href="http://my.csdn.net/zwk626542417" class="user_name" target="_blank">zwk626542417</a></span>
+</div>
+<div class="interact">
+
+    <a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]"></a>
+
+ <a href="javascript:void(0);" class="letter"  title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=zwk626542417','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                         <div class="ico_expert" title="CSDN博客准专家"  onclick="javascript:location='http://blog.csdn.net/experts/rule.html'" style=" cursor:pointer;width:54px;height:60px;background:url('http://c.csdnimg.cn/jifen/images/xunzhang/xunzhang/bokezhunzhuanjiamiddle.png') no-repeat" ></div>
+                <div id="bms_box">
+                                            <a  target="_blank">
+                                                    <img src="http://c.csdnimg.cn/jifen/images/xunzhang/xunzhang/zhuanlandaren.png" onmouseover="m_over_m(this,2)" onmouseout="m_out_m()" alt="1" >
+                                            </a>
+                                            <a  target="_blank">
+                                                    <img src="http://c.csdnimg.cn/jifen/images/xunzhang/xunzhang/chizhiyiheng.png" onmouseover="m_over_m(this,4)" onmouseout="m_out_m()" alt="3" >
+                                            </a>
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>270929次</span></li>
+    <li>积分：<span>8220</span> </li>    
+    <li >等级： <span style="position:relative;display:inline-block;z-index:1" >
+            <img src="http://c.csdnimg.cn/jifen/images/xunzhang/jianzhang/blog6.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：8220 </div>
+        </span>  </li>
+    <li>排名：<span>第1113名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>146篇</span></li>
+    <li>转载：<span>1篇</span></li>
+    <li>译文：<span>0篇</span></li>
+    <li>评论：<span>1673条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字" /></span>
+        <input id="btnSubmit" type="button" value="搜索" title="search in blog" />
+        <input type="hidden" name="q" id="inputQ" />
+        <input type="hidden" name="t" value="blog" />
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script><div id="panel_Category" class="panel">
+    <ul class="panel_head"><span>博客专栏</span></ul>
+    <ul class="panel_body" id="sp_column">
+    <table cellpadding="0" cellspacing="0"><tr>
+    <td style="padding:10px 10px 0 0;">
+    <a href="http://blog.csdn.net/column/details/java-ssh-zwk.html" target="_blank"><img src="http://avatar.csdn.net/blogpic/20150605212154147.jpg" style="width:75px;height:75px;" /></a>
+    </td>
+    <td style="padding:10px 0; vertical-align:top;">
+    <a href="http://blog.csdn.net/column/details/java-ssh-zwk.html" target="_blank">SSH</a>
+    <p>文章：6篇</p>
+    <span>阅读：12934</span>
+    </td>
+    </tr></table>
+    </ul>
+</div><div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">    
+                 <li>
+                    <a href="/zwk626542417/article/category/1210697" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">导图总结</a><span>(15)</span>
+                </li>
+                 <li>
+                    <a href="/zwk626542417/article/category/1210698" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">生活札记</a><span>(7)</span>
+                </li>
+                 <li>
+                    <a href="/zwk626542417/article/category/1218566" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">机房收费</a><span>(9)</span>
+                </li>
+                 <li>
+                    <a href="/zwk626542417/article/category/1280240" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">软件工程</a><span>(7)</span>
+                </li>
+                 <li>
+                    <a href="/zwk626542417/article/category/1310964" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">UML学习</a><span>(7)</span>
+                </li>
+                 <li>
+                    <a href="/zwk626542417/article/category/1359571" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">编程语言</a><span>(4)</span>
+                </li>
+                 <li>
+                    <a href="/zwk626542417/article/category/1383062" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">设计模式</a><span>(7)</span>
+                </li>
+                 <li>
+                    <a href="/zwk626542417/article/category/1402847" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">架构设计</a><span>(5)</span>
+                </li>
+                 <li>
+                    <a href="/zwk626542417/article/category/1421466" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">VB.NET</a><span>(10)</span>
+                </li>
+                 <li>
+                    <a href="/zwk626542417/article/category/1548009" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">B/S学习</a><span>(25)</span>
+                </li>
+                 <li>
+                    <a href="/zwk626542417/article/category/2167323" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">java学习</a><span>(46)</span>
+                </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list">
+<!--归档统计-->
+<li><a href="/zwk626542417/article/month/2015/08">2015年08月</a><span>(4)</span></li><li><a href="/zwk626542417/article/month/2015/07">2015年07月</a><span>(4)</span></li><li><a href="/zwk626542417/article/month/2015/06">2015年06月</a><span>(5)</span></li><li><a href="/zwk626542417/article/month/2015/05">2015年05月</a><span>(4)</span></li><li><a href="/zwk626542417/article/month/2015/04">2015年04月</a><span>(4)</span></li><li><a href="/zwk626542417/article/month/2015/03">2015年03月</a><span>(4)</span></li><li><a href="/zwk626542417/article/month/2015/02">2015年02月</a><span>(4)</span></li><li><a href="/zwk626542417/article/month/2015/01">2015年01月</a><span>(3)</span></li><li><a href="/zwk626542417/article/month/2014/12">2014年12月</a><span>(4)</span></li><li><a href="/zwk626542417/article/month/2014/11">2014年11月</a><span>(4)</span></li><li><a href="/zwk626542417/article/month/2014/09">2014年09月</a><span>(4)</span></li><li><a href="/zwk626542417/article/month/2014/08">2014年08月</a><span>(4)</span></li><li><a href="/zwk626542417/article/month/2014/07">2014年07月</a><span>(2)</span></li><li><a href="/zwk626542417/article/month/2014/06">2014年06月</a><span>(2)</span></li><li><a href="/zwk626542417/article/month/2014/05">2014年05月</a><span>(1)</span></li><li><a href="/zwk626542417/article/month/2014/04">2014年04月</a><span>(2)</span></li><li><a href="/zwk626542417/article/month/2014/03">2014年03月</a><span>(3)</span></li><li><a href="/zwk626542417/article/month/2014/02">2014年02月</a><span>(2)</span></li><li><a href="/zwk626542417/article/month/2014/01">2014年01月</a><span>(4)</span></li><li><a href="/zwk626542417/article/month/2013/12">2013年12月</a><span>(4)</span></li><li><a href="/zwk626542417/article/month/2013/11">2013年11月</a><span>(5)</span></li><li><a href="/zwk626542417/article/month/2013/10">2013年10月</a><span>(2)</span></li><li><a href="/zwk626542417/article/month/2013/09">2013年09月</a><span>(2)</span></li><li><a href="/zwk626542417/article/month/2013/08">2013年08月</a><span>(5)</span></li><li><a href="/zwk626542417/article/month/2013/07">2013年07月</a><span>(3)</span></li><li><a href="/zwk626542417/article/month/2013/06">2013年06月</a><span>(5)</span></li><li><a href="/zwk626542417/article/month/2013/05">2013年05月</a><span>(5)</span></li><li><a href="/zwk626542417/article/month/2013/04">2013年04月</a><span>(9)</span></li><li><a href="/zwk626542417/article/month/2013/03">2013年03月</a><span>(2)</span></li><li><a href="/zwk626542417/article/month/2013/02">2013年02月</a><span>(4)</span></li><li><a href="/zwk626542417/article/month/2013/01">2013年01月</a><span>(4)</span></li><li><a href="/zwk626542417/article/month/2012/12">2012年12月</a><span>(4)</span></li><li><a href="/zwk626542417/article/month/2012/11">2012年11月</a><span>(4)</span></li><li><a href="/zwk626542417/article/month/2012/10">2012年10月</a><span>(5)</span></li><li><a href="/zwk626542417/article/month/2012/09">2012年09月</a><span>(2)</span></li><li><a href="/zwk626542417/article/month/2012/08">2012年08月</a><span>(18)</span></li>
+</div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="/zwk626542417/article/details/18839909" title="项目总结—jQuery EasyUI-DataGrid有参数查询">项目总结—jQuery EasyUI-DataGrid有参数查询</a><span>(20741)</span>
+</li>
+<li>
+<a href="/zwk626542417/article/details/39667999" title="Oracle错误——ORA-03113:通信通道的文件结尾 解决办法">Oracle错误——ORA-03113:通信通道的文件结尾 解决办法</a><span>(15604)</span>
+</li>
+<li>
+<a href="/zwk626542417/article/details/9796259" title="一看就会之—利用IIS服务发布网站（实践篇）上">一看就会之—利用IIS服务发布网站（实践篇）上</a><span>(12090)</span>
+</li>
+<li>
+<a href="/zwk626542417/article/details/18839349" title="项目总结—jQuery EasyUI- DataGrid使用">项目总结—jQuery EasyUI- DataGrid使用</a><span>(11605)</span>
+</li>
+<li>
+<a href="/zwk626542417/article/details/7891765" title="解决SQL Server 连接服务器 错误2">解决SQL Server 连接服务器 错误2</a><span>(9851)</span>
+</li>
+<li>
+<a href="/zwk626542417/article/details/19248747" title="项目总结—jQuery EasyUI-DataGrid动态加载表头">项目总结—jQuery EasyUI-DataGrid动态加载表头</a><span>(8868)</span>
+</li>
+<li>
+<a href="/zwk626542417/article/details/43150047" title="Java +EasyUI+SpringMvc实现Excle导入导出(上)">Java +EasyUI+SpringMvc实现Excle导入导出(上)</a><span>(7782)</span>
+</li>
+<li>
+<a href="/zwk626542417/article/details/35555531" title="Oracle使用——PLSQL的中文乱码显示全是问号">Oracle使用——PLSQL的中文乱码显示全是问号</a><span>(6316)</span>
+</li>
+<li>
+<a href="/zwk626542417/article/details/34863103" title="Eclipse（MyEclipse）使用技巧——修改注释字体大小">Eclipse（MyEclipse）使用技巧——修改注释字体大小</a><span>(5969)</span>
+</li>
+<li>
+<a href="/zwk626542417/article/details/38815667" title="Java Drp项目实战——Web应用服务器">Java Drp项目实战——Web应用服务器</a><span>(5803)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="/zwk626542417/article/details/9665151" title="相见恨晚之—SQLHelper">相见恨晚之—SQLHelper</a><span>(72)</span>
+</li>
+<li>
+<a href="/zwk626542417/article/details/9850107" title="html入门之—一天快速掌握">html入门之—一天快速掌握</a><span>(52)</span>
+</li>
+<li>
+<a href="/zwk626542417/article/details/19249229" title="项目总结—jQuery EasyUI-DataGrid 拼表及查看详情">项目总结—jQuery EasyUI-DataGrid 拼表及查看详情</a><span>(48)</span>
+</li>
+<li>
+<a href="/zwk626542417/article/details/20630385" title="PB9核心之——数据窗口对象使用">PB9核心之——数据窗口对象使用</a><span>(41)</span>
+</li>
+<li>
+<a href="/zwk626542417/article/details/9815191" title="行动下移篇之——aspnetpager分页控件">行动下移篇之——aspnetpager分页控件</a><span>(38)</span>
+</li>
+<li>
+<a href="/zwk626542417/article/details/9796259" title="一看就会之—利用IIS服务发布网站（实践篇）上">一看就会之—利用IIS服务发布网站（实践篇）上</a><span>(36)</span>
+</li>
+<li>
+<a href="/zwk626542417/article/details/9817409" title="C/S与B/S谁与争锋之我见">C/S与B/S谁与争锋之我见</a><span>(34)</span>
+</li>
+<li>
+<a href="/zwk626542417/article/details/15339353" title="JavaScript学习篇之——面向对象">JavaScript学习篇之——面向对象</a><span>(28)</span>
+</li>
+<li>
+<a href="/zwk626542417/article/details/15028615" title="JavaScript学习篇之——初始JavaScript">JavaScript学习篇之——初始JavaScript</a><span>(28)</span>
+</li>
+<li>
+<a href="/zwk626542417/article/details/19502169" title="2014我准备好了">2014我准备好了</a><span>(28)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend"></ul>
+</div>
+<script type="text/javascript">
+ new Ad(12, 'ad_commend');
+</script>    </div>
+    <div class="clear">
+    </div>
+ </div>   
+            <div class="clear">
+            </div>
+        </div>
+        
+
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/cnick/cnick.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="http://medal.blog.csdn.net/showblogmedal.ashx?blogid=1175410"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/JavaScript1.js"></script>
+
+    <script type="text/javascript" src="http://passport.csdn.net/content/loginbox/login.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script>
+<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+<script type="text/javascript" src="http://ad.csdn.net/scripts/ad-blog.js"></script>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a>"
+                    + "<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+    });
+</script>
+
+
+
+
+    </div>
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://static.csdn.net/public/common/toolbar/js/toolbar.js"></script>     <!--new top-->
+   
+    <link href="http://c.csdnimg.cn/comm_ask/css/ask_float_block.css" type="text/css" rel="stylesheet" />
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/wmd.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/showdown.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/prettify.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/apps/ask_float_block.js'></script>
+   
+</body>
+</html>   
+ 

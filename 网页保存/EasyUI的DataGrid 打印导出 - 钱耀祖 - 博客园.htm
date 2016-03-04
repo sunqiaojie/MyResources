@@ -1,0 +1,379 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>EasyUI的DataGrid 打印导出 - 钱耀祖 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=62IP_0cEz3HhbrLfyt0yP7LqLTBi71fpE28OaYc_AIs1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/coffee/bundle-coffee.css?v=H7P3zU3_M529NtLVh9kKULJaZLDGv9Qz_L_VdgyN1P41"/>
+<link type="text/css" rel="stylesheet" href="/blog/customcss/139984.css?v=8LwQrX1iNHc0J7gxHJotlS%2b7Ot4%3d"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/qyzBlog/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/qyzBlog/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/qyzBlog/wlwmanifest.xml"/>
+<script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'qyzBlog', cb_enable_mathjax=false;</script>
+<script src="/bundles/blog-common.js?v=0q3N7bpnLK57cw_uM7DrZa8bhyXSj2QpgEfOllvBxSo1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/qyzBlog/"><img id="blogLogo" src="/Skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/qyzBlog/">钱耀祖</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="navigator">
+			
+<!--done-->
+			<ul id="navList">
+				<li><a id="MyLinks1_HomeLink" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+				<li><a id="MyLinks1_IngLink" class="menu" href="http://home.cnblogs.com/ing/">闪存</a></li>
+				<li><a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/qyzBlog/">首页</a></li>
+				<li><a id="MyLinks1_NewPostLink" class="menu" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+				<li><a id="MyLinks1_ContactLink" accesskey="9" class="menu" rel="nofollow" href="http://msg.cnblogs.com/send/%E9%92%B1%E8%80%80%E7%A5%96">联系</a></li>
+				<li><a id="MyLinks1_Admin" class="menu" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+				<li><a id="MyLinks1_Syndication" class="menu" href="http://www.cnblogs.com/qyzBlog/rss">订阅</a>
+				<a id="MyLinks1_XMLLink" class="aHeaderXML" href="http://www.cnblogs.com/qyzBlog/rss"><img src="http://www.cnblogs.com/images/xml.gif" alt="订阅" /></a></li>
+			</ul>
+
+
+			<div class="blogStats">
+				
+				
+<!--done-->
+随笔- 14&nbsp;
+文章- 0&nbsp;
+评论- 18&nbsp;
+
+				
+			</div><!--end: blogStats -->
+		</div><!--end: navigator 博客导航栏 -->
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/qyzBlog/p/3410741.html">EasyUI的DataGrid 打印导出</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p>一直在Winform和WPF的项目，偶尔接触Web都是网上下个模板修修改改就成了，学习的不太深入。</p>
+<p>今日遇到一个打印导出datagrid的问题，做桌面项目的打印导出通常我都是直接将数据源拿过来放到我的打印导出模块直接就出来了，但是在web上没有积累，特别是用了EasyUI的DataGrid,一时不知道如何是好。</p>
+<p>遂度娘一翻找到如下解决方案：</p>
+<p>1.打印部分</p>
+<p>　　新增print.js</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('c47f72b4-e713-4a97-a44b-681e86688e29')"><img id="code_img_closed_c47f72b4-e713-4a97-a44b-681e86688e29" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_c47f72b4-e713-4a97-a44b-681e86688e29" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('c47f72b4-e713-4a97-a44b-681e86688e29',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_c47f72b4-e713-4a97-a44b-681e86688e29" class="cnblogs_code_hide">
+<pre><span style="color: #008000;">//</span><span style="color: #008000;"> strPrintName 打印任务名</span><span style="color: #008000;">
+//</span><span style="color: #008000;"> printDatagrid 要打印的datagrid</span>
+<span style="color: #0000ff;">function</span><span style="color: #000000;"> CreateFormPage(strPrintName, printDatagrid) {
+    </span><span style="color: #0000ff;">var</span> tableString = '&lt;table cellspacing="0" class="pb"&gt;'<span style="color: #000000;">;
+    </span><span style="color: #0000ff;">var</span> frozenColumns = printDatagrid.datagrid("options").frozenColumns;  <span style="color: #008000;">//</span><span style="color: #008000;"> 得到frozenColumns对象</span>
+    <span style="color: #0000ff;">var</span> columns = printDatagrid.datagrid("options").columns;    <span style="color: #008000;">//</span><span style="color: #008000;"> 得到columns对象</span>
+    <span style="color: #0000ff;">var</span> nameList = ''<span style="color: #000000;">;
+
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> 载入title</span>
+    <span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">typeof</span> columns != 'undefined' &amp;&amp; columns != ''<span style="color: #000000;">) {
+        $(columns).each(</span><span style="color: #0000ff;">function</span><span style="color: #000000;"> (index) {
+            tableString </span>+= '\n&lt;tr&gt;'<span style="color: #000000;">;
+            </span><span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">typeof</span> frozenColumns != 'undefined' &amp;&amp; <span style="color: #0000ff;">typeof</span> frozenColumns[index] != 'undefined'<span style="color: #000000;">) {
+                </span><span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">var</span> i = 0; i &lt; frozenColumns[index].length; ++<span style="color: #000000;">i) {
+                    </span><span style="color: #0000ff;">if</span> (!<span style="color: #000000;">frozenColumns[index][i].hidden) {
+                        tableString </span>+= '\n&lt;th width="' + frozenColumns[index][i].width + '"'<span style="color: #000000;">;
+                        </span><span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">typeof</span> frozenColumns[index][i].rowspan != 'undefined' &amp;&amp; frozenColumns[index][i].rowspan &gt; 1<span style="color: #000000;">) {
+                            tableString </span>+= ' rowspan="' + frozenColumns[index][i].rowspan + '"'<span style="color: #000000;">;
+                        }
+                        </span><span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">typeof</span> frozenColumns[index][i].colspan != 'undefined' &amp;&amp; frozenColumns[index][i].colspan &gt; 1<span style="color: #000000;">) {
+                            tableString </span>+= ' colspan="' + frozenColumns[index][i].colspan + '"'<span style="color: #000000;">;
+                        }
+                        </span><span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">typeof</span> frozenColumns[index][i].field != 'undefined' &amp;&amp; frozenColumns[index][i].field != ''<span style="color: #000000;">) {
+                            nameList </span>+= ',{"f":"' + frozenColumns[index][i].field + '", "a":"' + frozenColumns[index][i].align + '"}'<span style="color: #000000;">;
+                        }
+                        tableString </span>+= '&gt;' + frozenColumns[0][i].title + '&lt;/th&gt;'<span style="color: #000000;">;
+                    }
+                }
+            }
+            </span><span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">var</span> i = 0; i &lt; columns[index].length; ++<span style="color: #000000;">i) {
+                </span><span style="color: #0000ff;">if</span> (!<span style="color: #000000;">columns[index][i].hidden) {
+                    tableString </span>+= '\n&lt;th width="' + columns[index][i].width + '"'<span style="color: #000000;">;
+                    </span><span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">typeof</span> columns[index][i].rowspan != 'undefined' &amp;&amp; columns[index][i].rowspan &gt; 1<span style="color: #000000;">) {
+                        tableString </span>+= ' rowspan="' + columns[index][i].rowspan + '"'<span style="color: #000000;">;
+                    }
+                    </span><span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">typeof</span> columns[index][i].colspan != 'undefined' &amp;&amp; columns[index][i].colspan &gt; 1<span style="color: #000000;">) {
+                        tableString </span>+= ' colspan="' + columns[index][i].colspan + '"'<span style="color: #000000;">;
+                    }
+                    </span><span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">typeof</span> columns[index][i].field != 'undefined' &amp;&amp; columns[index][i].field != ''<span style="color: #000000;">) {
+                        nameList </span>+= ',{"f":"' + columns[index][i].field + '", "a":"' + columns[index][i].align + '"}'<span style="color: #000000;">;
+                    }
+                    tableString </span>+= '&gt;' + columns[index][i].title + '&lt;/th&gt;'<span style="color: #000000;">;
+                }
+            }
+            tableString </span>+= '\n&lt;/tr&gt;'<span style="color: #000000;">;
+        });
+    }
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> 载入内容</span>
+    <span style="color: #0000ff;">var</span> rows = printDatagrid.datagrid("getRows"); <span style="color: #008000;">//</span><span style="color: #008000;"> 这段代码是获取当前页的所有行</span>
+    <span style="color: #0000ff;">var</span> nl = eval('([' + nameList.substring(1) + '])'<span style="color: #000000;">);
+    </span><span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">var</span> i = 0; i &lt; rows.length; ++<span style="color: #000000;">i) {
+        tableString </span>+= '\n&lt;tr&gt;'<span style="color: #000000;">;
+        $(nl).each(</span><span style="color: #0000ff;">function</span><span style="color: #000000;"> (j) {
+            </span><span style="color: #0000ff;">var</span> e = nl[j].f.lastIndexOf('_0'<span style="color: #000000;">);
+
+            tableString </span>+= '\n&lt;td'<span style="color: #000000;">;
+            </span><span style="color: #0000ff;">if</span> (nl[j].a != 'undefined' &amp;&amp; nl[j].a != ''<span style="color: #000000;">) {
+                tableString </span>+= ' style="text-align:' + nl[j].a + ';"'<span style="color: #000000;">;
+            }
+            tableString </span>+= '&gt;'<span style="color: #000000;">;
+            </span><span style="color: #0000ff;">if</span> (e + 2 ==<span style="color: #000000;"> nl[j].f.length) {
+                tableString </span>+= rows[i][nl[j].f.substring(0<span style="color: #000000;">, e)];
+            }
+            </span><span style="color: #0000ff;">else</span><span style="color: #000000;">
+                tableString </span>+=<span style="color: #000000;"> rows[i][nl[j].f];
+            tableString </span>+= '&lt;/td&gt;'<span style="color: #000000;">;
+        });
+        tableString </span>+= '\n&lt;/tr&gt;'<span style="color: #000000;">;
+    }
+    tableString </span>+= '\n&lt;/table&gt;'<span style="color: #000000;">; 
+    window.showModalDialog(</span>"print.htm"<span style="color: #000000;">, tableString,
+    </span>"location:No;status:No;help:No;dialogWidth:800px;dialogHeight:600px;scroll:auto;"<span style="color: #000000;">);
+}</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code </span></div>
+<p>　　新增print.htm</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('4261fc1e-2402-4514-b0cb-24e3777f5f00')"><img id="code_img_closed_4261fc1e-2402-4514-b0cb-24e3777f5f00" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_4261fc1e-2402-4514-b0cb-24e3777f5f00" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('4261fc1e-2402-4514-b0cb-24e3777f5f00',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_4261fc1e-2402-4514-b0cb-24e3777f5f00" class="cnblogs_code_hide">
+<pre><span style="color: #0000ff;">&lt;!</span><span style="color: #ff00ff;">DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">html </span><span style="color: #ff0000;">xmlns</span><span style="color: #0000ff;">="http://www.w3.org/1999/xhtml"</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">head</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">title</span><span style="color: #0000ff;">&gt;</span>数据打印<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">title</span><span style="color: #0000ff;">&gt;</span>
+    
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">style </span><span style="color: #ff0000;">type</span><span style="color: #0000ff;">="text/css"</span><span style="color: #0000ff;">&gt;</span><span style="background-color: #f5f5f5; color: #800000;">
+    body</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">background</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;">white</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">margin</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;">0px</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">padding</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;">0px</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">font-size</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;">13px</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">text-align</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;">left</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+.pb</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">font-size</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;">13px</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">border-collapse</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;">collapse</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+.pb th</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">font-weight</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;">bold</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">text-align</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;">center</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">border</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;">1px solid #333333</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">padding</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;">2px</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #000000;">}</span><span style="background-color: #f5f5f5; color: #800000;">
+.pb td</span><span style="background-color: #f5f5f5; color: #000000;">{</span><span style="background-color: #f5f5f5; color: #ff0000;">border</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;">1px solid #333333</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #ff0000;">padding</span><span style="background-color: #f5f5f5; color: #000000;">:</span><span style="background-color: #f5f5f5; color: #0000ff;">2px</span><span style="background-color: #f5f5f5; color: #000000;">;</span><span style="background-color: #f5f5f5; color: #000000;">}</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">style</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">head</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span>
+    <span style="color: #0000ff;">&lt;</span><span style="color: #800000;">script </span><span style="color: #ff0000;">type</span><span style="color: #0000ff;">="text/javascript"</span><span style="color: #0000ff;">&gt;</span><span style="background-color: #f5f5f5; color: #000000;">
+        document.write(window.dialogArguments);
+        window.print();
+    </span><span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">script</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">body</span><span style="color: #0000ff;">&gt;</span>
+<span style="color: #0000ff;">&lt;/</span><span style="color: #800000;">html</span><span style="color: #0000ff;">&gt;</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code </span></div>
+<p>　　页面引用print.js并调用</p>
+<div class="cnblogs_code">
+<pre>CreateFormPage("datagrid",$("#dg"));</pre>
+</div>
+<p>2.导出部分</p>
+<p>　　新增export.js</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('a2334241-a107-41d4-816e-67f8db969ede')"><img id="code_img_closed_a2334241-a107-41d4-816e-67f8db969ede" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_a2334241-a107-41d4-816e-67f8db969ede" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('a2334241-a107-41d4-816e-67f8db969ede',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_a2334241-a107-41d4-816e-67f8db969ede" class="cnblogs_code_hide">
+<pre><span style="color: #0000ff;">function</span><span style="color: #000000;"> ChangeToTable(printDatagrid) {
+    </span><span style="color: #0000ff;">var</span> tableString = '&lt;table cellspacing="0" class="pb"&gt;'<span style="color: #000000;">;
+    </span><span style="color: #0000ff;">var</span> frozenColumns = printDatagrid.datagrid("options").frozenColumns;  <span style="color: #008000;">//</span><span style="color: #008000;"> 得到frozenColumns对象</span>
+    <span style="color: #0000ff;">var</span> columns = printDatagrid.datagrid("options").columns;    <span style="color: #008000;">//</span><span style="color: #008000;"> 得到columns对象</span>
+    <span style="color: #0000ff;">var</span> nameList = <span style="color: #0000ff;">new</span><span style="color: #000000;"> Array();
+
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> 载入title</span>
+    <span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">typeof</span> columns != 'undefined' &amp;&amp; columns != ''<span style="color: #000000;">) {
+        $(columns).each(</span><span style="color: #0000ff;">function</span><span style="color: #000000;"> (index) {
+            tableString </span>+= '\n&lt;tr&gt;'<span style="color: #000000;">;
+            </span><span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">typeof</span> frozenColumns != 'undefined' &amp;&amp; <span style="color: #0000ff;">typeof</span> frozenColumns[index] != 'undefined'<span style="color: #000000;">) {
+                </span><span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">var</span> i = 0; i &lt; frozenColumns[index].length; ++<span style="color: #000000;">i) {
+                    </span><span style="color: #0000ff;">if</span> (!<span style="color: #000000;">frozenColumns[index][i].hidden) {
+                        tableString </span>+= '\n&lt;th width="' + frozenColumns[index][i].width + '"'<span style="color: #000000;">;
+                        </span><span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">typeof</span> frozenColumns[index][i].rowspan != 'undefined' &amp;&amp; frozenColumns[index][i].rowspan &gt; 1<span style="color: #000000;">) {
+                            tableString </span>+= ' rowspan="' + frozenColumns[index][i].rowspan + '"'<span style="color: #000000;">;
+                        }
+                        </span><span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">typeof</span> frozenColumns[index][i].colspan != 'undefined' &amp;&amp; frozenColumns[index][i].colspan &gt; 1<span style="color: #000000;">) {
+                            tableString </span>+= ' colspan="' + frozenColumns[index][i].colspan + '"'<span style="color: #000000;">;
+                        }
+                        </span><span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">typeof</span> frozenColumns[index][i].field != 'undefined' &amp;&amp; frozenColumns[index][i].field != ''<span style="color: #000000;">) {
+                            nameList.push(frozenColumns[index][i]);
+                        }
+                        tableString </span>+= '&gt;' + frozenColumns[0][i].title + '&lt;/th&gt;'<span style="color: #000000;">;
+                    }
+                }
+            }
+            </span><span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">var</span> i = 0; i &lt; columns[index].length; ++<span style="color: #000000;">i) {
+                </span><span style="color: #0000ff;">if</span> (!<span style="color: #000000;">columns[index][i].hidden) {
+                    tableString </span>+= '\n&lt;th width="' + columns[index][i].width + '"'<span style="color: #000000;">;
+                    </span><span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">typeof</span> columns[index][i].rowspan != 'undefined' &amp;&amp; columns[index][i].rowspan &gt; 1<span style="color: #000000;">) {
+                        tableString </span>+= ' rowspan="' + columns[index][i].rowspan + '"'<span style="color: #000000;">;
+                    }
+                    </span><span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">typeof</span> columns[index][i].colspan != 'undefined' &amp;&amp; columns[index][i].colspan &gt; 1<span style="color: #000000;">) {
+                        tableString </span>+= ' colspan="' + columns[index][i].colspan + '"'<span style="color: #000000;">;
+                    }
+                    </span><span style="color: #0000ff;">if</span> (<span style="color: #0000ff;">typeof</span> columns[index][i].field != 'undefined' &amp;&amp; columns[index][i].field != ''<span style="color: #000000;">) {
+                        nameList.push(columns[index][i]);
+                    }
+                    tableString </span>+= '&gt;' + columns[index][i].title + '&lt;/th&gt;'<span style="color: #000000;">;
+                }
+            }
+            tableString </span>+= '\n&lt;/tr&gt;'<span style="color: #000000;">;
+        });
+    }
+    </span><span style="color: #008000;">//</span><span style="color: #008000;"> 载入内容</span>
+    <span style="color: #0000ff;">var</span> rows = printDatagrid.datagrid("getRows"); <span style="color: #008000;">//</span><span style="color: #008000;"> 这段代码是获取当前页的所有行</span>
+    <span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">var</span> i = 0; i &lt; rows.length; ++<span style="color: #000000;">i) {
+        tableString </span>+= '\n&lt;tr&gt;'<span style="color: #000000;">;
+        </span><span style="color: #0000ff;">for</span> (<span style="color: #0000ff;">var</span> j = 0; j &lt; nameList.length; ++<span style="color: #000000;">j) {
+            </span><span style="color: #0000ff;">var</span> e = nameList[j].field.lastIndexOf('_0'<span style="color: #000000;">);
+
+            tableString </span>+= '\n&lt;td'<span style="color: #000000;">;
+            </span><span style="color: #0000ff;">if</span> (nameList[j].align != 'undefined' &amp;&amp; nameList[j].align != ''<span style="color: #000000;">) {
+                tableString </span>+= ' style="text-align:' + nameList[j].align + ';"'<span style="color: #000000;">;
+            }
+            tableString </span>+= '&gt;'<span style="color: #000000;">;
+            </span><span style="color: #0000ff;">if</span> (e + 2 ==<span style="color: #000000;"> nameList[j].field.length) {
+                tableString </span>+= rows[i][nameList[j].field.substring(0<span style="color: #000000;">, e)];
+            }
+            </span><span style="color: #0000ff;">else</span><span style="color: #000000;">
+                tableString </span>+=<span style="color: #000000;"> rows[i][nameList[j].field];
+            tableString </span>+= '&lt;/td&gt;'<span style="color: #000000;">;
+        }
+        tableString </span>+= '\n&lt;/tr&gt;'<span style="color: #000000;">;
+    }
+    tableString </span>+= '\n&lt;/table&gt;'<span style="color: #000000;">;
+    </span><span style="color: #0000ff;">return</span><span style="color: #000000;"> tableString;
+}
+
+</span><span style="color: #0000ff;">function</span><span style="color: #000000;"> Export(strXlsName, exportGrid) {
+    </span><span style="color: #0000ff;">var</span> f = $('&lt;form action="export.aspx" method="post" id="fm1"&gt;&lt;/form&gt;'<span style="color: #000000;">);
+    </span><span style="color: #0000ff;">var</span> i = $('&lt;input type="hidden" id="txtContent" name="txtContent" /&gt;'<span style="color: #000000;">);
+    </span><span style="color: #0000ff;">var</span> l = $('&lt;input type="hidden" id="txtName" name="txtName" /&gt;'<span style="color: #000000;">);
+    i.val(ChangeToTable(exportGrid));
+    i.appendTo(f);
+    l.val(strXlsName);
+    l.appendTo(f);
+    f.appendTo(document.body).submit();
+   </span><span style="color: #0000ff;">try</span><span style="color: #000000;">{
+    document.body.removeChild(f);}</span><span style="color: #0000ff;">catch</span><span style="color: #000000;">(e){}
+}</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code </span></div>
+<p>　　新增export.aspx后台</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('0d8c36c0-63e1-41b6-9316-8497be8ff9c3')"><img id="code_img_closed_0d8c36c0-63e1-41b6-9316-8497be8ff9c3" class="code_img_closed" src="http://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" alt="" /><img id="code_img_opened_0d8c36c0-63e1-41b6-9316-8497be8ff9c3" class="code_img_opened" style="display: none;" onclick="cnblogs_code_hide('0d8c36c0-63e1-41b6-9316-8497be8ff9c3',event)" src="http://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" alt="" />
+<div id="cnblogs_code_open_0d8c36c0-63e1-41b6-9316-8497be8ff9c3" class="cnblogs_code_hide">
+<pre> <span style="color: #0000ff;">protected</span> <span style="color: #0000ff;">void</span> Page_Load(<span style="color: #0000ff;">object</span><span style="color: #000000;"> sender, EventArgs e)
+    {
+        Response.Clear();
+        Response.Buffer </span>= <span style="color: #0000ff;">true</span><span style="color: #000000;">;
+        Response.Charset </span>= <span style="color: #800000;">"</span><span style="color: #800000;">utf-8</span><span style="color: #800000;">"</span><span style="color: #000000;">;
+        Response.ContentEncoding </span>=<span style="color: #000000;"> System.Text.Encoding.UTF8;
+        Response.AppendHeader(</span><span style="color: #800000;">"</span><span style="color: #800000;">content-disposition</span><span style="color: #800000;">"</span>, <span style="color: #800000;">"</span><span style="color: #800000;">attachment;filename=\"</span><span style="color: #800000;">"</span> + HttpUtility.HtmlEncode(Request[<span style="color: #800000;">"</span><span style="color: #800000;">txtName</span><span style="color: #800000;">"</span>] ?? DateTime.Now.ToString(<span style="color: #800000;">"</span><span style="color: #800000;">yyyyMMdd</span><span style="color: #800000;">"</span>)) + <span style="color: #800000;">"</span><span style="color: #800000;">.xls\"</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+        Response.ContentType </span>= <span style="color: #800000;">"</span><span style="color: #800000;">Application/ms-excel</span><span style="color: #800000;">"</span><span style="color: #000000;">;
+        Response.Write(</span><span style="color: #800000;">"</span><span style="color: #800000;">&lt;html&gt;\n&lt;head&gt;\n</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+        Response.Write(</span><span style="color: #800000;">"</span><span style="color: #800000;">&lt;style type=\"text/css\"&gt;\n.pb{font-size:13px;border-collapse:collapse;} </span><span style="color: #800000;">"</span> +
+                       <span style="color: #800000;">"</span><span style="color: #800000;">\n.pb th{font-weight:bold;text-align:center;border:0.5pt solid windowtext;padding:2px;} </span><span style="color: #800000;">"</span> +
+                       <span style="color: #800000;">"</span><span style="color: #800000;">\n.pb td{border:0.5pt solid windowtext;padding:2px;}\n&lt;/style&gt;\n&lt;/head&gt;\n</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+        Response.Write(</span><span style="color: #800000;">"</span><span style="color: #800000;">&lt;body&gt;\n</span><span style="color: #800000;">"</span> + Request[<span style="color: #800000;">"</span><span style="color: #800000;">txtContent</span><span style="color: #800000;">"</span>] + <span style="color: #800000;">"</span><span style="color: #800000;">\n&lt;/body&gt;\n&lt;/html&gt;</span><span style="color: #800000;">"</span><span style="color: #000000;">);
+        Response.Flush();
+        Response.End();
+    }</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code </span></div>
+<p>　　export.aspx前台仅保留</p>
+<div class="cnblogs_code" onclick="cnblogs_code_show('5675d1c1-9246-4513-85a8-026475bb5b88')">&lt;%@ Page Language="C#" AutoEventWireup="true" CodeFile="export.aspx.cs" Inherits="export" %&gt;</div>
+<p>　　页面引用export.js并调用</p>
+<div class="cnblogs_code">
+<pre>Export('outputexcel', $('#dg'));</pre>
+</div>
+<p>到此我的打印导出功能已经完成，但是有个问题EasyUI1.3.4不支持IE8，这肿么行！果断换到1.3.2版本测试没有问题。做web没多久深感IE浏览器兼容性问题太烦，真是各家做各家的产品！让人不敢踏入Web界啊。</p>
+<p>第一次自己写博客，感谢大家来捧场，谢谢</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2013-11-06 15:55</span> <a href='http://www.cnblogs.com/qyzBlog/'>钱耀祖</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="http://i.cnblogs.com/EditPosts.aspx?postid=3410741" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(3410741);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=139984,cb_entryId=3410741,cb_blogApp=currentBlogApp,cb_blogUserGuid='07c260aa-2b51-e111-aa3f-842b2b196315',cb_entryCreatedDate='2013/11/6 15:55:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.cnblogs.com/" target="_blank" title="开发者的网上家园">博客园首页</a><a href="http://q.cnblogs.com/" target="_blank" title="程序员问答社区">博问</a><a href="http://news.cnblogs.com/" target="_blank" title="IT新闻">新闻</a><a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a><a href="http://job.cnblogs.com/" target="_blank">程序员招聘</a><a href="http://kb.cnblogs.com/" target="_blank">知识库</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    var enableGoogleAd = canShowAdsense(); 
+    fixPostBodyFormat();
+</script>
+<div id="google_ad_c1" class="c_ad_block"></div>
+<div id="under_post_news"></div>
+<div id="google_ad_c2" class="c_ad_block"></div>
+<div id="under_post_kb"></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+</script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<DIV id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</DIV>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2015 钱耀祖
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+</body>
+</html>

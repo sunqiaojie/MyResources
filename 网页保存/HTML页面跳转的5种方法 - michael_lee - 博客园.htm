@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<title>HTML页面跳转的5种方法 - michael_lee - 博客园</title>
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=VpfXXGDfdkCz7-E0_XQ205E77kSNAF0FnyWpIgmGioM1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/ThinkInside/bundle-ThinkInside.css?v=RRjf6pEarGnbXZ86qxNycPfQivwSKWRa4heYLB15rVE1"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/aszx0413/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/aszx0413/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/aszx0413/wlwmanifest.xml"/>
+<script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'aszx0413', cb_enable_mathjax=false;</script>
+<script src="/bundles/blog-common.js?v=KJbWl4pDSR547B6rgxi3B-dDHKVpKi8xHNL9Qhc1rkk1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/aszx0413/"><img id="blogLogo" src="/Skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/aszx0413/">Liner's ItEr</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="MyLinks1_HomeLink" class="menu" href="http://www.cnblogs.com/">博客园</a></li>
+<li><a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/aszx0413/">首页</a></li>
+<li><a id="MyLinks1_NewPostLink" class="menu" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="MyLinks1_ContactLink" class="menu" rel="nofollow" href="http://msg.cnblogs.com/send/michael_lee">联系</a></li>
+<li><a id="MyLinks1_Syndication" class="menu" href="http://www.cnblogs.com/aszx0413/rss">订阅</a>
+<!--<a id="MyLinks1_XMLLink" class="aHeaderXML" href="http://www.cnblogs.com/aszx0413/rss"><img src="http://www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="MyLinks1_Admin" class="menu" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			
+<!--done-->
+随笔- 4&nbsp;
+文章- 19&nbsp;
+评论- 4&nbsp;
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/aszx0413/articles/1886819.html">HTML页面跳转的5种方法</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p><span style="font-size: 10pt;">下面列了五个例子来详细说明，这几个例子的主要功能是：在5秒后，自动跳转到同目录下的hello.html（根据自己需要自行修改）文件。</span><br /><strong><span style="font-size: 10pt;">1) html的实现</span></strong></p>
+<p><strong><span style="font-size: 10pt;">&nbsp;</span></strong></p>
+<p><span style="font-size: 10pt;">
+</span></p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:html">&lt;head&gt;
+&lt;!-- 以下方式只是刷新不跳转到其他页面 --&gt;
+&lt;meta http-equiv="refresh" content="10"&gt;
+&lt;!-- 以下方式定时转到其他页面 --&gt;
+&lt;meta http-equiv="refresh" content="5;url=hello.html"&gt; 
+&lt;/head&gt;
+</pre>
+</div>
+<p>
+<span style="font-size: 10pt;">优点：简单</span><br /><span style="font-size: 10pt;">缺点：Struts Tiles中无法使用</span></p>
+<p>&nbsp;</p>
+<p><strong><span style="font-size: 10pt;">2) javascript的实现</span></strong></p>
+<p>&nbsp;</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:javascript">&lt;script language="javascript" type="text/javascript"&gt; 
+// 以下方式直接跳转
+window.location.href='hello.html';
+// 以下方式定时跳转
+setTimeout("javascript:location.href='hello.html'", 5000); 
+&lt;/script&gt;
+</pre>
+</div>
+<p><span style="font-size: 10pt;">优点：灵活，可以结合更多的其他功能</span><br /><span style="font-size: 10pt;">缺点：受到不同浏览器的影响</span><br /><strong><span style="font-size: 10pt;">3) 结合了倒数的javascript实现（IE）</span></strong></p>
+<p>&nbsp;</p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:html">&lt;span id="totalSecond"&gt;5&lt;/span&gt;
+&lt;script language="javascript" type="text/javascript"&gt; 
+var second = totalSecond.innerText; 
+setInterval("redirect()", 1000); 
+function redirect(){ 
+totalSecond.innerText=--second; 
+if(second&lt;0) location.href='hello.html'; 
+} 
+&lt;/script&gt;
+
+</pre>
+</div>
+<p>
+<span style="font-size: 10pt;">优点：更人性化</span><br /><span style="font-size: 10pt;">缺点：firefox不支持（firefox不支持span、div等的innerText属性）</span><br /><strong><span style="font-size: 10pt;">3') 结合了倒数的javascript实现（firefox）</span></strong></p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:javascript">&lt;script language="javascript" type="text/javascript"&gt; 
+var second = document.getElementById('totalSecond').textContent; 
+setInterval("redirect()", 1000); 
+function redirect() 
+{ 
+document.getElementById('totalSecond').textContent = --second; 
+if (second &lt; 0) location.href = 'hello.html'; 
+} 
+&lt;/script&gt;
+
+</pre>
+</div>
+<p><strong><span style="font-size: 10pt;">4) 解决Firefox不支持innerText的问题</span></strong></p>
+<p><strong>
+<div class="cnblogs_Highlighter">
+<pre class="brush:html">&lt;span id="totalSecond"&gt;5&lt;/span&gt;
+&lt;script language="javascript" type="text/javascript"&gt; 
+if(navigator.appName.indexOf("Explorer") &gt; -1){ 
+document.getElementById('totalSecond').innerText = "my text innerText"; 
+} else{ 
+document.getElementById('totalSecond').textContent = "my text textContent"; 
+} 
+&lt;/script&gt;
+</pre>
+</div>
+<span style="font-size: 10pt;">5) 整合3)和3')</span></strong></p>
+<div class="cnblogs_Highlighter">
+<pre class="brush:html">&lt;span id="totalSecond"&gt;5&lt;/span&gt;
+
+&lt;script language="javascript" type="text/javascript"&gt; 
+var second = document.getElementById('totalSecond').textContent; 
+
+if (navigator.appName.indexOf("Explorer") &gt; -1)  { 
+	second = document.getElementById('totalSecond').innerText; 
+} else { 
+	second = document.getElementById('totalSecond').textContent; 
+} 
+
+setInterval("redirect()", 1000); 
+function redirect() { 
+if (second &lt; 0) { 
+	location.href = 'hello.html'; 
+} else { 
+	if (navigator.appName.indexOf("Explorer") &gt; -1) { 
+		document.getElementById('totalSecond').innerText = second--; 
+	} else { 
+		document.getElementById('totalSecond').textContent = second--; 
+	} 
+} 
+} 
+&lt;/script&gt;
+
+</pre>
+</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2010-11-24 17:25</span> <a href='http://www.cnblogs.com/aszx0413/'>michael_lee</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>) &nbsp;<a href="http://i.cnblogs.com/EditArticles.aspx?postid=1886819" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(1886819);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=79471,cb_entryId=1886819,cb_blogApp=currentBlogApp,cb_blogUserGuid='fd02f2a0-caf6-df11-ac81-842b2b196315',cb_entryCreatedDate='2010/11/24 17:25:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.cnblogs.com/" target="_blank" title="开发者的网上家园">博客园首页</a><a href="http://q.cnblogs.com/" target="_blank" title="程序员问答社区">博问</a><a href="http://news.cnblogs.com/" target="_blank" title="IT新闻">新闻</a><a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a><a href="http://job.cnblogs.com/" target="_blank">程序员招聘</a><a href="http://kb.cnblogs.com/" target="_blank">知识库</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    var enableGoogleAd = canShowAdsense(); 
+    fixPostBodyFormat();
+</script>
+<div id="google_ad_c1" class="c_ad_block"></div>
+<div id="under_post_news"></div>
+<div id="google_ad_c2" class="c_ad_block"></div>
+<div id="under_post_kb"></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+</script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2015 michael_lee
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+</body>
+</html>

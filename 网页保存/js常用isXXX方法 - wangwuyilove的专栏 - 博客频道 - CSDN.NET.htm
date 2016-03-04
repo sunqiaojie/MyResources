@@ -1,0 +1,1089 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+     
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>   
+    
+     
+    <script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/tracking.js" charset="utf-8"></script>  
+
+    <script type="text/javascript">
+        var protocol = window.location.protocol;
+        document.write('<script type="text/javascript" src="' + protocol + '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></' + 'script>');
+    </script>
+
+     <script id="allmobilize" charset="utf-8" src="http://a.yunshipei.com/46aae4d1e2371e4aa769798941cef698/allmobilize.min.js"></script>
+ <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+
+    <title>js常用方法 - wangwuyilove的专栏
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="对各位注意到这个帖子的朋友说一声对不起，我不是故意的测试服务器一直没关，一忙就给忘了删了.....如果有管理员看到，可以把这个阅读数什么的清零，谢谢" />
+    <script src="http://static.blog.csdn.net/scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://static.blog.csdn.net/scripts/ad.js?v=1.1"></script>
+        <!--new top-->
+               <link rel="stylesheet" href="http://static.csdn.net/public/common/toolbar/css/index.css">        <!--new top-->
+
+    <link rel="Stylesheet" type="text/css" href="http://static.blog.csdn.net/skin/light_blue/css/style.css?v=1.1" />
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="/wangwuyilove/rss/list" />
+    <link rel="shortcut icon" href="http://c.csdnimg.cn/public/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/default.css" />
+ 
+
+
+</head>
+<body>
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="http://static.csdn.net/public/common/toolbar/js/html.js" type="text/javascript"></script>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/wangwuyilove">wangwuyilove的专栏</a></h2>
+            <h3>写文章的目的是为了自己加深理解和以后的用的时候看看，希望各位大神指点不当之处，让我这个小小菜鸟进一步的学习，谢谢！！</h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+            
+                <li id="btnContents"><a href="http://blog.csdn.net/wangwuyilove?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="http://static.blog.csdn.net/images/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/wangwuyilove?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="http://static.blog.csdn.net/images/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/wangwuyilove/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="http://static.blog.csdn.net/images/ico_rss.gif">订阅</span></a></li>                
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "wangwuyilove";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/wangwuyilove";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod='popu_3' > 
+
+<a href="http://special.csdncms.csdn.net/rust/index.shtml"><font color=red>
+Rust开发技术学习路线</font></a>
+&nbsp;&nbsp;&nbsp;
+  
+
+<a href="http://huiyi.csdn.net/activity/product/goods_list?project_id=2262">
+<font color=blue>专家亲授Hadoop技术，你报名了吗？ 
+</font></a>
+&nbsp;&nbsp;&nbsp;
+
+<a href="http://geek.csdn.net/news/detail/37080">
+<font color=red>【极客头条】动动手，写一篇文章就好
+</font></a>
+&nbsp;&nbsp;&nbsp;
+<a href="http://www.csdn.net/app/">
+<font color=blue>CSDN移动客户端，下载送50C币
+</font></a>
+&nbsp;&nbsp;&nbsp;</div>                        </div>
+                        
+
+  
+<link href="http://static.blog.csdn.net/css/comment1.css" type="text/css" rel="stylesheet" />
+<link href="http://static.blog.csdn.net/css/style1.css" type="text/css" rel="stylesheet" />
+<script language='JavaScript' type='text/javascript' src='http://download.csdn.net/js/jquery.cookie.js'></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/search-service/main.js"></script>
+<link rel="stylesheet" href="http://static.blog.csdn.net/public/res-min/markdown_views.css?v=1.0" />
+<script type="text/javascript" src="http://static.blog.csdn.net/public/res/bower-libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="/wangwuyilove/article/details/22731817">
+        js常用方法            
+        </a></span>
+    </h1>
+</div>
+
+   
+
+    <div class="article_manage">
+        <span class="link_categories">
+        分类：
+            <a href="/wangwuyilove/article/category/1394674" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">javascript</a> 
+        </span>
+    <span class="link_postdate">2014-04-01 14:35</span>
+    <span class="link_view" title="阅读次数">846人阅读</span>
+    <span class="link_comments" title="评论次数"><a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(0)</span>
+    <span class="link_collect"><a href="javascript:void(0);" onclick="javascript:collectArticle('js常用方法','22731817');return false;" title="收藏">收藏</a></span>
+    <span class="link_report"><a href="#report"  onclick="javascript:report(22731817,2);return false;" title="举报">举报</a></span>
+    
+</div>
+<div class="tag2box"><a href='http://www.csdn.net/tag/js' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">js</a></div>
+
+  
+
+  
+  
+     
+
+<div id="article_content" class="article_content">
+
+<div style="color:rgb(50,62,50); font-family:simsun; font-size:14px; line-height:21px; background-color:rgb(156,174,193)">
+<pre name="code" class="html">Javascript代码 
+function obj$(id)                      根据id得到对象   
+function val$(id)                      根据id得到对象的值   
+function trim(str)                      删除左边和右边空格   
+function ltrim(str)                    删除左边空格   
+function rtrim (str)                    删除右边空格   
+function isEmpty(str)                  字串是否有值   
+function equals(str1, str2)            js判断比较两字符串是否相等   
+function equalsIgnoreCase(str1, str2)  js判断忽略大小写比较两个字符串是否相等   
+function isChinese(str)                js判断判断是否中文   
+function isEmail(strEmail)              js判断是否电子邮件   
+function isImg(str)                    js判断是否是一个图片格式的文件jpg|jpeg|swf|gif   
+function isInteger(str)                js判断是否是一个整数   
+function isFloat                        js判断是否是一个浮点数   
+function isPost(str)                    js判断是否邮编(1位至6位   
+function isMobile(str)                  js判断是否是手机号   
+function isPhone(str)                  js判断是否是电话号码必须包含区号,可以含有分机号   
+function isQQ(str)                      js判断是否合法的QQ号码             
+function isIP(str)                      js判断是否是合法的IP   
+function isDate(str)                    js判断是否日期类型(例:2005-12-12)   
+function isIdCardNo(idNumber)          js判断是否是合法的身份证号   
+*/   
+  
+  
+function obj$(id)   
+{   
+    return document.getElementByIdx(id);   
+}   
+  
+  
+function val$(id)   
+{   
+    var obj = document.getElementByIdx(id);   
+    if(obj !== null)   
+    {   
+        return obj.value;   
+    }   
+    return null;   
+}   
+  
+  
+function trim(str)   
+{   
+    return str.replace(/(^\s*)|(\s*$)/g, '');   
+}   
+  
+  
+function ltrim(str)   
+{   
+    return str.replace(/^\s*/g,'');   
+}   
+  
+  
+function rtrim(str)   
+{   
+    return str.replace(/\s*$/,'');   
+}   
+  
+  
+function isEmpty(str)   
+{   
+    if(str != null &amp;&amp; str.length &gt; 0)   
+    {   
+        return true;   
+    }   
+    return false;   
+}   
+  
+  
+function equals(str1, str2)   
+{   
+    if(str1 == str2)   
+    {   
+        return true;   
+    }   
+    return false;   
+}   
+  
+  
+function equalsIgnoreCase(str1, str2)   
+{   
+    if(str1.toUpperCase() == str2.toUpperCase())   
+    {   
+        return true;   
+    }   
+    return false;   
+}   
+  
+  
+function isChinese(str)   
+{   
+  var str = str.replace(/(^\s*)|(\s*$)/g,'');   
+  if (!(/^[\u4E00-\uFA29]*$/.test(str)   
+          &amp;&amp; (!/^[\uE7C7-\uE7F3]*$/.test(str))))   
+  {   
+      return false;   
+  }   
+  return true;   
+}   
+  
+  
+function isEmail(str)   
+{   
+    if(/^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/.test(str))   
+    {   
+        return true  
+    }   
+    return false;   
+}   
+  
+  
+function isImg(str)   
+{   
+    var objReg = new RegExp(&quot;[.]+(jpg|jpeg|swf|gif)$&quot;, &quot;gi&quot;);   
+    if(objReg.test(str))   
+    {   
+        return true;   
+    }   
+    return false;   
+}   
+  
+  
+function isInteger(str)   
+{   
+    if(/^-?\d+$/.test(str))   
+    {   
+        return true;   
+    }   
+    return false;   
+}   
+  
+  
+function isFloat(str)   
+{   
+    if(/^(-?\d+)(\.\d+)?$/.test(str)   
+    {   
+        return true;   
+    }   
+    return false;   
+}   
+  
+  
+function isPost(str)   
+{   
+    if(/^\d{1,6}$/.test(str))   
+    {   
+        return true;   
+    }   
+    return false;   
+}   
+  
+  
+function isMobile(str)   
+{   
+    if(/^1[35]\d{9}/.test(str))   
+      {   
+          return true;   
+      }   
+    return false;   
+}   
+  
+  
+function isPhone(str)   
+{   
+    if(/^(0[1-9]\d{1,2}-)\d{7,8}(-\d{1,8})?/.test(str))   
+    {   
+        return true;   
+    }   
+    return false;   
+}   
+  
+  
+function isQQ(str){   
+    if(/^\d{5,9}$/.test(str))   
+    {   
+        return true;   
+    }   
+    return false;   
+}   
+  
+  
+function isIP(str){   
+    var reg = /^(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9])\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[1-9]|0)\.(25[0-5]|2[0-4][0-9]|[0-1]{1}[0-9]{2}|[1-9]{1}[0-9]{1}|[0-9])$/;   
+    if(.test(str))   
+    {   
+        return true;   
+    }   
+    return false;   
+}   
+  
+  
+function isDate(str)   
+{   
+    var reg = /^((((1[6-9]|[2-9]\d)\d{2})-(0?[13578]|1[02])-(0?[1-9]|[12]\d|3[01]))|(((1[6-9]|[2-9]\d)\d{2})-(0?[13456789]|1[012])-(0?[1-9]|[12]\d|30))|(((1[6-9]|[2-9]\d)\d{2})-0?2-(0?[1-9]|1\d|2[0-8]))|(((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))-0?2-29-))$/;   
+    if(reg.test(str))   
+    {   
+        return true;   
+    }   
+    return false;     
+}   
+  
+  
+function isIdCardNo(idNumber)   
+{   
+    var factorArr = new Array(7,9,10,5,8,4,2,1,6,3,7,9,10,5,8,4,2,1);   
+    var varArray = new Array();   
+    var lngProduct = 0;   
+    var intCheckDigit;   
+    var idNumber.length = ;   
+  
+    if ((idNumber.length != 15) &amp;&amp; (idNumber.length != 18))   
+    {   
+        return false;   
+    }     
+    for(i=0;i&lt;idNumber.length;i++)   
+    {   
+        varArray[i] = idNumber.charAt(i);   
+        if ((varArray[i] &lt; '0' || varArray[i] &gt; '9') &amp;&amp; (i != 17))   
+        {   
+            return false;   
+        }   
+        else if (i &lt; 17)   
+        {   
+            varArray[i] = varArray[i]*factorArr[i];   
+        }   
+    }   
+    if (idNumber.length == 18)   
+    {   
+        var date8 = idNumber.substring(6,14);   
+        if (checkDate(date8) == false)   
+        {   
+            return false;   
+        }         
+        for(i=0;i&lt;17;i++)   
+        {   
+            lngProduct = lngProduct + varArray[i];   
+        }         
+        intCheckDigit = 12 - lngProduct % 11;   
+        switch (intCheckDigit)   
+        {   
+            case 10:   
+                intCheckDigit = 'X';   
+                break;   
+            case 11:   
+                intCheckDigit = 0;   
+                break;   
+            case 12:   
+                intCheckDigit = 1;   
+                break;   
+        }         
+        if (varArray[17].toUpperCase() != intCheckDigit)   
+        {   
+            return false;   
+        }   
+    }   
+    else  
+    {         
+        var date6 = idNumber.substring(6,12);   
+        if (checkDate(date6) == false)   
+        {   
+            return false;   
+        }   
+    }   
+    return true;   
+} </pre><br>
+<br>
+</div>
+    
+        <div  style="padding-top:20px">         
+            <p  style="font-size:12px;" >版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
+        </div>
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+
+
+
+<div class="bdsharebuttonbox" style="float: right;">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"  style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"style="background-position:0 -1612px !important" ></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+   <link rel="stylesheet" href="http://static.blog.csdn.net/css/blog_detail.css" />
+
+    
+<!--172.16.140.12-->
+<ul class="article_next_prev">
+            <li class="prev_article"><span  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/wangwuyilove/article/details/21178207';">上一篇</span><a href="/wangwuyilove/article/details/21178207" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">搞IT的技术人员为什么会如此苦逼</a></li>
+            <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/wangwuyilove/article/details/25824285';">下一篇</span><a href="/wangwuyilove/article/details/25824285" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">前台传递参数，乱码问题</a></li>
+</ul>
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+ 
+
+      
+</div>
+<div id="suggest"></div>
+         <script  language="javascript" type='text/javascript'>     
+             $(function(){
+                 $.get("/wangwuyilove/svc/GetSuggestContent/22731817",function(data){
+                     $("#suggest").html(data);
+                 });     
+             });             
+         </script>  
+
+
+<style>
+.blog-ass-articl dd {
+color: #369;
+width: 99%; /*修改行*/
+float: left;
+overflow: hidden;
+font: normal normal 12px/23px "SimSun";
+height: 23px;
+margin: 0;
+padding: 0 0 0 10px;
+margin-right: 30px;
+background: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;
+}
+</style>
+
+<dl class="blog-ass-articl" id="res-relatived" > 
+     <dt><span>猜你在找</span></dt>    
+
+
+   
+
+
+    <div id="adCollege" style="width: 42%;float: left;"> 
+        <script src="http://csdnimg.cn/jobreco/job_reco.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            csdn.position.showEdu({
+                sourceType: "blog",
+                searchType: "detail",
+                searchKey: "22731817",
+                username: "",
+                recordcount: "5",
+                containerId: "adCollege" //容器DIV的id。 
+            });
+        </script> 
+    </div>  
+
+    
+     <div id="res"  data-mod="popu_36"  class="tracking-ad" style="width: 42%;float: left;margin-right: 30px;"></div>
+   
+</dl>
+
+<div id="job_blog_reco">
+<script src="http://c.csdnimg.cn/jobreco/job_reco.js" type="text/javascript"></script>
+   
+     <script type="text/javascript">
+         csdn.position.show({
+         sourceType: "blog",
+         tplType: "blogDetail",
+         searchType: "detail",
+         searchKey: "22731817",
+             username: "",
+         containerId: "job_blog_reco"
+        }); 
+    </script>
+
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        setTimeout(function () {
+            var searchtitletags = 'js常用方法' + ',' + $("#tags").html();
+            searchService({
+                index: 'blog',
+                query: searchtitletags,
+                from: 5,
+                size: 5,
+                appendTo: '#res',
+                url: 'recommend',
+                his: 2,
+                client: "blog_cf_enhance",
+                tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+            });
+        }, 500);
+    });    
+
+ </script>   
+
+    <div id="ad_cen">
+   
+          <script type="text/javascript">
+              new Ad(4, 'ad_cen');
+          </script>
+    </div>
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list">
+    </div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form">
+    </div>
+
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '22731817';
+    var commentscount = 0;
+    var islock = false
+</script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/comment.js"></script>
+    <div id="ad_bot">
+    </div>
+    <script type="text/javascript">
+        setTimeout(function(){
+            new Ad(5, 'ad_bot');
+        },500);  
+    </script>
+<div id="report_dialog">
+</div>
+
+<div id="d-top"  style="bottom:60px;">
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="http://static.blog.csdn.net/images/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop"  style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])" style="">         
+         <img src="http://static.blog.csdn.net/images/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);    
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+
+
+<div class="tag_list" style="display:none"></div>
+  <script  language="javascript" type='text/javascript'>     
+      $(function(){
+              setTimeout(function(){
+                  $.get("/wangwuyilove/svc/GetTagContent",function(data){
+                      $(".tag_list").html(data).show();
+                  });     
+              });
+          },500);                       
+ </script> 
+
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });
+        },200);  
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }    
+
+</script>
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+                   
+           <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/wangwuyilove" target="_blank">
+    <img src="http://avatar.csdn.net/1/2/7/1_wangwuyilove.jpg" title="访问我的空间" style="max-width:90%"/>
+    </a>
+    <br />
+    <span><a href="http://my.csdn.net/wangwuyilove" class="user_name" target="_blank">wangwuyilove</a></span>
+</div>
+<div class="interact">
+
+    <a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]"></a>
+
+ <a href="javascript:void(0);" class="letter"  title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=wangwuyilove','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                <div id="bms_box">
+                                            <a  target="_blank">
+                                                    <img src="http://c.csdnimg.cn/jifen/images/xunzhang/xunzhang/chizhiyiheng.png" onmouseover="m_over_m(this,4)" onmouseout="m_out_m()" alt="1" >
+                                            </a>
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>28116次</span></li>
+    <li>积分：<span>642</span> </li>    
+    <li >等级： <span style="position:relative;display:inline-block;z-index:1" >
+            <img src="http://c.csdnimg.cn/jifen/images/xunzhang/jianzhang/blog3.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：642 </div>
+        </span>  </li>
+    <li>排名：<span>千里之外</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>38篇</span></li>
+    <li>转载：<span>7篇</span></li>
+    <li>译文：<span>0篇</span></li>
+    <li>评论：<span>20条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字" /></span>
+        <input id="btnSubmit" type="button" value="搜索" title="search in blog" />
+        <input type="hidden" name="q" id="inputQ" />
+        <input type="hidden" name="t" value="blog" />
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script><div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">    
+                 <li>
+                    <a href="/wangwuyilove/article/category/1268565" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">java 设计模式</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/wangwuyilove/article/category/1268566" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">java se</a><span>(14)</span>
+                </li>
+                 <li>
+                    <a href="/wangwuyilove/article/category/1268567" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">java ee</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/wangwuyilove/article/category/1278677" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">mysql</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/wangwuyilove/article/category/1283697" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">心情杂谈</a><span>(6)</span>
+                </li>
+                 <li>
+                    <a href="/wangwuyilove/article/category/1326918" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">java相关框架</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/wangwuyilove/article/category/1390220" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">网络</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/wangwuyilove/article/category/1394674" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">javascript</a><span>(8)</span>
+                </li>
+                 <li>
+                    <a href="/wangwuyilove/article/category/2395031" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">java web</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/wangwuyilove/article/category/2845879" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">sql</a><span>(8)</span>
+                </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list">
+<!--归档统计-->
+<li><a href="/wangwuyilove/article/month/2015/08">2015年08月</a><span>(2)</span></li><li><a href="/wangwuyilove/article/month/2015/07">2015年07月</a><span>(1)</span></li><li><a href="/wangwuyilove/article/month/2015/06">2015年06月</a><span>(5)</span></li><li><a href="/wangwuyilove/article/month/2015/05">2015年05月</a><span>(2)</span></li><li><a href="/wangwuyilove/article/month/2015/02">2015年02月</a><span>(3)</span></li><li><a href="/wangwuyilove/article/month/2015/01">2015年01月</a><span>(1)</span></li><li><a href="/wangwuyilove/article/month/2014/07">2014年07月</a><span>(3)</span></li><li><a href="/wangwuyilove/article/month/2014/06">2014年06月</a><span>(4)</span></li><li><a href="/wangwuyilove/article/month/2014/05">2014年05月</a><span>(2)</span></li><li><a href="/wangwuyilove/article/month/2014/04">2014年04月</a><span>(1)</span></li><li><a href="/wangwuyilove/article/month/2014/03">2014年03月</a><span>(2)</span></li><li><a href="/wangwuyilove/article/month/2013/09">2013年09月</a><span>(4)</span></li><li><a href="/wangwuyilove/article/month/2013/05">2013年05月</a><span>(1)</span></li><li><a href="/wangwuyilove/article/month/2013/04">2013年04月</a><span>(2)</span></li><li><a href="/wangwuyilove/article/month/2013/01">2013年01月</a><span>(7)</span></li><li><a href="/wangwuyilove/article/month/2012/11">2012年11月</a><span>(4)</span></li><li><a href="/wangwuyilove/article/month/2012/10">2012年10月</a><span>(1)</span></li>
+</div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="/wangwuyilove/article/details/8805973" title="js获取表单数据">js获取表单数据</a><span>(10689)</span>
+</li>
+<li>
+<a href="/wangwuyilove/article/details/25890461" title="java判断日期是当月第几周，星期几？">java判断日期是当月第几周，星期几？</a><span>(1652)</span>
+</li>
+<li>
+<a href="/wangwuyilove/article/details/30083383" title="ExtJS4学习--多表头Grid">ExtJS4学习--多表头Grid</a><span>(1515)</span>
+</li>
+<li>
+<a href="/wangwuyilove/article/details/37764165" title="关于网络爬虫httpUrlConn.getResponseCode()取不到值得问题">关于网络爬虫httpUrlConn.getResponseCode()取不到值得问题</a><span>(1091)</span>
+</li>
+<li>
+<a href="/wangwuyilove/article/details/37812893" title="java中Object转String">java中Object转String</a><span>(913)</span>
+</li>
+<li>
+<a href="/wangwuyilove/article/details/36010667" title="JQuery插件使用ZTree创建一个树">JQuery插件使用ZTree创建一个树</a><span>(861)</span>
+</li>
+<li>
+<a href="/wangwuyilove/article/details/22731817" title="js常用方法">js常用方法</a><span>(844)</span>
+</li>
+<li>
+<a href="/wangwuyilove/article/details/25824285" title="前台传递参数，乱码问题">前台传递参数，乱码问题</a><span>(665)</span>
+</li>
+<li>
+<a href="/wangwuyilove/article/details/12109369" title="Myeclipse远程debug配置">Myeclipse远程debug配置</a><span>(665)</span>
+</li>
+<li>
+<a href="/wangwuyilove/article/details/8549679" title="用java实现单链表模拟栈">用java实现单链表模拟栈</a><span>(639)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="/wangwuyilove/article/details/43983363" title="年后的纠结">年后的纠结</a><span>(14)</span>
+</li>
+<li>
+<a href="/wangwuyilove/article/details/30083383" title="ExtJS4学习--多表头Grid">ExtJS4学习--多表头Grid</a><span>(2)</span>
+</li>
+<li>
+<a href="/wangwuyilove/article/details/8501784" title="用jxl操作Excel文件">用jxl操作Excel文件</a><span>(2)</span>
+</li>
+<li>
+<a href="/wangwuyilove/article/details/8526001" title="集合链表解析">集合链表解析</a><span>(1)</span>
+</li>
+<li>
+<a href="/wangwuyilove/article/details/8506062" title="java操作属性文件">java操作属性文件</a><span>(1)</span>
+</li>
+<li>
+<a href="/wangwuyilove/article/details/37764165" title="关于网络爬虫httpUrlConn.getResponseCode()取不到值得问题">关于网络爬虫httpUrlConn.getResponseCode()取不到值得问题</a><span>(0)</span>
+</li>
+<li>
+<a href="/wangwuyilove/article/details/37757237" title="JdbcTemplate的使用">JdbcTemplate的使用</a><span>(0)</span>
+</li>
+<li>
+<a href="/wangwuyilove/article/details/36010667" title="JQuery插件使用ZTree创建一个树">JQuery插件使用ZTree创建一个树</a><span>(0)</span>
+</li>
+<li>
+<a href="/wangwuyilove/article/details/37812893" title="java中Object转String">java中Object转String</a><span>(0)</span>
+</li>
+<li>
+<a href="/wangwuyilove/article/details/28883875" title="JSON介绍">JSON介绍</a><span>(0)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend"></ul>
+</div>
+<script type="text/javascript">
+ new Ad(12, 'ad_commend');
+</script><div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="/wangwuyilove/article/details/8526001#comments">集合链表解析</a>
+    <p style="margin:0px;"><a href="/u012442401" class="user_name">u012442401</a>:
+这个getnode里的判断在初始化建立链表的时候好像会发生错误，始终只是add在了0这个位置，
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wangwuyilove/article/details/30083383#comments">ExtJS4学习--多表头Grid</a>
+    <p style="margin:0px;"><a href="/xiaoyan966" class="user_name">xiaoyan966</a>:
+那这么说双层表头后，gridpanel的forcefit属性就失效了？必须指定宽度，那就肯定不能自适...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wangwuyilove/article/details/43983363#comments">年后的纠结</a>
+    <p style="margin:0px;"><a href="/wangwuyilove" class="user_name">wangwuyilove</a>:
+@anlidengshiwei:果断是大神啊
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wangwuyilove/article/details/43983363#comments">年后的纠结</a>
+    <p style="margin:0px;"><a href="/wangwuyilove" class="user_name">wangwuyilove</a>:
+@huangbin10025:好的，以后多向你们学习
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wangwuyilove/article/details/43983363#comments">年后的纠结</a>
+    <p style="margin:0px;"><a href="/wangwuyilove" class="user_name">wangwuyilove</a>:
+@itmyhome:这是个好借口，谢谢哦
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wangwuyilove/article/details/43983363#comments">年后的纠结</a>
+    <p style="margin:0px;"><a href="/wangwuyilove" class="user_name">wangwuyilove</a>:
+@u012858313:是啊，人毕竟有感情
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wangwuyilove/article/details/43983363#comments">年后的纠结</a>
+    <p style="margin:0px;"><a href="/anlidengshiwei" class="user_name">anlidengshiwei</a>:
+我是做国土的地理信息，今天直接提交辞职信了。我也在南京。
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wangwuyilove/article/details/43983363#comments">年后的纠结</a>
+    <p style="margin:0px;"><a href="/huangbin10025" class="user_name">huangbin10025</a>:
+想走赶紧走，我也是兰州一年多  南京半年 后来到北京发展的
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wangwuyilove/article/details/43983363#comments">年后的纠结</a>
+    <p style="margin:0px;"><a href="/u012858313" class="user_name">u012858313</a>:
+同样的情况 不过我手里的这个项目已经是后期了 而且没人催我  但真心不知道怎么开这个口！
+    </p>
+    </li>
+    <li>
+   
+         <a href="/wangwuyilove/article/details/43983363#comments">年后的纠结</a>
+    <p style="margin:0px;"><a href="/wangwuyilove" class="user_name">wangwuyilove</a>:
+@jim_won:好的，谢谢
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+ </div>   
+            <div class="clear">
+            </div>
+        </div>
+        
+
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/cnick/cnick.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="http://medal.blog.csdn.net/showblogmedal.ashx?blogid=1320002"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/JavaScript1.js"></script>
+
+    <script type="text/javascript" src="http://passport.csdn.net/content/loginbox/login.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script>
+<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+<script type="text/javascript" src="http://ad.csdn.net/scripts/ad-blog.js"></script>
+<script type="text/javascript" src="http://zz.csdn.net/js/count.js"></script>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a>"
+                    + "<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+    });
+</script>
+
+
+
+
+    </div>
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://static.csdn.net/public/common/toolbar/js/toolbar.js"></script>     <!--new top-->
+   
+    <link href="http://c.csdnimg.cn/comm_ask/css/ask_float_block.css" type="text/css" rel="stylesheet" />
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/wmd.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/showdown.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/prettify.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/apps/ask_float_block.js'></script>
+   
+</body>
+</html>   
+ 

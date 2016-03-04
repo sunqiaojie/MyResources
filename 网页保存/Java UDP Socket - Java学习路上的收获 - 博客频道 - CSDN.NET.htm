@@ -1,0 +1,1141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+     
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>   
+    
+     
+    <script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/tracking.js" charset="utf-8"></script>  
+
+    <script type="text/javascript">
+        var protocol = window.location.protocol;
+        document.write('<script type="text/javascript" src="' + protocol + '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></' + 'script>');
+    </script>
+
+     <script id="allmobilize" charset="utf-8" src="http://a.yunshipei.com/46aae4d1e2371e4aa769798941cef698/allmobilize.min.js"></script>
+ <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+
+    <title>Java UDP Socket - Java学习路上的收获
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="当时百度的。实在没记住出处。效果很理想，就收藏了。package com.demo.pinch;import android.content.Context;import android.graphics.Bitmap;import android.util.FloatMath;import android.view.MotionEvent;import android.view." />
+    <script src="http://static.blog.csdn.net/scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://static.blog.csdn.net/scripts/ad.js?v=1.1"></script>
+        <!--new top-->
+               <link rel="stylesheet" href="http://static.csdn.net/public/common/toolbar/css/index.css">        <!--new top-->
+
+    <link rel="Stylesheet" type="text/css" href="http://static.blog.csdn.net/skin/dark1/css/style.css?v=1.1" />
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="/qinpeng100423/rss/list" />
+    <link rel="shortcut icon" href="http://c.csdnimg.cn/public/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/blue_green.css" />
+ 
+
+
+</head>
+<body>
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="http://static.csdn.net/public/common/toolbar/js/html.js" type="text/javascript"></script>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/qinpeng100423">Java学习路上的收获</a></h2>
+            <h3>路漫漫其修远兮，吾将上下而求索！</h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+            
+                <li id="btnContents"><a href="http://blog.csdn.net/qinpeng100423?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="http://static.blog.csdn.net/images/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/qinpeng100423?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="http://static.blog.csdn.net/images/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/qinpeng100423/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="http://static.blog.csdn.net/images/ico_rss.gif">订阅</span></a></li>                
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "qinpeng100423";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/qinpeng100423";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod='popu_3' > 
+
+<a href="http://bbs.csdn.net/topics/391857175">
+<font color=red>想听课？来发话题吧
+</font></a>
+&nbsp;&nbsp;&nbsp;
+
+<a href="http://www.csdn.net/app/">
+<font color=blue>CSDN APP 博客上线
+</font></a>
+&nbsp;&nbsp;&nbsp;
+<a href="http://blog.csdn.net/blogdevteam/article/details/49612641">
+<font color=red>有奖征文：云服务器使用初体验
+</font></a>
+&nbsp;&nbsp;&nbsp;
+<a href="http://blog.csdn.net/blogdevteam/article/details/49758609">
+<font color=blue>有奖试读—增长黑客，创业公司必知的“黑科技” 
+</font></a>
+</div>                        </div>
+                        
+
+<!--AdForward Begin:-->
+<script type="text/javascript" ads-src="http://csdnim.qtmojo.com/main/s?user=csdn|blog|fumeiti&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.qtmojo.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+<!--AdForward End-->
+
+  
+<link href="http://static.blog.csdn.net/css/comment1.css" type="text/css" rel="stylesheet" />
+<link href="http://static.blog.csdn.net/css/style1.css" type="text/css" rel="stylesheet" />
+<script language='JavaScript' type='text/javascript' src='http://download.csdn.net/js/jquery.cookie.js'></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/search-service/main.js"></script>
+<link rel="stylesheet" href="http://static.blog.csdn.net/public/res-min/markdown_views.css?v=1.0" />
+<script type="text/javascript" src="http://static.blog.csdn.net/public/res/bower-libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+           
+            var isBole = false;
+            
+          
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="/qinpeng100423/article/details/8980423">
+        <font color="red">[置顶]</font>
+        Java UDP Socket            
+        </a></span>
+    </h1>
+</div>
+
+   
+
+    <div class="article_manage">
+        <span class="link_categories">
+        分类：
+            <a href="/qinpeng100423/article/category/1431506" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">TCP/UDP</a> 
+        </span>
+    <span class="link_postdate">2013-05-27 16:15</span>
+    <span class="link_view" title="阅读次数">13120人阅读</span>
+    <span class="link_comments" title="评论次数"><a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(0)</span>
+    <span class="link_collect"><a href="javascript:void(0);" onclick="javascript:collectArticle('Java UDP Socket','8980423');return false;" title="收藏">收藏</a></span>
+    <span class="link_report"><a href="#report"  onclick="javascript:report(8980423,2);return false;" title="举报">举报</a></span>
+    
+</div>
+
+  
+
+  
+  
+     
+
+<div id="article_content" class="article_content">
+
+<p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px; font-size:14px; font-family:verdana,arial,helvetica,sans-serif; line-height:21px">
+<span style="padding:0px; margin:0px; line-height:1.5em"></span></p>
+<pre name="code" class="java"></pre>一. UDP协议定义<br style="padding: 0px; margin: 0px; line-height: 1.5em;" /><p>UDP协议的全称是用户数据报，在网络中它与TCP协议一样用于处理数据包。在OSI模型中，在第四层——传输层，处于IP协议的上一层。UDP有不提供数据报分组、组装和不能对数据包的排序的缺点，也就是说，当报文发送之后，是无法得知其是否安全完整到达的。</p><p></p><span style="padding:0px; margin:0px; line-height:1.5em">二. 使用UDP的原因</span><br style="padding:0px; margin:0px; line-height:1.5em" />它不属于连接型协议，因而具有资源消耗小，处理速度快的优点，所以通常音频、视频和普通数据在传送时使用UDP较多，因为它们即使偶尔丢失一两个数据包，也不会对接收结果产生太大影响。比如我们聊天用的ICQ和OICQ就是使用的UDP协议。在选择使用协议的时候，选择UDP必须要谨慎。在网络质量令人不十分满意的环境下，UDP协议数据包丢失会比较严重。<br style="padding:0px; margin:0px; line-height:1.5em" /><br style="padding:0px; margin:0px; line-height:1.5em" /><span style="padding:0px; margin:0px; line-height:1.5em">三. 在Java中使用UDP协议编程的相关类</span><br style="padding:0px; margin:0px; line-height:1.5em" />1. InetAddress<br style="padding:0px; margin:0px; line-height:1.5em" />用于描述和包装一个Internet IP地址。有如下方法返回实例：<br style="padding:0px; margin:0px; line-height:1.5em" />getLocalhost()：返回封装本地地址的实例。<p></p><p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px; font-size:14px; font-family:verdana,arial,helvetica,sans-serif; line-height:21px">getAllByName(String host)：返回封装Host地址的InetAddress实例数组。</p><p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px; font-size:14px; font-family:verdana,arial,helvetica,sans-serif; line-height:21px">getByName(String host)：返回一个封装Host地址的实例。其中，Host可以是域名或者是一个合法的IP地址。<br style="padding:0px; margin:0px; line-height:1.5em" />InetAddress.getByAddress(addr)：根据地址串返回InetAddress实例。<br style="padding:0px; margin:0px; line-height:1.5em" />InetAddress.getByAddress(host, addr)：根据主机地符串和地址串返回InetAddress实例。<br style="padding:0px; margin:0px; line-height:1.5em" /><br style="padding:0px; margin:0px; line-height:1.5em" />2. DatagramSocket<br style="padding:0px; margin:0px; line-height:1.5em" />用于接收和发送UDP的Socket实例。该类有3个构造函数：<br style="padding:0px; margin:0px; line-height:1.5em" />DatagramSocket()：通常用于客户端编程，它并没有特定监听的端口，仅仅使用一个临时的。程序会让操作系统分配一个可用的端口。<br style="padding:0px; margin:0px; line-height:1.5em" />DatagramSocket(int port)：创建实例，并固定监听Port端口的报文。通常用于服务端</p><p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px; font-size:14px; font-family:verdana,arial,helvetica,sans-serif; line-height:21px">DatagramSocket(int port, InetAddress localAddr)：这是个非常有用的构建器，当一台机器拥有多于一个IP地址的时候，由它创建的实例仅仅接收来自LocalAddr的报文。<br style="padding:0px; margin:0px; line-height:1.5em" />DatagramSocket具有的主要方法如下：<br style="padding:0px; margin:0px; line-height:1.5em" />1）receive(DatagramPacket d)：接收数据报文到d中。receive方法产生一个“阻塞”。“阻塞”是一个专业名词，它会产生一个内部循环，使程序暂停在这个地方，直到一个条件触发。</p><p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px; font-size:14px; font-family:verdana,arial,helvetica,sans-serif; line-height:21px">2）send(DatagramPacket dp)：发送报文dp到目的地。</p><p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px; font-size:14px; font-family:verdana,arial,helvetica,sans-serif; line-height:21px">3）setSoTimeout(int timeout)：设置超时时间，单位为毫秒。</p><p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px; font-size:14px; font-family:verdana,arial,helvetica,sans-serif; line-height:21px">4）close()：关闭DatagramSocket。在应用程序退出的时候，通常会主动释放资源，关闭Socket，但是由于异常地退出可能造成资源无法回收。所以，应该在程序完成时，主动使用此方法关闭Socket，或在捕获到异常抛出后关闭Socket。</p><p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px; font-size:14px; font-family:verdana,arial,helvetica,sans-serif; line-height:21px">3. DatagramPacket<br style="padding:0px; margin:0px; line-height:1.5em" />用于处理报文，它将Byte数组、目标地址、目标端口等数据包装成报文或者将报文拆卸成Byte数组。应用程序在产生数据包是应该注意，TCP/IP规定数据报文大小最多包含65507个，通常主机接收548个字节，但大多数平台能够支持8192字节大小的报文。DatagramPacket类的构建器共有4个：<br style="padding:0px; margin:0px; line-height:1.5em" />DatagramPacket(byte[] buf, int length)：将数据包中Length长的数据装进Buf数组，一般用来接收客户端发送的数据。<br style="padding:0px; margin:0px; line-height:1.5em" />DatagramPacket(byte[] buf, int offset, int length)：将数据包中从Offset开始、Length长的数据装进Buf数组。<br style="padding:0px; margin:0px; line-height:1.5em" />DatagramPacket(byte[] buf, int length, InetAddress clientAddress, int clientPort)：从Buf数组中，取出Length长的数据创建数据包对象，目标是clientAddress地址，clientPort端口,通常用来发送数据给客户端。</p><p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px; font-size:14px; font-family:verdana,arial,helvetica,sans-serif; line-height:21px">DatagramPacket(byte[] buf, int offset, int length, InetAddress clientAddress, int clientPort)：从Buf数组中，取出Offset开始的、Length长的数据创建数据包对象，目标是clientAddress地址，clientPort端口，通常用来发送数据给客户端。<br style="padding:0px; margin:0px; line-height:1.5em" />主要的方法如下：<br style="padding:0px; margin:0px; line-height:1.5em" />1）getData(): 从实例中取得报文的Byte数组编码。<br style="padding:0px; margin:0px; line-height:1.5em" />2）setDate(byte[] buf)：将byte数组放入要发送的报文中。<br style="padding:0px; margin:0px; line-height:1.5em" /><span style="padding:0px; margin:0px; line-height:1.5em">四. 实例解析<br style="padding:0px; margin:0px; line-height:1.5em" /></span>下面让我们来看一个UDP的服务端和客户端交互通信的例子，在本例中，服务端循环等待客户端发送的信息，并对其进行回应，客户端向服务端发送信息，并接收服务端的回应信息。代码如下：<br style="padding:0px; margin:0px; line-height:1.5em" />1.UDP的服务端程序</p><p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px; font-size:14px; font-family:verdana,arial,helvetica,sans-serif; line-height:21px"></p><p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px; font-size:14px; font-family:verdana,arial,helvetica,sans-serif; line-height:21px"></p><pre name="code" class="java">import java.io.IOException;  
+import java.net.DatagramPacket;  
+import java.net.DatagramSocket;  
+import java.net.InetAddress;  
+import java.net.InetSocketAddress;  
+import java.net.SocketException;  
+  
+/** 
+ * Copyright 2007 GuangZhou Cotel Co. Ltd. 
+ * All right reserved.     
+ * UTP服务类.      
+ * @author QPING
+ */  
+public class UdpServerSocket {  
+    private byte[] buffer = new byte[1024];  
+      
+    private DatagramSocket ds = null;  
+  
+    private DatagramPacket packet = null;  
+  
+    private InetSocketAddress socketAddress = null;  
+  
+    private String orgIp;  
+  
+    /** 
+     * 构造函数，绑定主机和端口. 
+     * @param host 主机 
+     * @param port 端口 
+     * @throws Exception 
+     */  
+    public UdpServerSocket(String host, int port) throws Exception {  
+        socketAddress = new InetSocketAddress(host, port);  
+        ds = new DatagramSocket(socketAddress);  
+        System.out.println(&quot;服务端启动!&quot;);  
+    }  
+      
+    public final String getOrgIp() {  
+        return orgIp;  
+    }  
+  
+    /** 
+     * 设置超时时间，该方法必须在bind方法之后使用. 
+     * @param timeout 超时时间 
+     * @throws Exception 
+     */  
+    public final void setSoTimeout(int timeout) throws Exception {  
+        ds.setSoTimeout(timeout);  
+    }  
+  
+    /** 
+     * 获得超时时间. 
+     * @return 返回超时时间. 
+     * @throws Exception 
+     */  
+    public final int getSoTimeout() throws Exception {  
+        return ds.getSoTimeout();  
+    }  
+  
+    /** 
+     * 绑定监听地址和端口. 
+     * @param host 主机IP 
+     * @param port 端口 
+     * @throws SocketException 
+     */  
+    public final void bind(String host, int port) throws SocketException {  
+        socketAddress = new InetSocketAddress(host, port);  
+        ds = new DatagramSocket(socketAddress);  
+    }  
+  
+  
+    /** 
+     * 接收数据包，该方法会造成线程阻塞. 
+     * @return 返回接收的数据串信息 
+     * @throws IOException  
+     */  
+    public final String receive() throws IOException {  
+        packet = new DatagramPacket(buffer, buffer.length);  
+        ds.receive(packet);  
+        orgIp = packet.getAddress().getHostAddress();  
+        String info = new String(packet.getData(), 0, packet.getLength());  
+        System.out.println(&quot;接收信息：&quot; + info);  
+        return info;  
+    }  
+  
+    /** 
+     * 将响应包发送给请求端. 
+     * @param bytes 回应报文 
+     * @throws IOException 
+     */  
+    public final void response(String info) throws IOException {  
+        System.out.println(&quot;客户端地址 : &quot; + packet.getAddress().getHostAddress()  
+                + &quot;,端口：&quot; + packet.getPort());  
+        DatagramPacket dp = new DatagramPacket(buffer, buffer.length, packet  
+                .getAddress(), packet.getPort());  
+        dp.setData(info.getBytes());  
+        ds.send(dp);  
+    }  
+  
+    /** 
+     * 设置报文的缓冲长度. 
+     * @param bufsize 缓冲长度 
+     */  
+    public final void setLength(int bufsize) {  
+        packet.setLength(bufsize);  
+    }  
+  
+    /** 
+     * 获得发送回应的IP地址. 
+     * @return 返回回应的IP地址 
+     */  
+    public final InetAddress getResponseAddress() {  
+        return packet.getAddress();  
+    }  
+  
+    /** 
+     * 获得回应的主机的端口. 
+     * @return 返回回应的主机的端口. 
+     */  
+    public final int getResponsePort() {  
+        return packet.getPort();  
+    }  
+  
+    /** 
+     * 关闭udp监听口. 
+     */  
+    public final void close() {  
+        try {  
+            ds.close();  
+        } catch (Exception ex) {  
+            ex.printStackTrace();  
+        }  
+    }  
+  
+    /** 
+     * 测试方法. 
+     * @param args 
+     * @throws Exception 
+     */  
+    public static void main(String[] args) throws Exception {  
+        String serverHost = &quot;127.0.0.1&quot;;  
+        int serverPort = 3344;  
+        UdpServerSocket udpServerSocket = new UdpServerSocket(serverHost, serverPort);  
+        while (true) {  
+            udpServerSocket.receive();  
+            udpServerSocket.response(&quot;你好,sterning!&quot;);  
+              
+        }  
+    }  
+} </pre><br>
+<span style="background-color:rgb(250,250,250)">2. UDP客户端程序</span>
+<p></p>
+<p></p>
+<p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px; font-size:14px; font-family:verdana,arial,helvetica,sans-serif; line-height:21px">
+<span style="background-color:rgb(250,250,250)"><br>
+</span></p>
+<p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px; font-size:14px; font-family:verdana,arial,helvetica,sans-serif; line-height:21px">
+<span style="font-family:verdana,arial,helvetica,sans-serif; font-size:14px; line-height:21px; background-color:rgb(250,250,250)"></span></p>
+<pre name="code" class="java">import java.io.*;  
+import java.net.*;  
+  
+/** 
+ * Copyright 2007 GuangZhou Cotel Co. Ltd. 
+ * All right reserved.     
+ * UDP客户端程序，用于对服务端发送数据，并接收服务端的回应信息. 
+ * @author QPING
+ */  
+public class UdpClientSocket {  
+    private byte[] buffer = new byte[1024];  
+  
+    private DatagramSocket ds = null;  
+  
+    /** 
+     * 构造函数，创建UDP客户端 
+     * @throws Exception 
+     */  
+    public UdpClientSocket() throws Exception {  
+        ds = new DatagramSocket();  
+    }  
+      
+    /** 
+     * 设置超时时间，该方法必须在bind方法之后使用. 
+     * @param timeout 超时时间 
+     * @throws Exception 
+     */  
+    public final void setSoTimeout(final int timeout) throws Exception {  
+        ds.setSoTimeout(timeout);  
+    }  
+  
+    /** 
+     * 获得超时时间. 
+     * @return 返回超时时间 
+     * @throws Exception 
+     */  
+    public final int getSoTimeout() throws Exception {  
+        return ds.getSoTimeout();  
+    }  
+  
+    public final DatagramSocket getSocket() {  
+        return ds;  
+    }  
+  
+    /** 
+     * 向指定的服务端发送数据信息. 
+     * @param host 服务器主机地址 
+     * @param port 服务端端口 
+     * @param bytes 发送的数据信息 
+     * @return 返回构造后俄数据报 
+     * @throws IOException 
+     */  
+    public final DatagramPacket send(final String host, final int port,  
+            final byte[] bytes) throws IOException {  
+        DatagramPacket dp = new DatagramPacket(bytes, bytes.length, InetAddress  
+                .getByName(host), port);  
+        ds.send(dp);  
+        return dp;  
+    }  
+  
+    /** 
+     * 接收从指定的服务端发回的数据. 
+     * @param lhost 服务端主机 
+     * @param lport 服务端端口 
+     * @return 返回从指定的服务端发回的数据. 
+     * @throws Exception 
+     */  
+    public final String receive(final String lhost, final int lport)  
+            throws Exception {  
+        DatagramPacket dp = new DatagramPacket(buffer, buffer.length);  
+        ds.receive(dp);  
+        String info = new String(dp.getData(), 0, dp.getLength());  
+        return info;  
+    }  
+  
+    /** 
+     * 关闭udp连接. 
+     */  
+    public final void close() {  
+        try {  
+            ds.close();  
+        } catch (Exception ex) {  
+            ex.printStackTrace();  
+        }  
+    }  
+  
+    /** 
+     * 测试客户端发包和接收回应信息的方法. 
+     * @param args 
+     * @throws Exception 
+     */  
+    public static void main(String[] args) throws Exception {  
+        UdpClientSocket client = new UdpClientSocket();  
+        String serverHost = &quot;127.0.0.1&quot;;  
+        int serverPort = 3344;  
+        client.send(serverHost, serverPort, (&quot;你好，阿蜜果!&quot;).getBytes());  
+        String info = client.receive(serverHost, serverPort);  
+        System.out.println(&quot;服务端回应数据：&quot; + info);  
+    }  
+} </pre><br>
+原文连接：http://sishuok.com/forum/blogPost/list/466.html
+<p></p>
+<p style="padding-top:0px; padding-bottom:0px; margin-top:0px; margin-bottom:0px; font-size:14px; font-family:verdana,arial,helvetica,sans-serif; line-height:21px">
+<br>
+</p>
+    
+        <div  style="padding-top:20px">         
+            <p  style="font-size:12px;" >版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
+        </div>
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+
+
+
+<div class="bdsharebuttonbox" style="float: right;">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"  style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"style="background-position:0 -1612px !important" ></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+   <link rel="stylesheet" href="http://static.blog.csdn.net/css/blog_detail.css" />
+
+    
+<!--172.16.140.13-->
+<ul class="article_next_prev">
+            <li class="prev_article"><span  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/qinpeng100423/article/details/8969957';">上一篇</span><a href="/qinpeng100423/article/details/8969957" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">Eclipse 代码提示功能设置。</a></li>
+            <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/qinpeng100423/article/details/8984684';">下一篇</span><a href="/qinpeng100423/article/details/8984684" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">定时任务:Java中Timer和TimerTask的使用</a></li>
+</ul>
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+ 
+
+        <div id="digg" ArticleId="8980423">
+            <dl id="btnDigg" class="digg digg_disable">
+               
+                 <dt>顶</dt>
+                <dd>3</dd>
+            </dl>
+            <dl id="btnBury" class="digg digg_disable">
+              
+                  <dt>踩</dt>
+                <dd>2</dd>
+            </dl>
+        </div>
+      
+</div>
+<div id="suggest"></div>
+         <script  language="javascript" type='text/javascript'>     
+             $(function(){
+                 $.get("/qinpeng100423/svc/GetSuggestContent/8980423",function(data){
+                     $("#suggest").html(data);
+                 });     
+             });             
+         </script>  
+
+
+<style>
+.blog-ass-articl dd {
+color: #369;
+width: 99%; /*修改行*/
+float: left;
+overflow: hidden;
+font: normal normal 12px/23px "SimSun";
+height: 23px;
+margin: 0;
+padding: 0 0 0 10px;
+margin-right: 30px;
+background: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;
+}
+</style>
+
+<dl class="blog-ass-articl" id="res-relatived" > 
+     <dt><span>猜你在找</span></dt>    
+
+
+   
+
+
+    <div id="adCollege" style="width: 42%;float: left;"> 
+        <script src="http://csdnimg.cn/jobreco/job_reco.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            csdn.position.showEdu({
+                sourceType: "blog",
+                searchType: "detail",
+                searchKey: "8980423",
+                username: "",
+                recordcount: "5",
+                containerId: "adCollege" //容器DIV的id。 
+            });
+        </script> 
+    </div>  
+
+    
+     <div id="res"  data-mod="popu_36"  class="tracking-ad" style="width: 42%;float: left;margin-right: 30px;"></div>
+   
+</dl>
+
+
+
+<script type="text/javascript">
+    $(function () {
+        setTimeout(function () {
+            var searchtitletags = 'Java UDP Socket' + ',' + $("#tags").html();
+            searchService({
+                index: 'blog',
+                query: searchtitletags,
+                from: 5,
+                size: 5,
+                appendTo: '#res',
+                url: 'recommend',
+                his: 2,
+                client: "blog_cf_enhance",
+                tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+            });
+        }, 500);
+    });    
+
+ </script>   
+
+    <div id="ad_cen">        
+<!--AdForward Begin:-->
+<script type="text/javascript" src="http://csdnim.qtmojo.com/main/s?user=csdn|blog|banner2&db=csdnim&border=0&local=yes&js=ie" charset="gbk"></script>
+<!--AdForward End-->    </div>  
+
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list">
+    </div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form">
+    </div>
+
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '8980423';
+    var commentscount = 0;
+    var islock = false
+</script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/comment.js"></script>
+    <div id="ad_bot">
+    </div>
+<div id="report_dialog">
+</div>
+
+<div id="d-top"  style="bottom:60px;">
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="http://static.blog.csdn.net/images/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop"  style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])" style="">         
+         <img src="http://static.blog.csdn.net/images/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);    
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+
+
+<div class="tag_list" style="display:none"></div>
+  <script  language="javascript" type='text/javascript'>     
+      $(function(){
+              setTimeout(function(){
+                  $.get("/qinpeng100423/svc/GetTagContent",function(data){
+                      $(".tag_list").html(data).show();
+                  });     
+              });
+          },500);                       
+ </script> 
+
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });
+        },200);  
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }    
+
+</script>
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+                   
+           <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/qinpeng100423" target="_blank">
+    <img src="http://avatar.csdn.net/B/C/1/1_qinpeng100423.jpg" title="访问我的空间" style="max-width:90%"/>
+    </a>
+    <br />
+    <span><a href="http://my.csdn.net/qinpeng100423" class="user_name" target="_blank">qinpeng100423</a></span>
+</div>
+<div class="interact">
+
+    <a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]"></a>
+
+ <a href="javascript:void(0);" class="letter"  title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=qinpeng100423','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                <div id="bms_box">
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>266431次</span></li>
+    <li>积分：<span>2786</span> </li>    
+    <li >等级： <span style="position:relative;display:inline-block;z-index:1" >
+            <img src="http://c.csdnimg.cn/jifen/images/xunzhang/jianzhang/blog5.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：2786 </div>
+        </span>  </li>
+    <li>排名：<span>第6985名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>52篇</span></li>
+    <li>转载：<span>6篇</span></li>
+    <li>译文：<span>1篇</span></li>
+    <li>评论：<span>23条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字" /></span>
+        <input id="btnSubmit" type="button" value="搜索" title="search in blog" />
+        <input type="hidden" name="q" id="inputQ" />
+        <input type="hidden" name="t" value="blog" />
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script><div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">    
+                 <li>
+                    <a href="/qinpeng100423/article/category/809141" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">JAVA</a><span>(20)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/809143" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">JavaScript</a><span>(8)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/809144" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">JSP</a><span>(0)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/809142" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">MS SQL</a><span>(6)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/809145" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">MyEclipse</a><span>(9)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/905250" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Oracle</a><span>(8)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/905259" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Ajax</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/905348" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">HTML/CSS</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/905349" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Struts2</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/905350" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Hibernate</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/905351" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Spring</a><span>(8)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/905352" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Struts1</a><span>(0)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/905354" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">EXT</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/905357" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Java编程思想</a><span>(5)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/905359" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">设计模式</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/905360" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">正则表达式</a><span>(0)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/905364" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">HTTP协议</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/905366" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Tomcat</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/1070264" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">WebService</a><span>(0)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/1147320" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">其它感悟</a><span>(4)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/1184237" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Highcharts</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/1259000" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Google Maps</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/1358337" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Jackson</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/1431506" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">TCP/UDP</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/1457709" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">MySql</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/1572335" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Linux</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/qinpeng100423/article/category/1572341" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Shell</a><span>(3)</span>
+                </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list">
+<!--归档统计-->
+<li><a href="/qinpeng100423/article/month/2013/10">2013年10月</a><span>(5)</span></li><li><a href="/qinpeng100423/article/month/2013/07">2013年07月</a><span>(3)</span></li><li><a href="/qinpeng100423/article/month/2013/06">2013年06月</a><span>(6)</span></li><li><a href="/qinpeng100423/article/month/2013/05">2013年05月</a><span>(3)</span></li><li><a href="/qinpeng100423/article/month/2013/03">2013年03月</a><span>(7)</span></li><li><a href="/qinpeng100423/article/month/2013/01">2013年01月</a><span>(2)</span></li><li><a href="/qinpeng100423/article/month/2012/11">2012年11月</a><span>(2)</span></li><li><a href="/qinpeng100423/article/month/2012/10">2012年10月</a><span>(2)</span></li><li><a href="/qinpeng100423/article/month/2012/09">2012年09月</a><span>(1)</span></li><li><a href="/qinpeng100423/article/month/2012/07">2012年07月</a><span>(1)</span></li><li><a href="/qinpeng100423/article/month/2012/06">2012年06月</a><span>(3)</span></li><li><a href="/qinpeng100423/article/month/2012/05">2012年05月</a><span>(3)</span></li><li><a href="/qinpeng100423/article/month/2012/04">2012年04月</a><span>(2)</span></li><li><a href="/qinpeng100423/article/month/2012/03">2012年03月</a><span>(1)</span></li><li><a href="/qinpeng100423/article/month/2011/11">2011年11月</a><span>(5)</span></li><li><a href="/qinpeng100423/article/month/2011/10">2011年10月</a><span>(6)</span></li><li><a href="/qinpeng100423/article/month/2011/09">2011年09月</a><span>(1)</span></li><li><a href="/qinpeng100423/article/month/2011/04">2011年04月</a><span>(6)</span></li>
+</div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="/qinpeng100423/article/details/6895978" title="Java 判断文件夹是否存在、创建文件夹">Java 判断文件夹是否存在、创建文件夹</a><span>(48176)</span>
+</li>
+<li>
+<a href="/qinpeng100423/article/details/9307181" title="SPRING中的线程池ThreadPoolTaskExecutor">SPRING中的线程池ThreadPoolTaskExecutor</a><span>(31391)</span>
+</li>
+<li>
+<a href="/qinpeng100423/article/details/8637797" title="使用JavaScript的XMLHttpRequest发送POST、GET请求以及接收返回值">使用JavaScript的XMLHttpRequest发送POST、GET请求以及接收返回值</a><span>(24480)</span>
+</li>
+<li>
+<a href="/qinpeng100423/article/details/7641967" title="CheckBox复选框全选以及获取值(转)">CheckBox复选框全选以及获取值(转)</a><span>(19426)</span>
+</li>
+<li>
+<a href="/qinpeng100423/article/details/6896198" title="Java 删除文件夹和子文件夹中的所有文件">Java 删除文件夹和子文件夹中的所有文件</a><span>(18573)</span>
+</li>
+<li>
+<a href="/qinpeng100423/article/details/8980423" title="Java UDP Socket">Java UDP Socket</a><span>(13085)</span>
+</li>
+<li>
+<a href="/qinpeng100423/article/details/9125857" title="使用JAVA读写Properties属性文件">使用JAVA读写Properties属性文件</a><span>(7897)</span>
+</li>
+<li>
+<a href="/qinpeng100423/article/details/6870208" title="Oracle错误之ora-12154:TNS:监听程序当前无法识别链接描述符中请求的服务">Oracle错误之ora-12154:TNS:监听程序当前无法识别链接描述符中请求的服务</a><span>(7117)</span>
+</li>
+<li>
+<a href="/qinpeng100423/article/details/6934936" title="springmvc中获得request方法">springmvc中获得request方法</a><span>(6047)</span>
+</li>
+<li>
+<a href="/qinpeng100423/article/details/9109873" title="MySQL中UNION和UNION ALL的使用">MySQL中UNION和UNION ALL的使用</a><span>(5925)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="/qinpeng100423/article/details/9307181" title="SPRING中的线程池ThreadPoolTaskExecutor">SPRING中的线程池ThreadPoolTaskExecutor</a><span>(9)</span>
+</li>
+<li>
+<a href="/qinpeng100423/article/details/6895978" title="Java 判断文件夹是否存在、创建文件夹">Java 判断文件夹是否存在、创建文件夹</a><span>(3)</span>
+</li>
+<li>
+<a href="/qinpeng100423/article/details/13018485" title="ajax乱码解决总结">ajax乱码解决总结</a><span>(2)</span>
+</li>
+<li>
+<a href="/qinpeng100423/article/details/7736765" title="Highcharts使用指南">Highcharts使用指南</a><span>(2)</span>
+</li>
+<li>
+<a href="/qinpeng100423/article/details/7622538" title="MyEclipse不编译的解决方法总结(转)">MyEclipse不编译的解决方法总结(转)</a><span>(2)</span>
+</li>
+<li>
+<a href="/qinpeng100423/article/details/8202733" title="google map v3离线版地图">google map v3离线版地图</a><span>(1)</span>
+</li>
+<li>
+<a href="/qinpeng100423/article/details/7641967" title="CheckBox复选框全选以及获取值(转)">CheckBox复选框全选以及获取值(转)</a><span>(1)</span>
+</li>
+<li>
+<a href="/qinpeng100423/article/details/7569027" title="一个男人关心的东西 决定了他的层次(转)">一个男人关心的东西 决定了他的层次(转)</a><span>(1)</span>
+</li>
+<li>
+<a href="/qinpeng100423/article/details/8210919" title="用eclipse如何debug部署在tomcat上的应用(转)">用eclipse如何debug部署在tomcat上的应用(转)</a><span>(1)</span>
+</li>
+<li>
+<a href="/qinpeng100423/article/details/6888952" title="在MyEclipse中引入JDK源码">在MyEclipse中引入JDK源码</a><span>(1)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend">
+<ul>
+<li><a href="http://blog.csdn.net/xlgen157387/article/details/49781487" target="_blank">* Nginx初探</a></li>
+
+<li><a href="http://blog.csdn.net/xfxyy_sxfancy/article/details/49758323"  target="_blank">*编译器架构的王者LLVM——（6）多遍翻译的宏翻译系统</a></li>
+<li><a href="http://blog.csdn.net/chenyufeng1991/article/details/49765291" target="_blank">* 我的第一个Apple Watch小游戏——猜数字（Swift）</a></li>
+<li><a href="http://blog.csdn.net/lovehuangjiaju/article/details/49747437" target="_blank">*Spark源码阅读：第十节 Standalone运行模式解析</a></li>
+<li><a href="http://blog.csdn.net/coder_pig/article/details/49745363" target="_blank">* Android基础入门教程——8.3.16 Canvas API详解(Part 1)</a></li>
+<li><a href="http://blog.csdn.net/lmj623565791/article/details/49734867"target="_blank">*Android 一个改善的okHttp封装库</a></li>
+
+</ul></ul>
+</div>
+
+
+<div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="/qinpeng100423/article/details/6895978#comments">Java 判断文件夹是否存在、创建文件夹</a>
+    <p style="margin:0px;"><a href="/u010329676" class="user_name">u010329676</a>:
+欺骗我感情，要用mkdirs
+    </p>
+    </li>
+    <li>
+   
+         <a href="/qinpeng100423/article/details/6895978#comments">Java 判断文件夹是否存在、创建文件夹</a>
+    <p style="margin:0px;"><a href="/MCL529" class="user_name">MCL529</a>:
+我想说这个没有用
+    </p>
+    </li>
+    <li>
+   
+         <a href="/qinpeng100423/article/details/7641967#comments">CheckBox复选框全选以及获取值(转)</a>
+    <p style="margin:0px;"><a href="/u012862227" class="user_name">u012862227</a>:
+你这样会出现一个问题，当只有一个checkbox时，全选没有用，而且提交的时候永远会提醒“没有che...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/qinpeng100423/article/details/7641967#comments">Java 判断文件夹是否存在、创建文件夹</a>
+    <p style="margin:0px;"><a href="/helei123a" class="user_name">helei123a</a>:
+生成文件夹file .mkdirs();    应该用这个呀，被你坑了
+    </p>
+    </li>
+    <li>
+   
+         <a href="/qinpeng100423/article/details/9307181#comments">SPRING中的线程池ThreadPoolTaskExecutor</a>
+    <p style="margin:0px;"><a href="/lanyingtianshiabc" class="user_name">lanyingtianshiabc</a>:
+请问楼主 怎么用 ThreadPoolTaskExecutor 列出活动线程的name
+    </p>
+    </li>
+    <li>
+   
+         <a href="/qinpeng100423/article/details/9307181#comments">SPRING中的线程池ThreadPoolTaskExecutor</a>
+    <p style="margin:0px;"><a href="/lirenzuo" class="user_name">lirenzuo</a>:
+好资料，谢谢分享，收藏了！写得很细致、通透、明了。
+    </p>
+    </li>
+    <li>
+   
+         <a href="/qinpeng100423/article/details/9307181#comments">SPRING中的线程池ThreadPoolTaskExecutor</a>
+    <p style="margin:0px;"><a href="/lirenzuo" class="user_name">lirenzuo</a>:
+好资料，谢谢分享，收藏了！写得很细致、通透、明了。
+    </p>
+    </li>
+    <li>
+   
+         <a href="/qinpeng100423/article/details/6888952#comments">在MyEclipse中引入JDK源码</a>
+    <p style="margin:0px;"><a href="/zhuojiajin" class="user_name">zhuojiajin</a>:
+你知道javax.servlet.jar的源码在哪里吗？
+    </p>
+    </li>
+    <li>
+   
+         <a href="/qinpeng100423/article/details/6888952#comments">SPRING中的线程池ThreadPoolTaskExecutor</a>
+    <p style="margin:0px;"><a href="/th3639" class="user_name">th3639</a>:
+那是用 ExecutorService  这个好 还是spring的好呢？
+    </p>
+    </li>
+    <li>
+   
+         <a href="/qinpeng100423/article/details/6888952#comments">SPRING中的线程池ThreadPoolTaskExecutor</a>
+    <p style="margin:0px;"><a href="/colorandsong" class="user_name">colorandsong</a>:
+谢谢楼主！
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+ </div>   
+            <div class="clear">
+            </div>
+        </div>
+        
+
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/cnick/cnick.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="http://medal.blog.csdn.net/showblogmedal.ashx?blogid=1065696"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/JavaScript1.js"></script>
+
+    <script type="text/javascript" src="http://passport.csdn.net/content/loginbox/login.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script>
+<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+<script type="text/javascript" src="http://ad.csdn.net/scripts/ad-blog.js"></script>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a>"
+                    + "<a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+    });
+</script>
+
+
+
+
+    </div>
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://static.csdn.net/public/common/toolbar/js/toolbar.js"></script>     <!--new top-->
+   
+    <link href="http://c.csdnimg.cn/comm_ask/css/ask_float_block.css" type="text/css" rel="stylesheet" />
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/wmd.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/showdown.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/prettify.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/apps/ask_float_block.js'></script>
+   
+</body>
+</html>   
+ 

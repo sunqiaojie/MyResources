@@ -1,0 +1,5 @@
+注意，如果页面上使用了框架，则可能导致session超时后退出到登录页面，此时登录页面显示在框架的某个子页面，解决方法，在登录页面加入如下代码即可。
+    <script language="javascript">   
+        if (top != window)   
+      	    top.location.href = window.location.href;   
+    </script>

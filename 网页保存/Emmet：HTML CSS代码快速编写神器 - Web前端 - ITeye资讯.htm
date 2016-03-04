@@ -1,0 +1,521 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Emmet：HTML/CSS代码快速编写神器 - Web前端 - ITeye资讯</title>
+    <meta name="description" content="Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的话，对该插件一定不会陌生。它使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度，比如下面的演示： Zen coding下的编码演示 去年年底，该插件已经改名为Emmet。但Emmet不只改名，还带来了一些新特性。本文就来直观地演示给你。 一、快速编写HTML代码 1.  初始化 HTML文档需要包含 ..." />
+    <meta name="keywords" content="html, css, Emmet, Zen coding,web,Web前端" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    
+    <link rel="search" type="application/opensearchdescription+xml" href="/open_search.xml" title="ITeye" />
+    <link href="http://www.iteye.com/stylesheets/news.css?1438136530" media="screen" rel="stylesheet" type="text/css" />
+    <script src="http://www.iteye.com/javascripts/application.js?1358214518" type="text/javascript"></script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-535605-1']);
+  _gaq.push(['_setDomainName', 'iteye.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+      <link href="http://www.iteye.com/javascripts/syntaxhighlighter/SyntaxHighlighter.css?1348819953" media="screen" rel="stylesheet" type="text/css" />
+  <script src="http://www.iteye.com/javascripts/syntaxhighlighter/shCoreCommon.js?1325907333" type="text/javascript"></script>
+<script src="http://www.iteye.com/javascripts/hotkey.js?1324994303" type="text/javascript"></script>
+<script src="http://www.iteye.com/javascripts/weiboshare.js?1324994303" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="page">
+      <div id="header">
+        <div class="clearfix"><div id="user_nav">
+      <a href="/login" class="welcome" title="登录">您还未登录 !</a>
+    <a href="/login">登录</a>
+    <a href="/signup" class="nobg">注册</a>
+  </div>
+</div>
+        <div class="clearfix">
+          <div id="branding">
+            <a href="http://www.iteye.com"><img alt="ITeye3.0" src="http://www.iteye.com/images/logo.gif?1324994303" title="ITeye-最棒的软件开发交流社区" /></a>
+          </div>
+          <div id="gg"><!--AdForward Begin:-->
+<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=iteye|news|banner1&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+<!--AdForward End--></div>
+        </div>
+      </div>
+      <div id="content" class="clearfix">
+        <div id="main">
+          
+
+
+
+          
+
+
+<div class="h-entry" style='display:none'>
+  <a href="http://wangguo.iteye.com" class="p-author" target="_blank">wangguo</a>
+</div>
+
+
+<div class="crumbs" style="margin:10px 0;">
+  <a href="/news">资讯频道</a> <span class="arrow">&rarr;</span>
+  <a href="/news/category/web">Web前端</a>
+</div>
+
+<div class="news_main">
+  <div class="news">
+    <div class="clearfix">
+      <div class="news_digg">
+        <div class='digg' id='d27580'><h3 class='digged'><span class='digg'>21顶</span><br/><span class='bury'>0踩</span></h3></div>
+      </div>
+      <div id="news_icon"><a href="/news/category/web" title="查看Web前端分类资讯" target="_blank"><img alt="Web前端" src="http://www.iteye.com/images/icon/whole_category/web.gif?1324994303" /></a></div>
+      <div class="title">
+        <h3>
+          <img alt="原创新闻" src="http://www.iteye.com/images/news/ori.gif?1324994303" />
+          <a href='/news/27580' title="Emmet：HTML/CSS代码快速编写神器">Emmet：HTML/CSS代码快速编写神器</a>
+          <span class="actions">
+            
+            
+          </span>
+        </h3>
+        <div class="news_info" style="background-color: transparent;">
+          <span class='date'>2013-04-16 17:40</span> by 副主编 <a href='http://wangguo.iteye.com' target='_blank' title='wangguo'>wangguo</a>
+          <span class="comment"><a href="#comments">评论(16)</a></span>
+          <span class='view'>有96141人浏览</span>
+          
+        </div>
+        <div class="news_tag">
+                      <a href="/news/tag/html"><span>html</span></a>
+                      <a href="/news/tag/css"><span>css</span></a>
+                      <a href="/news/tag/Emmet"><span>Emmet</span></a>
+                      <a href="/news/tag/Zen%20coding"><span>Zen coding</span></a>
+                  </div>
+      </div>
+    </div>
+        
+    <h4 class='copyright'>声明：ITeye资讯文章的版权属于ITeye网站所有，严禁任何网站转载本文，否则必将追究法律责任！</h4>
+        <script type="text/javascript">
+      var hunters = ["\u003Ca href='/jobs/2509' target='_blank' style='color:#000;'\u003E\u003Cspan style='font-weight:bold;'\u003E\u4e0a\u6d77: \u003C/span\u003E Junior Product Manager\u003C/a\u003E","\u003Ca href='/jobs/2508' target='_blank' style='color:#000;'\u003E\u003Cspan style='font-weight:bold;'\u003E\u4e0a\u6d77: \u003C/span\u003E Senior Software Engineer\u003C/a\u003E"]
+      var hunter_id = Math.ceil(Math.random() * hunters.length) - 1;
+      if(hunter_id == -1) hunter_id = 0;
+    </script>
+    <div id="hunter_recommended" style="background:#fff;border: 1px solid #ccc; padding: 4px;margin-bottom: 10px;">
+      <span id="hunters_nav" style="margin-right:5px;">
+        <a href="#" onclick="hunter_id <= 0 ? hunter_id = hunters.length - 1 : hunter_id--; $('hunters').update(hunters[hunter_id]);return false;" style="border:1px solid #ccc;padding: 0 3px;size: 13px;text-decoration: none;">&lt;</a>
+        <a href="#" onclick="hunter_id >= hunters.length - 1 ? hunter_id = 0 : hunter_id++; $('hunters').update(hunters[hunter_id]);return false;" style="border:1px solid #ccc;padding: 0 3px;size :13px;text-decoration: none;">&gt;</a>
+      </span>
+      猎头职位: <span id="hunters"></span>
+      <script type="text/javascript">$('hunters').update(hunters[hunter_id]);</script>
+    </div>
+
+    <div id="news_content">
+      Emmet的前身是大名鼎鼎的Zen coding，如果你从事Web前端开发的话，对该插件一定不会陌生。它使用仿CSS选择器的语法来生成代码，大大提高了HTML/CSS代码编写的速度，比如下面的演示：<br /><br /><div style="text-align: center;"><img src="http://dl.iteye.com/upload/attachment/0083/2327/301ff5c9-3604-3dd3-a206-6d3516861ec4.jpg" /><br />Zen coding下的编码演示</div><br /><br />去年年底，该插件已经改名为Emmet。<strong>但Emmet不只改名，还带来了一些新特性。本文就来直观地演示给你。</strong><br /><br /><span style="color: red;"><span style="font-size: medium;"><strong>一、快速编写HTML代码</strong></span></span><br /><br /><strong>1.&nbsp; 初始化</strong><br /><br />HTML文档需要包含一些固定的标签，比如&lt;html&gt;、&lt;head&gt;、&lt;body&gt;等，现在你只需要1秒钟就可以输入这些标签。比如输入“!”或“html:5”，然后按Tab键：<br /><br /><div style="text-align: center;"><img src="http://dl.iteye.com/upload/attachment/0083/2329/0070e820-1cbf-3f42-8c5b-838e5774d02b.gif" /></div><br /><br /><ul><li>html:5 或!：用于HTML5文档类型</li><li>html:xt：用于XHTML过渡文档类型</li><li>html:4s：用于HTML4严格文档类型</ul></li><strong>2.&nbsp; 轻松添加类、id、文本和属性</strong><br /><br />连续输入元素名称和ID，Emmet会自动为你补全，比如输入p#foo：<br /><br /><div style="text-align: center;"><img src="http://dl.iteye.com/upload/attachment/0083/2331/cb250aef-3b60-3297-86ba-8c3ed36cacad.gif" /></div><br /><br />连续输入类和id，比如p.bar#foo，会自动生成：<br /><br /><pre class="html" name="code">&lt;p class="bar" id="foo"&gt;&lt;/p&gt;</pre><br />下面来看看如何定义HTML元素的内容和属性。你可以通过输入h1{foo}和a[href=#]，就可以自动生成如下代码：<br /><br /><pre class="html" name="code">&lt;h1&gt;foo&lt;/h1&gt;
+&lt;a href="#"&gt;&lt;/a&gt;</pre><br /><div style="text-align: center;"><img src="http://dl.iteye.com/upload/attachment/0083/2333/167e1956-4ac6-3b6d-9025-8bf90fee1250.gif" /></div><br /><br /><strong>3.&nbsp; 嵌套</strong><br /><br />现在你只需要1行代码就可以实现标签的嵌套。<br /><br /><ul><li>&gt;：子元素符号，表示嵌套的元素</li><li>+：同级标签符号</li><li>^：可以使该符号前的标签提升一行</ul></li>效果如下图所示：<br /><br /><div style="text-align: center;"><img src="http://dl.iteye.com/upload/attachment/0083/2335/47ae82f5-4fd8-36a1-9b4e-d148237537ee.gif" /></div><br /><br /><strong>4.&nbsp; 分组</strong><br /><br />你可以通过嵌套和括号来快速生成一些代码块，比如输入(.foo&gt;h1)+(.bar&gt;h2)，会自动生成如下代码：<br /><br /><pre class="html" name="code">&lt;div class="foo"&gt;
+  &lt;h1&gt;&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div class="bar"&gt;
+  &lt;h2&gt;&lt;/h2&gt;
+&lt;/div&gt;</pre><br /><div style="text-align: center;"><img src="http://dl.iteye.com/upload/attachment/0083/2337/ae3a8b58-244a-3680-9f0c-d0cab459fc41.gif" /></div><br /><br /><strong>5.&nbsp; 隐式标签</strong><br /><br />声明一个带类的标签，只需输入div.item，就会生成&lt;div class="item"&gt;&lt;/div&gt;。<br /><br />在过去版本中，可以省略掉div，即输入.item即可生成&lt;div class="item"&gt;&lt;/div&gt;。现在如果只输入.item，则Emmet会根据父标签进行判定。比如在&lt;ul&gt;中输入.item，就会生成&lt;li class="item"&gt;&lt;/li&gt;。<br /><br /><div style="text-align: center;"><img src="http://dl.iteye.com/upload/attachment/0083/2339/363af658-650f-38d1-ad0e-9608df9d2873.gif" /></div><br /><br />下面是所有的隐式标签名称：<br /><br /><ul><li>li：用于ul和ol中</li><li>tr：用于table、tbody、thead和tfoot中</li><li>td：用于tr中</li><li>option：用于select和optgroup中</ul></li><strong>6.&nbsp; 定义多个元素</strong><br /><br />要定义多个元素，可以使用*符号。比如，ul&gt;li*3可以生成如下代码：<br /><br /><pre class="html" name="code">&lt;ul&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre><br /><br /><div style="text-align: center;"><img src="http://dl.iteye.com/upload/attachment/0083/2341/cf5613ac-4198-326e-a651-a08ad206800a.gif" /></div><br /><br /><strong>7.&nbsp; 定义多个带属性的元素</strong><br /><br />如果输入 ul&gt;li.item$*3，将会生成如下代码：<br /><br /><pre class="html" name="code">&lt;ul&gt;
+  &lt;li class="item1"&gt;&lt;/li&gt;
+  &lt;li class="item2"&gt;&lt;/li&gt;
+  &lt;li class="item3"&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre><br /> <br /><div style="text-align: center;"><img src="http://dl.iteye.com/upload/attachment/0083/2343/a1c5f9d8-d187-3bde-895b-2e14fb428184.gif" /></div><br /><br /><span style="font-size: medium;"><span style="color: red;"><strong>二、CSS缩写</strong></span></span><br /><br /><strong>1.&nbsp; 值</strong><br /><br />比如要定义元素的宽度，只需输入w100，即可生成<br /><br /><pre class="css" name="code">width: 100px;</pre><br /><div style="text-align: center;"><img src="http://dl.iteye.com/upload/attachment/0083/2345/21a47a7c-2d38-3231-8b4b-7d15f38be57a.gif" /></div><br /><br />除了px，也可以生成其他单位，比如输入h10p+m5e，结果如下：<br /><br /><pre class="css" name="code">height: 10%;
+margin: 5em;</pre><br /><br />单位别名列表：<br /><br /><ul><li>p 表示%</li><li>e 表示 em</li><li>x 表示 ex</ul></li><strong>2.&nbsp; 附加属性</strong><br /><br />可能你之前已经了解了一些缩写，比如 @f，可以生成：<br /><br /><pre class="css" name="code">@font-face {
+  font-family:;
+  src:url();
+}</pre><br />一些其他的属性，比如background-image、border-radius、font、@font-face,text-outline、text-shadow等额外的选项，可以通过“+”符号来生成，比如输入@f+，将生成：<br /><br /><pre class="css" name="code">@font-face {
+  font-family: 'FontName';
+  src: url('FileName.eot');
+  src: url('FileName.eot?#iefix') format('embedded-opentype'),
+     url('FileName.woff') format('woff'),
+     url('FileName.ttf') format('truetype'),
+     url('FileName.svg#FontName') format('svg');
+  font-style: normal;
+  font-weight: normal;
+}</pre><br /><div style="text-align: center;"><img src="http://dl.iteye.com/upload/attachment/0083/2347/2c8cccf4-be54-3190-b1e7-3713717e2a78.gif" /></div><br /><br /><strong>3.&nbsp; 模糊匹配</strong><br /><br />如果有些缩写你拿不准，Emmet会根据你的输入内容匹配最接近的语法，比如输入ov:h、ov-h、ovh和oh，生成的代码是相同的：<br /><br /><pre class="css" name="code">overflow: hidden;</pre><br /><div style="text-align: center;"><img src="http://dl.iteye.com/upload/attachment/0083/2349/4c2c81e2-ebba-367e-a4fd-4f667d08ca84.gif" /></div><br /><br /><strong>4.&nbsp; 供应商前缀</strong><br /><br />如果输入非W3C标准的CSS属性，Emmet会自动加上供应商前缀，比如输入trs，则会生成：<br /><br /><pre class="css" name="code">-webkit-transform: ;
+-moz-transform: ;
+-ms-transform: ;
+-o-transform: ;
+transform: ;</pre><br /><div style="text-align: center;"><img src="http://dl.iteye.com/upload/attachment/0083/2351/a68eda57-f573-343c-81b8-19e0a48c08fe.gif" /></div><br /><br />你也可以在任意属性前加上“-”符号，也可以为该属性加上前缀。比如输入-super-foo：<br /><br /><pre class="css" name="code">-webkit-super-foo: ;
+-moz-super-foo: ;
+-ms-super-foo: ;
+-o-super-foo: ;
+super-foo: ;</pre><br />如果不希望加上所有前缀，可以使用缩写来指定，比如-wm-trf表示只加上-webkit和-moz前缀：<br /><br /><pre class="css" name="code">-webkit-transform: ;
+-moz-transform: ;
+transform: ;</pre><br />前缀缩写如下：<br /><br /><ul><li>w 表示 -webkit-</li><li>m 表示 -moz-</li><li>s 表示 -ms-</li><li>o 表示 -o-</ul></li><strong>5.&nbsp; 渐变</strong><br /><br />输入lg(left, #fff 50%, #000)，会生成如下代码：<br /><br /><pre class="css" name="code">background-image: -webkit-gradient(linear, 0 0, 100% 0, color-stop(0.5, #fff), to(#000));
+background-image: -webkit-linear-gradient(left, #fff 50%, #000);
+background-image: -moz-linear-gradient(left, #fff 50%, #000);
+background-image: -o-linear-gradient(left, #fff 50%, #000);
+background-image: linear-gradient(left, #fff 50%, #000);</pre><br /><div style="text-align: center;"><img src="http://dl.iteye.com/upload/attachment/0083/2353/f39213f9-5d68-3728-8cf3-7964aaa02bae.gif" /></div><br /><br /><span style="font-size: medium;"><span style="color: red;"><strong>三、附加功能</strong></span></span><br /><br /><strong>生成Lorem ipsum文本</strong><br /><br />Lorem ipsum指一篇常用于排版设计领域的拉丁文文章，主要目的是测试文章或文字在不同字型、版型下看起来的效果。通过Emmet，你只需输入lorem 或 lipsum即可生成这些文字。还可以指定文字的个数，比如lorem10，将生成：<br /><br /><div class="quote_title">引用</div><div class="quote_div">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero delectus.</div><br /><div style="text-align: center;"><img src="http://dl.iteye.com/upload/attachment/0083/2355/87a3d500-1798-3050-b7e0-df51c94bd203.gif" /></div><br /><br /><span style="font-size: medium;"><span style="color: red;"><strong>四、定制</strong></span></span><br /><br />你还可以定制Emmet插件：<br /><br /><ul><li>添加新缩写或更新现有缩写，可修改<a href="http://docs.emmet.io/customization/snippets/" target="_blank">snippets.json</a>文件</li><li>更改Emmet过滤器和操作的行为，可修改<a href="http://docs.emmet.io/customization/preferences/" target="_blank">preferences.json</a>文件</li><li>定义如何生成HTML或XML代码，可修改<a href="http://docs.emmet.io/customization/syntax-profiles/" target="_blank">syntaxProfiles.json</a>文件</ul></li><br /><span style="font-size: medium;"><strong><span style="color: red;">五、针对不同编辑器的插件</span></strong></span><br /><br />Emmet支持的编辑器如下（链接为针对该编辑器的Emmet插件）：<br /><br /><ul><li><a href="https://github.com/sergeche/emmet-sublime" target="_blank">Sublime Text 2</a></li><li><a href="https://github.com/emmetio/Emmet.tmplugin" target="_blank">TextMate 1.x</a></li><li><a href="https://github.com/emmetio/emmet-eclipse" target="_blank">Eclipse/Aptana</a></li><li><a href="https://github.com/emmetio/Emmet.codaplugin" target="_blank">Coda 1.6 and 2.x</a></li><li><a href="https://github.com/emmetio/Emmet.sugar" target="_blank">Espresso</a></li><li><a href="https://github.com/sergeche/emmet.chocmixin" target="_blank">Chocolat</a> （通过“Install Mixin”对话框添加)</li><li><a href="https://github.com/emmetio/emmet/downloads" target="_blank">Komodo Edit/IDE</a> （通过Tools → Add-ons菜单添加)</li><li><a href="https://github.com/emmetio/emmet/downloads" target="_blank">Notepad++</a></li><li><a href="https://github.com/emmetio/emmet/downloads" target="_blank">PSPad</a></li><li><a href="https://github.com/emmetio/emmet/downloads" target="_blank">&lt;textarea&gt;</a></li><li><a href="https://github.com/emmetio/codemirror" target="_blank">CodeMirror2/3</a></li><li><a href="https://github.com/emmetio/brackets-emmet" target="_blank">Brackets</a></ul></li>相关文档：<a href="http://docs.emmet.io/" target="_blank">http://docs.emmet.io/</a>（其中包含了一个Demo，你可以试验文中所提到的这些缩写）<br /><br />Via <a href="http://coding.smashingmagazine.com/2013/03/26/goodbye-zen-coding-hello-emmet/" target="_blank">smashingmagazine</a>
+    </div>
+
+    <div id="news_recommended_n2"><!--AdForward Begin:-->
+<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=iteye|news|banner3&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+<!--AdForward End--></div>
+
+    
+  <div class="attachments">
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0083/2327/301ff5c9-3604-3dd3-a206-6d3516861ec4.jpg" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0083/2327/301ff5c9-3604-3dd3-a206-6d3516861ec4-thumb.jpg' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 122.9 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0083/2329/0070e820-1cbf-3f42-8c5b-838e5774d02b.gif" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0083/2329/0070e820-1cbf-3f42-8c5b-838e5774d02b-thumb.gif' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 48.2 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0083/2331/cb250aef-3b60-3297-86ba-8c3ed36cacad.gif" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0083/2331/cb250aef-3b60-3297-86ba-8c3ed36cacad-thumb.gif' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 13 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0083/2333/167e1956-4ac6-3b6d-9025-8bf90fee1250.gif" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0083/2333/167e1956-4ac6-3b6d-9025-8bf90fee1250-thumb.gif' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 15.8 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0083/2335/47ae82f5-4fd8-36a1-9b4e-d148237537ee.gif" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0083/2335/47ae82f5-4fd8-36a1-9b4e-d148237537ee-thumb.gif' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 26.4 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0083/2337/ae3a8b58-244a-3680-9f0c-d0cab459fc41.gif" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0083/2337/ae3a8b58-244a-3680-9f0c-d0cab459fc41-thumb.gif' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 26.8 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0083/2339/363af658-650f-38d1-ad0e-9608df9d2873.gif" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0083/2339/363af658-650f-38d1-ad0e-9608df9d2873-thumb.gif' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 25.1 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0083/2341/cf5613ac-4198-326e-a651-a08ad206800a.gif" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0083/2341/cf5613ac-4198-326e-a651-a08ad206800a-thumb.gif' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 18.7 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0083/2343/a1c5f9d8-d187-3bde-895b-2e14fb428184.gif" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0083/2343/a1c5f9d8-d187-3bde-895b-2e14fb428184-thumb.gif' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 28.9 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0083/2345/21a47a7c-2d38-3231-8b4b-7d15f38be57a.gif" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0083/2345/21a47a7c-2d38-3231-8b4b-7d15f38be57a-thumb.gif' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 36 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0083/2347/2c8cccf4-be54-3190-b1e7-3713717e2a78.gif" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0083/2347/2c8cccf4-be54-3190-b1e7-3713717e2a78-thumb.gif' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 78.7 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0083/2349/4c2c81e2-ebba-367e-a4fd-4f667d08ca84.gif" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0083/2349/4c2c81e2-ebba-367e-a4fd-4f667d08ca84-thumb.gif' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 61 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0083/2351/a68eda57-f573-343c-81b8-19e0a48c08fe.gif" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0083/2351/a68eda57-f573-343c-81b8-19e0a48c08fe-thumb.gif' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 111.1 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0083/2353/f39213f9-5d68-3728-8cf3-7964aaa02bae.gif" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0083/2353/f39213f9-5d68-3728-8cf3-7964aaa02bae-thumb.gif' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 94.8 KB</li>
+        </ul>
+      
+    
+      
+        <ul style="display:none;">
+          <li><a href="http://dl2.iteye.com/upload/attachment/0083/2355/87a3d500-1798-3050-b7e0-df51c94bd203.gif" target="_blank"><img src='http://dl2.iteye.com/upload/attachment/0083/2355/87a3d500-1798-3050-b7e0-df51c94bd203-thumb.gif' class='magplus' title='点击查看原始大小图片' /></a></li>
+          
+          <li>大小: 23 KB</li>
+        </ul>
+      
+    
+    
+      <ul>
+        <li><a href="#" onclick="$$('div.attachments ul').invoke('show');$(this).up(1).hide();return false;">查看图片附件</a></li>
+      </ul>
+    
+  </div>
+
+
+
+    <div>
+          </div>
+  </div>
+
+        <div id="digg_bottom" class="clearfix">
+      <div class="share_weibo">分享到：
+      <a data-type='sina' href="javascript:;" title="分享到新浪微博"><img src="/images/sina.jpg"></a>
+      <a data-type='qq' href="javascript:;" title="分享到腾讯微博"><img src="/images/tec.jpg"></a>
+      </div>
+<div class='digged'><strong>21</strong> <br/>顶</div><div class='digged'><strong>0</strong> <br/>踩</div></div>
+
+  <div class="comments">
+    <span style="font-weight:bold; font-size:16px;margin-right:14px;">评论</span> 共 16 条  请<a href="/login">登录</a>后发表评论 
+    <a id="comments" name="comments"></a>
+    <div id='nc137540'>
+  <h5>16 楼 <a href='http://yanhaijing.iteye.com' target='_blank' title='yanhaijing'>yanhaijing</a> 2014-12-25 11:12  </h5>
+  <div>这么酷炫，赞</div>
+</div>
+<div id='nc128855'>
+  <h5>15 楼 <a href='http://flower1987.iteye.com' target='_blank' title='FLOWER1987'>FLOWER1987</a> 2013-05-23 15:35  </h5>
+  <div>不支持ftl文件吗 只支持扩展名为html的文件？</div>
+</div>
+<div id='nc128361'>
+  <h5>14 楼 <a href='http://narycc.iteye.com' target='_blank' title='naryCC'>naryCC</a> 2013-05-07 14:18  </h5>
+  <div>效率是成功的10%</div>
+</div>
+<div id='nc127851'>
+  <h5>13 楼 <a href='http://meichen8050753.iteye.com' target='_blank' title='meichen8050753'>meichen8050753</a> 2013-04-18 13:22  </h5>
+  <div>神器啊。。。</div>
+</div>
+<div id='nc127845'>
+  <h5>12 楼 <a href='http://cyruscript.iteye.com' target='_blank' title='cyruscript'>cyruscript</a> 2013-04-18 12:17  </h5>
+  <div>在MyEclipse 2013下试过,与hibernate插件有冲突.</div>
+</div>
+<div id='nc127839'>
+  <h5>11 楼 <a href='http://wgy-java.iteye.com' target='_blank' title='wgy_java'>wgy_java</a> 2013-04-18 10:46  </h5>
+  <div>这么酷@!<img src="/images/smiles/icon_lol.gif" /> </div>
+</div>
+<div id='nc127835'>
+  <h5>10 楼 <a href='http://akandfxs.iteye.com' target='_blank' title='akandfxs'>akandfxs</a> 2013-04-18 09:20  </h5>
+  <div>特意登陆顶神器。</div>
+</div>
+<div id='nc127830'>
+  <h5>9 楼 <a href='http://ivension.iteye.com' target='_blank' title='ivension'>ivension</a> 2013-04-17 21:39  </h5>
+  <div>神器，MARK一下。</div>
+</div>
+<div id='nc127829'>
+  <h5>8 楼 <a href='http://weng.iteye.com' target='_blank' title='weng'>weng</a> 2013-04-17 21:06  </h5>
+  <div>神器&nbsp;&nbsp;&nbsp; </div>
+</div>
+<div id='nc127822'>
+  <h5>7 楼 <a href='http://toolog.iteye.com' target='_blank' title='toolog'>toolog</a> 2013-04-17 16:19  </h5>
+  <div>见识过！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！</div>
+</div>
+<div id='nc127819'>
+  <h5>6 楼 <a href='http://yjc2020.iteye.com' target='_blank' title='yjc2020'>yjc2020</a> 2013-04-17 14:24  </h5>
+  <div><div class="quote_title">wangguo 写道</div><div class="quote_div"><div class="quote_title">yjc2020 写道</div><div class="quote_div">eclipse 插件 403</div><br /><a rel="nofollow" href="https://github.com/emmetio/emmet-eclipse" target="_blank">https://github.com/emmetio/emmet-eclipse</a></div><br /><br /><br />Go to Help &gt; Install New Software… in your Eclipse IDE<br />Add http://emmet.io/eclipse/updates/ in update sites<br />Check Emmet for Eclipse group in available plugins list, click Next button and follow the installation instructions<br />Restart Eclipse</div>
+</div>
+<div id='nc127810'>
+  <h5>5 楼 <a href='http://wangguo.iteye.com' target='_blank' title='wangguo'>wangguo</a> 2013-04-17 10:10  </h5>
+  <div><div class="quote_title">yjc2020 写道</div><div class="quote_div">eclipse 插件 403</div><br /><a rel="nofollow" href="https://github.com/emmetio/emmet-eclipse" target="_blank">https://github.com/emmetio/emmet-eclipse</a></div>
+</div>
+<div id='nc127809'>
+  <h5>4 楼 <a href='http://yjc2020.iteye.com' target='_blank' title='yjc2020'>yjc2020</a> 2013-04-17 09:46  </h5>
+  <div>eclipse 插件 403</div>
+</div>
+<div id='nc127802'>
+  <h5>3 楼 <a href='http://cyruscript.iteye.com' target='_blank' title='cyruscript'>cyruscript</a> 2013-04-16 21:13  </h5>
+  <div><div class="quote_title">freezingsky 写道</div><div class="quote_div">。。。这种编码很是神奇，但对于开发者而言，相当于学多门语言。。。</div><br />语法很简单，会基本css语法基本可以在非常短的时间就可以把常用的语法掌握。</div>
+</div>
+<div id='nc127801'>
+  <h5>2 楼 <a href='http://freezingsky.iteye.com' target='_blank' title='freezingsky'>freezingsky</a> 2013-04-16 20:29  </h5>
+  <div>。。。这种编码很是神奇，但对于开发者而言，相当于学多门语言。。。</div>
+</div>
+<div id='nc127800'>
+  <h5>1 楼 <a href='http://cyruscript.iteye.com' target='_blank' title='cyruscript'>cyruscript</a> 2013-04-16 20:23  </h5>
+  <div>$符号得到加强，不过支持最好是SublimeText. DW等真没支持。</div>
+</div>
+
+    
+    
+  </div>
+  <div class="comments"><h3>发表评论</h3></div>
+  
+  <p style="text-align:center; margin-top:10px; margin-bottom:30px;"><a href="/login"> <img src="/images/login_icon.png" style="vertical-align:middle; margin-right: 10px;" /> 您还没有登录,请您登录后再发表评论 </a></p>
+
+</div>
+<script type="text/javascript">
+
+  function quote_comment(id) {
+    new Ajax.Request('/editor/quote', {
+      parameters: {'id':id, 'type':'NewsComment'},
+      onSuccess:function(response){
+        editor.bbcode_editor.textarea.insertAfterSelection(response.responseText);
+        Element.scrollTo(editor.bbcode_editor.textarea.element);}
+    });
+  }
+  
+  dp.SyntaxHighlighter.HighlightAll('code', true, true);
+  fix_image_size($$('div#news_content img'), 650);
+  fix_image_size($$('div.comments img'), 620);
+
+  new WeiboShare({share_buttons: $$('.share_weibo')[0], img_scope: $('news_content')});
+</script>
+
+
+
+        </div>
+        <div id="local">
+          <div class="notices_area">
+<a href="http://www.iteye.com/news/25338-iteye-csdn-recruitment"><b>2013 ITeye&CSDN最新职位火热招聘中！</b>急聘ruby研发、编辑、运营！请将简历发送至hrzhaopin@csdn.net</a></div>            <div>
+  <form action="/news/search" method="get">    <input class="text" id="query" name="query" size="15" style="width: 135px;" type="text" />
+    <input class="submit" type="submit" value="搜索资讯" style="width: 68px;" />
+  </form></div>
+
+
+
+    
+        <div>
+  <h3>相关资讯 </h3>
+        <ul>
+                    <li><a href="/news/27548" target="_blank">RubyMine 5.4发布，支持Rails 4</a></li>
+                    <li><a href="/news/27577" target="_blank">前端 CSS 规范大全</a></li>
+                    <li><a href="/news/8426-interesting-3d-css-and-video" target="_blank">有趣的3D CSS 和 Video </a></li>
+              </ul>
+  </div>
+        <div>
+  <h3>相关讨论 </h3>
+        <ul>
+                    <li><a href="http://www.iteye.com/topic/1128740" target="_blank">分享7个超实用的Emmet（zen coding）HTML代码使用技巧</a></li>
+                    <li><a href="http://www.iteye.com/topic/582923" target="_blank">CSS全科教程——第一部分：CSS基础</a></li>
+                    <li><a href="http://www.iteye.com/topic/1066902" target="_blank">设计制作一个自己的个性化弹出提示框</a></li>
+                    <li><a href="http://www.iteye.com/topic/702207" target="_blank">cssTable分享</a></li>
+                    <li><a href="http://www.iteye.com/topic/1137154" target="_blank">纯css3实现的动画加载条</a></li>
+              </ul>
+  </div>
+        <div>
+  <h3>相关博客 </h3>
+        <ul>
+                    <li><a href="http://xllily.iteye.com/blog/2110349" target="_blank">Emmet：HTML/CSS代码快速编写神器</a></li>
+                    <li><a href="http://liuguofeng.iteye.com/blog/2146420" target="_blank"> Emmet：HTML/CSS代码快速编写神器</a></li>
+                    <li><a href="http://axl234.iteye.com/blog/1944867" target="_blank">Emmet：HTML/CSS代码快速编写神器 </a></li>
+                    <li><a href="http://liuguofeng.iteye.com/blog/2100706" target="_blank">Web 前端利器Emmet 的CSS 用法总结</a></li>
+                    <li><a href="http://gao-tang.iteye.com/blog/2097172" target="_blank">CSS学习前准备</a></li>
+              </ul>
+  </div>
+    
+
+        </div>
+        <div id="nav">
+  <div class="wrapper">
+    <ul>
+            <li><a href="http://www.iteye.com/">首页</a></li>
+      <li><a href="http://www.iteye.com/news" class='selected'>资讯</a></li>
+      <li><a href="http://www.iteye.com/magazines">精华</a></li>
+      <li><a href="http://www.iteye.com/forums">论坛</a></li>
+      <li><a href="http://www.iteye.com/ask">问答</a></li>
+      <li><a href="http://www.iteye.com/blogs">博客</a></li>
+      <li><a href="http://www.iteye.com/blogs/subjects">专栏</a></li>
+      <li><a href="http://www.iteye.com/groups">群组</a></li>
+      <!-- <li><a target="_blank" href="http://job.iteye.com/iteye">招聘</a></li>-->
+      <li><a target="_blank" href="http://job.csdn.net/">招聘</a></li>
+      <li class="last"><a href="http://www.iteye.com/search">搜索</a></li>
+    </ul>
+  </div>
+</div>
+      </div>
+      <div id="footer">
+  <div id="site_nav">
+    <ul>
+      <li><a href="/index/service">广告服务</a></li>
+      <li><a href="http://webmaster.iteye.com">ITeye黑板报</a></li>
+      <li><a href="/index/contactus">联系我们</a></li>
+      <li class="last"><a href="/index/friend_links">友情链接</a></li>
+    </ul>
+  </div>
+  <div id="copyright">
+    &copy; 2003-2015 ITeye.com.    [ <a href="http://www.miibeian.gov.cn">京ICP证110151号</a>  京公网安备110105010620 ]<br/>
+    百联优力(北京)投资有限公司  版权所有<br />
+  </div>
+</div>
+
+    </div>
+    <script type="text/javascript">
+  document.write("<img src='http://stat.iteye.com/?url="+ encodeURIComponent(document.location.href) + "&referrer=" + encodeURIComponent(document.referrer) + "&user_id=' width='0' height='0' />");
+</script>
+
+<script src="http://csdnimg.cn/pubfooter/js/tracking.js?version=20130923164150" type="text/javascript"></script>
+
+    <script type="text/javascript">
+      function json_digg(id) {
+        call_json_digg('digg', id)
+      };
+      function json_bury(id) {
+        call_json_digg('bury', id)
+      };
+      function disable_digg_link(id) {
+        $$('#digg_link_' + id + ' a.push_up').each(function(link) {
+            old_count = $('digg_count_' + id).textContent;
+            link.replace('<span class="push_up">顶 <b id="digg_count_' + id + '">' + old_count + '</b></span>')
+        });
+        $$('#digg_link_' + id + ' a.trample').each(function(link) {
+            old_count = $('bury_count_' + id).textContent;
+            link.replace('<span class="trample">踩 <b id="bury_count_' + id + '">' + old_count + '</b></span>')
+        });
+      };
+      function call_json_digg(type, id) {
+        if (type === 'bury' || type === 'digg') {
+          new Ajax.Request('/news/' + type,
+                           {
+                             method:'post',
+                             parameters: {"id": id, "format" : 'json' },
+                             onSuccess: function(transport) {
+                               disable_digg_link(id);
+                               var json = transport.responseText.evalJSON();
+                               $(type + "_count_" + id).update(json[type + '_count']);
+                             }
+                           });
+        }
+      };
+    </script>
+    
+  </body>
+</html>

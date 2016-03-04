@@ -1,0 +1,1172 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+     
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>   
+    
+     
+    <script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/tracking.js" charset="utf-8"></script>  
+
+    <script type="text/javascript">
+        var protocol = window.location.protocol;
+        document.write('<script type="text/javascript" src="' + protocol + '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></' + 'script>');
+    </script>
+
+  
+ <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+
+    <title>Spring3 MVC详解一 - liumm0000的专栏
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="本来是搜一些html5 websocket资料看的，结果被引去看了php的socket编程。下面是一些简单的例子，在命令行运行php脚本就行[命令行运行PHP]PHP中有一个php.exe文件，可以用命令执行PHP脚本。如：D:/php.exe -f F:/test.php ; 可以使用php.exe -h查看更多参数：server端：" />
+    <script src="http://static.blog.csdn.net/scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://static.blog.csdn.net/scripts/ad.js?v=1.1"></script>
+        <!--new top-->
+               <link rel="stylesheet" href="http://c.csdnimg.cn/public/common/toolbar/css/index.css">        <!--new top-->
+
+    <link rel="Stylesheet" type="text/css" href="http://static.blog.csdn.net/skin/default/css/style.css?v=1.1" />
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="/liumm0000/rss/list" />
+    <link rel="shortcut icon" href="http://c.csdnimg.cn/public/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/default.css" />
+ 
+
+
+</head>
+<body>
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="http://c.csdnimg.cn/public/common/toolbar/js/html.js" type="text/javascript"></script>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/liumm0000">liumm0000的专栏</a></h2>
+            <h3></h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+            
+                <li id="btnContents"><a href="http://blog.csdn.net/liumm0000?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="http://static.blog.csdn.net/images/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/liumm0000?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="http://static.blog.csdn.net/images/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/liumm0000/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="http://static.blog.csdn.net/images/ico_rss.gif">订阅</span></a></li>                
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "liumm0000";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/liumm0000";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod='popu_3' > 
+
+<a href="http://blog.csdn.net/lmj623565791/article/details/50709663">
+<font color=red>Android 6.0 运行时权限处理完全解析
+</font></a>
+&nbsp;&nbsp;&nbsp;
+
+<a href="http://blog.csdn.net/xingjiarong/article/details/50651235">
+<font color=blue>python编程常用模板总结
+</font></a>
+&nbsp;&nbsp;&nbsp;
+<a href="http://lib.csdn.net/base/15/structure">
+<font color=red>【知识库】一张大图看懂Android架构
+</font></a>
+
+</div>                        </div>
+                        
+
+<!--AdForward Begin:-->
+<script type="text/javascript" ads-src="http://csdnim.qtmojo.com/main/s?user=csdn|blog|fumeiti&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.qtmojo.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+<!--AdForward End-->
+
+  
+<link href="http://static.blog.csdn.net/css/comment1.css" type="text/css" rel="stylesheet" />
+<link href="http://static.blog.csdn.net/css/style1.css" type="text/css" rel="stylesheet" />
+<script language='JavaScript' type='text/javascript' src='http://download.csdn.net/js/jquery.cookie.js'></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/search-service/main.js"></script>
+<link rel="stylesheet" href="http://static.blog.csdn.net/public/res-min/markdown_views.css?v=1.0" />
+<link rel="stylesheet" href="http://static.blog.csdn.net/css/category.css?v=1.0" />
+<script type="text/javascript" src="http://static.blog.csdn.net/public/res/bower-libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+           
+            var isBole = false;
+            
+          
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="/liumm0000/article/details/7565480">
+        Spring3 MVC详解一            
+        </a></span>
+    </h1>
+</div>
+
+   
+
+        <div class="article_manage clearfix">
+        <div class="article_l">
+            <span class="link_categories">
+            标签：
+              <a href='http://www.csdn.net/tag/mvc' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">mvc</a><a href='http://www.csdn.net/tag/spring' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">spring</a><a href='http://www.csdn.net/tag/servlet' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">servlet</a><a href='http://www.csdn.net/tag/resources' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">resources</a><a href='http://www.csdn.net/tag/bean' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">bean</a><a href='http://www.csdn.net/tag/exception' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">exception</a>
+            </span>
+        </div>
+        <div class="article_r">
+            <span class="link_postdate">2012-05-14 17:34</span>
+            <span class="link_view" title="阅读次数">26430人阅读</span>
+            <span class="link_comments" title="评论次数"> <a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(7)</span>
+            <span class="link_collect tracking-ad" data-mod="popu_171"> <a href="javascript:void(0);" onclick="javascript:collectArticle('Spring3 MVC详解一','7565480');return false;" title="收藏">收藏</a></span>
+             <span class="link_report"> <a href="#report" onclick="javascript:report(7565480,2);return false;" title="举报">举报</a></span>
+
+        </div>
+    </div>
+      <div class="category clearfix">
+        <div class="category_l">
+           <img src="http://static.blog.csdn.net/images/category_icon.jpg">
+            <span>分类：</span>
+        </div>
+        <div class="category_r">
+                    <label  onclick="GetCategoryArticles('1138466','liumm0000','top','7565480');">
+                        <span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">Spring<em>（5）</em></span>
+                      <img class="arrow-down" src="http://static.blog.csdn.net/images/arrow_triangle _down.jpg" style="display:inline;">
+                      <img class="arrow-up" src="http://static.blog.csdn.net/images/arrow_triangle_up.jpg" style="display:none;">
+                        <div class="subItem">
+                            <div class="subItem_t"><a  href="http://blog.csdn.net/liumm0000/article/category/1138466"  target="_blank">作者同类文章</a><i class="J_close">X</i></div>
+                            <ul class="subItem_l" id="top_1138466">                            
+                            </ul>
+                        </div>
+                    </label>                    
+        </div>
+    </div>
+    <script   type="text/javascript" src="http://static.blog.csdn.net/scripts/category.js"></script>  
+        <div   class="bog_copyright">         
+            <p  class="copyright_p" >版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
+        </div>
+
+  
+
+  
+  
+     
+
+<div id="article_content" class="article_content">
+
+<p><br>
+</p>
+<h3 style="margin-top:0px; margin-right:0px; margin-bottom:0.5em; margin-left:0px; padding-top:10px; padding-right:0px; padding-bottom:0px; padding-left:0px; font-family:Arial; text-align:left; font-size:16px; line-height:1.5em">
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<strong>DispatcherServlet <span style="font-family:Arial; font-size:16px; line-height:24px; text-align:left">
+<strong>前置控制器</strong></span></strong></p>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+&nbsp;<span style="white-space:pre"> </span><span style="font-weight:normal; line-height:1.5em">使用Spring MVC,配置DispatcherServlet是第一步。</span><span style="font-weight:normal; line-height:1.5em">DispatcherServlet是一个Servlet,所以可以配置多个DispatcherServlet。</span><span style="font-weight:normal; line-height:1.5em">DispatcherServlet是前置控制器，配置在web.xml文件中的。拦截匹配的请求，Servlet拦截匹配规则要自已定义，把拦截下来的请求，依据某某规则分发到目标Controller(我们写的Action)来处理</span></p>
+</h3>
+<pre name="code" class="html"><span style="white-space:pre">	</span>&lt;servlet&gt;
+		&lt;servlet-name&gt;spring3&lt;/servlet-name&gt;
+		&lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+		&lt;init-param&gt;
+			&lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+			&lt;param-value&gt;/WEB-INF/spring/mvc-config.xml&lt;/param-value&gt;
+		&lt;/init-param&gt;
+		&lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+	&lt;/servlet&gt;
+	&lt;servlet-mapping&gt;
+		&lt;servlet-name&gt;spring3&lt;/servlet-name&gt;
+		&lt;url-pattern&gt;/&lt;/url-pattern&gt;
+	&lt;/servlet-mapping&gt;</pre><span style="font-size:12px"><span lang="EN-US" style="font-family:Arial; line-height:24px; text-align:left"><span style="white-space:pre"></span>DispatcherServlet是一个Servlet,可以同时配置多个，每个</span><span style="font-family:Arial; line-height:24px; text-align:left">&nbsp;</span><span lang="EN-US" style="font-family:Arial; line-height:24px; text-align:left">DispatcherServlet有一个自己的</span><span style="font-family:Arial; line-height:24px; text-align:left">&nbsp;</span><span lang="EN-US" style="font-family:Arial; line-height:24px; text-align:left">WebApplicationContext上下文，这个上下文继承了</span><span style="font-family:Arial; line-height:24px; text-align:left">&nbsp;</span><span style="font-family:Arial; line-height:24px; text-align:left"></span><span lang="EN-US" style="font-family:Arial; line-height:24px; text-align:left">根上下文&nbsp;中所有东西。</span><span style="font-family:Arial; line-height:24px; text-align:left">&nbsp;</span><span lang="EN-US" style="font-family:Arial; line-height:24px; text-align:left">保存在</span><span style="font-family:Arial; line-height:24px; text-align:left">&nbsp;</span><span lang="EN-US" style="font-family:Arial; line-height:24px; text-align:left">ServletContext中，key是&quot;org.springframework.web.servlet.FrameworkServlet.CONTEXT&quot;&#43;Servlet名称。当一个Request对象产生时，会把这个</span><span lang="EN-US" style="font-family:Arial; line-height:24px; text-align:left">WebApplicationContext上下文保存在Request对象中，key是DispatcherServlet.class.getName()
+ &#43; &quot;.CONTEXT&quot;。可以使用工具类取出上下文：RequestContextUtils.getWebApplicationContext(request);</span></span><br>
+<br>
+<br>
+<span style="font-family:Arial; line-height:24px; text-align:left"><span style="font-size:16px"><strong>使用listener监听器来加载配置<br>
+</strong></span></span>
+<p><span style="font-size:12px"><span style="font-family:Arial; line-height:24px; text-align:left"></span></span><pre name="code" class="html">&lt;listener&gt;   
+  &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;   
+&lt;/listener&gt;  </pre>Spring会创建一个全局的<span lang="EN-US" style="font-family:Arial; line-height:24px; text-align:left">WebApplicationContext上下文，称为根上下文&nbsp;，保存在</span><span style="font-family:Arial; line-height:24px; text-align:left">&nbsp;</span><span lang="EN-US" style="font-family:Arial; line-height:24px; text-align:left">ServletContext中，key是WebApplicationContext.ROOT_WEB_APPLICATION_CONTEXT_ATTRIBUTE属性的&#20540;。可以使用工具类取出上下文：WebApplicationContextUtils.getWebApplicationContext(ServletContext);</span></p>
+<br>
+<strong><span style="font-family:Arial; font-size:16px; line-height:24px; text-align:left">Spring &nbsp;</span><span style="font-family:Arial; font-size:16px; line-height:24px; text-align:left">mvc-config</span><span style="font-size:16px; line-height:24px; font-family:Arial">.xml
+ 配置文件片段讲解</span><span style="font-size:16px; line-height:24px; text-align:left; font-family:Arial">&nbsp;<br>
+</span></strong><span style="text-align:left"></span><pre name="code" class="html" style="font-family: Arial; line-height: 24px; "><span style="font-size:10px;">   &lt;!-- 自动扫描的包名 --&gt;  
+   &lt;context:component-scan base-package=&quot;com.app,com.core,JUnit4&quot; &gt;&lt;/context:component-scan&gt;  
+     
+   &lt;!-- 默认的注解映射的支持 --&gt;  
+   &lt;mvc:annotation-driven /&gt;  
+     
+   &lt;!-- 视图解释类 --&gt;  
+   &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;  
+    &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot;/&gt;  
+    &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;/&gt;&lt;!--可为空,方便实现自已的依据扩展名来选择视图解释类的逻辑  --&gt;  
+    &lt;property name=&quot;viewClass&quot; value=&quot;org.springframework.web.servlet.view.JstlView&quot; /&gt;  
+   &lt;/bean&gt;  
+     
+   &lt;!-- 拦截器 --&gt;  
+   &lt;mvc:interceptors&gt;  
+    &lt;bean class=&quot;com.core.mvc.MyInteceptor&quot; /&gt;  
+   &lt;/mvc:interceptors&gt;       
+  
+    &lt;!-- 对静态资源文件的访问  方案一 （二选一） --&gt;  
+    &lt;mvc:default-servlet-handler/&gt;  
+      
+    &lt;!-- 对静态资源文件的访问  方案二 （二选一）--&gt;  
+&lt;mvc:resources mapping=&quot;/images/**&quot; location=&quot;/images/&quot; cache-period=&quot;31556926&quot;/&gt;  
+&lt;mvc:resources mapping=&quot;/js/**&quot; location=&quot;/js/&quot; cache-period=&quot;31556926&quot;/&gt;  
+&lt;mvc:resources mapping=&quot;/css/**&quot; location=&quot;/css/&quot; cache-period=&quot;31556926&quot;/&gt;  </span></pre><span style="font-size:10px"><br>
+</span>
+<h3 style="margin-top:0px; margin-right:0px; margin-bottom:0.5em; margin-left:0px; padding-top:10px; padding-right:0px; padding-bottom:0px; padding-left:0px; font-family:Arial; text-align:left; line-height:1.5em">
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-size:10px">&lt;context:component-scan/&gt; <span style="font-weight:normal">
+扫描指定的包中的类上的注解，常用的注解有：</span></span></p>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-weight:normal"><span style="font-size:10px">@Controller 声明Action组件<br>
+@Service&nbsp;&nbsp;&nbsp; 声明Service组件&nbsp;&nbsp;&nbsp; @Service(&quot;myMovieLister&quot;)&nbsp;<br>
+@Repository 声明Dao组件<br>
+@Component&nbsp;&nbsp; 泛指组件, 当不好归类时.&nbsp;<br>
+@RequestMapping(&quot;/menu&quot;)&nbsp; 请求映射<br>
+@Resource&nbsp; 用于注入，( j2ee提供的 ) 默认按名称装配，@Resource(name=&quot;beanName&quot;)&nbsp;<br>
+@Autowired 用于注入，(srping提供的) 默认按类型装配&nbsp;<br>
+@Transactional( rollbackFor={Exception.class}) 事务管理<br>
+@ResponseBody<br>
+@Scope(&quot;prototype&quot;)&nbsp;&nbsp; 设定bean的作用域</span></span></p>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-size:10px">&lt;mvc:annotation-driven /&gt; <span style="font-weight:normal">
+是一种简写形式，完全可以手动配置替代这种简写形式，简写形式可以让初学都快速应用默认配置方案。<br>
+</span>&lt;mvc:annotation-driven /&gt; <span style="font-weight:normal">会自动注册DefaultAnnotationHandlerMapping与AnnotationMethodHandlerAdapter 两个bean,是spring MVC为@Controllers分发请求所必须的。<br>
+并提供了：数据绑定支持，@NumberFormatannotation支持，@DateTimeFormat支持，@Valid支持，读写XML的支持（JAXB），读写JSON的支持（Jackson）。<br>
+后面，我们处理响应ajax请求时，就使用到了对json的支持。<br>
+后面，对action写JUnit单元测试时，要从spring IOC容器中取DefaultAnnotationHandlerMapping与AnnotationMethodHandlerAdapter 两个bean，来完成测试，取的时候要知道是&lt;mvc:annotation-driven /&gt;这一句注册的这两个bean。</span></span></p>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-size:10px">&lt;mvc:interceptors/&gt; <span style="font-weight:normal">
+是一种简写形式。可以配置多个HandlerMapping。&lt;mvc:interceptors/&gt;会为每一个HandlerMapping，注入一个拦截器。其实我们也可以手动配置为每个HandlerMapping注入一个拦截器。</span></span></p>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-size:10px">&lt;mvc:default-servlet-handler/&gt; <span style="font-weight:normal">
+使用默认的Servlet来响应静态文件。</span></span></p>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-size:10px">&lt;mvc:resources mapping=&quot;/images/**&quot; location=&quot;/images/&quot; cache-period=&quot;31556926&quot;/&gt;<span style="font-weight:normal"> 匹配URL&nbsp; /images/**&nbsp; 的URL被当做静态资源，由Spring读出到内存中再响应http。</span></span></p>
+<p style="font-size:16px; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+&nbsp;</p>
+</h3>
+<span style="font-family:Arial; line-height:24px; text-align:left"><strong><span style="font-size:24px">访问到静态的文件，如jpg,js,css</span></strong></span><br>
+<div style="">&nbsp;&nbsp;<br>
+<h3 style="margin-top:0px; margin-right:0px; margin-bottom:0.5em; margin-left:0px; padding-top:10px; padding-right:0px; padding-bottom:0px; padding-left:0px; font-family:Arial; text-align:left; line-height:1.5em">
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-weight:normal"><span style="font-size:10px">如何你的<code class="classname" style="font-family:'Courier New',Courier,monospace; white-space:pre">DispatcherServlet拦截 *.do这样的URL，就不存在访问不到静态资源的问题。如果你的</code><code class="classname" style="font-family:'Courier New',Courier,monospace; white-space:pre">DispatcherServlet拦截“/”，拦截了所有的请求，同时对*.js,*.jpg的访问也就被拦截了。</code></span></span></p>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-weight:normal"><span style="font-size:10px">目的：可以正常访问静态文件，不要找不到静态文件报404。</span></span></p>
+</h3>
+<br>
+<span style="font-family:Arial; font-size:13px; line-height:24px; text-align:left"><strong>方案一：激活Tomcat的defaultServlet来处理静态文件</strong></span><pre name="code" class="html" style="font-weight: bold; ">&lt;servlet-mapping&gt;   
+    &lt;servlet-name&gt;default&lt;/servlet-name&gt;  
+    &lt;url-pattern&gt;*.jpg&lt;/url-pattern&gt;     
+&lt;/servlet-mapping&gt;    
+&lt;servlet-mapping&gt;       
+    &lt;servlet-name&gt;default&lt;/servlet-name&gt;    
+    &lt;url-pattern&gt;*.js&lt;/url-pattern&gt;    
+&lt;/servlet-mapping&gt;    
+&lt;servlet-mapping&gt;        
+    &lt;servlet-name&gt;default&lt;/servlet-name&gt;       
+    &lt;url-pattern&gt;*.css&lt;/url-pattern&gt;      
+&lt;/servlet-mapping&gt;    
+要配置多个，每种文件配置一个</pre>
+<h3 style="margin-top:0px; margin-right:0px; margin-bottom:0.5em; margin-left:0px; padding-top:10px; padding-right:0px; padding-bottom:0px; padding-left:0px; font-family:Arial; text-align:left; font-size:16px; line-height:1.5em">
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-weight:normal"><span style="font-size:13px">要写在DispatcherServlet的前面， 让</span>&nbsp;<span style="font-size:13px">defaultServlet先拦截，这个就不会进入Spring了&nbsp;</span></span></p>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-size:13px; font-weight:normal"><br>
+</span></p>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-size:13px; font-weight:normal">Tomcat, Jetty, JBoss, and GlassFish&nbsp; 默认 Servlet的名字 -- &quot;default&quot;<br>
+Google App Engine 默认 Servlet的名字 -- &quot;_ah_default&quot;<br>
+Resin 默认 Servlet的名字 -- &quot;resin-file&quot;<br>
+WebLogic 默认 Servlet的名字&nbsp; -- &quot;FileServlet&quot;<br>
+WebSphere&nbsp; 默认 Servlet的名字 -- &quot;SimpleFileServlet&quot;&nbsp;</span></p>
+</h3>
+<br>
+<span style="font-family:Arial; font-size:13px; line-height:24px; text-align:left"><strong>方案二： 在spring3.0.4以后版本提供了mvc:resources&nbsp;</strong></span><br style="font-family:Arial; font-size:13px; line-height:24px; text-align:left">
+<span style="font-family:Arial; font-size:13px; line-height:24px; text-align:left">mvc:resources 的使用方法：</span><pre name="code" class="html">&lt;!-- 对静态资源文件的访问 --&gt;    
+&lt;mvc:resources mapping=&quot;/images/**&quot; location=&quot;/images/&quot; /&gt;  </pre>
+<h3 style="margin-top:0px; margin-right:0px; margin-bottom:0.5em; margin-left:0px; padding-top:10px; padding-right:0px; padding-bottom:0px; padding-left:0px; font-family:Arial; text-align:left; line-height:1.5em">
+<pre name="code" class="html" style="background-color: rgb(255, 255, 255); line-height: 24px; text-align: left; font-size: 13px; "><span style="font-weight: normal;">mapping<span style="font-family: Arial; line-height: 1.5em; ">映射到ResourceHttpRequestHandler进行处理
+location指定静态资源的位置.可以是web application根目录下、jar包里面，这样可以把静态资源压缩到jar包中
+cache-period 可以使得静态资源进行web cache&nbsp;</span></span></pre><span style="font-weight:normal"><span style="font-size:10px"><br>
+如果出现下面的错误，可能是没有配置&lt;mvc:annotation-driven /&gt;的原因。&nbsp;<br>
+报错WARNING: No mapping found for HTTP request with URI [/mvc/user/findUser/lisi/770] in DispatcherServlet with name 'springMVC'<br>
+</span></span>
+<p></p>
+<p style="font-size:16px; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-size:13px; font-weight:normal">&nbsp;</span></p>
+<p style="font-size:16px; margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-size:13px; font-weight:normal">使用&lt;mvc:resources/&gt;元素,把mapping的URI注册到SimpleUrlHandlerMapping的urlMap中,key为mapping的URI pattern&#20540;,而value为ResourceHttpRequestHandler,这样就巧妙的把对静态资源的访问由HandlerMapping转到ResourceHttpRequestHandler处理并返回,所以就支持classpath目录,jar包内静态资源的访问.另外需要注意的一点是,不要对SimpleUrlHandlerMapping设置defaultHandler.因为对static
+ uri的defaultHandler就是ResourceHttpRequestHandler,否则无法处理static resources request.</span></p>
+</h3>
+<br>
+<span style="font-family:Arial; line-height:24px; text-align:left"><strong><span style="font-size:10px">方案三 ，使用&lt;mvc:default-servlet-handler/&gt;</span></strong></span><br>
+<pre name="code" class="html">&lt;mvc:default-servlet-handler/&gt;</pre>
+<h3 style="margin-top:0px; margin-right:0px; margin-bottom:0.5em; margin-left:0px; padding-top:10px; padding-right:0px; padding-bottom:0px; padding-left:0px; font-family:Arial; text-align:left; line-height:1.5em">
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-weight:normal"><span style="font-size:10px">会把&quot;/**&quot; url,注册到SimpleUrlHandlerMapping的urlMap中,把对静态资源的访问由HandlerMapping转到org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler处理并返回.DefaultServletHttpRequestHandler使用就是各个Servlet容器自己的默认Servlet.</span></span></p>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-weight:normal"><span style="font-size:10px">&nbsp;</span></span></p>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-weight:normal"><span style="font-size:10px">补充说明：多个HandlerMapping的执行顺序问题：</span></span></p>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-weight:normal"><span style="font-size:10px">DefaultAnnotationHandlerMapping的order属性&#20540;是：0<br>
+&lt;mvc:resources/&nbsp;&gt;自动注册的&nbsp;SimpleUrlHandlerMapping的order属性&#20540;是：&nbsp;2147483646</span></span></p>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-weight:normal"><span style="font-size:10px">&lt;mvc:default-servlet-handler/&gt;自动注册&nbsp;的SimpleUrlHandlerMapping&nbsp;的order属性&#20540;是：&nbsp;2147483647</span></span></p>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-weight:normal"><span style="font-size:10px">spring会先执行order&#20540;比较小的。当访问一个a.jpg图片文件时，先通过&nbsp;DefaultAnnotationHandlerMapping&nbsp;来找处理器，一定是找不到的，我们没有叫a.jpg的Action。再按order&#20540;升序找，由于最后一个&nbsp;SimpleUrlHandlerMapping&nbsp;是匹&nbsp;&quot;/**&quot;的，所以一定会匹配上，再响应图片。</span></span></p>
+</h3>
+<br>
+<br>
+<strong><span style="font-size:24px">&nbsp;<span style="font-family:Arial; line-height:24px; text-align:left">请求如何映射到具体的Action中的方法</span></span><br>
+</strong><br>
+<span style="font-size:12px"><span style="font-family:Arial; line-height:24px; text-align:left"><strong>方案一：基于xml配置映射，可以利用SimpleUrlHandlerMapping、BeanNameUrlHandlerMapping进行Url映射和拦截请求。</strong></span><br style="font-family:Arial; font-weight:bold; line-height:24px; text-align:left">
+<span style="font-family:Arial; line-height:24px; text-align:left"><strong>&nbsp;</strong></span><br style="font-family:Arial; font-weight:bold; line-height:24px; text-align:left">
+<span style="font-family:Arial; line-height:24px; text-align:left"><strong>方案二：基于注解映射，可以使用DefaultAnnotationHandlerMapping。</strong></span></span><br>
+<pre name="code" class="html">&lt;bean class=&quot;org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping&quot;&gt;  &lt;/bean&gt;   
+简写
+<span style="font-family: Arial; line-height: 24px; text-align: left; "><span style="font-size:10px;">&lt;mvc:annotation-driven /&gt;</span></span>
+</pre><span style="font-family:Arial; font-size:16px; line-height:24px; text-align:left">&nbsp;</span><span style="font-family:Arial; line-height:24px; text-align:left; font-size:13px">并在action类上使用：<br>
+@Controller<br>
+@RequestMapping(&quot;/user&quot;)<br>
+</span><br>
+<br>
+<h3 style="margin-top:0px; margin-right:0px; margin-bottom:0.5em; margin-left:0px; padding-top:10px; padding-right:0px; padding-bottom:0px; padding-left:0px; font-family:Arial; text-align:left; line-height:1.5em">
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<strong><span style="font-size:24px">Spring中的拦截器：</span><br>
+</strong><span style="font-weight:normal"><span style="font-size:12px">Spring为我们提供了：</span><span style="font-size:12px">org.springframework.web.servlet.HandlerInterceptor接口，</span></span><span style="font-size:13px; font-weight:normal; line-height:1.5em">org.springframework.web.servlet.handler.HandlerInterceptorAdapter适配器，</span><span style="font-size:13px; font-weight:normal; line-height:1.5em">实现这个接口或继承此类，可以非常方便的实现自己的拦截器。</span></p>
+</h3>
+<pre name="code" class="java"> public boolean preHandle(HttpServletRequest request,HttpServletResponse response, Object handler);</pre>
+<div style="text-align:left"><span style="font-family:Arial"><span style="line-height:24px"><strong></strong></span></span><pre name="code" class="java" style="font-size:12px; "> public void postHandle(HttpServletRequest request,HttpServletResponse response, Object handler,ModelAndView modelAndView);</pre><span style="font-size:12px"></span><pre name="code" class="java"> public void afterCompletion(HttpServletRequest request,HttpServletResponse response, Object handler, Exception ex)</pre></div>
+<div style="text-align:left"><span style="font-family:Arial; font-size:13px; line-height:24px">分别实现预处理、后处理（调用了Service并返回ModelAndView，但未进行页面渲染）、返回处理（已经渲染了页面）&nbsp;</span></div>
+<span style="font-family:Arial; font-size:13px; line-height:24px">在preHandle中，可以进行编码、安全控制等处理；&nbsp;</span><br style="font-family:Arial; font-size:13px; line-height:24px; text-align:left">
+<span style="font-family:Arial; font-size:13px; line-height:24px; text-align:left">在postHandle中，有机会修改ModelAndView；&nbsp;</span><br style="font-family:Arial; font-size:13px; line-height:24px; text-align:left">
+<span style="font-family:Arial; font-size:13px; line-height:24px; text-align:left">在afterCompletion中，可以根据ex是否为null判断是否发生了异常，进行日志记录。&nbsp;</span><br style="font-family:Arial; font-size:13px; line-height:24px; text-align:left">
+<span style="font-family:Arial; font-size:13px; line-height:24px; text-align:left">参数中的Object handler是下一个拦截器。</span><br>
+<br>
+<span style="font-family:Arial; font-size:13px; line-height:24px; text-align:left"><strong>自定义一个拦截器，要实现HandlerInterceptor接口：</strong></span><br>
+<pre name="code" class="java">public class MyInteceptor implements HandlerInterceptor</pre><br>
+<span style="font-family:Arial; font-size:13px; line-height:24px; text-align:left">Spring MVC并没有总的拦截器，不能对所有的请求进行前后拦截。</span><span style="font-family:Arial; font-size:13px; line-height:24px; text-align:left">Spring MVC的拦截器，是属于HandlerMapping级别的，可以有多个HandlerMapping
+ ，每个HandlerMapping可以有自己的拦截器。</span><br>
+<br>
+<h3 style="margin-top:0px; margin-right:0px; margin-bottom:0.5em; margin-left:0px; padding-top:10px; padding-right:0px; padding-bottom:0px; padding-left:0px; font-family:Arial; text-align:left; font-size:16px; line-height:1.5em">
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-size:13px">在spring MVC的配置文件中配置有三种方法：</span></p>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-size:13px; font-weight:normal">方案一 &nbsp;（近&#20284;）总拦截器，拦截所有url</span></p>
+</h3>
+<pre name="code" class="html">&lt;mvc:interceptors&gt;  
+    &lt;bean class=&quot;com.app.mvc.MyInteceptor&quot; /&gt;  
+&lt;/mvc:interceptors&gt;  </pre><span style="font-family:Arial; font-size:13px; line-height:24px; text-align:left">&lt;mvc:interceptors/&gt;会为每一 个HandlerMapping，注入一个拦截器。总有一个HandlerMapping是可以找到处理器的，最多也只找到一个处理器，所以这个拦截器总会被执行的。起到了总拦截器的作用。</span><br>
+<span style="font-family:Arial; line-height:24px; text-align:left; font-size:13px"><br>
+方案二 &nbsp;</span><span style="font-family:Arial; line-height:24px; text-align:left; font-size:13px">（近&#20284;）</span><span style="font-family:Arial; font-size:16px; line-height:24px; text-align:left">&nbsp;</span><span style="font-family:Arial; line-height:24px; text-align:left; font-size:13px">总拦截器，</span><span style="font-family:Arial; font-size:16px; line-height:24px; text-align:left">&nbsp;</span><span style="font-family:Arial; line-height:24px; text-align:left; font-size:13px">拦截匹配的URL。比方案一多一个URL匹配。</span><br>
+<pre name="code" class="html">&lt;mvc:interceptors &gt;    
+  &lt;mvc:interceptor&gt;    
+        &lt;mvc:mapping path=&quot;/user/*&quot; /&gt; &lt;!-- /user/*  --&gt;    
+        &lt;bean class=&quot;com.mvc.MyInteceptor&quot;&gt;&lt;/bean&gt;    
+    &lt;/mvc:interceptor&gt;    
+&lt;/mvc:interceptors&gt; </pre><br>
+<span style="font-family:Arial; font-size:13px; line-height:24px; text-align:left">方案三 &nbsp; HandlerMapping上的拦截器</span><br>
+<pre name="code" class="html">&lt;bean class=&quot;org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping&quot;&gt;       
+ &lt;property name=&quot;interceptors&quot;&gt;       
+     &lt;list&gt;       
+         &lt;bean class=&quot;com.mvc.MyInteceptor&quot;&gt;&lt;/bean&gt;      
+     &lt;/list&gt;       
+ &lt;/property&gt;       
+&lt;/bean&gt;   </pre>
+<h3 style="margin-top:0px; margin-right:0px; margin-bottom:0.5em; margin-left:0px; padding-top:10px; padding-right:0px; padding-bottom:0px; padding-left:0px; font-family:Arial; text-align:left; font-size:16px; line-height:1.5em">
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-size:13px; font-weight:normal">&lt;mvc:annotation-driven /&gt;会自动注册DefaultAnnotationHandlerMapping 与AnnotationMethodHandlerAdapter 这两个bean,所以就没有机会再给它注入interceptors属性，就无法指定拦截器。</span></p>
+<p style="margin-top:0px; margin-bottom:0px; padding-top:0px; padding-bottom:0px">
+<span style="font-weight:normal"><span style="font-size:13px">如果我们手动配置上面的两个Bean，不使用</span>&nbsp;<span style="font-size:13px">&lt;mvc:annotation-driven /&gt;，就可以</span>&nbsp;<span style="font-size:13px">给interceptors属性</span>&nbsp;<span style="font-size:13px">注入拦截器了。</span></span></p>
+</h3>
+<br>
+<br>
+<span style="font-family:Arial; line-height:24px; text-align:left"><strong><span style="font-size:24px">实现全局的异常处理</span></strong></span><br>
+<br>
+</div>
+<pre name="code" class="html">&lt;!-- 总错误处理--&gt;  
+&lt;bean id=&quot;exceptionResolver&quot; class=&quot;org.springframework.web.servlet.handler.SimpleMappingExceptionResolver&quot;&gt;  
+    &lt;property name=&quot;defaultErrorView&quot;&gt;    
+        &lt;value&gt;/error/error&lt;/value&gt;  
+    &lt;/property&gt;  
+    &lt;property name=&quot;defaultStatusCode&quot;&gt;    
+        &lt;value&gt;500&lt;/value&gt;  
+    &lt;/property&gt;     
+    &lt;property name=&quot;warnLogCategory&quot;&gt;    
+        &lt;value&gt;org.springframework.web.servlet.handler.SimpleMappingExceptionResolver&lt;/value&gt;  
+    &lt;/property&gt;     
+&lt;/bean&gt;   </pre><br>
+<span style="font-family:Arial; font-size:13px; line-height:24px; text-align:left">通过SimpleMappingExceptionResolver我们可以将不同的异常映射到不同的jsp页面（通过exceptionMappings属性的配置）。<span style="font-family:Arial; font-size:13px; line-height:24px; text-align:left">如果所抛出的异常在exceptionMappings中没有对应的映射，则Spring将用此默认配置显示异常信息<span style="font-family:Arial; font-size:13px; line-height:24px; text-align:left">（通过defaultErrorView属性的配置）</span>。</span></span><br>
+<pre name="code" class="html">&lt;html&gt;  
+&lt;head&gt;  
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=GBK&quot;&gt;  
+&lt;title&gt;错误页面&lt;/title&gt;  
+&lt;/head&gt;  
+&lt;body&gt;  
+&lt;h1&gt;出错了&lt;/h1&gt;  
+&lt;%  
+Exception e = (Exception)request.getAttribute(&quot;exception&quot;);  
+out.print(e.getMessage());  
+%&gt;  
+&lt;/body&gt;  
+&lt;/html&gt; </pre><span style="font-family:Arial; font-size:13px; line-height:24px; text-align:left">其中一句：request.getAttribute(&quot;exception&quot;)，key是exception，也是在SimpleMappingExceptionResolver类默认指定的，是可能通过配置文件修改这个&#20540;的。</span><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p></p>
+   
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+
+
+
+<div class="bdsharebuttonbox tracking-ad" style="float: right;" data-mod="popu_172">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"  style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"style="background-position:0 -1612px !important" ></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+   <link rel="stylesheet" href="http://static.blog.csdn.net/css/blog_detail.css" />
+
+    
+<!--172.16.140.11-->
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+ 
+
+        <div id="digg" ArticleId="7565480">
+            <dl id="btnDigg" class="digg digg_disable">
+               
+                 <dt>顶</dt>
+                <dd>3</dd>
+            </dl>
+            <dl id="btnBury" class="digg digg_disable">
+              
+                  <dt>踩</dt>
+                <dd>0</dd>
+            </dl>
+        </div>
+
+   <ul class="article_next_prev">
+                <li class="prev_article"><span  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/liumm0000/article/details/7565027';">上一篇</span><a href="/liumm0000/article/details/7565027" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">Spring IOC 常用注解</a></li>
+                <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/liumm0000/article/details/7565803';">下一篇</span><a href="/liumm0000/article/details/7565803" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">Spring3 MVC详解二</a></li>
+    </ul>
+
+    <div style="clear:both; height:10px;"></div>
+
+
+        <div class="similar_article"  style="display:none">
+                <h4>我的同类文章</h4>
+                <div class="similar_c"style="margin:20px 0px 0px 0px">
+                    <div class="similar_c_t">
+                                <label class="similar_cur">
+                                    <span  style="cursor:pointer"  onclick="GetCategoryArticles('1138466','liumm0000','foot','7565480');">Spring<em>（5）</em></span>
+                                </label>
+                    </div>
+                   
+                    <div class="similar_wrap tracking-ad" data-mod="popu_141"  style="max-height:195px;">
+                        <a href="http://blog.csdn.net" style="display:none">http://blog.csdn.net</a>
+                        <ul class="similar_list fl">                          
+                        </ul>
+
+                        <ul class="similar_list fr">                           
+                        </ul>
+                    </div>
+                </div>
+            </div>    
+    <script  type="text/javascript">
+        $(function () {
+            GetCategoryArticles('1138466', 'liumm0000','foot','7565480');
+        });
+    </script>
+      
+</div>
+<div id="suggest"></div>
+         <script  language="javascript" type='text/javascript'>     
+             $(function(){
+                 $.get("/liumm0000/svc/GetSuggestContent/7565480",function(data){
+                     $("#suggest").html(data);
+                 });     
+             });             
+         </script>  
+
+
+<style>
+.blog-ass-articl dd {
+color: #369;
+width: 99%; /*修改行*/
+float: left;
+overflow: hidden;
+font: normal normal 12px/23px "SimSun";
+height: 23px;
+margin: 0;
+padding: 0 0 0 10px;
+margin-right: 30px;
+background: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;
+}
+</style>
+
+<dl class="blog-ass-articl" id="res-relatived" > 
+     <dt><span>猜你在找</span></dt>    
+
+
+   
+
+
+    <div id="adCollege" style="width: 42%;float: left;"> 
+        <script src="http://csdnimg.cn/jobreco/job_reco.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            csdn.position.showEdu({
+                sourceType: "blog",
+                searchType: "detail",
+                searchKey: "7565480",
+                username: "",
+                recordcount: "5",
+                containerId: "adCollege" //容器DIV的id。 
+            });
+        </script> 
+    </div>  
+
+    
+     <div id="res"  data-mod="popu_36"  class="tracking-ad" style="width: 42%;float: left;margin-right: 30px;"></div>
+   
+</dl>
+
+
+
+<script type="text/javascript">
+    $(function () {
+        setTimeout(function () {
+            var searchtitletags = 'Spring3 MVC详解一' + ',' + $("#tags").html();
+            searchService({
+                index: 'blog',
+                query: searchtitletags,
+                from: 5,
+                size: 5,
+                appendTo: '#res',
+                url: 'recommend',
+                his: 2,
+                client: "blog_cf_enhance",
+                tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+            });
+        }, 500);
+    });    
+
+ </script>   
+
+    <div id="ad_cen">        
+<!--AdForward Begin:-->
+<script type="text/javascript" src="http://csdnim.qtmojo.com/main/s?user=csdn|blog|banner2&db=csdnim&border=0&local=yes&js=ie" charset="gbk"></script>
+<!--AdForward End-->    </div>  
+
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list">
+    </div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form">
+    </div>
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '7565480';
+    var commentscount = 7;
+    var islock = false
+</script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/comment.js"></script>
+    <div id="ad_bot">
+    </div>
+<div id="report_dialog">
+</div>
+
+<div id="d-top"  style="bottom:60px;">
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="http://static.blog.csdn.net/images/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop"  style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])" style="">         
+         <img src="http://static.blog.csdn.net/images/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);    
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+
+
+<div class="tag_list" style="display:none"></div>
+  <script  language="javascript" type='text/javascript'>     
+      $(function(){
+              setTimeout(function(){
+                  $.get("/liumm0000/svc/GetTagContent",function(data){
+                      $(".tag_list").html(data).show();
+                  });     
+              });
+          },500);                       
+ </script> 
+
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });
+        },200);  
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }    
+
+</script>
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+                   
+           <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/liumm0000" target="_blank">
+    <img src="http://avatar.csdn.net/F/4/4/1_liumm0000.jpg" title="访问我的空间" style="max-width:90%"/>
+    </a>
+    <br />
+    <span><a href="http://my.csdn.net/liumm0000" class="user_name" target="_blank">liumm0000</a></span>
+</div>
+<div class="interact">
+
+    <a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]"></a>
+
+ <a href="javascript:void(0);" class="letter"  title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=liumm0000','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                <div id="bms_box">
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>188655次</span></li>
+    <li>积分：<span>2287</span> </li>    
+    <li >等级： <span style="position:relative;display:inline-block;z-index:1" >
+            <img src="http://c.csdnimg.cn/jifen/images/xunzhang/jianzhang/blog5.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：2287 </div>
+        </span>  </li>
+    <li>排名：<span>第10048名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>50篇</span></li>
+    <li>转载：<span>19篇</span></li>
+    <li>译文：<span>1篇</span></li>
+    <li>评论：<span>24条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字" /></span>
+        <input id="btnSubmit" type="button" value="搜索" title="search in blog" />
+        <input type="hidden" name="q" id="inputQ" />
+        <input type="hidden" name="t" value="blog" />
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script><div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">    
+                 <li>
+                    <a href="/liumm0000/article/category/1138465" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">JAVA技术</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/liumm0000/article/category/1570765" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Hbase</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/liumm0000/article/category/1570763" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Hadoop</a><span>(3)</span>
+                </li>
+                 <li>
+                    <a href="/liumm0000/article/category/1138455" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Ajax</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/liumm0000/article/category/1141154" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">JAVA EE</a><span>(7)</span>
+                </li>
+                 <li>
+                    <a href="/liumm0000/article/category/1138466" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Spring</a><span>(6)</span>
+                </li>
+                 <li>
+                    <a href="/liumm0000/article/category/1138469" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Struts</a><span>(0)</span>
+                </li>
+                 <li>
+                    <a href="/liumm0000/article/category/1138467" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Hibernate</a><span>(0)</span>
+                </li>
+                 <li>
+                    <a href="/liumm0000/article/category/1138473" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Oracle OGG</a><span>(4)</span>
+                </li>
+                 <li>
+                    <a href="/liumm0000/article/category/1138459" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Oracle DB</a><span>(10)</span>
+                </li>
+                 <li>
+                    <a href="/liumm0000/article/category/1138470" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">IBM ESB</a><span>(5)</span>
+                </li>
+                 <li>
+                    <a href="/liumm0000/article/category/1138476" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Web Services</a><span>(4)</span>
+                </li>
+                 <li>
+                    <a href="/liumm0000/article/category/1139385" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">NoSQL</a><span>(10)</span>
+                </li>
+                 <li>
+                    <a href="/liumm0000/article/category/1149561" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Linux</a><span>(12)</span>
+                </li>
+                 <li>
+                    <a href="/liumm0000/article/category/1171410" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">ETL</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/liumm0000/article/category/1207269" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">其他</a><span>(0)</span>
+                </li>
+                 <li>
+                    <a href="/liumm0000/article/category/1878289" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">MySQL</a><span>(3)</span>
+                </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list">
+<!--归档统计-->
+<li><a href="/liumm0000/article/month/2014/04">2014年04月</a><span>(3)</span></li><li><a href="/liumm0000/article/month/2014/01">2014年01月</a><span>(1)</span></li><li><a href="/liumm0000/article/month/2013/10">2013年10月</a><span>(5)</span></li><li><a href="/liumm0000/article/month/2013/08">2013年08月</a><span>(1)</span></li><li><a href="/liumm0000/article/month/2012/12">2012年12月</a><span>(3)</span></li><li><a href="/liumm0000/article/month/2012/11">2012年11月</a><span>(1)</span></li><li><a href="/liumm0000/article/month/2012/09">2012年09月</a><span>(1)</span></li><li><a href="/liumm0000/article/month/2012/08">2012年08月</a><span>(13)</span></li><li><a href="/liumm0000/article/month/2012/07">2012年07月</a><span>(1)</span></li><li><a href="/liumm0000/article/month/2012/06">2012年06月</a><span>(8)</span></li><li><a href="/liumm0000/article/month/2012/05">2012年05月</a><span>(33)</span></li>
+</div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="/liumm0000/article/details/7565480" title="Spring3 MVC详解一">Spring3 MVC详解一</a><span>(26414)</span>
+</li>
+<li>
+<a href="/liumm0000/article/details/18841197" title="RPM方式安装MySQL5.6">RPM方式安装MySQL5.6</a><span>(21959)</span>
+</li>
+<li>
+<a href="/liumm0000/article/details/7543471" title="MQ 基本概念">MQ 基本概念</a><span>(10423)</span>
+</li>
+<li>
+<a href="/liumm0000/article/details/7578041" title="MQ常用命令">MQ常用命令</a><span>(8369)</span>
+</li>
+<li>
+<a href="/liumm0000/article/details/7682157" title="kettle介绍">kettle介绍</a><span>(7993)</span>
+</li>
+<li>
+<a href="/liumm0000/article/details/13408855" title="Hadoop三种安装模式">Hadoop三种安装模式</a><span>(7798)</span>
+</li>
+<li>
+<a href="/liumm0000/article/details/7536247" title="Morphia 学习二 接口">Morphia 学习二 接口</a><span>(7755)</span>
+</li>
+<li>
+<a href="/liumm0000/article/details/8443550" title="Tomcat的跨区域访问问题">Tomcat的跨区域访问问题</a><span>(7662)</span>
+</li>
+<li>
+<a href="/liumm0000/article/details/7932019" title="Java LDAP操作">Java LDAP操作</a><span>(7075)</span>
+</li>
+<li>
+<a href="/liumm0000/article/details/7843559" title="股票API之----------新浪财经频道">股票API之----------新浪财经频道</a><span>(6110)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="/liumm0000/article/details/18841197" title="RPM方式安装MySQL5.6">RPM方式安装MySQL5.6</a><span>(9)</span>
+</li>
+<li>
+<a href="/liumm0000/article/details/7565480" title="Spring3 MVC详解一">Spring3 MVC详解一</a><span>(7)</span>
+</li>
+<li>
+<a href="/liumm0000/article/details/7536247" title="Morphia 学习二 接口">Morphia 学习二 接口</a><span>(3)</span>
+</li>
+<li>
+<a href="/liumm0000/article/details/7565803" title="Spring3 MVC详解二">Spring3 MVC详解二</a><span>(1)</span>
+</li>
+<li>
+<a href="/liumm0000/article/details/7535655" title="MongoDB基于GridFS存储文件">MongoDB基于GridFS存储文件</a><span>(1)</span>
+</li>
+<li>
+<a href="/liumm0000/article/details/7535858" title="Morphia 学习一 注解">Morphia 学习一 注解</a><span>(1)</span>
+</li>
+<li>
+<a href="/liumm0000/article/details/7579005" title="打包解压">打包解压</a><span>(1)</span>
+</li>
+<li>
+<a href="/liumm0000/article/details/7537512" title="Morphia 学习五  使用">Morphia 学习五  使用</a><span>(1)</span>
+</li>
+<li>
+<a href="/liumm0000/article/details/7537426" title="Morphia 学习四  数据类型与容器">Morphia 学习四  数据类型与容器</a><span>(0)</span>
+</li>
+<li>
+<a href="/liumm0000/article/details/7536363" title="Morphia 学习三  自定义注解、转换器">Morphia 学习三  自定义注解、转换器</a><span>(0)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend">
+<ul>
+<li><a href="http://blog.csdn.net/nugongahou110/article/details/50698382" 
+
+target="_blank">*Android自定义ViewGroup打造各种风格的SlidingMenu</a></li>
+<li><a href="http://blog.csdn.net/lmj623565791/article/details/50709663" 
+
+target="_blank">* Android 6.0 运行时权限处理完全解析</a></li>
+<li><a href="http://blog.csdn.net/u011225629/article/details/50492403" 
+
+target="_blank">* 数据库性能优化之SQL语句优化</a></li>
+<li><a 
+
+href="http://blog.csdn.net/harvic880925/article/details/50598322"target="_blank">*Animation动画详解(七)——ObjectAnimator基本使用</a></li>
+<li><a href="http://blog.csdn.net/luoshengyang/article/details/50527574" 
+
+target="_blank">* Chromium网页URL加载过程分析</a></li>
+<li><a href="http://jiezhu2007.iteye.com/blog/2277613"  
+
+target="_blank">* 大数据三种典型云服务模式</a></li>
+
+</ul></ul>
+</div>
+
+
+<div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="/liumm0000/article/details/18841197#comments">RPM方式安装MySQL5.6</a>
+    <p style="margin:0px;"><a href="/guyezi" class="user_name">guyezi</a>:
+@q447552640:$ find -name mysql.sock# cat /etc/my.c...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/liumm0000/article/details/18841197#comments">RPM方式安装MySQL5.6</a>
+    <p style="margin:0px;"><a href="/guyezi" class="user_name">guyezi</a>:
+@q447552640:# whereis mysqlmysql: /usr/bin/mysql /...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/liumm0000/article/details/18841197#comments">RPM方式安装MySQL5.6</a>
+    <p style="margin:0px;"><a href="/yuan_yutian" class="user_name">yuan_yutian</a>:
+楼主，谢谢分享，非常好
+    </p>
+    </li>
+    <li>
+   
+         <a href="/liumm0000/article/details/18841197#comments">RPM方式安装MySQL5.6</a>
+    <p style="margin:0px;"><a href="/u014230624" class="user_name">u014230624</a>:
+我这个版本中没有my_defaults.cnf 但是有几个my_small.cnf、my_huge....
+    </p>
+    </li>
+    <li>
+   
+         <a href="/liumm0000/article/details/7536247#comments">Morphia 学习二 接口</a>
+    <p style="margin:0px;"><a href="/baidu_32666017" class="user_name">baidu_32666017</a>:
+赞一个
+    </p>
+    </li>
+    <li>
+   
+         <a href="/liumm0000/article/details/7535655#comments">MongoDB基于GridFS存储文件</a>
+    <p style="margin:0px;"><a href="/u011396672" class="user_name">u011396672</a>:
+你好，楼主，请教一个问题哈，我的mongofiles.exe 打不开是什么原因，您知道吗，请指点一下...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/liumm0000/article/details/7535655#comments">RPM方式安装MySQL5.6</a>
+    <p style="margin:0px;"><a href="/tm8426" class="user_name">tm8426</a>:
+yum -y remove  mysql-libs，这里不妥。因为postfix的/usr/bin/...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/liumm0000/article/details/7535655#comments">RPM方式安装MySQL5.6</a>
+    <p style="margin:0px;"><a href="/wentongpan19" class="user_name">wentongpan19</a>:
+很好用
+    </p>
+    </li>
+    <li>
+   
+         <a href="/liumm0000/article/details/7535655#comments">RPM方式安装MySQL5.6</a>
+    <p style="margin:0px;"><a href="/liuyanlinglanq" class="user_name">liuyanlinglanq</a>:
+很有用
+    </p>
+    </li>
+    <li>
+   
+         <a href="/liumm0000/article/details/7565480#comments">Spring3 MVC详解一</a>
+    <p style="margin:0px;"><a href="/zhuojiajin" class="user_name">zhuojiajin</a>:
+赞个！
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+ </div>   
+            <div class="clear">
+            </div>
+        </div>
+        
+
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/cnick/cnick.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="http://medal.blog.csdn.net/showblogmedal.ashx?blogid=1294538"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/JavaScript1.js"></script>
+
+    <script type="text/javascript" src="http://passport.csdn.net/content/loginbox/login.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script>
+<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+<script type="text/javascript" src="http://ad.csdn.net/scripts/ad-blog.js"></script>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<span class='tracking-ad' data-mod='popu_167'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a></span>"
+                    + "<span class='tracking-ad' data-mod='popu_170'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a></span>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+
+        $(".bar").show();
+    });
+</script>
+
+
+
+
+    </div>
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://c.csdnimg.cn/public/common/toolbar/js/toolbar.js"></script>     <!--new top-->
+   
+    <link href="http://c.csdnimg.cn/comm_ask/css/ask_float_block.css" type="text/css" rel="stylesheet" />
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/wmd.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/showdown.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/prettify.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/apps/ask_float_block.js'></script>
+   
+</body>
+</html>   
+ 

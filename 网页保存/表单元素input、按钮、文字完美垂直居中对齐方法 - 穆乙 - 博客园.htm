@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<title>表单元素input、按钮、文字完美垂直居中对齐方法 - 穆乙 - 博客园</title>
+<link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=VDh8zSH1vx51MDqRT7hK220akQ58FjlaaeGuWBPhfOA1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/BlueFresh/bundle-BlueFresh.css?v=VoIQYpsyKiEsCxWOPDTiVOvwHnHY5zFeQaiLSbUi9Dg1"/>
+<link type="text/css" rel="stylesheet" href="/blog/customcss/95946.css?v=i0q3Y8OUi8D32rVWUs3AGsu8b8w%3d"/>
+<link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/pigtail/rss"/>
+<link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/pigtail/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/pigtail/wlwmanifest.xml"/>
+<script src="http://common.cnblogs.com/script/jquery.js" type="text/javascript"></script>  
+<script type="text/javascript">var currentBlogApp = 'pigtail', cb_enable_mathjax=false;</script>
+<script src="/bundles/blog-common.js?v=kg4eH0I4kCxkpJz04h1o6y1_tlMoYMYUM47AnqNPO6k1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/pigtail/"><img id="blogLogo" src="/Skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="http://www.cnblogs.com/pigtail/">穆乙’s Blog 专注前端技术</a></h1>
+<h2>宁肯像种子一样等待，也不愿像疲惫的陀螺 ，旋转得那样勉强</h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li></li>
+<li><a id="MyLinks1_MyHomeLink" class="menu" href="http://www.cnblogs.com/pigtail/">首页</a></li>
+<li><a id="MyLinks1_NewPostLink" class="menu" rel="nofollow" href="http://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="MyLinks1_ContactLink" class="menu" rel="nofollow" href="http://msg.cnblogs.com/send/%E7%A9%86%E4%B9%99">联系</a></li>
+<li>
+<!----></li>
+<li><a id="MyLinks1_Admin" class="menu" rel="nofollow" href="http://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			
+<!--done-->
+随笔- 110&nbsp;
+文章- 2&nbsp;
+评论- 91&nbsp;
+
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="http://www.cnblogs.com/pigtail/archive/2012/06/20/2556041.html">表单元素input、按钮、文字完美垂直居中对齐方法</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body"><p>本文最终总结出来办法就是要对齐的表单内容（含文字、图片、表单各种元素、label）字体设置为Tahoma，则可以完美的实现对齐(Verdana等字体也可以)，其中个别的input元素如radio的padding和margin设置为0，即可完美解决表单元素input等对齐问题。</p>
+<p>最近的项目涉及到很多表单的制作，特别是复选框(checkbox)和单选框(radio)。但是在前端开发过程中发现，单(复)选框和它们后面的提示文字在不进行任何设置的情况下，是无法对齐的，而且在Firefox和IE中相差甚大。即使设置了vertical-align:middle，也依然不能完美对齐。如下图所示：<br /><br /><img id="aimg_123057" title="01.jpg" src="http://static.blueidea.com/attachment/forum/2009/7/24/20090724_d5acc7e104a84501ab353NghN976NqNn.jpg" alt="01.jpg" /><br /><br />于是上网查看了一些网站，发现这个问题是普遍存在的，如下图（FF3.5）：<br /><br /><img id="aimg_123058" title="error.jpg" src="http://static.blueidea.com/attachment/forum/2009/7/24/20090724_2464cad1dd198bb5bc96bbt3oQbFujmq.jpg.thumb.jpg" alt="error.jpg" /><br /><br />在很多网站涉及到表单的页面中，都存在这种表单元素与提示文字无法对齐的问题。于是打算研究一下这个问题。首先，搜索到了wheatlee前辈的文章《<a href="http://www.blueidea.com/tech/web/2008/5892.asp" target="_blank">大家都对vertical-align的各说各话</a>》。wheatlee在他的文章中关于垂直居中提到了这样几个关键点：<br /><br />1、vertical-align:middle的时候，是该元素的中心对齐周围元素的中心。<br /><br />2、这里&ldquo;中心&rdquo;的定义是：图片当然就是height的一半的位置，而文字应该是基于baseline往上移动0.5ex，亦即小写字母&ldquo;x&rdquo;的正中心。但是很多浏览器往往把ex这个单位定义为0.5em，以至于其实不一定是x的正中心<br /><br />（baseline等名词如果不懂，请先阅读wheatlee的文章）<br /><br />按照这个思路，对照我遇到的问题，首先想到的是先验证一下浏览器对于&ldquo;复选框&rdquo;和图片是不是使用同样的规则来渲染（是不是把复选框当成一个正方形图片来对待）。于是写出下面的代码：<br /><br /><br />&lt;style&gt;<br />body{font-size:12px;}<br />&lt;/style&gt;<br />&lt;input style="vertical-align:middle;" name="test" type="checkbox"&gt;<br />&lt;img style="vertical-align:middle;"&nbsp;&nbsp;src="testpic.gif" /&gt;<br />测试文字<br /><br />代码中的testpic.gif是一个尺寸与复选框完全一样的黑色图片。FF3.5下显示如下：<br /><img id="aimg_123059" title="02.jpg" src="http://static.blueidea.com/attachment/forum/2009/7/24/20090724_c3c93d45e84f439fad30JFuHF4HHWu7v.jpg" alt="02.jpg" /><br />事实证明，FF3.5对于复选框和图片的垂直对齐方式是采用同样的规则进行渲染的，即将复选框当作一个正方形的图片(IE不是)。按照wheatlee&ldquo;middle的时候，是该元素的中心对齐周围元素的中心&rdquo;的观点，如果我在复选框后面输入英文字符，那么复选框的中心将与英文中小写字母x的中心对齐。经测试，FF3.5下面基本上是这样的(在一些字号的时候会有一定的误差，比如，如果字体高度是偶数，那么这个中心点有时在一般偏上1px，有时在一半偏下1px)。如图：<br /><img id="aimg_123060" title="03.jpg" src="http://static.blueidea.com/attachment/forum/2009/7/24/20090724_9f5ae254c9be4ffadd08BK3pNiqLc2vV.jpg.thumb.jpg" alt="03.jpg" /><br />但是这对于中文来说，并不是一个好的结果。因为中文是方块字，并且相同字号的情况下，高度会比小写的x高出很多。所以，按照浏览器内置的方式，只用 vertical-align:middle是无论如何也无法对齐中文的（无论是只写中文，中文在前，英文在前，FF3.5都是按照小写x中心那种方法来对齐的）。但是回头再看看wheatlee的文章，他说这个小写x中心对齐的渲染方式，是对于&ldquo;文字&rdquo;来说的。那么，如果不是文字呢&hellip;？如果复选框后面跟的是一个行内元素，如label，而文字是写在它内部的，会是什么样呢？浏览器会不会将这个内联元素整体看作一个&ldquo;块&rdquo;，然后依照类似图片的规则进行渲染呢？如果那样，我们就达到目的了。</p>
+<p><br />但是经过测试，很遗憾，事实并不是这样，加上label后跟没加没有任何区别。FF3.5/IE6/IE7均是如此。在FF3.5中用firebug看一下，证明浏览器并没有按照label的高度值来去对齐中心点。如图：<br /><br /><img id="aimg_123061" title="04.jpg" src="http://static.blueidea.com/attachment/forum/2009/7/24/20090724_00a50fe185d621f74ae78NZUTvZaZ2_pl.jpg.thumb.jpg" alt="04.jpg" /><br />如果按照之前的设想，红蓝两线应该是重合的。但现在的情况是，它们相差了1px。并且这1px是没有规律的，随着字号的放大，并不恒定，貌似轻易也无法提炼出对应关系来。于是想到，再试一下将label也加上vertical-align:middle。结果如图：<br /><img id="aimg_123062" title="05.jpg" src="http://static.blueidea.com/attachment/forum/2009/7/24/20090724_8a6882b098fd4a64802fzyfvbcuTpFNy.jpg.thumb.jpg" alt="05.jpg" /><br /><br />在FF3.5和IE7下面已经很接近于我们希望的状态了，只差1px。IE6下&hellip; 无语了。<br /><br />经过以上折腾，我得出了跟wheatlee相同的结论，就是，各种浏览器之间对这个问题的处理貌似没有任何规律。并且，似乎每一种浏览器对于 vertical-align:middle的渲染都不是完全遵从W3C所说的&ldquo;Align the vertical midpoint of the box with the baseline of the parent box plus half the x-height of the parent.&rdquo;<br /><br />但是经过仔细总结和分析，发现好像最终对齐的结果跟label的高度和当前字体中小写x的中心点都有关系，两者同时影响着渲染结果(虽然不明白为什么会这样)。那么，既然现在的情况以及非常接近于希望的状态了，是否可以通过设置字体的方式来改变小写x的中心点的位置，进而对垂直对齐的结果进行&ldquo;微调&rdquo;呢？<br /><br />最终，在不断的测试中发现，如果将font-family中的第一个字体设置为Tahoma，则可以完美的实现对齐(Verdana等字体也可以)。而且在FF3.5/IE6/IE7/IE8和Chrome中均显示正常。<br />最终效果：<br /><img id="aimg_123063" title="06.jpg" src="http://static.blueidea.com/attachment/forum/2009/7/24/20090724_3ac58c1b3b551aaa6b72VCdGfOX7GmBX.jpg.thumb.jpg" alt="06.jpg" /></p>
+<p><br />至此，多选框(checkbox)和提示文字对齐的问题已经解决，那么其他表单元素呢？试验了一下单选框(radio)，发现，还是有问题。提示文字依然是偏上。用firebug看了一下，发现radio元素默认有5px的左边距和3px的上、右边距，却没有下边距。如图：<br /><br /><img id="aimg_123064" title="08.jpg" src="http://static.blueidea.com/attachment/forum/2009/7/24/20090724_81f5d91a1c8b7df053cdRa9hwBrY5qoD.jpg.thumb.jpg" alt="08.jpg" /><br /><br />于是，尝试去掉radio的外边距，刷新后显示正常。（其实多选框checkbox也是有外边距的，只是它的外边距四个方向都有，并且相等，所以对于垂直对齐没有影响。）下图是一些常用表单元素的最终显示效果以及最终代码，大家可以用不同浏览器看一下实际的效果（注：由于演示使用的12px的中文实际只有11px高，而 IE下文本框等元素的高度是22px，一个是奇数，一个是偶数，所以这些部分在IE中是无论如何也对不齐的，差1px。如果手动控制文本框高度为奇数，或者将文字设置成为偶数的高度，则显示正常）：<br /><br /><img id="aimg_123065" title="09.jpg" src="http://static.blueidea.com/attachment/forum/2009/7/24/20090724_cd35182c75a207094250y4lFya8WZFhS.jpg" alt="09.jpg" /></p>
+<p>&nbsp;</p>
+<div class="mywords">本文关键词：<a href="http://www.kmwzjs.com/keywords.php?words=表单元素">表单元素</a> <a href="http://www.kmwzjs.com/keywords.php?words=input">input</a> <a href="http://www.kmwzjs.com/keywords.php?words=对齐">对齐</a></div></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2012-06-20 11:54</span> <a href='http://www.cnblogs.com/pigtail/'>穆乙</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="http://i.cnblogs.com/EditPosts.aspx?postid=2556041" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(2556041);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,isLogined=false,cb_blogId=95946,cb_entryId=2556041,cb_blogApp=currentBlogApp,cb_blogUserGuid='7e7e0147-29d1-e011-8ee0-842b2b196315',cb_entryCreatedDate='2012/6/20 11:54:00';loadViewCount(cb_entryId);</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id="comment_form" class="commentform">
+<a name="commentform"></a>
+<div id="divCommentShow"></div>
+<div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" id="lnk_RefreshComments" onclick="return RefreshCommentList();">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+<div id="comment_form_container"></div>
+<div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+<div id="site_nav_under"><a href="http://www.cnblogs.com/" target="_blank" title="开发者的网上家园">博客园首页</a><a href="http://q.cnblogs.com/" target="_blank" title="程序员问答社区">博问</a><a href="http://news.cnblogs.com/" target="_blank" title="IT新闻">新闻</a><a href="http://home.cnblogs.com/ing/" target="_blank">闪存</a><a href="http://job.cnblogs.com/" target="_blank">程序员招聘</a><a href="http://kb.cnblogs.com/" target="_blank">知识库</a></div>
+<div id="opt_under_post"></div>
+<script type="text/javascript">
+    var enableGoogleAd = canShowAdsense(); 
+    fixPostBodyFormat();
+</script>
+<script type='text/javascript'>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+    (function () {
+        if (enableGoogleAd) {
+            var gads = document.createElement('script');
+            gads.async = true;
+            gads.type = 'text/javascript';
+            var useSSL = 'https:' == document.location.protocol;
+            gads.src = (useSSL ? 'https:' : 'http:') +
+              '//www.googletagservices.com/tag/js/gpt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(gads, node);
+        }
+  })();
+</script>
+<script type='text/javascript'>
+    try {
+        if (enableGoogleAd) {
+            googletag.cmd.push(function() {
+            googletag.defineSlot('/1090369/cnblogs_blogpost_C2', [468, 60], 'div-gpt-ad-1433581717989-0').addService(googletag.pubads());
+            googletag.defineSlot('/1090369/cnblogs_blogpost_C1_sitehome', [300, 250], 'div-gpt-ad-1433581717989-1').addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.pubads().collapseEmptyDivs();
+            googletag.enableServices();
+            });
+        };
+    } catch (e) { }
+</script>
+<div id="google_ad_c1" class="c_ad_block">
+    <div id='div-gpt-ad-1433581717989-1' style='height:250px; width:300px;'>
+    <script type='text/javascript'>
+        try {
+            if (enableGoogleAd) {
+                googletag.cmd.push(function () { googletag.display('div-gpt-ad-1433581717989-1'); });
+            } else {
+                $('#div-gpt-ad-1433581717989-1').hide();
+            }
+    } catch (e) { }
+    </script>
+    </div>
+</div>
+<div id="under_post_news"></div>
+<div id="google_ad_c2" class="c_ad_block">
+<div id='div-gpt-ad-1433581717989-0' style='height:60px; width:468px;'>
+<script type='text/javascript'>
+try {
+    if (enableGoogleAd) {
+        googletag.cmd.push(function () { googletag.display('div-gpt-ad-1433581717989-0'); });
+    } else {
+        $('#div-gpt-ad-1433581717989-0').hide();
+    }
+} catch (e) { }
+</script>
+</div>
+</div>
+<div id="under_post_kb"></div>
+<div id="HistoryToday" class="c_ad_block"></div>
+<script type="text/javascript">
+$(function () {
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 200);
+});
+</script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2015 穆乙
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+</body>
+</html>

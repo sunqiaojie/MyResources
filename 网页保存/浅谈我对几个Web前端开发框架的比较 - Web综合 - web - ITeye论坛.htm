@@ -1,0 +1,784 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>浅谈我对几个Web前端开发框架的比较 - Web综合 - web - ITeye论坛</title>
+    <meta name="description" content="原文在我的博客中，欢迎大家来访交流 http://chrisx.iteye.com/blog/697596 强调一下，这篇日志主要还是针对想学前端开发的新朋友写的，不是说我有什么独特见解，而是比较客观的状态，就各种框架的异同和应用场合，需要注意的地方做简单描述，不做具体深入分析，有的地方比较抽象，对于抽象之处大家可以到网上或各大高手博客中深入学习，当然也可以与我继续探讨。   一直以来对Web前端开 ..." />
+    <meta name="keywords" content="Web综合 web" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link href="/rss/board/web" rel="alternate" title="ITeye论坛" type="application/rss+xml" />
+    <link rel="search" type="application/opensearchdescription+xml" href="/open_search.xml" title="ITeye" />
+    <link href="http://www.iteye.com/stylesheets/forum.css?1438136530" media="screen" rel="stylesheet" type="text/css" />
+    <script src="http://www.iteye.com/javascripts/application.js?1358214518" type="text/javascript"></script>
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-535605-1']);
+  _gaq.push(['_setDomainName', 'iteye.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+      <link href="http://www.iteye.com/javascripts/syntaxhighlighter/SyntaxHighlighter.css?1348819953" media="screen" rel="stylesheet" type="text/css" />
+  <script src="http://www.iteye.com/javascripts/syntaxhighlighter/shCoreCommon.js?1325907333" type="text/javascript"></script>
+<script src="http://www.iteye.com/javascripts/hotkey.js?1324994303" type="text/javascript"></script>
+  <script src="http://www.iteye.com/javascripts/code_favorites.js?1358214518" type="text/javascript"></script>
+          <script src="http://www.iteye.com/javascripts/dragdrop.js?1324994303" type="text/javascript"></script>
+          </head>
+  <body>
+    <div id="page">
+      <div id="header">
+        <div class="clearfix"><div id="user_nav">
+      <a href="/login" class="welcome" title="登录">您还未登录 !</a>
+    <a href="/login">登录</a>
+    <a href="/signup" class="nobg">注册</a>
+  </div>
+</div>
+        <div class="clearfix">
+          <div id="branding">
+            <a href="http://www.iteye.com"><img alt="ITeye-最棒的软件开发交流社区" src="http://www.iteye.com/images/logo.gif?1324994303" title="ITeye-最棒的软件开发交流社区" /></a>
+          </div>
+          <div id="gg"><IFRAME SRC="/iframe_ggbd/942" SCROLLING=no WIDTH=728 HEIGHT=90 FRAMEBORDER=0></IFRAME></div>
+        </div>
+      </div>
+
+      <div id="content" class="clearfix">
+        <div id="main">
+          
+
+
+
+          
+
+<div class="h-entry" style='display:none'>
+  <a href="http://chrisx.iteye.com" class="p-author" target="_blank">chrisx</a>
+</div>
+
+
+<div class="clearfix">
+  <div class="crumbs">
+    <a href="/forums">论坛首页</a> <span class="arrow">&rarr;</span>
+    <a href="/forums/board/web">Web前端技术论坛</a> <span class="arrow">&rarr;</span>
+    <h1>浅谈我对几个Web前端开发框架的比较</h1>
+  </div>
+</div>
+
+
+  <div id="forum_tag_list">
+    <a href="/forums/board/web">全部</a>
+          <a href='/forums/tag/JavaScript'>JavaScript</a>
+          <a href='/forums/tag/HTML5'>HTML5</a>
+          <a href='/forums/tag/jQuery'>jQuery</a>
+          <a href='/forums/tag/CSS'>CSS</a>
+              <a href="/forums/tag/EXT">EXT</a>
+          <a href="/forums/tag/Ajax">Ajax</a>
+          <a href="/forums/tag/Web%E7%BB%BC%E5%90%88">Web综合</a>
+          <a href="/forums/tag/%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1">界面设计</a>
+          <a href="/forums/tag/DWR">DWR</a>
+      </div>
+
+
+<div class="actions">
+  <div class="buttons"></div>
+  <div class="wrapper">
+    <div id="forum_recommended_f4"><!--AdForward Begin:-->
+<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=iteye|forums|banner3&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+<!--AdForward End--></div>
+    <div class="pagination"><span class="disabled prev_page">&laquo; 上一页</span> <span class="current">1</span> <a href="/topic/703155?page=2" rel="next">2</a> <a href="/topic/703155?page=3">3</a> <span class="gap">&hellip;</span> <a href="/topic/703155?page=6">6</a> <a href="/topic/703155?page=7">7</a> <a href="/topic/703155?page=2" class="next_page" rel="next">下一页 &raquo;</a></div>
+    <div class="info">浏览 39716 次</div>
+  </div>
+</div>
+
+
+
+<table id="forum_main" cellspacing="1">
+  <thead>
+    <tr>
+      <th colspan="2" class="topic_title">
+        <div class="wrapper"><span class='locked'>锁定老帖子</span> <a href="/topic/703155">主题：浅谈我对几个Web前端开发框架的比较</a></div>
+        <div id='topic_rate_box'><strong class='highlight'>该帖已经被评为良好帖</strong></div>
+      </th>
+    </tr>
+    <tr>
+      <td class="first_col">作者</td>
+      <td class="last_col">正文
+      
+      </td>
+    </tr>
+  </thead>
+  <tbody id="posts">
+    <tr id="1561027">
+  <td class="postauthor">
+    <ul>
+      <li class="name">chrisx</li>
+      <li>等级: <img src="/images/star1.gif" alt="一星会员" title="一星会员"/></li>
+      <li><a href='http://chrisx.iteye.com' target='_blank'><img alt="chrisx的博客" class="logo" src="http://www.iteye.com/upload/logo/user/267597/710b531a-462e-3896-ba9c-38f579e3fa11.jpg?1277273522" title="chrisx的博客: 刃 - 不完美De光" width="" /></a></li>
+      <li>性别: <img src="/images/icon_minigender_1.gif" title="男"/></li>      <li>文章: 42</li>
+      <li>积分: 120</li>
+      <li>来自: 天津</li>
+      <li><img src='/images/status/offline.gif'/></li>
+    </ul>
+  </td>
+  <td class="postcontent">
+    <div class="postactions">
+      <div class="description">
+        &nbsp;&nbsp;
+        发表时间：2010-07-01&nbsp;&nbsp;
+        最后修改：2010-07-02
+      </div>
+      <div class="links">
+        
+        
+          
+          
+        
+      </div>
+    </div>
+    <div class="postbody clearfix">
+      
+        
+              <script type="text/javascript">
+      var hunters = ["\u003Ca href='/jobs/2509' target='_blank' style='color:#000;'\u003E\u003Cspan style='font-weight:bold;'\u003E\u4e0a\u6d77: \u003C/span\u003E Junior Product Manager\u003C/a\u003E","\u003Ca href='/jobs/2508' target='_blank' style='color:#000;'\u003E\u003Cspan style='font-weight:bold;'\u003E\u4e0a\u6d77: \u003C/span\u003E Senior Software Engineer\u003C/a\u003E"]
+      var hunter_id = Math.ceil(Math.random() * hunters.length) - 1;
+      if(hunter_id == -1) hunter_id = 0;
+    </script>
+    <div id="hunter_recommended" style="background:#fff;border: 1px solid #ccc; padding: 4px;margin-bottom: 10px;">
+      <span id="hunters_nav" style="margin-right:5px;">
+        <a href="#" onclick="hunter_id <= 0 ? hunter_id = hunters.length - 1 : hunter_id--; $('hunters').update(hunters[hunter_id]);return false;" style="border:1px solid #ccc;padding: 0 3px;size: 13px;text-decoration: none;">&lt;</a>
+        <a href="#" onclick="hunter_id >= hunters.length - 1 ? hunter_id = 0 : hunter_id++; $('hunters').update(hunters[hunter_id]);return false;" style="border:1px solid #ccc;padding: 0 3px;size :13px;text-decoration: none;">&gt;</a>
+      </span>
+      猎头职位: <span id="hunters"></span>
+      <script type="text/javascript">$('hunters').update(hunters[hunter_id]);</script>
+    </div>
+
+        
+      
+                                            <div id="related_topics">相关文章: <span class="close"><a href="#" onclick="$('related_topics').hide();if($('hunter_recommended')){$('hunter_recommended').style.width='780px'};if($('topic_tags')){$('topic_tags').style.width='790px'};return false;" title="关闭">&nbsp;</a></span>
+              <ul>
+                                  <li><a href='http://www.iteye.com/topic/443051' title='Flex and Extjs ..' target='_blank'>Flex and Extjs ..</a></li>
+                                  <li><a href='http://www.iteye.com/topic/639982' title='AIR, 我已经对你彻底失望了.' target='_blank'>AIR, 我已经对你彻底失望了.</a></li>
+                                  <li><a href='http://www.iteye.com/topic/212875' title='FLEX探讨篇--------大话客户端,FLEX和EXT你选谁?' target='_blank'>FLEX探讨篇--------大话客户端,FLEX和EXT你选谁?</a></li>
+                              </ul>
+              <br/><span>推荐群组: <a href="http://flex2.group.iteye.com" target="_blank">flex</a></span>
+              <br/><a href="/wiki/topic/703155" target="_blank">更多相关推荐</a>
+            </div>
+            <script type="text/javascript">
+              document.observe("dom:loaded", function() {
+                if($('hunter_recommended')) {
+                  $('hunter_recommended').setStyle({cssFloat: 'left', width: '557px'})
+                }
+                if($('topic_tags')) {
+                  $('topic_tags').setStyle({width: '567px'})
+                }
+                new Draggable("related_topics");
+              });
+            </script>
+                          
+          <div id="topic_tags" class="news_tag">
+                          <a href="/forums/tag/Web%E7%BB%BC%E5%90%88">Web综合</a>
+                      </div>
+        
+      
+      原文在我的博客中，欢迎大家来访交流 <a target="_blank" href="http://chrisx.iteye.com/blog/697596">http://chrisx.iteye.com/blog/697596</a><br /><br /><span style="font-size: medium;"><span style="color: red;">强调一下，这篇日志主要还是针对想学前端开发的新朋友写的，不是说我有什么独特见解，而是比较客观的状态，就各种框架的异同和应用场合，需要注意的地方做简单描述，不做具体深入分析，有的地方比较抽象，对于抽象之处大家可以到网上或各大高手博客中深入学习，当然也可以与我继续探讨。</span></span><br /><span style="font-size: small;"> <br />一直以来对Web前端开发兴趣颇深，用过一些框架产品。在JavaEye上看到一些刚接触前端开发朋友的疑问，犹豫这些产品的前景利弊，不知从何入手。想把自己的一点经验分享给大家，如有不到位之处请一起来纠正。<br /><br /><span style="color: blue;"><strong>jQuery</strong></span><br />1. 绝对的万金油，核心js只有50K，占用带宽小，门户网站、管理系统，用在哪都可以。<br />2. jQuery是对js底层dom操作封装最薄的一个框架，没有大量的专有对象，多为提供函数进行dom操作。<span style="color: red;">准确的说，它不是偏重于富客户端的框架，而是侧重于对js dom编程。下面几种才是完整的富客户端的框架。</span><br />3. 我认为它最大的三个亮点，一是支持CSS3的大量选择符，想定位或选择一个html元素简直轻而易举。二是灵活便捷的Ajax请求和回调操作。三是事件绑定功能，内部封装了很多事件，想统一为一个页面上的一些元素添加事件很方便，这也提高了复用性和可维护性，避免了页面中出现大量的html属性。合理的编码可以使html与js, css分离开，便于维护。<br />4. 此外它也封装了很多常用的操作，例如节点的添加删除、常用的动画效果、逻辑判断比较等等。避免了直接使用dom api进行繁琐的操作。<br />5. 本身提供了可扩展的函数，可以自己编写插件与核心jQuery对象进行集成使用。这也是常用的手段，只要你理解js面向对象编程，熟悉jQuery API，就能写出很多定制的插件，复用在各种地方。<br />6. 至于jQueryUI，与其他框架不一样的地方在于，它很少用js去生成html，而是把现有的html通过jQueryUI的API加工成想要的效果，关于这点是好是坏，我觉得就是见仁见智的问题了，没有必要争论什么。<br />7. 新生的jQuery EasyUI不错。<br />8. 如果今后的更新都保持现在这种模式，我认为它的前景很乐观，什么时候javascript完蛋了才轮到它玩完。<br /><br /><span style="color: blue;"><strong>ExtJS</strong></span><br />1. 一整套带有UI的js库，封装得很多，很厚，核心js就600多K，这么大的东西门户网站当然就别想了，里面的效果当然也不会运用到门户网站，所以它是专门为管理系统而生的。因为局域网不会有带宽问题。<br />2. 它与jQuery不同，基本上是纯用js来生成html的，页面里只需引入各个ExtJS库和你自己写的js，不会出现很多html内容，body里基本没什么。所以优化就显得重要了，不然会严重浪费资源。<br />3. UI就不说了，大家都认可，本来就是为UI而生，它可以做出来桌面级程序的效果。一般来说，一个管理系统的项目如果用Ext，基本就从始至终都是Ext做了，不会像jQuery那样，哪想要了就加在哪，很随意。Ext更像一个整体(虽然它也可以拆开用，不过麻烦，不建议)。<br />4. 提供了对其他js框架的适配，像对jQuery, prototype等。没实际应用过，就不说了。<br />5. 理解js面向对象编程在ext中很重要，如果你觉得用jQuery时了解简单的dom和css即可，那你在这就吃大亏了，Ext处处离不开对象的概念。<br />6. Ext的UI开发类似C#，有很多控件。不同的是，你要全部自己手写，所以开发量较大。现在虽然有Ext Designer可视化工具，但其效果并不很好，生成的代码有的往往不是想要的，不易维护，真做起来还是自己写更方便。<br />7. 团队开发时，必须保证做UI的人每人都会Ext，而且深入应用过，因为Ext项目是整体，不适于参杂html替代。<br />8. Ext项目在IE系列浏览器上不可用，相当卡，我想这不是Ext本身的问题，所谓内存泄露等问题现在早已解决了，而且不是关键所在。我开很多网页同时用IE8看jQuery.net官网时有时也会卡，试想他们官网肯定做到很好的优化了吧，jQuery既是如此，何况Ext。反观其他浏览器，FireFox, Chrome等浏览Ext项目都很流畅，所以应该是浏览器对js解析不同造成的。<br />9. 版权问题，Ext运用在商业项目中是收费的。<br /><br /><span style="color: blue;"><strong>Flex&nbsp; [自己也是在学习中，不敢妄言，以后深入应用后再做补充]</strong></span><br />1. Adobe平台的，基于ActionScript实现，用在哪都行，但偏重于内网管理系统，用在门户网站就相当于在线玩Flash游戏，loading... <br />2. 与Ext不同，它有健壮的可视化开发工具Flash Builder，可以同C#一样进行拖拽布局，生成一种xml，也便于维护。<br />3. 编译后生成swf文件直接嵌入html即可，提高安全性，浏览时同flash，需要flash player。<br />4. 与Ext相同，也是属于一个整体，有丰富的控件库。<br />5. 这条纯属个人观点，HTML5不支持插入对象，也就意味着不能插入swf文件，难道Flex就完蛋了？虽然HTML5不支持Flash是客观事实，但HTML5的统一为时尚远，各大浏览器对HTML5的支持，Adobe是否会有对策，这些会怎么样现在都不好说，HTML5与HTML4并行应该会有很长一段时间，至少Flex在现在是一个名列前茅的好产品，所以我选择了它。<br /><br /><span style="color: blue;"><strong>SilverLight</strong></span><br />微软平台的，主要是应用在微软系列的语言中，包括CS与BS架构。同样，除了jQuery，Asp.net也不适合与以上等框架集成，因为Asp.net是事件驱动，这些框架都是为消息驱动而生的，勉强应用只会事倍功半，丧失.net本身的优势。<br /><br /><span style="color: red;"><strong>js面向对象编程我一直在提，其实并不难理解，关于这点应该学习下，很有必要。它涉及到代码复用、功能扩展、对象继承、闭包、优化等很多问题，能省去不少编码，便于维护，还能不改变框架源代码而实现不同的功能。</strong></span><br /><br />闲话不多说了，希望能给刚走进前端开发的朋友一点帮助。以后可能还会就js面向对象编程再写一篇日志，有兴趣可以来看看。我的QQ是421557193，有兴趣可以与我交流，请注明是IT同行。<br /></span>
+    </div>
+    
+
+          <div id="topic_copyright">声明：ITeye文章版权属于作者，受法律保护。没有作者书面许可不得转载。 </div>
+      <div id="forum_recommended_f5"><span>推荐链接</span><ul><li><!--AdForward Begin:-->
+<script type="text/javascript" ads-src="http://csdnim.allyes.com/main/s?user=iteye|forums|banner4&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.allyes.com.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+<!--AdForward End--></li></ul></div>
+              <div id="forum_recommended_f0"><IFRAME SRC="/iframe_ggbd/155" SCROLLING=no WIDTH=728 HEIGHT=90 FRAMEBORDER=0></IFRAME></div>
+        </td>
+  </tr>
+  <tr>
+    <td class="postauthor"><a href="#">返回顶楼</a></td>
+    <td class="postcontent">
+      <div class="icons">
+        <a href='http://chrisx.iteye.com' class='icon_www' title='浏览作者的博客'>&nbsp;</a>
+        <a href='http://chrisx.iteye.com/blog/profile' class='icon_profile' title='浏览作者资料'>&nbsp;</a>
+        <a href="http://my.iteye.com/messages/new?message%5Breceiver_name%5D=chrisx" class="icon_pm" title="发送站内短信">&nbsp;</a>
+        <a href='http://chrisx.iteye.com/blog/guest_book' class='icon_guestbook' title='给作者留言'>&nbsp;</a>
+        <a href="http://my.iteye.com/feed?subscription%5Bsubscribed_user_name%5D=chrisx" class="icon_rss" onclick="var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', 'S0An/lD7oIqa+JCZRIh8PuOtOTN6C0N47iz86pBZt1s='); f.appendChild(s);f.submit();return false;" title="关注作者">&nbsp</a>
+              </div>
+                    </td>
+</tr>
+<tr class="sep2"><td colspan="2"></td></tr>
+<tr id="1561272">
+  <td class="postauthor">
+    <ul>
+      <li class="name">zhangdaiping</li>
+      <li>等级: <img src="/images/star1.gif" alt="一星会员" title="一星会员"/></li>
+      <li><a href='http://zhangdaiping.iteye.com' target='_blank'><img alt="zhangdaiping的博客" class="logo" src="http://www.iteye.com/upload/logo/user/994200/c75a9acd-acbb-3a40-b041-83f7a37a3f12.png?1406011813" title="zhangdaiping的博客: maxzhang" width="" /></a></li>
+      <li>性别: <img src="/images/icon_minigender_1.gif" title="男"/></li>      <li>文章: 111</li>
+      <li>积分: 100</li>
+      <li>来自: 北京</li>
+      <li><img src='/images/status/offline.gif'/></li>
+    </ul>
+  </td>
+  <td class="postcontent">
+    <div class="postactions">
+      <div class="description">
+        &nbsp;&nbsp;
+        发表时间：2010-07-01&nbsp;&nbsp;
+        
+      </div>
+      <div class="links">
+        
+        
+          
+          
+          
+        
+      </div>
+    </div>
+    <div class="postbody clearfix">
+      
+      
+      楼主有时间可以尝试下Ext-Core, 会让你眼前一亮.
+    </div>
+    
+
+            </td>
+  </tr>
+  <tr>
+    <td class="postauthor"><a href="#">返回顶楼</a></td>
+    <td class="postcontent">
+      <div class="icons">
+        <a href='http://zhangdaiping.iteye.com' class='icon_www' title='浏览作者的博客'>&nbsp;</a>
+        <a href='http://zhangdaiping.iteye.com/blog/profile' class='icon_profile' title='浏览作者资料'>&nbsp;</a>
+        <a href="http://my.iteye.com/messages/new?message%5Breceiver_name%5D=zhangdaiping" class="icon_pm" title="发送站内短信">&nbsp;</a>
+        <a href='http://zhangdaiping.iteye.com/blog/guest_book' class='icon_guestbook' title='给作者留言'>&nbsp;</a>
+        <a href="http://my.iteye.com/feed?subscription%5Bsubscribed_user_name%5D=zhangdaiping" class="icon_rss" onclick="var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', 'S0An/lD7oIqa+JCZRIh8PuOtOTN6C0N47iz86pBZt1s='); f.appendChild(s);f.submit();return false;" title="关注作者">&nbsp</a>
+                  <a href="#1561272" title="zhangdaiping回帖:浅谈我对几个Web前端开发框架的比较">回帖地址</a>
+              </div>
+                        <div id='post_rate_box_1561272' class='post_rate_box'><a href='#' onclick='return false;' class='good' title='好'>0</a> <a href='#' onclick='return false;' class='hidden' title='差'>0</a> 请登录后投票</div>              </td>
+</tr>
+<tr class="sep2"><td colspan="2"></td></tr>
+<tr id="1561316">
+  <td class="postauthor">
+    <ul>
+      <li class="name">chrisx</li>
+      <li>等级: <img src="/images/star1.gif" alt="一星会员" title="一星会员"/></li>
+      <li><a href='http://chrisx.iteye.com' target='_blank'><img alt="chrisx的博客" class="logo" src="http://www.iteye.com/upload/logo/user/267597/710b531a-462e-3896-ba9c-38f579e3fa11.jpg?1277273522" title="chrisx的博客: 刃 - 不完美De光" width="" /></a></li>
+      <li>性别: <img src="/images/icon_minigender_1.gif" title="男"/></li>      <li>文章: 42</li>
+      <li>积分: 120</li>
+      <li>来自: 天津</li>
+      <li><img src='/images/status/offline.gif'/></li>
+    </ul>
+  </td>
+  <td class="postcontent">
+    <div class="postactions">
+      <div class="description">
+        &nbsp;&nbsp;
+        发表时间：2010-07-01&nbsp;&nbsp;
+        
+      </div>
+      <div class="links">
+        
+        
+          
+          
+          
+        
+      </div>
+    </div>
+    <div class="postbody clearfix">
+      
+      
+      好的 谢谢推荐<br />Ext-core刚开始看过一点 也是对js dom的封装 但没实际用过...
+    </div>
+    
+
+            </td>
+  </tr>
+  <tr>
+    <td class="postauthor"><a href="#">返回顶楼</a></td>
+    <td class="postcontent">
+      <div class="icons">
+        <a href='http://chrisx.iteye.com' class='icon_www' title='浏览作者的博客'>&nbsp;</a>
+        <a href='http://chrisx.iteye.com/blog/profile' class='icon_profile' title='浏览作者资料'>&nbsp;</a>
+        <a href="http://my.iteye.com/messages/new?message%5Breceiver_name%5D=chrisx" class="icon_pm" title="发送站内短信">&nbsp;</a>
+        <a href='http://chrisx.iteye.com/blog/guest_book' class='icon_guestbook' title='给作者留言'>&nbsp;</a>
+        <a href="http://my.iteye.com/feed?subscription%5Bsubscribed_user_name%5D=chrisx" class="icon_rss" onclick="var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', 'S0An/lD7oIqa+JCZRIh8PuOtOTN6C0N47iz86pBZt1s='); f.appendChild(s);f.submit();return false;" title="关注作者">&nbsp</a>
+                  <a href="#1561316" title="chrisx回帖:浅谈我对几个Web前端开发框架的比较">回帖地址</a>
+              </div>
+                        <div id='post_rate_box_1561316' class='post_rate_box'><a href='#' onclick='return false;' class='good' title='好'>0</a> <a href='#' onclick='return false;' class='hidden' title='差'>0</a> 请登录后投票</div>              </td>
+</tr>
+<tr class="sep2"><td colspan="2"></td></tr>
+<tr id="1562697">
+  <td class="postauthor">
+    <ul>
+      <li class="name">七月十五</li>
+      <li>等级: 初级会员</li>
+      <li><a href='http://hent.iteye.com' target='_blank'><img alt="七月十五的博客" class="logo" src="http://www.iteye.com/upload/logo/user/799563/cacf6ea5-671b-3443-a896-25441a9cbcb0.jpg?1359362963" title="七月十五的博客: 十五工作室" width="" /></a></li>
+      <li>性别: <img src="/images/icon_minigender_1.gif" title="男"/></li>      <li>文章: 160</li>
+      <li>积分: 70</li>
+      <li>来自: 杭州</li>
+      <li><img src='/images/status/offline.gif'/></li>
+    </ul>
+  </td>
+  <td class="postcontent">
+    <div class="postactions">
+      <div class="description">
+        &nbsp;&nbsp;
+        发表时间：2010-07-02&nbsp;&nbsp;
+        
+      </div>
+      <div class="links">
+        
+        
+          
+          
+          
+        
+      </div>
+    </div>
+    <div class="postbody clearfix">
+      
+      
+      ExtCore vs. jQuery<br />jQuery UI vs. ExtJs<br />各位看好哪个？<br /><br />还有Ext最近被sencha给兼并了，在移动触摸终端上会有所发展<br /><br />js框架其实还有很多，比如被诟病侵入严重的dojo，还有YUI等等<br /><br />非js框架Flex，JavaFX等等在HTML5时代，个人不看好它们。
+    </div>
+    
+
+            </td>
+  </tr>
+  <tr>
+    <td class="postauthor"><a href="#">返回顶楼</a></td>
+    <td class="postcontent">
+      <div class="icons">
+        <a href='http://hent.iteye.com' class='icon_www' title='浏览作者的博客'>&nbsp;</a>
+        <a href='http://hent.iteye.com/blog/profile' class='icon_profile' title='浏览作者资料'>&nbsp;</a>
+        <a href="http://my.iteye.com/messages/new?message%5Breceiver_name%5D=%E4%B8%83%E6%9C%88%E5%8D%81%E4%BA%94" class="icon_pm" title="发送站内短信">&nbsp;</a>
+        <a href='http://hent.iteye.com/blog/guest_book' class='icon_guestbook' title='给作者留言'>&nbsp;</a>
+        <a href="http://my.iteye.com/feed?subscription%5Bsubscribed_user_name%5D=%E4%B8%83%E6%9C%88%E5%8D%81%E4%BA%94" class="icon_rss" onclick="var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', 'S0An/lD7oIqa+JCZRIh8PuOtOTN6C0N47iz86pBZt1s='); f.appendChild(s);f.submit();return false;" title="关注作者">&nbsp</a>
+                  <a href="#1562697" title="七月十五回帖:浅谈我对几个Web前端开发框架的比较">回帖地址</a>
+              </div>
+                        <div id='post_rate_box_1562697' class='post_rate_box'><a href='#' onclick='return false;' class='good' title='好'>0</a> <a href='#' onclick='return false;' class='hidden' title='差'>0</a> 请登录后投票</div>              </td>
+</tr>
+<tr class="sep2"><td colspan="2"></td></tr>
+<tr id="1562710">
+  <td class="postauthor">
+    <ul>
+      <li class="name">javaest</li>
+      <li>等级: <img src="/images/star1.gif" alt="一星会员" title="一星会员"/></li>
+      <li><a href='http://javaest.iteye.com' target='_blank'><img alt="javaest的博客" class="logo" src="http://www.iteye.com/images/user-logo.gif?1324994303" title="javaest的博客: 北边村人" width="" /></a></li>
+      <li>性别: <img src="/images/icon_minigender_1.gif" title="男"/></li>      <li>文章: 59</li>
+      <li>积分: 105</li>
+      <li>来自: 长春</li>
+      <li><img src='/images/status/offline.gif'/></li>
+    </ul>
+  </td>
+  <td class="postcontent">
+    <div class="postactions">
+      <div class="description">
+        &nbsp;&nbsp;
+        发表时间：2010-07-02&nbsp;&nbsp;
+        
+      </div>
+      <div class="links">
+        
+        
+          
+          
+          
+        
+      </div>
+    </div>
+    <div class="postbody clearfix">
+      
+      
+      说的很全面.<br />我也从应用系统的开发角度说说Flex相关的优缺点.<br /><br />缺点：<br />和以往的技术相比，Flex没有JSP这个层次，以往JSP的做用是生成动态的HTML。因为Flex没有类似的和JSP相同作用的技术。所以Flex是纯静态的，是和HTML一样的静态。这种静态直接限制了Flex中ComboBox不能直接拥有动态的不完全确定的Options.，而是Flex显示到客户浏览器上之后，再进行二次请求ComboBox的项。<br />优点：因为Flex是静态的，他和静态HTML，IMG一样，客户对他的访问过程对WEB服务器没有什么压力。<br />Flex把这种压力分解到各各客户的机器上了。<br />缺点：<br />客户机器上的压力加大的，客户能不能受得了。<br />缺点：因为其本身的体积较大，所以对网络流亮要求高一些，<br />还有一种特殊的场景：页面的上的字段个数不一定，就是说有哪些字段是动态的，如果用JSP的话，我可以在JSP中写一个For语句，循环产生input(文本框)和input组件的相关属性与值。但在Flex下，你只能等Flex到客户浏览器之后，再发一个请求问服务器，页面有几个组件？这几个组件的相关属性是怎么样的啊？服务器把这些信息响应回浏览器上的Flex，Flex运用ActionScript脚本动态的去建立文本框组件。但在这个过程中，动态组件的相关属性的描述信息，通过网络传送到客户的机器之中了。浪费了网络流量。<br />优点：客户的体验非常好。前台开发过程中代码自然、流畅、简洁。在客户端跨浏览器跨系统平台。可以很方便的开发自己所需的个性化组件.<br />较HTML相比，在代码保护方面有一定的优势。访问者不容易看到Flex的代码。有效的保护的知识产权 。<br />因为这条优点，所以不能像以前那样，直接从浏览器上看HTML原码进行调试了。<br />一个大的问题,他对反射支持的不好，<br />与J2EE的集成开发环境还不是特别的成熟，完善。
+    </div>
+    
+
+            </td>
+  </tr>
+  <tr>
+    <td class="postauthor"><a href="#">返回顶楼</a></td>
+    <td class="postcontent">
+      <div class="icons">
+        <a href='http://javaest.iteye.com' class='icon_www' title='浏览作者的博客'>&nbsp;</a>
+        <a href='http://javaest.iteye.com/blog/profile' class='icon_profile' title='浏览作者资料'>&nbsp;</a>
+        <a href="http://my.iteye.com/messages/new?message%5Breceiver_name%5D=javaest" class="icon_pm" title="发送站内短信">&nbsp;</a>
+        <a href='http://javaest.iteye.com/blog/guest_book' class='icon_guestbook' title='给作者留言'>&nbsp;</a>
+        <a href="http://my.iteye.com/feed?subscription%5Bsubscribed_user_name%5D=javaest" class="icon_rss" onclick="var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', 'S0An/lD7oIqa+JCZRIh8PuOtOTN6C0N47iz86pBZt1s='); f.appendChild(s);f.submit();return false;" title="关注作者">&nbsp</a>
+                  <a href="#1562710" title="javaest回帖:浅谈我对几个Web前端开发框架的比较">回帖地址</a>
+              </div>
+                        <div id='post_rate_box_1562710' class='post_rate_box'><a href='#' onclick='return false;' class='good' title='好'>0</a> <a href='#' onclick='return false;' class='hidden' title='差'>0</a> 请登录后投票</div>              </td>
+</tr>
+<tr class="sep2"><td colspan="2"></td></tr>
+<tr id="1562720">
+  <td class="postauthor">
+    <ul>
+      <li class="name">lipeng88213</li>
+      <li>等级: 初级会员</li>
+      <li><a href='http://trylovecatch.iteye.com' target='_blank'><img alt="lipeng88213的博客" class="logo" src="http://www.iteye.com/upload/logo/user/217692/58b99694-5914-38a7-9c32-c5b4e1c21162.bmp?1268631961" title="lipeng88213的博客: 学习是一种信仰" width="" /></a></li>
+      <li>性别: <img src="/images/icon_minigender_1.gif" title="男"/></li>      <li>文章: 170</li>
+      <li>积分: 80</li>
+      <li>来自: 北京</li>
+      <li><img src='/images/status/offline.gif'/></li>
+    </ul>
+  </td>
+  <td class="postcontent">
+    <div class="postactions">
+      <div class="description">
+        &nbsp;&nbsp;
+        发表时间：2010-07-02&nbsp;&nbsp;
+        
+      </div>
+      <div class="links">
+        
+        
+          
+          
+          
+        
+      </div>
+    </div>
+    <div class="postbody clearfix">
+      
+      
+      个人还是比较喜欢jquery 小巧灵活 而且插件繁多 呵呵 
+    </div>
+    
+
+            </td>
+  </tr>
+  <tr>
+    <td class="postauthor"><a href="#">返回顶楼</a></td>
+    <td class="postcontent">
+      <div class="icons">
+        <a href='http://trylovecatch.iteye.com' class='icon_www' title='浏览作者的博客'>&nbsp;</a>
+        <a href='http://trylovecatch.iteye.com/blog/profile' class='icon_profile' title='浏览作者资料'>&nbsp;</a>
+        <a href="http://my.iteye.com/messages/new?message%5Breceiver_name%5D=lipeng88213" class="icon_pm" title="发送站内短信">&nbsp;</a>
+        <a href='http://trylovecatch.iteye.com/blog/guest_book' class='icon_guestbook' title='给作者留言'>&nbsp;</a>
+        <a href="http://my.iteye.com/feed?subscription%5Bsubscribed_user_name%5D=lipeng88213" class="icon_rss" onclick="var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', 'S0An/lD7oIqa+JCZRIh8PuOtOTN6C0N47iz86pBZt1s='); f.appendChild(s);f.submit();return false;" title="关注作者">&nbsp</a>
+                  <a href="#1562720" title="lipeng88213回帖:浅谈我对几个Web前端开发框架的比较">回帖地址</a>
+              </div>
+                        <div id='post_rate_box_1562720' class='post_rate_box'><a href='#' onclick='return false;' class='good' title='好'>0</a> <a href='#' onclick='return false;' class='hidden' title='差'>0</a> 请登录后投票</div>              </td>
+</tr>
+<tr class="sep2"><td colspan="2"></td></tr>
+<tr id="1562730">
+  <td class="postauthor">
+    <ul>
+      <li class="name">javaest</li>
+      <li>等级: <img src="/images/star1.gif" alt="一星会员" title="一星会员"/></li>
+      <li><a href='http://javaest.iteye.com' target='_blank'><img alt="javaest的博客" class="logo" src="http://www.iteye.com/images/user-logo.gif?1324994303" title="javaest的博客: 北边村人" width="" /></a></li>
+      <li>性别: <img src="/images/icon_minigender_1.gif" title="男"/></li>      <li>文章: 59</li>
+      <li>积分: 105</li>
+      <li>来自: 长春</li>
+      <li><img src='/images/status/offline.gif'/></li>
+    </ul>
+  </td>
+  <td class="postcontent">
+    <div class="postactions">
+      <div class="description">
+        &nbsp;&nbsp;
+        发表时间：2010-07-02&nbsp;&nbsp;
+        
+      </div>
+      <div class="links">
+        
+        
+          
+          
+          
+        
+      </div>
+    </div>
+    <div class="postbody clearfix">
+      
+      
+      Adobe在Flex方面似乎后劲不足,版本推的很慢,技术提升也不大.<br />在技术实力上看,长此以往很有可能被MS赶超,远期前途不明朗.<br />个人看法.
+    </div>
+    
+
+            </td>
+  </tr>
+  <tr>
+    <td class="postauthor"><a href="#">返回顶楼</a></td>
+    <td class="postcontent">
+      <div class="icons">
+        <a href='http://javaest.iteye.com' class='icon_www' title='浏览作者的博客'>&nbsp;</a>
+        <a href='http://javaest.iteye.com/blog/profile' class='icon_profile' title='浏览作者资料'>&nbsp;</a>
+        <a href="http://my.iteye.com/messages/new?message%5Breceiver_name%5D=javaest" class="icon_pm" title="发送站内短信">&nbsp;</a>
+        <a href='http://javaest.iteye.com/blog/guest_book' class='icon_guestbook' title='给作者留言'>&nbsp;</a>
+        <a href="http://my.iteye.com/feed?subscription%5Bsubscribed_user_name%5D=javaest" class="icon_rss" onclick="var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', 'S0An/lD7oIqa+JCZRIh8PuOtOTN6C0N47iz86pBZt1s='); f.appendChild(s);f.submit();return false;" title="关注作者">&nbsp</a>
+                  <a href="#1562730" title="javaest回帖:浅谈我对几个Web前端开发框架的比较">回帖地址</a>
+              </div>
+                        <div id='post_rate_box_1562730' class='post_rate_box'><a href='#' onclick='return false;' class='good' title='好'>0</a> <a href='#' onclick='return false;' class='hidden' title='差'>0</a> 请登录后投票</div>              </td>
+</tr>
+<tr class="sep2"><td colspan="2"></td></tr>
+<tr id="1562912">
+  <td class="postauthor">
+    <ul>
+      <li class="name">fight_bird</li>
+      <li>等级: <img src="/images/star2.gif" alt="二星会员" title="二星会员"/></li>
+      <li><a href='http://fight-bird.iteye.com' target='_blank'><img alt="fight_bird的博客" class="logo" src="http://www.iteye.com/upload/logo/user/8601/3c56617e-09dc-4fcb-ae77-31d8717f1962.gif?1236832049" title="fight_bird的博客: fight_bird" width="" /></a></li>
+      <li>性别: <img src="/images/icon_minigender_1.gif" title="男"/></li>      <li>文章: 387</li>
+      <li>积分: 234</li>
+      
+      <li><img src='/images/status/offline.gif'/></li>
+    </ul>
+  </td>
+  <td class="postcontent">
+    <div class="postactions">
+      <div class="description">
+        &nbsp;&nbsp;
+        发表时间：2010-07-02&nbsp;&nbsp;
+        
+      </div>
+      <div class="links">
+        
+        
+          
+          
+          
+        
+      </div>
+    </div>
+    <div class="postbody clearfix">
+      
+      
+      <div class="quote_title">javaest 写道</div><div class="quote_div">Adobe在Flex方面似乎后劲不足,版本推的很慢,技术提升也不大.<br />在技术实力上看,长此以往很有可能被MS赶超,远期前途不明朗.<br />个人看法.</div><br />同感，Flex的技术进步速度很慢，我个人怀疑Adobe公司缺少Anders这种大师级的人物，看看MXML的繁复和简陋的API（和JDK比）就知道了，试水Flex有4个月，3个小项目已经完工，在IDE、组件定制等方面却越来越失望，曾经试用过SilverLight，C#组合VS绝对胜过ActionScript与Flash Builder，只可惜对于技术力量有限的中小型公司来说，倒向微软往往意味着放弃Java，放弃和选择都是代价高昂的。<br /><br />我现在有点犹豫，选Flex也许是个错。<br /><br />正在调研JavaFX和JQuery类JS前端框架，JS前端框架本已是放弃的方案，原因是性能和开发效率低，现在看看JS引擎风起云涌，性能突飞猛进，是要重新审视了。
+    </div>
+    
+
+            </td>
+  </tr>
+  <tr>
+    <td class="postauthor"><a href="#">返回顶楼</a></td>
+    <td class="postcontent">
+      <div class="icons">
+        <a href='http://fight-bird.iteye.com' class='icon_www' title='浏览作者的博客'>&nbsp;</a>
+        <a href='http://fight-bird.iteye.com/blog/profile' class='icon_profile' title='浏览作者资料'>&nbsp;</a>
+        <a href="http://my.iteye.com/messages/new?message%5Breceiver_name%5D=fight_bird" class="icon_pm" title="发送站内短信">&nbsp;</a>
+        <a href='http://fight-bird.iteye.com/blog/guest_book' class='icon_guestbook' title='给作者留言'>&nbsp;</a>
+        <a href="http://my.iteye.com/feed?subscription%5Bsubscribed_user_name%5D=fight_bird" class="icon_rss" onclick="var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', 'S0An/lD7oIqa+JCZRIh8PuOtOTN6C0N47iz86pBZt1s='); f.appendChild(s);f.submit();return false;" title="关注作者">&nbsp</a>
+                  <a href="#1562912" title="fight_bird回帖:浅谈我对几个Web前端开发框架的比较">回帖地址</a>
+              </div>
+                        <div id='post_rate_box_1562912' class='post_rate_box'><a href='#' onclick='return false;' class='good' title='好'>0</a> <a href='#' onclick='return false;' class='hidden' title='差'>0</a> 请登录后投票</div>              </td>
+</tr>
+<tr class="sep2"><td colspan="2"></td></tr>
+<tr id="1562998">
+  <td class="postauthor">
+    <ul>
+      <li class="name">4geafanti</li>
+      <li>等级: 初级会员</li>
+      <li><a href='http://4geafanti.iteye.com' target='_blank'><img alt="4geafanti的博客" class="logo" src="http://www.iteye.com/images/user-logo.gif?1324994303" title="4geafanti的博客: " width="" /></a></li>
+      <li>性别: <img src="/images/icon_minigender_1.gif" title="男"/></li>      <li>文章: 2</li>
+      <li>积分: 30</li>
+      <li>来自: 深圳</li>
+      <li><img src='/images/status/offline.gif'/></li>
+    </ul>
+  </td>
+  <td class="postcontent">
+    <div class="postactions">
+      <div class="description">
+        &nbsp;&nbsp;
+        发表时间：2010-07-02&nbsp;&nbsp;
+        最后修改：2010-07-02
+      </div>
+      <div class="links">
+        
+        
+          
+          
+          
+        
+      </div>
+    </div>
+    <div class="postbody clearfix">
+      
+      
+      <div class="quote_title">javaest 写道</div><div class="quote_div">说的很全面.<br />我也从应用系统的开发角度说说Flex相关的优缺点.<br /><br />缺点：<br />和以往的技术相比，Flex没有JSP这个层次，以往JSP的做用是生成动态的HTML。因为Flex没有类似的和JSP相同作用的技术。所以Flex是纯静态的，是和HTML一样的静态。这种静态直接限制了Flex中ComboBox不能直接拥有动态的不完全确定的Options.，而是Flex显示到客户浏览器上之后，再进行二次请求ComboBox的项。<br />优点：因为Flex是静态的，他和静态HTML，IMG一样，客户对他的访问过程对WEB服务器没有什么压力。<br />Flex把这种压力分解到各各客户的机器上了。<br />缺点：<br />客户机器上的压力加大的，客户能不能受得了。<br />缺点：因为其本身的体积较大，所以对网络流亮要求高一些，<br />还有一种特殊的场景：页面的上的字段个数不一定，就是说有哪些字段是动态的，如果用JSP的话，我可以在JSP中写一个For语句，循环产生input(文本框)和input组件的相关属性与值。但在Flex下，你只能等Flex到客户浏览器之后，再发一个请求问服务器，页面有几个组件？这几个组件的相关属性是怎么样的啊？服务器把这些信息响应回浏览器上的Flex，Flex运用ActionScript脚本动态的去建立文本框组件。但在这个过程中，动态组件的相关属性的描述信息，通过网络传送到客户的机器之中了。浪费了网络流量。<br />优点：客户的体验非常好。前台开发过程中代码自然、流畅、简洁。在客户端跨浏览器跨系统平台。可以很方便的开发自己所需的个性化组件.<br />较HTML相比，在代码保护方面有一定的优势。访问者不容易看到Flex的代码。有效的保护的知识产权 。<br />因为这条优点，所以不能像以前那样，直接从浏览器上看HTML原码进行调试了。<br />一个大的问题,他对反射支持的不好，<br />与J2EE的集成开发环境还不是特别的成熟，完善。</div><br /><br />第一，Flex没有JSP的层次，Flex的通信基本上都是异步的，而你所说的层次还停留在传统的交互方式上，这是Flex的一个&nbsp; 优点，并非缺点。<br />第二，Flex分解压力到各各客户的机器上，如果程序设计合理，适当增加客户机的压力，从而很有效地减轻了服务器的负载，这种情况下，用户表示鸭梨不大，情绪很蛋定。 所以这也是Flex的优点，并非缺点。<br />第三，特殊的场景， JSP是在服务器端生成HTML的代码（html组件）再返回到客户端显示，Flex是请求服务器得到组件的相关属性（这个数据量要比请求JSP小的多），然后再根据得到的数据现实组件。所以不存在“浪费了网络流量”这样一说。<br />第四，与J2EE的集成开发环境还不是特别的成熟，完善&nbsp; 这个只是相对，目前来说已经相对成熟，完善了，Eclipse + MyEclipse + Flex builder(插件版本) 组合的IDE可以整合j2ee + flex一体式工程，debug也比较方便。例外，通信方面结合LCDS/DBS/DGS 使用 RemoteObject进行数据访问。Remote是基于AMF协议，使用AMF协议通信比使用HTTP快10被左右。由于AS3和JAVA语法极为相似，在使用RemoteObject远程对象调用和RemoteClass对象的数据传输，都是比较容易和方便的。这样的通信方式在目前也是比较先进的。<br /><br />当然Flex也有其很多缺点，比如内存优化和管理，Module的优化等等，我们在学习和使用的过程中需要对其要有客观，正确的认识。
+    </div>
+    
+
+            </td>
+  </tr>
+  <tr>
+    <td class="postauthor"><a href="#">返回顶楼</a></td>
+    <td class="postcontent">
+      <div class="icons">
+        <a href='http://4geafanti.iteye.com' class='icon_www' title='浏览作者的博客'>&nbsp;</a>
+        <a href='http://4geafanti.iteye.com/blog/profile' class='icon_profile' title='浏览作者资料'>&nbsp;</a>
+        <a href="http://my.iteye.com/messages/new?message%5Breceiver_name%5D=4geafanti" class="icon_pm" title="发送站内短信">&nbsp;</a>
+        <a href='http://4geafanti.iteye.com/blog/guest_book' class='icon_guestbook' title='给作者留言'>&nbsp;</a>
+        <a href="http://my.iteye.com/feed?subscription%5Bsubscribed_user_name%5D=4geafanti" class="icon_rss" onclick="var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', 'S0An/lD7oIqa+JCZRIh8PuOtOTN6C0N47iz86pBZt1s='); f.appendChild(s);f.submit();return false;" title="关注作者">&nbsp</a>
+                  <a href="#1562998" title="4geafanti回帖:浅谈我对几个Web前端开发框架的比较">回帖地址</a>
+              </div>
+                        <div id='post_rate_box_1562998' class='post_rate_box'><a href='#' onclick='return false;' class='good' title='好'>2</a> <a href='#' onclick='return false;' class='hidden' title='差'>0</a> 请登录后投票</div>              </td>
+</tr>
+<tr class="sep2"><td colspan="2"></td></tr>
+<tr id="1562999">
+  <td class="postauthor">
+    <ul>
+      <li class="name">ajonjun</li>
+      <li>等级: 初级会员</li>
+      <li><a href='http://hecks.iteye.com' target='_blank'><img alt="ajonjun的博客" class="logo" src="http://www.iteye.com/upload/logo/user/183924/6657a657-cca4-33cc-b3bf-b7034ab340a1.jpg?1261489431" title="ajonjun的博客: 猪头's blog       " width="" /></a></li>
+      <li>性别: <img src="/images/icon_minigender_1.gif" title="男"/></li>      <li>文章: 112</li>
+      <li>积分: 50</li>
+      <li>来自: 深圳</li>
+      <li><img src='/images/status/offline.gif'/></li>
+    </ul>
+  </td>
+  <td class="postcontent">
+    <div class="postactions">
+      <div class="description">
+        &nbsp;&nbsp;
+        发表时间：2010-07-02&nbsp;&nbsp;
+        
+      </div>
+      <div class="links">
+        
+        
+          
+          
+          
+        
+      </div>
+    </div>
+    <div class="postbody clearfix">
+      
+      
+      不错，简单明了。赞一个。
+    </div>
+    
+
+            </td>
+  </tr>
+  <tr>
+    <td class="postauthor"><a href="#">返回顶楼</a></td>
+    <td class="postcontent">
+      <div class="icons">
+        <a href='http://hecks.iteye.com' class='icon_www' title='浏览作者的博客'>&nbsp;</a>
+        <a href='http://hecks.iteye.com/blog/profile' class='icon_profile' title='浏览作者资料'>&nbsp;</a>
+        <a href="http://my.iteye.com/messages/new?message%5Breceiver_name%5D=ajonjun" class="icon_pm" title="发送站内短信">&nbsp;</a>
+        <a href='http://hecks.iteye.com/blog/guest_book' class='icon_guestbook' title='给作者留言'>&nbsp;</a>
+        <a href="http://my.iteye.com/feed?subscription%5Bsubscribed_user_name%5D=ajonjun" class="icon_rss" onclick="var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', 'S0An/lD7oIqa+JCZRIh8PuOtOTN6C0N47iz86pBZt1s='); f.appendChild(s);f.submit();return false;" title="关注作者">&nbsp</a>
+                  <a href="#1562999" title="ajonjun回帖:浅谈我对几个Web前端开发框架的比较">回帖地址</a>
+              </div>
+                        <div id='post_rate_box_1562999' class='post_rate_box'><a href='#' onclick='return false;' class='good' title='好'>0</a> <a href='#' onclick='return false;' class='hidden' title='差'>0</a> 请登录后投票</div>              </td>
+</tr>
+<tr class="sep2"><td colspan="2"></td></tr>
+
+  </tbody>
+</table>
+
+
+<div class="actions">
+  <div class="buttons"></div>
+  <div class="wrapper"><div class="pagination"><span class="disabled prev_page">&laquo; 上一页</span> <span class="current">1</span> <a href="/topic/703155?page=2" rel="next">2</a> <a href="/topic/703155?page=3">3</a> <span class="gap">&hellip;</span> <a href="/topic/703155?page=6">6</a> <a href="/topic/703155?page=7">7</a> <a href="/topic/703155?page=2" class="next_page" rel="next">下一页 &raquo;</a></div></div>
+</div>
+
+<div>
+  <div class="crumbs">
+    <a href="/forums">论坛首页</a> <span class="arrow">&rarr;</span>
+    <a href="/forums/board/web">Web前端技术版</a>
+    <br/><br/>跳转论坛:<select id="forum_urlname" name="forum[urlname]" onchange="window.location='/forums/board/'+this.value"><option value="mobile">移动开发技术</option>
+<option value="web" selected="selected">Web前端技术</option>
+<option value="Java">Java企业应用</option>
+<option value="language">编程语言技术</option>
+<option value="Tech">综合技术</option>
+<option value="New">入门技术</option>
+<option value="Job">招聘求职</option>
+<option value="Life">海阔天空</option></select>
+    
+  </div>
+
+  
+</div>
+
+<div style="display:none">
+  <form action="/posts/rate" id="post_rate_form" method="post" onsubmit="new Ajax.Request('/posts/rate', {asynchronous:true, evalScripts:true, parameters:Form.serialize(this)}); return false;"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="S0An/lD7oIqa+JCZRIh8PuOtOTN6C0N47iz86pBZt1s=" /></div>
+    <input type="hidden" id="post_rate_id" name="id"/>
+    <input type="hidden" id="post_rate_type" name="type"/>
+  </form></div>
+
+<script type="text/javascript">
+  function processComment() {
+    fix_image_size($$('div.postbody img'), 760);
+    
+    $$('#forum_main > #posts > tr[id]').each(function(tr){
+      var post_id = tr.id;
+      $$("#"+post_id+" pre[name=code]").each(function(pre, index){
+        var location = window.location;
+        source_url = location.protocol + "//" + location.host + location.pathname + location.search;
+        source_url += "#" + post_id;
+        pre.writeAttribute('codeable_type', 'Post');
+        pre.writeAttribute('codeable_id', post_id);
+        pre.writeAttribute('source_url', source_url);
+        pre.writeAttribute('pre_index', index);
+        pre.writeAttribute('title', '浅谈我对几个Web前端开发框架的比较');
+      });
+    });
+  }
+
+  dp.SyntaxHighlighter.HighlightAll('code', true, true);
+  processComment();
+  code_favorites_init();
+
+  function rate_post(id, type) {
+    Element.update('post_rate_box_' + id, '提交中...');
+    new Ajax.Request('/posts/rate', {asynchronous:true, evalScripts:true, parameters:{"id":id, "type":type}});
+  }
+
+  function rate_topic(type) {
+    Element.update('topic_rate_box', '提交中...');
+    new Ajax.Request('/topics/rate', {asynchronous:true, evalScripts:true, parameters:{"id":703155, "type":type}});
+  }
+</script>
+
+
+
+        </div>
+        <div id="nav">
+  <div class="wrapper">
+    <ul>
+            <li><a href="http://www.iteye.com/">首页</a></li>
+      <li><a href="http://www.iteye.com/news">资讯</a></li>
+      <li><a href="http://www.iteye.com/magazines">精华</a></li>
+      <li><a href="http://www.iteye.com/forums" class='selected'>论坛</a></li>
+      <li><a href="http://www.iteye.com/ask">问答</a></li>
+      <li><a href="http://www.iteye.com/blogs">博客</a></li>
+      <li><a href="http://www.iteye.com/blogs/subjects">专栏</a></li>
+      <li><a href="http://www.iteye.com/groups">群组</a></li>
+      <!-- <li><a target="_blank" href="http://job.iteye.com/iteye">招聘</a></li>-->
+      <li><a target="_blank" href="http://job.csdn.net/">招聘</a></li>
+      <li class="last"><a href="http://www.iteye.com/search">搜索</a></li>
+    </ul>
+  </div>
+</div>
+      </div>
+      <div id="footer">
+  <div id="site_nav">
+    <ul>
+      <li><a href="/index/service">广告服务</a></li>
+      <li><a href="http://webmaster.iteye.com">ITeye黑板报</a></li>
+      <li><a href="/index/contactus">联系我们</a></li>
+      <li class="last"><a href="/index/friend_links">友情链接</a></li>
+    </ul>
+  </div>
+  <div id="copyright">
+    &copy; 2003-2015 ITeye.com.    [ <a href="http://www.miibeian.gov.cn">京ICP证110151号</a>  京公网安备110105010620 ]<br/>
+    百联优力(北京)投资有限公司  版权所有<br />
+  </div>
+</div>
+
+    </div>
+    <script type="text/javascript">
+  document.write("<img src='http://stat.iteye.com/?url="+ encodeURIComponent(document.location.href) + "&referrer=" + encodeURIComponent(document.referrer) + "&user_id=' width='0' height='0' />");
+</script>
+
+<script src="http://csdnimg.cn/pubfooter/js/tracking.js?version=20130923164150" type="text/javascript"></script>
+
+  </body>
+</html>

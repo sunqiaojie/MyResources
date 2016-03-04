@@ -1,0 +1,520 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+
+        <meta name="keywords" content="私塾在线,java视频,java教程,java学习视频,android视频,maven视频,hadoop视频,hibernate,spring,struts2,设计模式,"/>
+        <meta name="description" content="java学习教程,java学习视频,java框架技术,深入浅出struts,hibernate,spring,企业架构,设计模式,数据库技术,oracle,mysql,jquery学习视频,,.net学习视频,移动编程,android,"/>
+
+        <title>jQuery-dialog在ie6下被下拉框(select)覆盖问题 - Web前端技术 - 学习交流 - 私塾在线 - 只做精品视频课程服务</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     
+
+<link href="http://sishuok.com/common/css/css-min.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="/forum/templates/default/styles/style.css?1441430752393" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+    var ctx = 'http://sishuok.com';
+    var forumCtx = '/forum';
+	var ssonlineUrl='http://sishuok.com';
+</script>
+<script language="javascript" src="http://sishuok.com/common/js/jquery/jquery-1.3.2.min.js"></script>
+<script language="javascript" src="http://sishuok.com/common/js/application.js?1"></script>
+    </head>
+
+    <body  leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+        <div id="main">
+            <div class="index">
+<div id="top_tit">
+    <a href="javascript:void(0)" class="top_menu_a2" onclick="addToFavorite()">
+    <div class="favorite"></div>
+    <div style="float: left;">&nbsp;收藏私塾在线</div>
+</a>
+            <div style="padding-left: 550px;float: left;display: inline;">&nbsp;</div>
+            <p class="top_p">欢迎您来到私塾在线网！&nbsp;&nbsp;&nbsp;</p>
+            <p class="top_p"><a href="http://sishuok.com/login">请登录!</a>&nbsp;</p>
+            <p class="top_p"><a href="http://sishuok.com/register">免费注册</a>&nbsp;</p>
+</div>
+
+<div class="banner_div"><a href="http://sishuok.com/"><div class="logo"></div></a>
+	<div class="menu_div_title">只做精品视频课程服务</div>
+    <div id="menu_div">
+        <a href="http://sishuok.com/">找课程</a><div class="menu_g"></div>
+        <a href="http://sishuok.com/learn">去学习</a><div class="menu_g"></div>
+        <!--<a href="http://sishuok.com/qa">知识问答</a><div class="menu_g"></div>-->
+        <a href="/forum/forums/list.html"  
+class="current">要交流</a><div class="menu_g"></div>
+        <a href="/forum/blog/index.html" >记笔记</a><div class="menu_g"></div>
+        <a href="/forum/forums/show/32.html" >有问题</a><div class="menu_g"></div>
+        <!--<a href="http://sishuok.com/resource">共享资源</a><div class="menu_g"></div>-->
+
+    </div>
+    <div class="right_align" style="margin-top: 37px;*margin-top: 38px;">
+
+            <div class="me_div2" style="float: right;"><p>
+			    <iframe width="110" height="20" style="float: left;margin-top: 5px;" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="http://widget.weibo.com/relationship/followbutton.php?language=zh_cn&amp;width=136&amp;height=20&amp;uid=2428827111&amp;style=2&amp;btn=light&amp;dpc=1"></iframe>
+                <a title="点击此处签到拿积分" class="btn-img btn-s1" style="border: 0px;padding: 6px;" onclick="checkin();"/>签到</a>
+                <a title="点击此处获取帮助" onclick="document.location.href='http://sishuok.com/help/index.jsp'" class="btn-img btn-s1" style="border: 0px;padding: 6px;"/>帮助</a>
+            </p></div>
+     </div>
+</div>
+<div style="border-top:2px solid #ff7b01;width: 100%;"></div>
+
+<script type="text/javascript" src="/forum/templates/default/js/jquery.jeditable.pack.js?1441430752393"></script>
+<script type="text/javascript" src="/forum/templates/default/js/post_show.js?1441430752393"></script>
+<script type="text/javascript" src="/forum/templates/default/js/post.js?1441430752393"></script>
+<script type="text/javascript" src="/forum/templates/default/js/pagination.js?1441430752393"></script>
+
+
+<script type="text/javascript">
+<!--
+function showEmail(beforeAt, afterAt)
+{
+	return beforeAt + "@" + afterAt;
+}
+
+var starOn = new Image();
+starOn.src = "/forum/templates/default/images/star_on.gif";
+
+var starOff = new Image();
+starOff.src = "/forum/templates/default/images/star_off.gif";
+
+function writeStars(q, postId)
+{
+	for (var i = 0; i < 5; i++) {
+		var name = "star" + postId + "_" + i;
+		document.write("<img name='" + name + "' alt='*' />");
+		document.images[name].src = q > i ? starOn.src : starOff.src;
+	}
+}
+
+function addBookmark(relationType, relationId)
+{
+	var w = window.open('/forum/bookmarks/insert/' + relationType + '/' + relationId + '.html;jsessionid=8E272D1305B0BB37B59B681ED2B1F2DA', 'bookmark_add', 'width=700, height=200, scrollbars=auto, resizable=true');
+	w.focus();
+}
+
+
+-->
+</script>
+
+
+<table cellspacing="0" cellpadding="10" width="100%" align="center" border="0">
+	<tr>
+		<td class="bodyline">
+			
+			<table cellspacing="2" cellpadding="2" width="100%" border="0">
+				<tr>
+					</td>
+
+					<td valign="middle" align="left" colspan="2">
+						<span class="nav">
+						<a class="nav" href="/forum/forums/list.html;jsessionid=8E272D1305B0BB37B59B681ED2B1F2DA">交流首页 </a> 
+            			&raquo; <a class="nav" href="/forum/forums/show/27.html;jsessionid=8E272D1305B0BB37B59B681ED2B1F2DA">Web前端技术 </a></span>
+            			&raquo;<span class="maintitle"><a href="/forum/posts/list/7708.html;jsessionid=8E272D1305B0BB37B59B681ED2B1F2DA" name="top" class="maintitle" id="top">jQuery-dialog在ie6下被下拉框(select)覆盖问题</a></span>
+                            &nbsp;<a href="/forum/rss/topicPosts/7708.html"><img src="/forum/templates/default/images/xml_button.gif" border="0" alt="XML" /></a>
+					</td>
+					<td valign="middle" align="right"></td>
+				</tr>
+			</table>
+
+			<table class="forumline" cellspacing="1" cellpadding="3" width="100%" border="0">
+				
+				<tr>
+					<th class="thleft" nowrap="nowrap" width="150" height="26">发表人</th>
+					<th class="thright" nowrap="nowrap" width="100%">内容</th>
+				</tr>
+
+				<!-- POST LISTING --> 
+	
+					<tr>
+						<td colspan="2">
+<div class="postinfo">
+	<div class="date">
+				<a href="/forum/posts/list/7708.html;jsessionid=8E272D1305B0BB37B59B681ED2B1F2DA#33227">
+		<img src="/forum/templates/default/images/icon_minipost_new.gif" alt="[Post New]" /></a>2013-12-03 08:31:29
+	</div>
+	<div class="subject">&nbsp;&nbsp; &nbsp;<b>文章主题:</b> <a name="33227" title="jQuery-dialog在ie6下被下拉框(select)覆盖问题"> jQuery-dialog在ie6下被下……</a></div>
+	<div class="action">
+
+
+
+
+
+		<a class="nav" href="#top"><img src="/forum/templates/default/images/icon_up.gif" alt="[Up]" /></a>
+	</div>
+</div>						</td>
+					</tr>
+
+					<tr>
+						<!-- Username -->
+
+
+						<td class="row1" valign="top" align="left" rowspan="2">
+<span class="genmed"><b>
+
+                <a id='customer_btn_10000802'  style="font-size: 14px;" href='javascript:void(0)' onmouseover="triggerCustomerBar('10000802', 'http://sishuok.com/common/images/no_img.gif', this)">guodong</a>
+</b></span>
+<br />
+
+<span class="gensmall">
+
+    <a title="看看ta的交流" href="/forum/blogRecentTopics/showTopicsByUser/255.html" target="_blank"><img src="http://sishuok.com/common/images/no_img.gif" width="100px" height="100px" border="0" alt="[头像]" /></a><br />
+<br/>
+
+        交流经验：22 <br>
+        总积分：122 <br>
+        级别：普通会员
+	<br/>
+
+	注册时间: 2011-11-03<br />
+	文章: 13
+<br />
+
+
+
+		<span class="offline">离线 </span>
+</span>
+<br />						</td>
+		
+						<!-- Message -->
+						<td class="row1" valign="top" id="post_text_33227">
+							<div class="postbody">
+									jQuery-dialog在ie6下被下拉框(select)覆盖问题
+<br />
+<p> 最近在解决jQuery在ie6下的兼容性时，发现一个问题，在此与大家分享，并希望大家给予宝贵的建议 </p> 
+<p> 问题如下： </p> 
+<p> 在ie6下使用jQuery的dialog弹出框时，若不引入jquery.bgiframe.js时，会出现下拉框(select)无法被弹出的div覆盖的问题，如下图： </p> 
+<p> <img src="http://static.oschina.net/uploads/space/2013/0222/134035_x0cT_991307.jpg" alt="" /> </p> 
+<p> 点击test按钮弹出dialog框，可以看到上图红框(属于dialog)部分被下拉框遮盖住了。 </p> 
+<p> 加载了jquery.bgiframe.js之后，如图： </p> 
+<p> <img src="http://static.oschina.net/uploads/space/2013/0222/134408_v5CP_991307.jpg" alt="" /> </p> 
+<p> 问题解决了。 </p> 
+<p> 解决原理：假设你的dialog代码为 </p> 
+<pre class="brush:html; toolbar: true; auto-links: false;">&lt;div id=&quot;message_dialog&quot; style=&quot;display:none; text-align:center;&quot;&gt;
+    This is a test...
+&lt;/div&gt;</pre> 
+<span>jquery.bgiframe.js的原理为在你的div中加入一个与你的div一样大小iframe，由于ie6下iframe可以覆盖select，div可以覆盖iframe，这样就间接解决了div无法覆盖select的问题。</span> 
+<p></p> 
+<p> 看到这里，你以为结束了？不，还没有，jquery的dialog有一个modal属性，用于禁用dialog下面的控件，假如你的dialog将这个属性设置为true，如 </p> 
+<p> </p> 
+<pre class="brush:js; toolbar: true; auto-links: false;">$('#test').click(function()
+    $('#message_dialog').dialog(
+        title:'Test',
+	modal:true,
+	open:function()
+    )
+);</pre> 那么，你会看到如下情况： 
+<p></p> 
+<p> <img src="http://static.oschina.net/uploads/space/2013/0222/135306_YW3O_991307.jpg" alt="" /> </p> 
+<p> 看见没有，下拉框全都不见啦！！！这又是为啥呢？仔细查过后发现，由于modal的原理是加一个与body同样大小被禁用的div层，由于引入了jquery.bgiframe.js，这个div层中也加入了一个等大的iframe，因为iframe覆盖select，所以下拉框就看不到了.... </p> 
+<p> 那么，手动去掉这个iframe如何？下面看效果 </p> 
+<p> </p> 
+<pre class="brush:js; toolbar: true; auto-links: false;">$('#test').click(function()
+    $('#message_dialog').dialog(
+        title:'Test',
+	modal:true,
+	open:function()
+    );
+    $(&quot;.ui-widget-overlay iframe&quot;).remove();
+);</pre> 
+<img src="http://static.oschina.net/uploads/space/2013/0222/135810_id2b_991307.jpg" alt="" /> 
+<p></p> 
+<p> 出来啦！有木有！有木有！不过为啥select可以点击呢？为啥没被禁用呢？因为禁用的那个div去掉iframe之后虽然不会覆盖下拉框，但是div不能覆盖select啊！有木有！自然禁用的div就无法覆盖下拉框，下拉框就能点击了。不过没关系，又想出一招，把select手动禁用如何？ </p> 
+<p> </p> 
+<pre class="brush:js; toolbar: true; auto-links: false;">$('#test').click(function()
+    $('#message_dialog').dialog(
+        title:'Test',
+	modal:true,
+	open:function()
+    );
+    $(&quot;select&quot;).attr(&quot;disabled&quot;,&quot;disabled&quot;);
+    $(&quot;.ui-widget-overlay iframe&quot;).remove();
+);</pre> 
+<img src="http://static.oschina.net/uploads/space/2013/0222/140227_vG02_991307.jpg" alt="" /> 
+<p></p> 
+<p> 看到这，你又以为搞定了吧！不，还木有！！假如你这个dialog支持关闭呢？那么关闭之后页面上的select不是依然被禁用了么？所以，你还需要对dialog的close做处理 </p> 
+<p> </p> 
+<pre class="brush:js; toolbar: true; auto-links: false;">$('#test').click(function()
+    $('#message_dialog').dialog(
+	title:'Test',
+	modal:true,
+	pen:function(),
+	close:function()
+            $(&quot;select&quot;).attr(&quot;disabled&quot;,false);
+	
+    );
+    $(&quot;select&quot;).attr(&quot;disabled&quot;,&quot;disabled&quot;);
+    $(&quot;.ui-widget-overlay iframe&quot;).remove();
+);</pre> 到此，这个问题终于算是解决啦！ 
+<p></p> 
+<p> 不过以上做法都是个人见解，如果有更好做法或者建议的，欢迎至极<img src="http://www.oschina.net/js/ke/plugins/emoticons/images/42.gif" alt="" /> </p> 
+<div class="clear"></div>
+							</div>
+
+
+
+                            <!--ad begin-->
+							
+                                <div style="width:100%;padding-top: 10px;line-height: 16px;">
+                                <hr style="border-top: #CCC 1px solid;  width: 100%;"/>
+                                <span style="color:gray">推广链接</span><br/>
+                                <ul style="color:gray;list-style: circle;margin-left: 30px;" class="reda">
+
+									<li><a href="http://sishuok.com/product/501?frombbs" target="_blank">研磨设计模式——跟着cc学设计系列</a></li>
+									<li><a href="http://sishuok.com/product/521?frombbs" target="_blank">云计算 之 Hadoop实战-中高级部分</a></li>
+									 <li><a href="http://sishuok.com/product/481?frombbs" target="_blank">云计算 之 Hadoop实战-初级部分 </a></li>
+									 <li><a href="http://sishuok.com/board/301?frombbs" target="_blank">云计算开发技术——企业级高端培训课程（业余班）</a></li>
+                                    <li><a href="http://sishuok.com/board/161?frombbs" target="_blank">独家Android4就业经典视频课程，2012年首发！！</a></li>
+                                    <li><a href="http://javass.cn/javapeixunxinwen/08.html?frombbs" target="_blank">2012 最给力的Java就业解决方案——Java私塾首推：远程学习+地面冲刺=高薪就业</a></li>
+									
+                                </ul>
+
+                        
+
+                                 <div style="border: 1px dotted #00A0EF;padding: 8px;margin: 5px;background:    #FFFCE7;">
+                                 <div style="color: blue;font-size: 20px;font-weight: bold;margin-bottom: 10px;line-height: 25px;">精品视频课程推荐</div>
+
+                                     <p style="margin: 0 0 15px 0;">
+                                     <a style="font-size: 16px;color: red;font-weight: bold;" href="/product/121?ad" target="_blank">jquery使用基础-独家视频教程</a>
+                                     <br/>独立使用jQuery简化js开发
+                                     </p>
+
+
+                                     <p style="margin: 0 0 15px 0;">
+                                     <a style="font-size: 16px;color: red;font-weight: bold;" href="/product/701?ad" target="_blank">深入浅出学Spring Web MVC视频教程</a>
+                                     <br/>系统、完整的学习Spring Web MVC开发的知识。包括：Spring Web MVC入门；理解DispatcherServlet；注解式控制器开发详解；数据类型转换；数据格式化；数据验证； 拦截器；对Ajax的支持；文件上传下载；表单标签等内容；最后以一个综合的CRUD带翻页的应用示例来综合所学的知识 
+                                     </p>
+
+
+                                     <p style="margin: 0 0 15px 0;">
+                                     <a style="font-size: 16px;color: red;font-weight: bold;" href="/product/81?ad" target="_blank">Java Web开发理论部分视频教程</a>
+                                     <br/>系统掌握开发实际的Java Web应用所需的理论知识和技能(Servlet、Jsp、JavaBean、TagLib、EL、JSTL、MVC模式、连接池DataSource、JNDI等知识)。涉及项目：在线投票计数、在线人数统计、登录检查、购物车、商品管理、非法字符替换等多个随堂演示小应用。
+
+                                     </p>
+
+
+                                     <p style="margin: 0 0 15px 0;">
+                                     <a style="font-size: 16px;color: red;font-weight: bold;" href="/product/181?ad" target="_blank">Spring3开发实战-独家视频教程</a>
+                                     <br/>从零到精通Spring3的开发知识；IoC/DI的思想、IoC/DI的运行流程、IoC/DI的开发指导、AOP的思想、AOP的运行流程、AOP应用的设计、Spring对JDBC和Hibernate的支持、Spring的事务、SSH的集成应用
+                                     </p>
+
+                                 </div>
+
+								<script type="text/javascript"><!--
+									google_ad_client = "ca-pub-5014907946493114";
+									/* 私塾在线 */
+									google_ad_slot = "5445862139";
+									google_ad_width = 728;
+									google_ad_height = 90;
+									//-->
+									</script>
+									<script type="text/javascript"
+									src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+								</script>
+
+                                </div>
+                            <!--ad end-->
+						</td>
+					</tr>
+
+		
+					<tr> 
+						<td class="row1" valign="bottom" nowrap="nowrap" height="28" width="100%">
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+<tr>
+	<td valign="middle" nowrap="nowrap">
+		<a href="http://sishuok.com/customer?customerUuid=10000802" target="_blank" class="icon_profile"><img src="/forum/images/transp.gif" alt="" /></a>
+		<a href="http://sishuok.com/msg/send?sm.receiveCustomer.uuid=10000802" class="icon_pm" target="_blank"><img src="/forum/images/transp.gif" alt="" /></a>
+
+		
+		
+
+		
+		
+	</td>
+
+</tr>
+</table>						</td>
+					</tr>
+		
+					<tr>
+						<td class="spacerow" colspan="2" height="1"><img src="/forum/templates/default/images/spacer.gif" alt="" width="1" height="1" /></td>
+					</tr>
+				<!-- END OF POST LISTING -->
+		
+				<tr align="center">
+					<td class="catbottom" colspan="2" height="28">
+						<table cellspacing="0" cellpadding="0" border="0">
+							<tr>
+								<td align="center"><span class="gensmall">&nbsp;</span></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+		
+			<table cellspacing="2" cellpadding="2" width="100%" align="center" border="0">
+				<tr>
+					</td>
+					
+					<td valign="middle" align="left" colspan="2">
+						<span class="nav">
+						<a class="nav" href="/forum/forums/list.html;jsessionid=8E272D1305B0BB37B59B681ED2B1F2DA">交流首页 </a> 
+            			&raquo; <a class="nav" href="/forum/forums/show/27.html;jsessionid=8E272D1305B0BB37B59B681ED2B1F2DA">Web前端技术 </a>
+						</span>
+					</td>
+
+					<td valign="middle" align="right"></td>
+				</tr>
+			</table>
+			
+			<table width="100%" align="center">
+				
+				
+			</table>
+
+			<table cellspacing="0" cellpadding="0" width="100%" border="0">
+				<tr>
+					<td align="left" valign="top" class="gensmall">
+						<!---->
+					</td>
+					<td align="right">	<table cellspacing="0" cellpadding="0" border="0">
+		<tr>			  
+			<td nowrap="nowrap">
+				<form action="" name="f" id="f" accept-charset="UTF-8">
+					<span class="gensmall">前往:&nbsp;</span>
+					<select onchange="if(this.options[this.selectedIndex].value != -1){ document.location = '/forum/forums/show/'+ this.options[this.selectedIndex].value +'.html'; }" name="select">
+						<option value="-1" selected="selected">选择一个版面</option>				
+						
+                            <optgroup label="软件设计专版">
+		
+								<option value="47">软件设计专版</option>
+							
+                            </optgroup>
+                            <optgroup label="Java">
+		
+								<option value="26">Java</option>
+							
+                            </optgroup>
+                            <optgroup label="Web前端技术">
+		
+								<option value="27">Web前端技术</option>
+							
+                            </optgroup>
+                            <optgroup label="数据库">
+		
+								<option value="28">数据库</option>
+							
+                            </optgroup>
+                            <optgroup label="移动编程">
+		
+								<option value="29">移动编程</option>
+							
+                            </optgroup>
+                            <optgroup label=".NET">
+		
+								<option value="30">.NET</option>
+							
+                            </optgroup>
+                            <optgroup label="其他语言">
+		
+								<option value="31">其他语言</option>
+							
+                            </optgroup>
+                            <optgroup label="学习问题讨论">
+		
+								<option value="32">学习问题讨论</option>
+							
+                            </optgroup>
+                            <optgroup label="面试、就业">
+		
+								<option value="45">面试、就业</option>
+							
+                            </optgroup>
+                            <optgroup label="站务建设区">
+		
+								<option value="33">站务管理</option>
+								<option value="34">灌水乐园</option>
+							
+                            </optgroup>
+					</select>
+					&nbsp;
+					<input class="liteoption" type="button" value="Go" onclick="if(document.f.select.options[document.f.select.selectedIndex].value != -1){ document.location = '/forum/forums/show/'+ document.f.select.options[document.f.select.selectedIndex].value +'.html'; }" />
+				</form>
+			</td>
+		</tr>
+	</table>
+</td>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+
+<a name="quick"></a>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	limitURLSize();
+
+});
+</script>
+
+
+<div class="big_box7">
+    <p><a href="http://sishuok.com/help/about_us.jsp">关于我们</a> | <a href="http://sishuok.com/help/contact.jsp">联系我们</a> | <a href="http://sishuok.com/help/agreement.jsp">用户协议</a> | <a href="http://sishuok.com/help/fee.jsp">私塾在线服务协议</a> | <a href="http://sishuok.com/help/copyright.jsp">版权声明</a> | <a href="http://sishuok.com/help/privacy.jsp">隐私保护</a></p>
+    <p>版权所有 Copyright(C)2009-2012 私塾在线学习网</p>
+</div>
+
+    <div id="user_tip" class="customer_bar customer_bar_container blue" style="display: none;">
+      <div style="width: 40px">
+          <a id="customer_btn_index"><img style="float: left;" src="http://sishuok.com/common/images/none_1_1.gif" width="40px" height="40px"/></a>
+      </div>
+      <div>
+
+
+          <div>
+              <!--<span class="customer_bar_item w_70">&nbsp;<a id="customer_btn_question">ta的问题</a></span>-->
+              <span class="customer_bar_item w_70">&nbsp;<a id="customer_btn_blog">ta的笔记</a></span>
+              <span class="customer_bar_item" style="padding-right: 0;">&nbsp;<a id="customer_btn_bbs">ta的交流</a></span>
+              <span class="customer_bar_item w_70">&nbsp;<a id="customer_btn_index2">ta的资料</a></span>
+          </div>
+          <div>
+
+              <span class="customer_bar_item w_70">&nbsp;<a id="customer_btn_msg">发消息</a></span>
+              <span class="customer_bar_item w_70" style="padding-right: 0;">&nbsp;<a id="customer_btn_ask">问问题</a></span>
+          </div>
+      </div>
+
+
+	</div>
+</div>
+</div>
+<a href="#top"></a>
+
+</body>
+</html>
+<script type="text/javascript" src="http://sishuok.com/common/js/ad.js"></script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try{
+var pageTracker = _gat._getTracker("UA-25378051-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+<div style="width: 0px;height: 0px;display: none;">
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F280074a10bea1abe79ad6d6dc08e4736' type='text/javascript'%3E%3C/script%3E"));
+</script>
+</div>
+<!-- SyntaxHighlighter 1.5.1 -->
+<script language="javascript" src="/forum/tinymce/editor.js"></script>
+<script language="javascript" src="/forum/tinymce/syntaxHighlighter/Scripts/shCore.js"></script>
+<script type="text/javascript">
+highlightAll();
+</script>
+</body>
+</html><a class="bshareDiv" href="http://www.bshare.cn/share"></a><script type="text/javascript" charset="utf-8"src="http://static.bshare.cn/b/buttonLite.js#uuid=841c9e6a-10b0-4e3b-90d2-ddebdbc41244&amp;style=3&amp;fs=4&amp;textcolor=#000&amp;bgcolor=#DDD&amp;text=分享到..."></script>

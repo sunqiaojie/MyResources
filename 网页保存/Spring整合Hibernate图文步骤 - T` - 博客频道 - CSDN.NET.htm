@@ -1,0 +1,1214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+     
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>   
+    
+     
+    <script type="text/javascript" src="http://c.csdnimg.cn/pubfooter/js/tracking.js" charset="utf-8"></script>  
+
+    <script type="text/javascript">
+        var protocol = window.location.protocol;
+        document.write('<script type="text/javascript" src="' + protocol + '//csdnimg.cn/pubfooter/js/repoAddr2.js?v=' + Math.random() + '"></' + 'script>');
+    </script>
+
+  
+ <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+
+    <title>Spring整合Hibernate图文步骤 - T`
+        - 博客频道 - CSDN.NET</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="1，&#160; 对于一个国家来说，数据库的建设规模，数据库信息量的大小和使用频度已成为衡量这个国家信息化程度的一个重要标志。2，&#160; 数据系统的几个重要概念(1)&#160;&#160;&#160;&#160;数据：数据是数据库中储存的基本对象。描述事物的符号记录称为数据，它可以是数字，也可以是文字，图形，图像，声音，语言等多种表现形式，它们都可以经过数字化后存入计算机。数据的表现形式还不能完全表达其内容，需要经过解释，数据和关于数据的解" />
+    <script src="http://static.blog.csdn.net/scripts/jquery.js" type="text/javascript"></script>
+    <script type="text/javascript" src="http://static.blog.csdn.net/scripts/ad.js?v=1.1"></script>
+        <!--new top-->
+               <link rel="stylesheet" href="http://c.csdnimg.cn/public/common/toolbar/css/index.css">        <!--new top-->
+
+    <link rel="Stylesheet" type="text/css" href="http://static.blog.csdn.net/skin/ink/css/style.css?v=1.1" />
+    <link id="RSSLink" title="RSS" type="application/rss+xml" rel="alternate" href="/qq7342272/rss/list" />
+    <link rel="shortcut icon" href="http://c.csdnimg.cn/public/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="http://static.blog.csdn.net/scripts/SyntaxHighlighter/styles/default.css" />
+ 
+
+
+</head>
+<body>
+    
+   
+      <!--new top-->
+    <script id="toolbar-tpl-scriptId" fixed="true" prod="blog" skin="black" src="http://c.csdnimg.cn/public/common/toolbar/js/html.js" type="text/javascript"></script>
+     <!--new top-->
+    <div id="container">
+        <div id="header">
+    <div class="header">
+        <div id="blog_title">
+            <h2>
+                <a href="http://blog.csdn.net/qq7342272">T`</a></h2>
+            <h3>把JAVA的头和尾去掉，蛋白质是鸡蛋的六倍。鸡肉味嘎嘣脆~~</h3>
+            <div class="clear">
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+</div>
+<div id="navigator">
+    <div class="navigator_bg">
+    </div>
+    <div class="navigator">
+        <ul>
+            
+                <li id="btnContents"><a href="http://blog.csdn.net/qq7342272?viewmode=contents"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_mulu'])">
+                    <img src="http://static.blog.csdn.net/images/ico_list.gif">目录视图</span></a></li>
+                <li id="btnView"><a href="http://blog.csdn.net/qq7342272?viewmode=list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_zhaiyao'])">
+                    <img src="http://static.blog.csdn.net/images/ico_summary.gif">摘要视图</span></a></li>
+                <li id="btnRss"><a href="http://blog.csdn.net/qq7342272/rss/list"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_RSS'])">
+                    <img src="http://static.blog.csdn.net/images/ico_rss.gif">订阅</span></a></li>                
+
+            </ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var username = "qq7342272";
+    var _blogger = username;
+    var blog_address = "http://blog.csdn.net/qq7342272";
+    var static_host = "http://static.blog.csdn.net";
+    var currentUserName = "";  
+</script>
+
+        <div id="body">
+            <div id="main">
+                <div class="main">
+                        <div class="ad_class">
+<div class="notice tracking-ad" data-mod='popu_3' > 
+
+<a href="http://huiyi.csdn.net/activity/product/goods_list?project_id=2741">
+<font color=red>2016软考项目经理实战班
+</font></a>
+&nbsp;&nbsp;&nbsp;
+
+<a href="http://edu.csdn.net/yearPromotion">
+<font color=blue>学院周年礼-顶尖课程钜惠呈现
+</font></a>
+&nbsp;&nbsp;&nbsp;
+<a href="http://huiyi.csdn.net/activity/product/goods_list?project_id=2792">
+<font color=red>Hadoop英雄会—暨Hadoop 10周年生日大趴</font>
+&nbsp;&nbsp;&nbsp;
+<a href="http://blog.csdn.net/dba_huangzj/article/details/50469185">
+<font color=blue>【博客专家】有奖试读—Windows PowerShell实战指南
+</font></a>
+
+</div>                        </div>
+                        
+
+<!--AdForward Begin:-->
+<script type="text/javascript" ads-src="http://csdnim.qtmojo.com/main/s?user=csdn|blog|fumeiti&db=csdnim&border=0&local=yes&js=ie" src="http://creatim.qtmojo.cn/td/AllyesDeliver.min.js" charset="gbk"></script>
+<!--AdForward End-->
+
+  
+<link href="http://static.blog.csdn.net/css/comment1.css" type="text/css" rel="stylesheet" />
+<link href="http://static.blog.csdn.net/css/style1.css" type="text/css" rel="stylesheet" />
+<script language='JavaScript' type='text/javascript' src='http://download.csdn.net/js/jquery.cookie.js'></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/search-service/main.js"></script>
+<link rel="stylesheet" href="http://static.blog.csdn.net/public/res-min/markdown_views.css?v=1.0" />
+<link rel="stylesheet" href="http://static.blog.csdn.net/css/category.css?v=1.0" />
+<script type="text/javascript" src="http://static.blog.csdn.net/public/res/bower-libs/MathJax/MathJax.js?config=TeX-AMS_HTML"></script>
+
+  <script type="text/ecmascript">
+      window.quickReplyflag = true;
+           
+            var isBole = false;
+            
+          
+    </script>
+<div id="article_details" class="details">
+    <div class="article_title">   
+         <span class="ico ico_type_Original"></span>
+
+
+    <h1>
+        <span class="link_title"><a href="/qq7342272/article/details/7928814">
+        Spring整合Hibernate图文步骤            
+        </a></span>
+    </h1>
+</div>
+
+   
+
+        <div class="article_manage clearfix">
+        <div class="article_l">
+            <span class="link_categories">
+            标签：
+              <a href='http://www.csdn.net/tag/hibernate' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">hibernate</a><a href='http://www.csdn.net/tag/spring' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">spring</a><a href='http://www.csdn.net/tag/%e6%95%b0%e6%8d%ae%e5%ba%93%e8%bf%9e%e6%8e%a5%e6%b1%a0' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">数据库连接池</a><a href='http://www.csdn.net/tag/user' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">user</a><a href='http://www.csdn.net/tag/class' target=_blank onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_tag']);">class</a>
+            </span>
+        </div>
+        <div class="article_r">
+            <span class="link_postdate">2012-08-31 15:34</span>
+            <span class="link_view" title="阅读次数">24802人阅读</span>
+            <span class="link_comments" title="评论次数"> <a href="#comments" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_pinglun'])">评论</a>(2)</span>
+            <span class="link_collect"> <a href="javascript:void(0);" onclick="javascript:collectArticle('Spring整合Hibernate图文步骤','7928814');return false;" title="收藏">收藏</a></span>
+             <span class="link_report"> <a href="#report" onclick="javascript:report(7928814,2);return false;" title="举报">举报</a></span>
+
+        </div>
+    </div>
+      <div class="category clearfix">
+        <div class="category_l">
+           <img src="http://static.blog.csdn.net/images/category_icon.jpg">
+            <span>分类：</span>
+        </div>
+        <div class="category_r">
+                    <label  onclick="GetCategoryArticles('857351','qq7342272','top','7928814');">
+                        <span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_fenlei']);">JAVA<em>（65）</em></span>
+                      <img class="arrow-down" src="http://static.blog.csdn.net/images/arrow_triangle _down.jpg" style="display:inline;">
+                      <img class="arrow-up" src="http://static.blog.csdn.net/images/arrow_triangle_up.jpg" style="display:none;">
+                        <div class="subItem">
+                            <div class="subItem_t"><a  href="http://blog.csdn.net/qq7342272/article/category/857351">作者同类文章</a><i class="J_close">X</i></div>
+                            <ul class="subItem_l" id="top_857351">                            
+                            </ul>
+                        </div>
+                    </label>                    
+        </div>
+    </div>
+    <script   type="text/javascript" src="http://static.blog.csdn.net/scripts/category.js"></script>  
+        <div   class="bog_copyright">         
+            <p  class="copyright_p" >版权声明：本文为博主原创文章，未经博主允许不得转载。</p>
+        </div>
+
+  
+
+  
+  
+     
+
+<div id="article_content" class="article_content">
+
+<p>工具：myeclipse9.0</p>
+<p>Spring版本：2.5.6</p>
+<p>Hibernate版本：3</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p>昨天花了一下午时间把Spring和Hibernate整合到了一起，今天做一个笔记。 &nbsp;</p>
+<p>首先建立java Project工程</p>
+<p><img src="http://img.my.csdn.net/uploads/201208/31/1346391046_2414.png" alt=""><br>
+</p>
+<p>点击Finish完成</p>
+<p><br>
+</p>
+<p>添加Hibernate和Spring所需要的jar包还有Mysql连接的jar包</p>
+<p><img src="http://img.my.csdn.net/uploads/201208/31/1346392042_1903.png" alt=""><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p>创建Dao层，Dao层实现，Model层，Service层</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p>DAO层代码：IUserDao</p>
+<p></p>
+<pre name="code" class="java">package org.zhy.demo.dao;
+
+import java.sql.SQLException;
+
+import org.zhy.demo.dao.model.UserInfo;
+/**
+ * DAO层简单的增删改查方法
+ * @author Administrator
+ *
+ */
+public interface IUserDao {
+
+	public void saveUser(UserInfo user) throws SQLException;
+
+	public void delUser(UserInfo user) throws SQLException;
+
+	public void editUsre(UserInfo user) throws SQLException;
+
+	public UserInfo getUserById(int id) throws SQLException;
+
+}
+</pre><br>
+<br>
+<p></p>
+<p>IUuserDao层实现（暂时空实现）</p>
+<p><br>
+</p>
+<p></p>
+<pre name="code" class="html">package org.zhy.demo.dao.impl;
+
+import java.sql.SQLException;
+
+import org.zhy.demo.dao.IUserDao;
+import org.zhy.demo.dao.model.UserInfo;
+
+/**
+ * IUserDao实现，配置完Spring及Hibernate文件后实现此类
+ * @author Administrator
+ *
+ */
+public class IUserDaoImpl implements IUserDao {
+
+	@Override
+	public void saveUser(UserInfo user) throws SQLException {
+
+	}
+
+	@Override
+	public void delUser(UserInfo user) throws SQLException {
+
+	}
+
+	@Override
+	public void editUsre(UserInfo user) throws SQLException {
+
+	}
+
+	@Override
+	public UserInfo getUserById(int id) throws SQLException {
+		return null;
+	}
+
+}
+</pre><br>
+<br>
+<p></p>
+<p>Model代码</p>
+<p></p>
+<pre name="code" class="java">package org.zhy.demo.dao.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class UserInfo {
+
+	
+	private int id;
+	private String name;
+	private String title;
+
+	@Id
+	@GeneratedValue
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+}
+</pre><br>
+<br>
+<p></p>
+<p><br>
+</p>
+<p>下面添加Spring配置文件</p>
+<p>在Src目录下添加SpringContext.xml</p>
+<p><br>
+</p>
+<p></p>
+<pre name="code" class="html">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
+	xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+	xmlns:aop=&quot;http://www.springframework.org/schema/aop&quot;
+	xmlns:tx=&quot;http://www.springframework.org/schema/tx&quot;
+	xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+           &quot;&gt;
+	&lt;aop:config&gt;&lt;/aop:config&gt;
+
+	&lt;bean class=&quot;org.springframework.context.annotation.CommonAnnotationBeanPostProcessor&quot; /&gt;
+
+	&lt;bean id=&quot;datasource&quot; class=&quot;org.apache.commons.dbcp.BasicDataSource&quot; destroy-method=&quot;close&quot;&gt;
+		&lt;property name=&quot;driverClassName&quot; value=&quot;com.mysql.jdbc.Driver&quot; /&gt;
+		&lt;property name=&quot;url&quot; value=&quot;jdbc:mysql://localhost/student&quot;&gt;&lt;/property&gt;
+		&lt;property name=&quot;username&quot; value=&quot;root&quot; /&gt; 
+		&lt;property name=&quot;password&quot; value=&quot;root&quot; /&gt; 
+		&lt;!-- 数据库连接池保持的最小连接数 --&gt;
+		&lt;property name=&quot;minIdle&quot; value=&quot;5&quot; /&gt;
+		&lt;!-- 数据库连接池保持的最大连接数 --&gt; 
+		&lt;property name=&quot;maxIdle&quot; value=&quot;30&quot; /&gt;
+		&lt;!--
+			当数据库连接因为某种原因断掉之后，再重新从连接池中拿另外一个连接时实际上这个连接可能
+			已经无效，所以为了确保所拿到的连接全都有效需要在获取连接，返回连接以及连接空闲时进行
+			有效性验证 下面3个设置为ture时进行验证，默认为false
+		 --&gt;
+		&lt;!-- 取得连接时是否进行有效性验证 --&gt;
+		&lt;property name=&quot;testOnBorrow&quot; value=&quot;true&quot; /&gt;
+		&lt;!-- 返回连接时是否进行有效性验证 --&gt;
+		&lt;property name=&quot;testOnReturn&quot; value=&quot;true&quot; /&gt;
+		&lt;!-- 连接空闲时是否进行有效性验证 --&gt;
+		&lt;property name=&quot;testWhileIdle&quot; value=&quot;true&quot; /&gt;
+		
+	&lt;/bean&gt;
+	
+	&lt;bean id=&quot;sessionFactory&quot; class=&quot;org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean&quot;&gt;
+		&lt;property name=&quot;dataSource&quot; ref=&quot;datasource&quot; /&gt;
+		&lt;!-- 注意：我用的是Annotation的方式配置的Hibernate，这里的property的name是annotatedClasses --&gt;
+		&lt;property name=&quot;annotatedClasses&quot;&gt;
+			&lt;list&gt;
+				&lt;value&gt;org.zhy.demo.dao.model.UserInfo&lt;/value&gt;
+			&lt;/list&gt;
+		&lt;/property&gt;
+		&lt;property name=&quot;hibernateProperties&quot;&gt;
+			&lt;props&gt;
+			    &lt;!-- 设置Hibernate方言 --&gt;
+				&lt;prop key=&quot;hibernate.dialect&quot;&gt;org.hibernate.dialect.MySQLDialect&lt;/prop&gt;
+				&lt;!-- 是否打印sql --&gt;
+				&lt;prop key=&quot;hibernate.show_sql&quot;&gt;true&lt;/prop&gt;
+				&lt;!-- 格式化sql --&gt;
+				&lt;prop key=&quot;hibernate.format_sql&quot;&gt;true&lt;/prop&gt;
+				&lt;!-- 是否自动更新表 --&gt;
+				&lt;prop key=&quot;hibernate.hbm2ddl.auto&quot;&gt;update&lt;/prop&gt;
+				&lt;prop key=&quot;hibernate.current_session_context_class&quot;&gt;thread&lt;/prop&gt;
+				&lt;!-- 最大抓取深度，如果为0，则关闭默认的外连接抓取。建议值为0-3 --&gt;
+				&lt;prop key=&quot;hibernate.max_fetch_depth&quot;&gt;1&lt;/prop&gt;
+				&lt;!-- 用于生成有助于调试的注释信息，默认为关闭 --&gt;
+				&lt;prop key=&quot;hibernate.use_sql_comments&quot;&gt;true&lt;/prop&gt;
+			&lt;/props&gt;
+		&lt;/property&gt;
+	&lt;/bean&gt;
+	
+	&lt;bean id=&quot;transactionManager&quot; class=&quot;org.springframework.orm.hibernate3.HibernateTransactionManager&quot; &gt;
+		&lt;property name=&quot;sessionFactory&quot; ref=&quot;sessionFactory&quot;&gt;&lt;/property&gt;
+	&lt;/bean&gt;
+	
+	&lt;aop:config&gt;
+		&lt;aop:pointcut id=&quot;txMethod&quot; expression=&quot;execution(* org.zhy.demo.dao.impl.*DaoImpl.*(..))&quot; /&gt;
+		&lt;aop:advisor advice-ref=&quot;txAdvice&quot; pointcut-ref=&quot;txMethod&quot;/&gt;
+	&lt;/aop:config&gt;
+	&lt;!-- AOP切面声明事务管理 --&gt;
+	&lt;tx:advice id=&quot;txAdvice&quot; transaction-manager=&quot;transactionManager&quot;&gt;
+		&lt;tx:attributes&gt;
+			&lt;tx:method name=&quot;save*&quot; propagation=&quot;REQUIRED&quot; /&gt; &lt;!-- 支持当前事务，如果执行到save开头的任何方法时没有事务则开启一个事务 这是最常见的方式--&gt;
+			&lt;tx:method name=&quot;update*&quot; propagation=&quot;REQUIRED&quot; /&gt;&lt;!-- 支持当前事务，如果执行到save开头的任何方法时没有事务则开启一个事务 这是最常见的方式--&gt;
+			&lt;tx:method name=&quot;add*&quot; propagation=&quot;REQUIRED&quot; /&gt;&lt;!-- 支持当前事务，如果执行到save开头的任何方法时没有事务则开启一个事务 这是最常见的方式--&gt;
+			&lt;tx:method name=&quot;delete*&quot; propagation=&quot;REQUIRED&quot; /&gt;&lt;!-- 支持当前事务，如果执行到save开头的任何方法时没有事务则开启一个事务 这是最常见的方式--&gt;
+			&lt;tx:method name=&quot;find*&quot; propagation=&quot;SUPPORTS&quot; read-only=&quot;true&quot;/&gt; &lt;!-- 支持当前事务，如果当前没有事务，就以非事务方式执行。只读 --&gt;
+			&lt;tx:method name=&quot;get*&quot; propagation=&quot;SUPPORTS&quot; read-only=&quot;true&quot;/&gt;&lt;!-- 支持当前事务，如果当前没有事务，就以非事务方式执行。只读 --&gt;
+			&lt;tx:method name=&quot;*&quot; /&gt;
+		&lt;/tx:attributes&gt;
+	&lt;/tx:advice&gt;
+	
+	
+	&lt;bean name=&quot;userDao&quot; class=&quot;org.zhy.demo.dao.impl.IUserDaoImpl&quot; &gt;
+		&lt;property name=&quot;sessionFactory&quot; ref=&quot;sessionFactory&quot;&gt;&lt;/property&gt;
+	&lt;/bean&gt;
+	&lt;bean name=&quot;userService&quot; class=&quot;org.zhy.demo.service.UserService&quot; /&gt;
+
+&lt;/beans&gt;</pre><br>
+<br>
+<p></p>
+<br>
+<p></p>
+<p>修改DAO实现类</p>
+<p><br>
+</p>
+<p></p>
+<pre name="code" class="java">package org.zhy.demo.dao.impl;
+
+import java.sql.SQLException;
+
+import org.hibernate.SessionFactory;
+import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.zhy.demo.dao.IUserDao;
+import org.zhy.demo.dao.model.UserInfo;
+
+/**
+ * IUserDao实现
+ * 
+ * @author Administrator
+ * 
+ */
+public class IUserDaoImpl implements IUserDao {
+
+	private HibernateTemplate hibernateTemplate;
+
+	public void setSessionFactory(SessionFactory sessionFactory) {
+		this.hibernateTemplate = new HibernateTemplate(sessionFactory);
+	}
+
+	@Override
+	public void saveUser(UserInfo user) throws SQLException {
+		hibernateTemplate.save(user);
+	}
+
+	@Override
+	public void delUser(UserInfo user) throws SQLException {
+		hibernateTemplate.delete(user);
+	}
+
+	@Override
+	public void editUsre(UserInfo user) throws SQLException {
+		hibernateTemplate.update(user);
+	}
+
+	@Override
+	public UserInfo getUserById(int id) throws SQLException {
+		UserInfo user = (UserInfo) hibernateTemplate.get(UserInfo.class, id);
+		return user;
+	}
+
+}
+</pre><br>
+<br>
+<p></p>
+<p>junit测试</p>
+<p><br>
+</p>
+<p></p>
+<pre name="code" class="java">	@Test
+	public void saveUserTest() throws SQLException{
+		ApplicationContext context= new ClassPathXmlApplicationContext(&quot;/SpringContext.xml&quot;);
+		UserService service =(UserService) context.getBean(&quot;userService&quot;);
+		
+		UserInfo user = new UserInfo();
+		user.setName(&quot;T`&quot;);
+		user.setTitle(&quot;CSDN BLOG&quot;);
+		service.addUserInfo(user);
+	}</pre><br>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p><br>
+</p>
+<p></p>
+   
+</div>
+
+
+
+
+<!-- Baidu Button BEGIN -->
+
+
+
+
+<div class="bdsharebuttonbox" style="float: right;">
+<a href="#" class="bds_more" data-cmd="more" style="background-position:0 0 !important; background-image: url(http://bdimg.share.baidu.com/static/api/img/share/icons_0_16.png?v=d754dcc0.png) !important"></a>
+<a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"  style="background-position:0 -52px !important"></a>
+<a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"style="background-position:0 -104px !important"></a>
+<a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"style="background-position:0 -260px !important"></a>
+<a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"style="background-position:0 -208px !important"></a>
+<a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"style="background-position:0 -1612px !important" ></a>
+</div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "1", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "16" }, "share": {} }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+<!-- Baidu Button END -->
+
+   <link rel="stylesheet" href="http://static.blog.csdn.net/css/blog_detail.css" />
+
+    
+<!--172.16.140.14-->
+
+<!-- Baidu Button BEGIN -->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1536434" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->
+
+ 
+
+        <div id="digg" ArticleId="7928814">
+            <dl id="btnDigg" class="digg digg_disable">
+               
+                 <dt>顶</dt>
+                <dd>1</dd>
+            </dl>
+            <dl id="btnBury" class="digg digg_disable">
+              
+                  <dt>踩</dt>
+                <dd>0</dd>
+            </dl>
+        </div>
+
+   <ul class="article_next_prev">
+                <li class="prev_article"><span  onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);location.href='/qq7342272/article/details/7896169';">上一篇</span><a href="/qq7342272/article/details/7896169" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">Hibernate4.0发布</a></li>
+                <li class="next_article"><span onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian']);location.href='/qq7342272/article/details/7929603';">下一篇</span><a href="/qq7342272/article/details/7929603" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_xiayipian'])">Spring 声明式事务，propagation属性列表</a></li>
+    </ul>
+
+    <div style="clear:both; height:10px;"></div>
+
+
+        <div class="similar_article"  style="display:none">
+                <h4>我的同类文章</h4>
+                <div class="similar_c"style="margin:20px 0px 0px 0px">
+                    <div class="similar_c_t">
+                                <label class="similar_cur">
+                                    <span  style="cursor:pointer"  onclick="GetCategoryArticles('857351','qq7342272','foot','7928814');">JAVA<em>（65）</em></span>
+                                </label>
+                    </div>
+                   
+                    <div class="similar_wrap tracking-ad" data-mod="popu_141"  style="max-height:195px;">
+                        <a href="http://blog.csdn.net" style="display:none">http://blog.csdn.net</a>
+                        <ul class="similar_list fl">                          
+                        </ul>
+
+                        <ul class="similar_list fr">                           
+                        </ul>
+                    </div>
+                </div>
+            </div>    
+    <script  type="text/javascript">
+        $(function () {
+            GetCategoryArticles('857351', 'qq7342272','foot','7928814');
+        });
+    </script>
+      
+</div>
+<div id="suggest"></div>
+         <script  language="javascript" type='text/javascript'>     
+             $(function(){
+                 $.get("/qq7342272/svc/GetSuggestContent/7928814",function(data){
+                     $("#suggest").html(data);
+                 });     
+             });             
+         </script>  
+
+
+<style>
+.blog-ass-articl dd {
+color: #369;
+width: 99%; /*修改行*/
+float: left;
+overflow: hidden;
+font: normal normal 12px/23px "SimSun";
+height: 23px;
+margin: 0;
+padding: 0 0 0 10px;
+margin-right: 30px;
+background: url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;
+}
+</style>
+
+<dl class="blog-ass-articl" id="res-relatived" > 
+     <dt><span>猜你在找</span></dt>    
+
+
+   
+
+
+    <div id="adCollege" style="width: 42%;float: left;"> 
+        <script src="http://csdnimg.cn/jobreco/job_reco.js" type="text/javascript"></script> 
+        <script type="text/javascript">
+            csdn.position.showEdu({
+                sourceType: "blog",
+                searchType: "detail",
+                searchKey: "7928814",
+                username: "",
+                recordcount: "5",
+                containerId: "adCollege" //容器DIV的id。 
+            });
+        </script> 
+    </div>  
+
+    
+     <div id="res"  data-mod="popu_36"  class="tracking-ad" style="width: 42%;float: left;margin-right: 30px;"></div>
+   
+</dl>
+
+
+
+<script type="text/javascript">
+    $(function () {
+        setTimeout(function () {
+            var searchtitletags = 'Spring整合Hibernate图文步骤' + ',' + $("#tags").html();
+            searchService({
+                index: 'blog',
+                query: searchtitletags,
+                from: 5,
+                size: 5,
+                appendTo: '#res',
+                url: 'recommend',
+                his: 2,
+                client: "blog_cf_enhance",
+                tmpl: '<dd style="background:url(http://static.blog.csdn.net/skin/default/images/blog-dot-red3.gif) no-repeat 0 10px;"><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></dd>'
+            });
+        }, 500);
+    });    
+
+ </script>   
+
+    <div id="ad_cen">        
+<!--AdForward Begin:-->
+<script type="text/javascript" src="http://csdnim.qtmojo.com/main/s?user=csdn|blog|banner2&db=csdnim&border=0&local=yes&js=ie" charset="gbk"></script>
+<!--AdForward End-->    </div>  
+
+<div class="comment_class">
+    <div id="comment_title" class="panel_head">
+        <span class="see_comment">查看评论</span><a name="comments"></a></div>
+    <div id="comment_list">
+    </div>
+    <div id="comment_bar">
+    </div>
+    <div id="comment_form">
+    </div>
+    <div class="announce">
+        * 以上用户言论只代表其个人观点，不代表CSDN网站的观点或立场<a name="reply"></a><a name="quote"></a></div>
+</div>
+
+<script type="text/javascript">
+    var fileName = '7928814';
+    var commentscount = 2;
+    var islock = true
+</script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/comment.js"></script>
+    <div id="ad_bot">
+    </div>
+<div id="report_dialog">
+</div>
+
+<div id="d-top"  style="bottom:60px;">
+        <a id="quick-reply" class="btn btn-top q-reply" title="快速回复" style="display:none;">
+            <img src="http://static.blog.csdn.net/images/blog-icon-reply.png" alt="快速回复">
+        </a>    
+
+    <a id="d-top-a" class="btn btn-top backtop"  style="display: none;" title="返回顶部" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_huidaodingbu'])" style="">         
+         <img src="http://static.blog.csdn.net/images/top.png" alt="TOP">
+    </a>
+</div>
+<script type="text/javascript">
+    $(function ()
+    {
+        $("#ad_frm_0").height("90px");
+        
+        setTimeout(function(){
+            $("#ad_frm_2").height("200px");
+        },1000);    
+    });
+  
+</script>
+<style type="text/css">
+    .tag_list
+    {
+        background: none repeat scroll 0 0 #FFFFFF;
+        border: 1px solid #D7CBC1;
+        color: #000000;
+        font-size: 12px;
+        line-height: 20px;
+        list-style: none outside none;
+        margin: 10px 2% 0 1%;
+        padding: 1px;
+    }
+    .tag_list h5
+    {
+        background: none repeat scroll 0 0 #E0DBD3;
+        color: #47381C;
+        font-size: 12px;
+        height: 24px;
+        line-height: 24px;
+        padding: 0 5px;
+        margin: 0;
+    }
+    .tag_list h5 a
+    {
+        color: #47381C;
+    }
+    .classify
+    {
+        margin: 10px 0;
+        padding: 4px 12px 8px;
+    }
+    .classify a
+    {
+        margin-right: 20px;
+        white-space: nowrap;
+    }
+</style>
+
+
+<div class="tag_list" style="display:none"></div>
+  <script  language="javascript" type='text/javascript'>     
+      $(function(){
+              setTimeout(function(){
+                  $.get("/qq7342272/svc/GetTagContent",function(data){
+                      $(".tag_list").html(data).show();
+                  });     
+              });
+          },500);                       
+ </script> 
+
+
+<div id="pop_win" style="display:none ;position: absolute; z-index: 10000; border: 1px solid rgb(220, 220, 220); top: 222.5px; left: 630px; opacity: 1; background: none 0px 0px repeat scroll rgb(255, 255, 255);">
+    
+</div>
+<div id="popup_mask"></div>
+<style>
+    #popup_mask
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        z-index: 9999;
+        left: 0px;
+        top: 0px;
+        opacity: 0.3;
+        filter: alpha(opacity=30);
+        display: none;
+    }
+
+</style>
+
+
+
+
+<script type="text/javascript">
+    $(function(){
+        setTimeout(function(){
+            $(".comment_body:contains('回复')").each(function(index,item){
+                var u=$(this).text().split('：')[0].toString().replace("回复","")
+                var thisComment=$(this);
+                if(u)
+                {
+                    $.getJSON("https://passport.csdn.net/get/nick?callback=?", {users: u}, function(a) {
+                        if(a!=null&&a.data!=null&&a.data.length>0)
+                        {
+                            nick=a.data[0].n; 
+                            if(u!=nick)
+                            {
+                                thisComment.text(thisComment.text().replace(u,nick));  
+                            }
+                        }       
+                    });  
+                }
+            });
+        },200);  
+        
+        setTimeout(function(){
+            $("a img[src='http://js.tongji.linezing.com/stats.gif']").parent().css({"position":"absolute","left":"50%"});
+        },300);
+    });
+
+    function loginbox(){
+        var $logpop=$("#pop_win");
+        $logpop.html('<iframe src="https://passport.csdn.net/account/loginbox?service=http://static.blog.csdn.net/callback.htm" frameborder="0" height="600" width="400" scrolling="no"></iframe>');
+
+        $('#popup_mask').css({
+            opacity: 0.5,
+            width: $( document ).width() + 'px',
+            height:  $( document ).height() + 'px'
+        });
+        $('#popup_mask').css("display","block");
+ 
+        $logpop.css( {
+            top: ($( window ).height() - $logpop.height())/ 2  + $( window 
+       ).scrollTop() + 'px',
+            left:($( window ).width() - $logpop.width())/ 2
+        } );
+ 
+        setTimeout( function () {
+            $logpop.show();
+            $logpop.css( {
+                opacity: 1
+            } );
+        }, 200 );
+ 
+        $('#popup_mask').unbind("click");
+        $('#popup_mask').bind("click", function(){
+            $('#popup_mask').hide();
+            var $clopop = $("#pop_win");
+            $("#common_ask_div_sc").css("display","none");
+            $clopop.css( {
+                opacity: 0
+            } );
+            setTimeout( function () {
+                $clopop.hide();
+            }, 350 );
+            return false;
+        });
+    }    
+
+</script>
+                        <div class="clear">
+                        </div>
+                    </div>                   
+                
+            </div>
+                   
+           <div id="side">
+    <div class="side">
+<div id="panel_Profile" class="panel">
+<ul class="panel_head"><span>个人资料</span></ul>
+<ul class="panel_body profile">
+<div id="blog_userface">
+    <a href="http://my.csdn.net/qq7342272" target="_blank">
+    <img src="http://avatar.csdn.net/7/2/2/1_qq7342272.jpg" title="访问我的空间" style="max-width:90%"/>
+    </a>
+    <br />
+    <span><a href="http://my.csdn.net/qq7342272" class="user_name" target="_blank">qq7342272</a></span>
+</div>
+<div class="interact">
+
+    <a href="javascript:void(0);" class="attent" id="span_add_follow" title="[加关注]"></a>
+
+ <a href="javascript:void(0);" class="letter"  title="[发私信]" onclick="window.open('http://msg.csdn.net/letters/model?receiver=qq7342272','_blank','height=350,width=700');_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_sixin'])"></a>  
+</div>
+<div id="blog_medal">
+                <div id="bms_box">
+               </div>
+</div>
+<ul id="blog_rank">
+    <li>访问：<span>317458次</span></li>
+    <li>积分：<span>3585</span> </li>    
+    <li >等级： <span style="position:relative;display:inline-block;z-index:1" >
+            <img src="http://c.csdnimg.cn/jifen/images/xunzhang/jianzhang/blog5.png" alt="" style="vertical-align: middle;" id="leveImg">
+            <div id="smallTittle" style=" position: absolute;  left: -24px;  top: 25px;  text-align: center;  width: 101px;  height: 32px;  background-color: #fff;  line-height: 32px;  border: 2px #DDDDDD solid;  box-shadow: 0px 2px 2px rgba (0,0,0,0.1);  display: none;   z-index: 999;">
+            <div style="left: 42%;  top: -8px;  position: absolute;  width: 0;  height: 0;  border-left: 10px solid transparent;  border-right: 10px solid transparent;  border-bottom: 8px solid #EAEAEA;"></div>
+            积分：3585 </div>
+        </span>  </li>
+    <li>排名：<span>第5155名</span></li>
+</ul>
+<ul id="blog_statistics">
+    <li>原创：<span>74篇</span></li>
+    <li>转载：<span>28篇</span></li>
+    <li>译文：<span>0篇</span></li>
+    <li>评论：<span>46条</span></li>
+</ul>
+</ul>
+</div>
+
+
+<div class="panel" id="panel_Search">
+    <ul class="panel_head"><span>文章搜索</span></ul>
+    <ul class="panel_body">
+        <form id="frmSearch" action="http://so.csdn.net/search" class="form_search" target="_blank">
+        <span><input id="inputSearch" type="text" class="blogsearch" title="请输入关键字" /></span>
+        <input id="btnSubmit" type="button" value="搜索" title="search in blog" />
+        <input type="hidden" name="q" id="inputQ" />
+        <input type="hidden" name="t" value="blog" />
+        <a id="btnSearchBlog" target="_blank"></a>
+        </form>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $("#btnSubmit").click(function () {           
+            search();
+        });
+
+        $("#frmSearch").submit(function () {
+            search();
+            return false;
+        });
+
+        function search()
+        {
+            var url = "http://so.csdn.net/so/search/s.do?q=" + encodeURIComponent($("#inputSearch").val()) + "&u=" + username + "&t=blog";
+            window.location.href = url;
+        }   
+    });
+</script><div id="panel_Category" class="panel">
+<ul class="panel_head"><span>文章分类</span></ul>
+<ul class="panel_body">    
+                 <li>
+                    <a href="/qq7342272/article/category/857350" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">PHP</a><span>(6)</span>
+                </li>
+                 <li>
+                    <a href="/qq7342272/article/category/857351" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">JAVA</a><span>(66)</span>
+                </li>
+                 <li>
+                    <a href="/qq7342272/article/category/857353" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">MYSQL</a><span>(4)</span>
+                </li>
+                 <li>
+                    <a href="/qq7342272/article/category/857354" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">JS</a><span>(9)</span>
+                </li>
+                 <li>
+                    <a href="/qq7342272/article/category/858124" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">MONGODB</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/qq7342272/article/category/858126" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">DEDECMS</a><span>(1)</span>
+                </li>
+                 <li>
+                    <a href="/qq7342272/article/category/1241099" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Spring</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/qq7342272/article/category/858128" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">其他</a><span>(16)</span>
+                </li>
+                 <li>
+                    <a href="/qq7342272/article/category/1241101" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Hibernate</a><span>(0)</span>
+                </li>
+                 <li>
+                    <a href="/qq7342272/article/category/1241102" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">Struts</a><span>(0)</span>
+                </li>
+                 <li>
+                    <a href="/qq7342272/article/category/1376231" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">oracle</a><span>(2)</span>
+                </li>
+                 <li>
+                    <a href="/qq7342272/article/category/5892959" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_wenzhangfenlei']); ">NoSql</a><span>(2)</span>
+                </li>
+</ul>
+</div><div id="panel_Archive" class="panel">
+<ul class="panel_head"><span>文章存档</span></ul>
+<ul class="panel_body">
+<div id="archive_list">
+<!--归档统计-->
+<li><a href="/qq7342272/article/month/2015/11">2015年11月</a><span>(2)</span></li><li><a href="/qq7342272/article/month/2015/10">2015年10月</a><span>(1)</span></li><li><a href="/qq7342272/article/month/2015/09">2015年09月</a><span>(1)</span></li><li><a href="/qq7342272/article/month/2015/05">2015年05月</a><span>(2)</span></li><li><a href="/qq7342272/article/month/2015/02">2015年02月</a><span>(1)</span></li><li><a href="/qq7342272/article/month/2014/02">2014年02月</a><span>(1)</span></li><li><a href="/qq7342272/article/month/2013/08">2013年08月</a><span>(2)</span></li><li><a href="/qq7342272/article/month/2013/05">2013年05月</a><span>(1)</span></li><li><a href="/qq7342272/article/month/2013/03">2013年03月</a><span>(3)</span></li><li><a href="/qq7342272/article/month/2013/02">2013年02月</a><span>(4)</span></li><li><a href="/qq7342272/article/month/2012/12">2012年12月</a><span>(1)</span></li><li><a href="/qq7342272/article/month/2012/11">2012年11月</a><span>(3)</span></li><li><a href="/qq7342272/article/month/2012/09">2012年09月</a><span>(10)</span></li><li><a href="/qq7342272/article/month/2012/08">2012年08月</a><span>(7)</span></li><li><a href="/qq7342272/article/month/2012/07">2012年07月</a><span>(2)</span></li><li><a href="/qq7342272/article/month/2012/06">2012年06月</a><span>(1)</span></li><li><a href="/qq7342272/article/month/2012/05">2012年05月</a><span>(4)</span></li><li><a href="/qq7342272/article/month/2012/03">2012年03月</a><span>(4)</span></li><li><a href="/qq7342272/article/month/2012/02">2012年02月</a><span>(2)</span></li><li><a href="/qq7342272/article/month/2012/01">2012年01月</a><span>(3)</span></li><li><a href="/qq7342272/article/month/2011/11">2011年11月</a><span>(5)</span></li><li><a href="/qq7342272/article/month/2011/10">2011年10月</a><span>(7)</span></li><li><a href="/qq7342272/article/month/2011/09">2011年09月</a><span>(2)</span></li><li><a href="/qq7342272/article/month/2011/08">2011年08月</a><span>(33)</span></li>
+</div>
+</ul>
+</div>
+<div id="hotarticls" class="panel">
+<ul class="panel_head">
+    <span>       
+阅读排行    </span>
+</ul>
+
+<ul class="panel_body itemlist">
+<li>
+<a href="/qq7342272/article/details/6830907" title="JAVA中List转换String，String转换List，Map转换String，String转换Map之间的转换类">JAVA中List转换String，String转换List，Map转换String，String转换Map之间的转换类</a><span>(48624)</span>
+</li>
+<li>
+<a href="/qq7342272/article/details/7928814" title="Spring整合Hibernate图文步骤">Spring整合Hibernate图文步骤</a><span>(24792)</span>
+</li>
+<li>
+<a href="/qq7342272/article/details/7940741" title="JAVA运行时异常及常见的5中RuntimeExecption">JAVA运行时异常及常见的5中RuntimeExecption</a><span>(23972)</span>
+</li>
+<li>
+<a href="/qq7342272/article/details/7878083" title="程序员笑话集锦">程序员笑话集锦</a><span>(12081)</span>
+</li>
+<li>
+<a href="/qq7342272/article/details/9698413" title="Java Socket接收和发送（字符串）">Java Socket接收和发送（字符串）</a><span>(11474)</span>
+</li>
+<li>
+<a href="/qq7342272/article/details/6653709" title="JS控制DIV的显示隐藏">JS控制DIV的显示隐藏</a><span>(11462)</span>
+</li>
+<li>
+<a href="/qq7342272/article/details/7991714" title="java 实现微信搜索附近人功能">java 实现微信搜索附近人功能</a><span>(10043)</span>
+</li>
+<li>
+<a href="/qq7342272/article/details/7658576" title="java获取当天起始与结束时间">java获取当天起始与结束时间</a><span>(9931)</span>
+</li>
+<li>
+<a href="/qq7342272/article/details/6666497" title="java中最大的整数">java中最大的整数</a><span>(8643)</span>
+</li>
+<li>
+<a href="/qq7342272/article/details/6653617" title="修改phpmyadmin中的默认超时时间">修改phpmyadmin中的默认超时时间</a><span>(8464)</span>
+</li>
+</ul>
+</div>
+<div id="hotarticls2" class="panel">
+<ul class="panel_head"><span>评论排行</span></ul>
+<ul class="panel_body itemlist">
+<li>
+<a href="/qq7342272/article/details/6924065" title="使用GWT的第一个程序">使用GWT的第一个程序</a><span>(9)</span>
+</li>
+<li>
+<a href="/qq7342272/article/details/6830907" title="JAVA中List转换String，String转换List，Map转换String，String转换Map之间的转换类">JAVA中List转换String，String转换List，Map转换String，String转换Map之间的转换类</a><span>(6)</span>
+</li>
+<li>
+<a href="/qq7342272/article/details/7991714" title="java 实现微信搜索附近人功能">java 实现微信搜索附近人功能</a><span>(4)</span>
+</li>
+<li>
+<a href="/qq7342272/article/details/6671433" title="JAVA内部类使用，什么时候该使用内部类及使用内部类的好处">JAVA内部类使用，什么时候该使用内部类及使用内部类的好处</a><span>(3)</span>
+</li>
+<li>
+<a href="/qq7342272/article/details/6907386" title="JAVA中观察者模式示例">JAVA中观察者模式示例</a><span>(3)</span>
+</li>
+<li>
+<a href="/qq7342272/article/details/7658576" title="java获取当天起始与结束时间">java获取当天起始与结束时间</a><span>(3)</span>
+</li>
+<li>
+<a href="/qq7342272/article/details/6931277" title="GWT中的事件与监听器">GWT中的事件与监听器</a><span>(2)</span>
+</li>
+<li>
+<a href="/qq7342272/article/details/7928814" title="Spring整合Hibernate图文步骤">Spring整合Hibernate图文步骤</a><span>(2)</span>
+</li>
+<li>
+<a href="/qq7342272/article/details/7878083" title="程序员笑话集锦">程序员笑话集锦</a><span>(2)</span>
+</li>
+<li>
+<a href="/qq7342272/article/details/6921251" title="JAVA适配器模式示例">JAVA适配器模式示例</a><span>(1)</span>
+</li>
+</ul>
+</div>
+<div id="homepageArticles" class="panel tracking-ad" data-mod="popu_4">
+<ul class="panel_head"><span>推荐文章</span></ul>
+<ul class="panel_body" id="ad_commend">
+<ul>
+<li><a href="http://blog.csdn.net/baimafujinji/article/details/50531182" 
+
+target="_blank">*算法与数据结构学习资源大搜罗——良心推荐</a></li>
+<li><a href="http://blog.csdn.net/foruok/article/details/50416725" 
+
+target="_blank">*架构设计：系统间通信（17）——服务治理与Dubbo 中篇（分析）</a></li>
+<li><a href="http://blog.csdn.net/u011225629/article/details/50492403" 
+
+target="_blank">*数据库性能优化之SQL语句优化</a></li>
+<li><a 
+
+href="http://blog.csdn.net/yanbober/article/details/46417531"target="_blank">*Android应用开发allowBackup敏感信息泄露的一点反思</a></li>
+<li><a href="http://blog.csdn.net/luoshengyang/article/details/50527574" 
+
+target="_blank">*Chromium网页URL加载过程分析</a></li>
+<li><a href="http://blog.csdn.net/androidlushangderen/article/details/50571584"  
+
+target="_blank">*Hadoop中止下线操作后大量剩余复制块的解决方案</a></li>
+
+</ul></ul>
+</div>
+
+
+<div id="newcomments" class="panel">
+<ul class="panel_head"><span>最新评论</span></ul>
+<ul class="panel_body itemlist">
+    <li>
+   
+         <a href="/qq7342272/article/details/7940741#comments">JAVA运行时异常及常见的5中RuntimeExecption</a>
+    <p style="margin:0px;"><a href="/guantz123" class="user_name">guantz123</a>:
+面试刚刚好问到了！
+    </p>
+    </li>
+    <li>
+   
+         <a href="/qq7342272/article/details/6907386#comments">JAVA中观察者模式示例</a>
+    <p style="margin:0px;"><a href="/tansuangai2008" class="user_name">tansuangai2008</a>:
+不错噢！
+    </p>
+    </li>
+    <li>
+   
+         <a href="/qq7342272/article/details/6907386#comments">JAVA中观察者模式示例</a>
+    <p style="margin:0px;"><a href="/dagezi56" class="user_name">dagezi56</a>:
+gooddddddddddddddddddddddddddd
+    </p>
+    </li>
+    <li>
+   
+         <a href="/qq7342272/article/details/6666497#comments">java中最大的整数</a>
+    <p style="margin:0px;"><a href="/L0ve_angle" class="user_name">L0ve_angle</a>:
+你所给的代码与解释并没有解决随机大整数
+    </p>
+    </li>
+    <li>
+   
+         <a href="/qq7342272/article/details/6924065#comments">使用GWT的第一个程序</a>
+    <p style="margin:0px;"><a href="/standyiness" class="user_name">standyiness</a>:
+为什么我的gwt程序在google浏览器里面显示不出来按钮？一直在等待gwt.google.com的...
+    </p>
+    </li>
+    <li>
+   
+         <a href="/qq7342272/article/details/6921251#comments">JAVA适配器模式示例</a>
+    <p style="margin:0px;"><a href="/wszyjlr" class="user_name">wszyjlr</a>:
+形象易懂，感谢！
+    </p>
+    </li>
+    <li>
+   
+         <a href="/qq7342272/article/details/7928814#comments">Spring整合Hibernate图文步骤</a>
+    <p style="margin:0px;"><a href="/huangrixin_" class="user_name">huangrixin_</a>:
+谢谢楼主，这篇整合使我得到了很大的帮助
+    </p>
+    </li>
+    <li>
+   
+         <a href="/qq7342272/article/details/7658576#comments">java获取当天起始与结束时间</a>
+    <p style="margin:0px;"><a href="/yizich" class="user_name">yizich</a>:
+应该用HOUR_OF_DAY，博主请修改，别误人子弟。
+    </p>
+    </li>
+    <li>
+   
+         <a href="/qq7342272/article/details/6671433#comments">JAVA内部类使用，什么时候该使用内部类及使用内部类的好处</a>
+    <p style="margin:0px;"><a href="/ZHOUCHAOQIANG" class="user_name">ZHOUCHAOQIANG</a>:
+太棒了
+    </p>
+    </li>
+    <li>
+   
+         <a href="/qq7342272/article/details/6671433#comments">JAVA内部类使用，什么时候该使用内部类及使用内部类的好处</a>
+    <p style="margin:0px;"><a href="/u014446479" class="user_name">u014446479</a>:
+顶！
+    </p>
+    </li>
+</ul>
+</div>
+    </div>
+    <div class="clear">
+    </div>
+ </div>   
+            <div class="clear">
+            </div>
+        </div>
+        
+
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/cnick/cnick.js"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/newblog.min.js"></script>
+
+
+<script type="text/javascript" src="http://medal.blog.csdn.net/showblogmedal.ashx?blogid=1156407"></script>
+<script type="text/javascript" src="http://static.blog.csdn.net/scripts/JavaScript1.js"></script>
+
+    <script type="text/javascript" src="http://passport.csdn.net/content/loginbox/login.js"></script>
+<script type="text/javascript">document.write("<img src=http://counter.csdn.net/pv.aspx?id=24 border=0 width=0 height=0>");</script>
+<script type="text/javascript" src="http://www.csdn.net/ui/scripts/Csdn/counter.js"></script>
+<script type="text/javascript" src="http://ad.csdn.net/scripts/ad-blog.js"></script>
+<script type="text/javascript">
+    $(function () {
+        function __get_code_toolbar(snippet_id) {
+            return $("<span data-mod='popu_167'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "' target='_blank' title='在CODE上查看代码片'  style='text-indent:0;'><img src='https://code.csdn.net/assets/CODE_ico.png' width=12 height=12 alt='在CODE上查看代码片' style='position:relative;top:1px;left:2px;'/></a></span>"
+                    + "<span data-mod='popu_170'><a href='https://code.csdn.net/snippets/"
+                    + snippet_id
+                    + "/fork' target='_blank' title='派生到我的代码片' style='text-indent:0;'><img src='https://code.csdn.net/assets/ico_fork.svg' width=12 height=12 alt='派生到我的代码片' style='position:relative;top:2px;left:2px;'/></a></span>");
+        }
+        
+        $("[code_snippet_id]").each(function () {
+            __s_id = $(this).attr("code_snippet_id");
+            if (__s_id != null && __s_id != "" && __s_id != 0 && parseInt(__s_id) > 70020) {
+                __code_tool = __get_code_toolbar(__s_id);
+                $(this).prev().find(".tools").append(__code_tool);
+            }
+        });
+
+        $(".bar").show();
+    });
+</script>
+
+
+
+
+    </div>
+      <!--new top-->
+    
+    <script id="csdn-toolbar-id" btnId="header_notice_num" wrapId="note1" count="5" subCount="5" type="text/javascript" src="http://c.csdnimg.cn/public/common/toolbar/js/toolbar.js"></script>     <!--new top-->
+   
+    <link href="http://c.csdnimg.cn/comm_ask/css/ask_float_block.css" type="text/css" rel="stylesheet" />
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/wmd.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/showdown.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/libs/prettify.js'></script>
+    <script language='JavaScript' type='text/javascript' src='http://c.csdnimg.cn/comm_ask/js/apps/ask_float_block.js'></script>
+   
+</body>
+</html>   
+ 
