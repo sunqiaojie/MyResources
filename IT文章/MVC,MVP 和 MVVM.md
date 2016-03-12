@@ -1,0 +1,41 @@
+    
+    最近MVC (Model-View-Controller) 和MVVM (Model-View-ViewModel) 在微软圈成为显学，ASP.NET MVC 和WPF 的Prism (MVVM Framework) 功不可没，
+MVC 和MVVM 在概念上都是基于分层的，将呈现(presentation) 与资料(data) 分开的设计架构，M 和V 基本上不是问题，但将这两个整合的中间这层可就
+有很多的学问，另外，除了MVC 和MVVM 外，还有一个叫做MVP (Model-View-Presenter) 的架构，这三个的设计概念非常类似，很容易会让人分不清楚...
+    
+    我们先来看各个架构的设计原则好了。
+    
+    首先是MVC，顾名思义，MVC是将Model, View和Controller分离，让彼此的职责(responsibility)能够明确的分开，这样不论是改M, V还是C，都可以
+确保另外两层可不用做任何修改，同时这样的分层也可以加强程式的可测试性(testability)，View和Model基本上是相关的，但它们并不会有直接的相依
+关系，而是由Controller去决定Model产生的资料，然后丢给View去做呈现，也就是说，Controller是Model和View之间的协调者(coordinator)，View和
+Model不能直接沟通，以确保责任的分离。而Controller可以只是一个系结Model和View的小类别，也可以是大到包含Workflow, Enterprise Services或是
+做为外部系统的Proxy Services等的逻辑系统，MVC各元件是可以分离的组件，也可以是分离的系统(当然要设计一些机制在相互沟通)。
+
+    再来是MVVM，MVVM的架构一样是M, V分离，但中间是以VM (ViewModel)来串接，这个ViewModel比较像是View的一个代理程式，它负责直接对Model做
+沟通，而View可以透过一些机制(ex: Events, Two-way Databindings, ...)来和ViewModel沟通以取得资料或将资料抛给Model做存取等工作，ViewModel也
+可以作为和外部系统的代理程式，例如Web Service或是REST Service或是Enterprise Services等等，不过它和MVC不同的地方，就是ViewModel和View的黏合
+度比较高，因为View必须要透过ViewModel才可以取得Model，而ViewModel又必须要处理来自View的通知讯息，所以虽然职责一样分明，但是却不像MVC那样
+可以扩展到整个系统元件都能用。如果MVVM要和MVP比较的话，MVVM会比MVP更灵活一点。
+
+    接着是MVP，MVP一样也是职责分明，且Model与View分离的架构，但是这个P (Presenter)和ViewModel就很类似，不过就如同Presenter (主持人)
+这个字所代表的意义，所有主控View呈现的工作，都是由Presenter来做，而View本身只是Presenter所要使用的舞台而已，所以View原则上会相依于
+Presenter，但是为了要做到关注点分离(SoC原则)，所以在View和Presenter间都会加入一个介面(ex: IView)，然后以IoC的方式将View注射到Presenter中，
+而Presenter就使用介面所定义的方法去操控，而View就透过介面所定义的方法去呈现介面即可。但也因为受限于介面，所以Presenter只能依介面
+定义的动作去回应与处理，而不能再做更多的延伸功能，除非更改View的介面。
+
+    由上面各个架构的讨论，我们可以得到以下的结果：
+
+    MVC 架构适合于大型系统，它可以分层且可以在实体层面切割为不同的机器或服务，只要彼此间具有适当的通讯协定即可。
+    
+    MVVM 架构适合像XAML 这种与程式码无关(code ignorance) 的使用者介面设计，只要View 中下特定的指令与ViewModel 串接，
+就可以享有ViewModel 沟通的功能，而ViewModel 只需做一些特别的介面实作，即可平顺的和View 沟通。
+
+    MVP 架构适合集中由程式码决定View 动作的应用程式，而View 只需要实作特定的介面即可，不需要太复杂的工作，但Presenter
+则可能会受限于View 介面的动作，而无法做更进一步对View 的控制。
+
+    最后我想提的是，MVC的包容度比MVVM和MVP要来的高，在MVC的V层，可以再进一步的包含MVVM或MVP的实作，而C层也可以使用MVP (V是输出的资料)
+来进一步切割资料的流动与输出，M层则可以类似MVVM的架构，当V (元件)有资料的异动时，VM即可自动侦测到并更新Model (资料库)。当然，要用什么
+样的架构去设计，端看当时的系统环境与需求来决定，而不是只想着要用同一种架构去做所有的系统。
+
+
+Source: http://www.cnblogs.com/xxdotnet/archive/2012/03/30/2425539.html
