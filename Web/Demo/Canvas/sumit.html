@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<form action="xxx.antion">
+			
+			<input type="text" id="time1"/>-- <input type="text" id="time2"/>
+			
+			<input type="button" id="smt_Time" value="导出文件" onclick="wjdc_fun()"/>
+		</form>
+		
+		<script type="text/javascript">
+			
+			function wjdc_fun(){
+				
+				var postParam = {
+					//time1 : $("time1").val(),
+					//time2 : $("time2").val()					
+				}
+				
+				fangfa1();
+				//fangfa2(postParam);
+			}
+			
+			function fangfa1(postParam){
+				
+				var test = postParam || "123";
+				
+				alert(test);
+				
+				/*$.ajax({
+		             type: "POST",
+		             url: "xxxx1.action",
+		             async:false,
+		             data: postParam,
+		             dataType: "json",
+		             success: function(data){
+		                alert("success");
+		             }
+	         	});*/
+			}
+			
+			function fangfa2(postParam){
+				$.ajax({
+		             type: "POST",
+		             url: "xxxx2.action",
+		             async:false,
+		             data: postParam,
+		             dataType: "json",
+		             success: function(data){
+		                alert("success");
+		             }
+	         	});
+			}
+		</script>
+	</body>
+</html>
