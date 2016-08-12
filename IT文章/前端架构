@@ -29,3 +29,24 @@
       发布 & 测试 & 开发
       
       
+  |--css
+  |   |---include
+  |   |       |--footer.css 
+  |   |  
+  |   |---module
+  |   |        |---doalog.css
+  |   |
+  |   |---package.json
+  |   |---release
+  |
+  |--script
+      |---common.js
+      |---package.json
+      |---release
+      |---widget
+             |---alert.js
+             |---confirm.js
+             |---dialog.js
+             |---login.js
+             
+      
