@@ -1,0 +1,247 @@
+
+#  上传源码时候，把package.json上传上去，
+#  而package.json中的“devDependencies”就记录了这个系统的开发依赖项，
+#  然后我通过nodejs的npm即可批量安装。
+#  执行“npm install”命令
+
+
+
+
+Grunt和所有grunt插件都是基于nodejs来运行的，所以需要提前安装nodejs
+
+1.安装grunt
+
+	“CLI”被翻译为“命令行”。要想使用grunt，首先必须将grunt-            cli安装到全局环境中，使用nodejs的“npm install…”进行安装
+	打开控制台（注意：windows系统下请使用管理员权限打开）
+	这里安装grunt不再是全局安装了，需要你在控制台进入到网站或系统的具体目录下。
+	(“—save-dev”的意思是，在当前目录安装grunt的同时，顺便把grunt保存为这个目录的开发依赖项。)
+	
+	>   npm install -g grunt -cli
+
+
+	·Contrib-jshint——javascript语法错误检查；
+
+	·Contrib-watch——实时监控文件变化、调用相应的任务重新执行；
+
+	·Contrib-clean——清空文件、文件夹；
+
+	·Contrib-uglify——压缩javascript代码
+
+	·Contrib-copy——复制文件、文件夹
+
+	·Contrib-concat——合并多个文件的代码到一个文件中
+
+	·karma——前端自动化测试工具
+
+
+2.安装uglify插件（压缩javascript代码）
+
+
+	>  npm install grunt-contrib-uglify --save-dev
+
+	第一步，在grunt.initConfig方法中配置 uglify 的配置参数。
+
+	第二步，在 grunt.initConfig 方法之后，要让grunt去加载这一个插件
+
+	第三步，在grunt命令执行时，要不要立即执行uglify插件？如果要，就写上，否则不写。
+
+//包装函数
+module.exports = function(grunt){
+	//任务配置，所有插件的配置信息
+	grunt.initConfig({
+		//获取 package.json
+		pkg:grunt.file.readJSON('package.json'),
+		//uglify插件的配置信息
+		uglify:{
+			options:{
+				stripBanners:true,
+				banner:'/*!<%=pkg.name%>-<%=pkg.version%>.js <%= grunt.template.today("yyyy-mm-dd") %> */'
+			},
+			build:{
+				src:'src/test.js',
+				dest:'build/<%=pkg.name%>-<%=pkg.version%>.js.min.js'
+			}
+		}
+	});
+	//告诉grunt我们将使用插件
+	grunt.loadNpmTasks('grunt-contrib-uglify');
+	// 告诉grunt当我们在终端中输入grunt是需要做些什么（注意先后顺序）
+	grunt.registerTask('default',['uglify']);
+};
+
+
+
+
+	options”中规定允许生成的压缩文件带banner，即在生成的压缩文件第一行加一句话说明。注意，其中使用到了pkg获取package.json的内容。
+	“build”中配置了源文件和目标文件。即规定了要压缩谁？压缩之后会生成谁？注意，我们这里将目标文件的文件名通过pkg的name和version来命名。
+
+
+
+3.使用jshint插件（检查javascript语法错误）
+
+
+	>  npm install grunt-contrib-jshint --save-dev
+
+	第一步，在grunt.initConfig方法中配置jshint。
+
+	第二步，加载插件。和uglify的加载方法一样。注意，这里没有先后顺序。
+
+		grunt.loadNpmTasks('grunt-contrib-jshint');
+
+	第三步，配置grunt命令启动时，要执行的任务，这里注意先后顺序。(先检查语法)
+
+		grunt.registerTask('default',['jshint','uglify']);
+
+4.使用csslint插件（检查css语法错误）
+
+	npm install grunt-contrib-csslint --save-dev
+
+	csslint:{
+			build:['src/*.css'],
+			options:{
+				csslintrc : '.csslintrc'
+			}
+		}
+
+
+5.使用watch插件（自动化检测）
+
+	npm install grunt-contrib-watch --save-dev
+
+	watch:{
+            build:{
+                files:['src/*.js','src/.css'],
+                tasks:['jshint','csslint','uglify'],
+                options:{spawn:false}
+            }
+        }
+
+
+
+
+
+
+-----------------------Gruntfile.js-------------------------------------
+
+module.exports = function(grunt){
+    //初始化grunt 配置
+    grunt.initConfig({
+
+        //获取package.json的信息
+        pkg: grunt.file.readJSON(‘package.json‘),
+        //concat插件的配置信息
+        concat: {
+            options:{
+                stripBanners:true, //合并时允许输出头部信息
+                banner:‘/*!<%= pkg.name %> - <%= pkg.version %>-‘+‘<%=grunt.template.today("yyyy-mm-dd") %> */‘
+            },
+            cssConcat:{
+                src:[‘src/css/css1.css‘,‘src/css/css2.css‘],
+                dest:‘src/css/concat/<%= pkg.name %> - <%= pkg.version %>.css‘ //dest 是目的地输出
+            },
+            jsConcat:{
+                src:‘src/js/*.js‘,
+                dest:‘src/js/concat/<%=pkg.name %> - <%= pkg.version %>.js‘
+            }
+        },
+        //压缩css
+        cssmin:{
+            options:{
+                stripBanners:true, //合并时允许输出头部信息
+                banner:‘/*!<%= pkg.name %> - <%= pkg.version %>-‘+‘<%=grunt.template.today("yyyy-mm-dd") %> */\n‘
+            },
+            build:{
+                src:‘src/css/concat/<%=pkg.name %> - <%=pkg.version %>.css‘,//压缩是要压缩合并了的
+                dest:‘dist/css/<%= pkg.name %> - <%= pkg.version %>.min.css‘ //dest 是目的地输出
+            }
+        },
+        //压缩js
+        uglify:{
+            options:{
+                stripBanners:true, //合并时允许输出头部信息
+                banner:‘/*!<%= pkg.name %> - <%= pkg.version %>-‘+‘<%=grunt.template.today("yyyy-mm-dd") %> */\n‘
+            },
+            build:{
+                src:‘src/js/concat/<%=pkg.name %> - <%=pkg.version %>.js‘,//压缩是要压缩合并了的
+                dest:‘dist/js/<%= pkg.name %> - <%= pkg.version %>.min.js‘ //dest 是目的地输出
+            }
+        },
+
+        jshint:{
+            options:{
+                jshintrc:‘.jshint‘
+            },
+            build:[‘Gruntfile.js‘,‘src/js/*js‘]
+        },
+
+        csslint:{
+            options:{
+                csslintrc:‘.csslint‘
+            },
+            build:[‘src/css/*.css‘]
+
+        },
+        //watch自动化
+        watch:{
+            build:{
+                files:[‘src/js/*.js‘,‘src/css/*.css‘],
+                tasks:[‘jshint‘,‘csslint‘,‘concat‘,‘cssmin‘,‘uglify‘],
+                options:{spawn:false}
+            }
+        }
+
+    });
+    //告诉grunt我们将使用插件
+    grunt.loadNpmTasks(‘grunt-contrib-concat‘);
+    grunt.loadNpmTasks(‘grunt-contrib-cssmin‘);
+    grunt.loadNpmTasks(‘grunt-contrib-uglify‘);
+    grunt.loadNpmTasks(‘grunt-contrib-jshint‘);
+    grunt.loadNpmTasks(‘grunt-contrib-csslint‘);
+    grunt.loadNpmTasks(‘grunt-contrib-watch‘);
+    //告诉grunt当我们在终端输入grunt时需要做些什么
+    grunt.registerInitTask(‘default‘,[‘jshint‘,‘csslint‘,‘concat‘,‘cssmin‘,‘uglify‘,‘watch‘]);//先进行语法检查，如果没有问题，再合并，再压缩
+};
+
+----------------------------------------------------------------------------------
+
+
+
+.csslint文件的配置：
+
+{
+    "adjoining-classes":false,
+    "box-sizing":false,
+    "box-model" : false,
+    "compatible-vendor-prefixes": false,
+    "floats":false,
+    "font-sizes":false,
+    "gradients":false,
+    "important":false,
+    "known-properties":false,
+    "outline-none":false,
+    "qualified-headings":false,
+    "regex-selectors":false,
+    "shorthand":false,
+    "text-indent":false,
+    "unique-headings":false,
+    "universal-selector":false,
+    "unqualified-attributes":false
+}
+.jshint文件配置
+
+{
+    "boss":false,
+    "curly":true,
+    "eqeqeq":true,
+    "expr":true,
+    "immed":true,
+    "newcap":true,
+    "noempty":true,
+    "noarg":true,
+    "undef":true,
+    "regexp":true,
+
+    "browser":true,
+    "devel":true,
+    "node":true
+}
